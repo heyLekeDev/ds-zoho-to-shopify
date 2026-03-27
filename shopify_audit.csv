@@ -1,0 +1,104 @@
+shopify_title,shopify_handle,shopify_status,variant_count,skus,expected_collection,has_image,has_description,issues,product_type,vendor
+BEESURE FACE MASK,beesure-face-mask,ACTIVE,5,"200-150-001, 200-150-002, 200-150-003, 200-150-004, 200-150-005",,True,True,"SKU not found in inventory CSV: 200-150-001, 200-150-002, 200-150-003, 200-150-004, 200-150-005",150-Face Masks,BeeSure
+BEESURE GLOVES,beesure-gloves,ACTIVE,2,"200-170-001, 200-170-002",,True,True,"SKU not found in inventory CSV: 200-170-001, 200-170-002",170-Gloves,BeeSure
+BridgeAid Floss Threaders,bridgeaid-floss-threaders,ACTIVE,1,480-110-005,,True,True,SKU not found in inventory CSV: 480-110-005,110-Floss & Interdental Aids,BridgeAid
+COLTENE COMPOSITE,coltene-composite,ACTIVE,10,"520-160-002, 520-160-003, 520-160-004, 520-160-005, 520-160-006, 520-160-007, 520-160-008, 520-160-009, 520-160-010, 520-160-011",,True,True,"SKU not found in inventory CSV: 520-160-002, 520-160-003, 520-160-004, 520-160-005, 520-160-006, 520-160-007, 520-160-008, 520-160-009, 520-160-010, 520-160-011",160-Composites,Brilliant Flow
+Crosstex Patient Bibs,crosstex-patient-bibs,ACTIVE,4,"200-190-002, 200-190-003, 200-190-004, 200-190-005",,True,True,"SKU not found in inventory CSV: 200-190-002, 200-190-003, 200-190-004, 200-190-005",190-Patient Bibs,Crosstex
+Monoject Dental Needles,monoject-dental-needles,ACTIVE,3,"100-140-001, 100-140-003, 100-140-002",,True,True,"SKU not found in inventory CSV: 100-140-001, 100-140-003, 100-140-002",140-Needles,Monoject
+Needle Gard II,needle-gard-ii,ACTIVE,1,100-140-004,,True,True,SKU not found in inventory CSV: 100-140-004,140-Needles,Needle Gard
+Septodont Syringes,septodont-syringes,ACTIVE,1,100-150-004,,True,True,SKU not found in inventory CSV: 100-150-004,150-Syringes,Septodont
+Septodont Local Anaesthetics,septodont-local-anaesthetics,ACTIVE,3,"100-130-002, 100-130-003, 100-130-001",Septodont Local Anaesthetics,True,True,SKU not found in inventory CSV: 100-130-002,130-Local Anaesthetics,Septodont
+Transcoject Painless Steel,transcoject-painless-steel,ACTIVE,1,100-140-006,,True,True,SKU not found in inventory CSV: 100-140-006,140-Needles,Transcodent
+DEHP Syringes,dehp-syringes,ACTIVE,1,100-150-003,,True,True,SKU not found in inventory CSV: 100-150-003,150-Syringes,DEHP
+Plasdent Patient Bibs,plasdent-patient-bibs,ACTIVE,6,"200-190-010, 200-190-011, 200-190-007, 200-190-006, 200-190-008, 200-190-009",,True,True,"SKU not found in inventory CSV: 200-190-010, 200-190-011, 200-190-007, 200-190-006, 200-190-008, 200-190-009",190-Patient Bibs,Plasdent
+MEDITRADE GLOVES,meditrade-gloves,ACTIVE,3,"200-170-013, 200-170-012, 200-170-010",,True,True,"SKU not found in inventory CSV: 200-170-013, 200-170-012, 200-170-010",170-Gloves,MEDITRADE
+Monoject Syringes,monoject-syringes,ACTIVE,1,100-150-002,,True,True,SKU not found in inventory CSV: 100-150-002,150-Syringes,Monoject
+MEDESY RETAINER CASE,medesy-retainer-case,ACTIVE,4,"420-110-016, 420-110-015, 420-110-017, 420-110-018",,True,True,"SKU not found in inventory CSV: 420-110-016, 420-110-015, 420-110-017, 420-110-018",110-Accessories,Medesy
+Miltex Spare Parts,miltex-spare-parts,ACTIVE,1,100-150-007,Miltex Spare Parts,True,True,OK,150-Syringes,Miltex
+Septoject Standard,septoject-standard,ACTIVE,1,100-140-005,Septoject Standard,True,True,OK,140-Needles,Septoject
+Unodent Bibs Holder,unodent-bibs-holder,ACTIVE,3,"200-190-013, 200-190-014, 200-190-012",,True,True,"SKU not found in inventory CSV: 200-190-013, 200-190-014, 200-190-012",190-Patient Bibs,UnoDent
+Bicon Universal,bicon-universal,ACTIVE,3,"320-170-003, 320-170-002, 320-170-001",,True,True,"SKU not found in inventory CSV: 320-170-003, 320-170-002, 320-170-001",170-Universal Abutments,Bicon
+Vivid Syringes,vivid-syringes,ACTIVE,1,100-150-006,Vivid Syringes,True,True,OK,150-Syringes,Vivid
+Medesy Syringes,medesy-syringes,ACTIVE,1,100-150-005,Medesy Syringes,True,True,OK,150-Syringes,Medesy
+11MM ABUTMENT CUTTING BURS,11mm-abutment-cutting-burs,ACTIVE,1,160-140-001,,True,True,SKU not found in inventory CSV: 160-140-001,140-Surgical Burs,Bicon
+Carbide Burs,carbide-burs-2,ACTIVE,2,"160-120-001, 160-120-002",,True,True,"SKU not found in inventory CSV: 160-120-001, 160-120-002",Dental Supply,Dental Solutions
+Bicon Membranes,bicon-membranes-2,ACTIVE,2,"140-120-001, 140-120-002",(no collection),True,True,OK,Dental Supply,Dental Solutions
+ORATEK FLOSS & BRUSH,oratek-floss-brush-1,ACTIVE,2,"480-110-002, 480-110-003",,True,True,"SKU not found in inventory CSV: 480-110-002, 480-110-003",Dental Supply,Dental Solutions
+BICON INTEGRA CP,bicon-integra-cp-1,ACTIVE,20,"320-120-002, 320-120-003, 320-120-004, 320-120-005, 320-120-006, 320-120-008, 320-120-009, 320-120-010, 320-120-011, 320-120-012, 320-120-013, 320-120-014, 320-120-015, 320-120-016, 320-120-017, 320-120-018, 320-120-019, 320-120-020, 320-120-021, 320-120-022",BICON INTEGRA CP,True,True,"SKU not found in inventory CSV: 320-120-021, 320-120-022",Dental Supply,Dental Solutions
+Dental Accessories,dental-accessories-2,ACTIVE,1,140-120-003,,True,True,SKU not found in inventory CSV: 140-120-003,Dental Supply,Dental Solutions
+Bicon Permanent,bicon-permanent,ACTIVE,33,"320-140-001, 320-140-002, 320-140-003, 320-140-004, 320-140-005, 320-140-006, 320-140-007, 320-140-008, 320-140-009, 320-140-010, 320-140-011, 320-140-012, 320-140-013, 320-140-014, 320-140-015, 320-140-016, 320-140-017, 320-140-018, 320-140-019, 320-140-020, 320-140-021, 320-140-022, 320-140-023, 320-140-024, 320-140-025, 320-140-026, 320-140-027, 320-140-028, 320-140-029, 320-140-030, 320-140-031, 320-140-032, 320-140-033",,True,True,"SKU not found in inventory CSV: 320-140-001, 320-140-002, 320-140-003, 320-140-004, 320-140-005, 320-140-006, 320-140-007, 320-140-008, 320-140-009, 320-140-010, 320-140-011, 320-140-012, 320-140-013, 320-140-014, 320-140-015, 320-140-016, 320-140-017, 320-140-018, 320-140-019, 320-140-020, 320-140-021, 320-140-022, 320-140-023, 320-140-024, 320-140-025, 320-140-026, 320-140-027, 320-140-028, 320-140-029, 320-140-030, 320-140-031, 320-140-032, 320-140-033",Dental Supply,Dental Solutions
+Geistlich Biomaterials,geistlich-biomaterials,ACTIVE,1,140-120-004,(no collection),True,True,OK,Dental Supply,Dental Solutions
+Bicon Temporary,bicon-temporary-1,ACTIVE,9,"320-160-001, 320-160-002, 320-160-003, 320-160-007, 320-160-008, 320-160-009, 320-160-010, 320-160-011, 320-160-012",,True,True,"SKU not found in inventory CSV: 320-160-001, 320-160-002, 320-160-003, 320-160-007, 320-160-008, 320-160-009, 320-160-010, 320-160-011, 320-160-012",Dental Supply,Dental Solutions
+Geistlich Bio-Oss,geistlich-bio-oss,ACTIVE,1,140-110-001,,True,True,SKU not found in inventory CSV: 140-110-001,Dental Supply,Dental Solutions
+Philips Oral Hygiene,philips-oral-hygiene,ACTIVE,1,480-110-004,,True,True,SKU not found in inventory CSV: 480-110-004,Dental Supply,Dental Solutions
+Surgical Burs,surgical-burs,ACTIVE,5,"160-110-007, 160-120-006, 160-120-012, 160-120-013, 160-120-014",(no collection),True,True,"SKU not found in inventory CSV: 160-120-006, 160-120-012, 160-120-013, 160-120-014",Dental Supply,Dental Solutions
+Diamond Burs,diamond-burs,ACTIVE,1,160-120-003,(no collection),True,True,OK,Dental Supply,Dental Solutions
+UnoDent Diamond Burs,unodent-diamond-burs,ACTIVE,1,160-130-002,(no collection),True,True,OK,Dental Supply,Dental Solutions
+Diatech Diamond Burs,diatech-diamond-burs,ACTIVE,4,"160-130-008, 160-130-009, 160-130-010, 160-130-015",,True,True,"SKU not found in inventory CSV: 160-130-008, 160-130-009, 160-130-010, 160-130-015",Dental Supply,Dental Solutions
+Surgical Instruments,surgical-instruments-1,ACTIVE,2,"340-180-001, 340-180-004",,True,True,"SKU not found in inventory CSV: 340-180-001, 340-180-004",Dental Supply,Dental Solutions
+Edenta Diamond Burs,edenta-diamond-burs,ACTIVE,1,160-130-003,,True,True,SKU not found in inventory CSV: 160-130-003,Dental Supply,Dental Solutions
+UnoDent Syringes,unodent-syringes-1,ACTIVE,1,100-150-001,,True,True,SKU not found in inventory CSV: 100-150-001,Dental Supply,Dental Solutions
+Endodontic Burs,endodontic-burs,ACTIVE,2,"160-120-010, 160-120-011",,True,True,"SKU not found in inventory CSV: 160-120-010, 160-120-011",Dental Supply,Dental Solutions
+VDW BARBED BROACHES,vdw-barbed-broaches-1,ACTIVE,4,"260-110-001, 260-110-002, 260-110-003, 260-110-004",,True,True,"SKU not found in inventory CSV: 260-110-001, 260-110-002, 260-110-003, 260-110-004",Dental Supply,Dental Solutions
+EthOss Bone Graft,ethoss-bone-graft,ACTIVE,2,"140-110-002, 140-110-003",,True,True,"SKU not found in inventory CSV: 140-110-002, 140-110-003",Dental Supply,Dental Solutions
+Kulzer Diamond Burs,kulzer-diamond-burs,ACTIVE,1,160-130-005,,True,True,SKU not found in inventory CSV: 160-130-005,Dental Supply,Dental Solutions
+Philips NiteWite,philips-nitewite-2,ACTIVE,1,180-120-001,,True,True,SKU not found in inventory CSV: 180-120-001,Dental Supply,Dental Solutions
+ZOOM PROTECTIVE EYEWEAR,zoom-protective-eyewear,ACTIVE,1,180-110-001,(no collection),True,True,OK,110-Whitening Equipment,PHILIPS ZOOM
+ZOOM ADVANCE POWER LAMP-W/S,zoom-advance-power-lamp-w-s,ACTIVE,1,180-110-002,(no collection),True,True,OK,110-Whitening Equipment,PHILIPS ZOOM
+RETAINER CASE- PHILIPS ZOOM,retainer-case-philips-zoom,ACTIVE,1,420-110-012,(no collection),True,False,No description,110-Accessories,PHILIPS ZOOM
+Bicon Bone Graft,bicon-bone-graft,ACTIVE,1,140-110-004,,True,True,SKU not found in inventory CSV: 140-110-004,Dental Supply,Dental Solutions
+Toffeln Clogs,toffeln-clogs,ACTIVE,3,"120-130-003, 120-130-001, 120-130-002",(no collection),True,True,OK,Dental Supply,Dental Solutions
+Philips Zoom Kit,philips-zoom-kit,ACTIVE,4,"180-130-001, 180-130-002, 180-130-001, 180-130-002",Unodent Bibs Holder,True,True,Product title ≠ expected collection name: expected 'Unodent Bibs Holder',Dental Supply,Dental Solutions
+Introduction to Implantology,introduction-to-implantology,ACTIVE,2,"620-110-001, 620-110-002",(no collection),False,False,No product image; No description,110-Clinical-training,Dental Solutions
+BIB HOLDER (10PCS) (6210),bib-holder-10pcs-6210,ACTIVE,1,200-190-001,,True,False,No description; SKU not found in inventory CSV: 200-190-001,190-Patient Bibs,Medesy
+BLADE HANDLE #3 - MILTEX,blade-handle-3-miltex,ACTIVE,1,340-190-011,,True,False,No description; SKU not found in inventory CSV: 340-190-011,190-Surgical Instruments,Miltex
+BURS - SURGICAL CARBIDE FG957,burs-surgical-carbide-fg957,ACTIVE,1,160-140-006,,True,False,No description; SKU not found in inventory CSV: 160-140-006,140-Surgical Burs,SS White
+EXCAVATOR SPOON 17 (664/17),excavator-spoon-17-664-17,ACTIVE,1,340-190-020,(no collection),True,False,No description,190-Surgical Instruments,Medesy
+EXPANDERS SOFT- SMALL (4916/6),expanders-soft-small-4916-6,ACTIVE,1,420-110-002,(no collection),True,False,No description,110-Accessories,Medesy
+EXTRACTION FORCEPS AUTOCLAVABLE MOLARS UPPER/LOWER (UNODENT),extraction-forceps-autoclavable-molars-upper-lower-unodent,ACTIVE,1,340-190-025,(no collection),True,False,No description,190-Surgical Instruments,UnoDent
+GATES GLIDDEN DRILLS NO.4,gates-glidden-drills-no-4,ACTIVE,1,260-150-006,,True,False,No description; SKU not found in inventory CSV: 260-150-006,150-Files & Reamers,UnoDent
+GATES GLIDDEN DRILLS NO.5,gates-glidden-drills-no-5,ACTIVE,1,260-150-008,,True,False,No description; SKU not found in inventory CSV: 260-150-008,150-Files & Reamers,UnoDent
+TEPE ANGLE INTERDENTAL BRUSH ASSORTED (6/PK),tepe-angle-interdental-brush-assorted-6-pk,ACTIVE,1,480-150-057,(no collection),True,False,No description,150-Toothbrushes & Tongue Cleaners,Tepe
+TEPE DAILY TOOTHPASTE 75ML KIDS,tepe-daily-toothpaste-75ml-kids,ACTIVE,1,480-150-049,(no collection),True,False,No description,150-Toothbrushes & Tongue Cleaners,Tepe
+BURS - SSW RA-3 - SLOW ROUND,burs-ssw-ra-3-slow-round,ACTIVE,1,160-140-003,,True,False,No description; SKU not found in inventory CSV: 160-140-003,140-Surgical Burs,SS White
+BURS - SSW RA-5 - SLOW ROUND,burs-ssw-ra-5-slow-round,ACTIVE,1,160-140-004,,True,False,No description; SKU not found in inventory CSV: 160-140-004,140-Surgical Burs,SS White
+BURS - SSW RA-8 - SLOW ROUND,burs-ssw-ra-8-slow-round,ACTIVE,1,160-140-005,,True,False,No description; SKU not found in inventory CSV: 160-140-005,140-Surgical Burs,SS White
+COTTON ROLL -ROEKO,cotton-roll-roeko,ACTIVE,1,200-120-001,,True,False,No description; SKU not found in inventory CSV: 200-120-001,120-Cotton Products,Roeko
+COTTON ROLL DISP.PULL WHITE,cotton-roll-disp-pull-white,ACTIVE,1,200-120-002,,True,False,No description; SKU not found in inventory CSV: 200-120-002,120-Cotton Products,UnoDent
+COTTON ROLL DISP.PUSH BIEGE,cotton-roll-disp-push-biege,ACTIVE,1,200-120-003,,True,False,No description; SKU not found in inventory CSV: 200-120-003,120-Cotton Products,Plasdent
+COTTON ROLL DISPENSER- WHITE,cotton-roll-dispenser-white,ACTIVE,1,200-120-004,,True,False,No description; SKU not found in inventory CSV: 200-120-004,120-Cotton Products,UnoDent
+SPONGE DISPENSER 2 X 2 MAUVE,sponge-dispenser-2-x-2-mauve,ACTIVE,1,200-120-005,,True,False,No description; SKU not found in inventory CSV: 200-120-005,120-Cotton Products,Plasdent
+Evacuator Tips,evacuator-tips,ACTIVE,1,200-140-001,,True,True,SKU not found in inventory CSV: 200-140-001,140-Evacuation Tips & Valves,Generic
+Intraoral Tips,intraoral-tips,ACTIVE,2,"200-140-013, 200-140-002",(no collection),True,True,SKU not found in inventory CSV: 200-140-013,140-Evacuation Tips & Valves,Generic
+Saliva Ejectors,saliva-ejectors,ACTIVE,2,"200-140-011, 200-140-003",(no collection),True,True,OK,140-Evacuation Tips & Valves,Generic
+UnoDent Saliva Ejectors,unodent-saliva-ejectors,ACTIVE,1,200-140-012,,True,True,SKU not found in inventory CSV: 200-140-012,140-Evacuation Tips & Valves,UnoDent
+DenMat Splash! Intraoral Tips,denmat-splash-intraoral-tips,ACTIVE,1,200-140-004,,True,True,SKU not found in inventory CSV: 200-140-004,140-Evacuation Tips & Valves,Splash!
+Sultan Intraoral Tips,sultan-intraoral-tips,ACTIVE,1,200-140-005,,True,True,SKU not found in inventory CSV: 200-140-005,140-Evacuation Tips & Valves,Sultan
+Surgical Aspirator Tips,surgical-aspirator-tips,ACTIVE,2,"200-140-006, 200-140-007",,True,True,"SKU not found in inventory CSV: 200-140-006, 200-140-007",140-Evacuation Tips & Valves,Generic
+Vivid Microfoam Tips,vivid-microfoam-tips,ACTIVE,1,200-140-008,(no collection),True,True,OK,140-Evacuation Tips & Valves,Vivid
+Vivid Surgical Aspirator Tips,vivid-surgical-aspirator-tips,ACTIVE,1,200-140-009,,True,True,SKU not found in inventory CSV: 200-140-009,140-Evacuation Tips & Valves,Vivid
+Vivid Intraoral Tips,vivid-intraoral-tips,ACTIVE,1,200-140-010,(no collection),True,True,OK,140-Evacuation Tips & Valves,Vivid
+Brightway Nitrile Gloves,brightway-nitrile-gloves,ACTIVE,1,,,True,True,No SKUs on product,170-Gloves,Brightway
+ComFit Earloop Masks,comfit-earloop-masks,ACTIVE,1,200-150-006,,True,True,SKU not found in inventory CSV: 200-150-006,150-Face Masks,ComFit
+Utility Nitrile Gloves,utility-nitrile-gloves,ACTIVE,4,"200-170-004, 200-170-005, 200-170-006, 200-170-008",,True,True,"SKU not found in inventory CSV: 200-170-004, 200-170-005, 200-170-006, 200-170-008",170-Gloves,Generic
+Blossom Exam Gloves,blossom-exam-gloves,ACTIVE,1,200-170-009,,True,True,SKU not found in inventory CSV: 200-170-009,170-Gloves,Blossom
+Meditrade Gentle Skin Latex,meditrade-gentle-skin-latex,ACTIVE,3,"200-170-010, 200-170-012, 200-170-013",,True,True,"SKU not found in inventory CSV: 200-170-010, 200-170-012, 200-170-013",170-Gloves,MEDITRADE
+Unigloves Kooltouch Nitrile,unigloves-kooltouch-nitrile,ACTIVE,2,"200-170-017, 200-170-018",(no collection),True,True,OK,170-Gloves,Unigloves
+CAVIT NORMAL TUBE PACKS (10/PK),cavit-normal-tube-packs-10pk,ACTIVE,1,520-210-001,(no collection),True,True,OK,210-Temporary Filling Materials,3M ESPE
+Vivid Barrier Products,vivid-barrier-products,ACTIVE,1,200-110-001,,True,True,SKU not found in inventory CSV: 200-110-001,110-Barrier Products,Vivid
+Bicon Drilling Implant Guide,bicon-drilling-implant-guide,ACTIVE,1,320-150-001,(no collection),True,True,OK,Implant Drilling Guide,Bicon
+Bicon Standard Guide Pin,bicon-standard-guide-pin,ACTIVE,2,"320-150-003, 320-150-004",(no collection),True,True,OK,Implant Guide Pin,Bicon
+Bicon Implant Impression Kit,bicon-implant-impression-kit,ACTIVE,2,"320-120-023, 320-120-024",(no collection),True,True,OK,Implant Impression Kit,Bicon
+Bicon Non-Shoulder Temporary Sleeve,bicon-non-shoulder-temporary-sleeve,ACTIVE,2,"320-160-005, 320-160-006",(no collection),True,True,OK,Temporary Abutment,Bicon
+Bicon Digital Implant Analog Kit — 3.0mm,bicon-digital-implant-analog-kit-30mm,ACTIVE,1,320-150-005,(no collection),True,True,OK,Digital Implant Analog Kit,Bicon
+Bicon Titanium Impression Post & Sleeve — 3.0mm,bicon-titanium-impression-post-sleeve-30mm,ACTIVE,1,320-120-001,(no collection),True,True,OK,Impression Post & Sleeve,Bicon
+Bicon Osteotome — 6.0mm,bicon-osteotome-60mm,ACTIVE,1,320-130-001,,True,True,SKU not found in inventory CSV: 320-130-001,Osteotome,Bicon
+Bicon Crown Seating Tip,bicon-crown-seating-tip,ACTIVE,1,320-150-007,(no collection),True,True,OK,Crown Seating Instrument,Bicon
+UnoDent Bur Block — Large Round (Blue),unodent-bur-block-large-round-blue,ACTIVE,1,160-110-001,,True,True,SKU not found in inventory CSV: 160-110-001,Bur Block,UnoDent
+Komet Pulimant Bur Cleaner,komet-pulimant-bur-cleaner,ACTIVE,1,160-110-003,,True,True,SKU not found in inventory CSV: 160-110-003,Bur Cleaner,Komet
+UnoDent Metal Bur Cleaning Brush,unodent-metal-bur-cleaning-brush,ACTIVE,1,160-110-004,,True,True,SKU not found in inventory CSV: 160-110-004,Bur Cleaning Brush,UnoDent
+UnoDent Metal Mesh Bur Holder,unodent-metal-mesh-bur-holder,ACTIVE,1,160-110-006,,True,True,SKU not found in inventory CSV: 160-110-006,Bur Holder,UnoDent
+Bicon MD Drilling Implant Guide,bicon-md-drilling-implant-guide,ACTIVE,1,320-150-008,(no collection),True,True,OK,Implant Drilling Guide,Bicon
+Bicon Paralleling Pin — 0°,bicon-paralleling-pin-0,ACTIVE,1,320-150-010,(no collection),True,True,OK,Paralleling Pin,Bicon
+Bicon Pilot Drill — 2.0mm,bicon-pilot-drill-20mm,ACTIVE,1,320-150-009,(no collection),True,True,OK,Implant Pilot Drill,Bicon
+Bicon Threaded Abutment Prep Holder,bicon-threaded-abutment-prep-holder,ACTIVE,1,320-140-034,(no collection),True,True,OK,Abutment Preparation Instrument,Bicon

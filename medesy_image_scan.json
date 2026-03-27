@@ -1,0 +1,872 @@
+{
+  "header": [
+    {
+      "sku": "340-110-022",
+      "name": "TWEEZER COLLEGE (1026)",
+      "catalog": "1026",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_1026_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001199957"
+    },
+    {
+      "sku": "340-120-001",
+      "name": "MIRROR HANDLE LIGHT MILLIMETER (4902/MM)",
+      "catalog": "4902/MM",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_4902slashMM_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003428865"
+    },
+    {
+      "sku": "340-140-002",
+      "name": "RULER ENDODONTIC (6170)",
+      "catalog": "6170",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_6170_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001060875"
+    },
+    {
+      "sku": "340-140-005",
+      "name": "WAX AND MODELLING INSTRUMENT ZAHLE 120MM (591)",
+      "catalog": "591",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_591_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003428832"
+    },
+    {
+      "sku": "340-190-040",
+      "name": "PLASTER SHEAR (4559)",
+      "catalog": "4559",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_4559_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003428810"
+    },
+    {
+      "sku": "340-190-045",
+      "name": "ROOT ELEVATOR 2MM MAESTRALE (726/1S. SL)",
+      "catalog": "726/1S. SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_726slash1SSL_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003429141"
+    },
+    {
+      "sku": "340-190-050",
+      "name": "ROOT ELEVATOR COUPLAND 3MM (798/1)",
+      "catalog": "798/1",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_798slash1_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003428722"
+    },
+    {
+      "sku": "340-190-058",
+      "name": "ROOT ELEVATOR LINDO-LEVIAN 2.5MM MAESTRALE (725/1.SL)",
+      "catalog": "725/1.SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_725slash1SL_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003429108"
+    },
+    {
+      "sku": "340-190-076",
+      "name": "SCISSOR BEEBEE (3550)",
+      "catalog": "3550",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_3550_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001204216"
+    },
+    {
+      "sku": "340-190-086",
+      "name": "SCISSOR SPENCER 130MM (3521)",
+      "catalog": "3521",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_3521_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001198065"
+    },
+    {
+      "sku": "340-190-089",
+      "name": "TOOTH FORCEPS N.1 (2500/1)",
+      "catalog": "2500/1",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_2500slash1_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000003428557"
+    },
+    {
+      "sku": "280-130-003",
+      "name": "ARTICULATOR WITH MAGNETIC PLAT",
+      "catalog": "5222",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_5222_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000000931680"
+    },
+    {
+      "sku": "340-110-024",
+      "name": "TWEEZER GERALD OY CURVED",
+      "catalog": "1029",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/03/Immagine_testata_1029_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001201851"
+    },
+    {
+      "sku": "340-190-026",
+      "name": "FORCEP FOR CROWN & BRIDGES LOW",
+      "catalog": "2400/1",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_2400slash1_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001235438"
+    },
+    {
+      "sku": "340-190-052",
+      "name": "ROOT ELEVATOR CRYER 12MM LEFT",
+      "catalog": "720/25",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_720slash25_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000005690463"
+    },
+    {
+      "sku": "340-190-063",
+      "name": "ROOT ELEVATOR LONDON HOSPITAL 977",
+      "catalog": "977",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_testata_977_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001446741"
+    },
+    {
+      "sku": "340-190-073",
+      "name": "ROOT ELEVATOR WARWICK-JAMES STRAIGHT 2.2MM (i796/1)",
+      "catalog": "796/1",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/03/Immagine_testata_796slash1_header.png",
+      "type": "testata_header",
+      "dims": "1200x1200",
+      "item_id": "5583220000001444849"
+    }
+  ],
+  "thumb": [],
+  "variante": [
+    {
+      "sku": "340-110-018",
+      "name": "TRAY ALUMINIUM BLUE (998/B)",
+      "catalog": "998/B",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_998slashB.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001172519"
+    },
+    {
+      "sku": "340-110-019",
+      "name": "TRAY ALUMINIUM GREEN (998/V)",
+      "catalog": "998/V",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_998slashV.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001173465"
+    },
+    {
+      "sku": "340-110-020",
+      "name": "TRAY ALUMINIUM RED (998/R)",
+      "catalog": "998/R",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_998slashR.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001173938"
+    },
+    {
+      "sku": "340-110-021",
+      "name": "TRAY ALUMINIUM SILVER (998/AS)",
+      "catalog": "998/AS",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_998slashAS.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001172992"
+    },
+    {
+      "sku": "340-110-023",
+      "name": "TWEEZER FLAGG (1023)",
+      "catalog": "1023",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_1023.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001208473"
+    },
+    {
+      "sku": "340-120-005",
+      "name": "MIRROR N.4 RHODIUM DOUBLE (6PC) (4912/4RO)",
+      "catalog": "4912/4RO",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_4912slash4RO.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001201378"
+    },
+    {
+      "sku": "340-120-007",
+      "name": "MIRRORS N.5 RHODIUM DOUBLE-6PC (4912/5RO)",
+      "catalog": "4912/5RO",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_4912slash5RO.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001218883"
+    },
+    {
+      "sku": "340-140-006",
+      "name": "WAX AND MODELLING INSTRUMENT ZAHLE 130MM (592)",
+      "catalog": "592",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_592.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428843"
+    },
+    {
+      "sku": "340-180-011",
+      "name": "FILLING INSTRUMENT OT2 (500/2)",
+      "catalog": "500/2",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_500slash2.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428689"
+    },
+    {
+      "sku": "340-180-012",
+      "name": "FILLING INSTRUMENT OT3 (500/3)",
+      "catalog": "500/3",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_500slash3.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428700"
+    },
+    {
+      "sku": "340-190-018",
+      "name": "EXCAVATOR N.3 (670/3)",
+      "catalog": "670/3",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_670slash3.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001228343"
+    },
+    {
+      "sku": "340-190-019",
+      "name": "EXCAVATOR SPOON 14 (664/14)",
+      "catalog": "664/14",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_664slash14.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001220302"
+    },
+    {
+      "sku": "340-190-021",
+      "name": "EXCAVATOR SPOON 18 (664/18)",
+      "catalog": "664/18",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_664slash18.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001183873"
+    },
+    {
+      "sku": "340-190-035",
+      "name": "NEEDLE HOLDER MAYO-HEGAR 180MM (1741/TC)",
+      "catalog": "1741/TC",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_1741slashTC.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001234019"
+    },
+    {
+      "sku": "340-190-044",
+      "name": "ROOT ELEVATOR 2.5MM MAESTRALE (726/2S. SL)",
+      "catalog": "726/2S. SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_726slash2SSL.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003430012"
+    },
+    {
+      "sku": "340-190-046",
+      "name": "ROOT ELEVATOR 3MM MAESTRALE (726/3S. SL)",
+      "catalog": "726/3S. SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_726slash3SSL.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003430023"
+    },
+    {
+      "sku": "340-190-049",
+      "name": "ROOT ELEVATOR COUPLAND 3.6MM (798/2)",
+      "catalog": "798/2",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_798slash2.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428733"
+    },
+    {
+      "sku": "340-190-054",
+      "name": "ROOT ELEVATOR CRYER 15MM RIGHT (720/28)",
+      "catalog": "720/28",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_720slash28.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003429097"
+    },
+    {
+      "sku": "340-190-055",
+      "name": "ROOT ELEVATOR CRYER 9MM RIGHT MAESTRALE (720/28S.SL)",
+      "catalog": "720/28S.SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_720slash28SSL.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428931"
+    },
+    {
+      "sku": "340-190-059",
+      "name": "ROOT ELEVATOR LINDO-LEVIAN 3MM MAESTRALE (725/2.SL)",
+      "catalog": "725/2.SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_725slash2SL.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003429119"
+    },
+    {
+      "sku": "340-190-060",
+      "name": "ROOT ELEVATOR LINDO-LEVIAN 4MM MAESTRALE (725/3.SL)",
+      "catalog": "725/3.SL",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_725slash3SL.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003429130"
+    },
+    {
+      "sku": "340-190-064",
+      "name": "ROOT ELEVATOR LUSSATORE 3MM (730/3S)",
+      "catalog": "730/3S",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_730slash3S.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003430034"
+    },
+    {
+      "sku": "340-190-070",
+      "name": "ROOT ELEVATOR SELDIN LEFT (720/23)",
+      "catalog": "720/23",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_720slash23.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428744"
+    },
+    {
+      "sku": "340-190-071",
+      "name": "ROOT ELEVATOR SELDIN RIGHT (720/22)",
+      "catalog": "720/22",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_720slash22.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428755"
+    },
+    {
+      "sku": "340-190-072",
+      "name": "ROOT ELEVATOR WARWICK-JAMES RIGHT 2.2MM (796/3)",
+      "catalog": "796/3",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_796slash3.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001445322"
+    },
+    {
+      "sku": "340-190-074",
+      "name": "ROOT ELEVTOR WARWICK-JAMES LEFT 2.2MM (796/2)",
+      "catalog": "796/2",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_796slash2.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001223613"
+    },
+    {
+      "sku": "340-190-085",
+      "name": "SCISSOR KELLY CURVED (3510)",
+      "catalog": "3510",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_3510.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001204689"
+    },
+    {
+      "sku": "340-190-090",
+      "name": "TOOTH FORCEPS N.122 (2500/122)",
+      "catalog": "2500/122",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash122.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001225032"
+    },
+    {
+      "sku": "340-190-091",
+      "name": "TOOTH FORCEPS N.13 (2500/13)",
+      "catalog": "2500/13",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash13.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001225505"
+    },
+    {
+      "sku": "340-190-092",
+      "name": "TOOTH FORCEPS N.130 (2500/130)",
+      "catalog": "2500/130",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash130.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001224086"
+    },
+    {
+      "sku": "340-190-093",
+      "name": "TOOTH FORCEPS N.17 (2500/17)",
+      "catalog": "2500/17",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash17.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428645"
+    },
+    {
+      "sku": "340-190-094",
+      "name": "TOOTH FORCEPS N.18 (2500/18)",
+      "catalog": "2500/18",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash18.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428634"
+    },
+    {
+      "sku": "340-190-095",
+      "name": "TOOTH FORCEPS N.187 (2500/187)",
+      "catalog": "2500/187",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash187.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428579"
+    },
+    {
+      "sku": "340-190-097",
+      "name": "TOOTH FORCEPS N.23 (2500/23)",
+      "catalog": "2500/23",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash23.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428590"
+    },
+    {
+      "sku": "340-190-098",
+      "name": "TOOTH FORCEPS N.24 (2500/24)",
+      "catalog": "2500/24",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash24.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428601"
+    },
+    {
+      "sku": "340-190-099",
+      "name": "TOOTH FORCEPS N.33 (2500/33)",
+      "catalog": "2500/33",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash33.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428612"
+    },
+    {
+      "sku": "340-190-101",
+      "name": "TOOTH FORCEPS N.67 (2500/67)",
+      "catalog": "2500/67",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash67.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001208946"
+    },
+    {
+      "sku": "340-190-102",
+      "name": "TOOTH FORCEPS N.7 (2500/7)",
+      "catalog": "2500/7",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash7.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428656"
+    },
+    {
+      "sku": "340-190-103",
+      "name": "TOOTH FORCEPS N.73 (2500/73)",
+      "catalog": "2500/73",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash73.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428623"
+    },
+    {
+      "sku": "340-190-111",
+      "name": "TOOTH FORCEPS PEDO N.123 (2500/123)",
+      "catalog": "2500/123",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash123.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428568"
+    },
+    {
+      "sku": "340-190-120",
+      "name": "TOOTH FORCEPS WITZEL (2500/221)",
+      "catalog": "2500/221",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash221.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001221721"
+    },
+    {
+      "sku": "380-110-027",
+      "name": "SPATULA FOR ALGINATE (209)",
+      "catalog": "209",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_209.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428876"
+    },
+    {
+      "sku": "420-110-002",
+      "name": "EXPANDERS SOFT- SMALL (4916/6)",
+      "catalog": "4916/6",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_4916slash6.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000003428898"
+    },
+    {
+      "sku": "280-130-002",
+      "name": "COMPLETE MAGNETE PLATE 5222/12",
+      "catalog": "5222/12",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_5222slash12.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001210365"
+    },
+    {
+      "sku": "340-120-002",
+      "name": "MIRROR HANDLE OCTAGONAL",
+      "catalog": "4900",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_4900.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001236384"
+    },
+    {
+      "sku": "340-120-009",
+      "name": "Medesy Double-Ended Williams / Explorer 23",
+      "catalog": "555/23",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_555slash23.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001167316"
+    },
+    {
+      "sku": "340-190-030",
+      "name": "LUCAS BONE CURETTE",
+      "catalog": "610",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_610.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001242060"
+    },
+    {
+      "sku": "340-190-051",
+      "name": "ROOT ELEVATOR COUPLAND 4.2MM",
+      "catalog": "798/3",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_798slash3.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001217937"
+    },
+    {
+      "sku": "340-190-053",
+      "name": "ROOT ELEVATOR CRYER 15MM LEFT",
+      "catalog": "720/26",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_720slash26.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001218410"
+    },
+    {
+      "sku": "340-190-065",
+      "name": "ROOT ELEVATOR LUSSATORE 4MM (CURVED)",
+      "catalog": "730/4S",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_730slash4S.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001197119"
+    },
+    {
+      "sku": "340-190-067",
+      "name": "ROOT ELEVATOR LUSSATORE 5MM",
+      "catalog": "730/5S",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_730slash5S.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001194754"
+    },
+    {
+      "sku": "340-190-075",
+      "name": "SCALPEL BLADE REMONVER 3636",
+      "catalog": "3636",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_3636.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001197592"
+    },
+    {
+      "sku": "340-190-081",
+      "name": "SCISSOR IRIS TC 115MM (3511/TC",
+      "catalog": "3511/TC",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_3511slashTC.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001231654"
+    },
+    {
+      "sku": "340-190-082",
+      "name": "SCISSOR IRIS TC CURVED (3512/T",
+      "catalog": "3512/TC",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_3512slashTC.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001203743"
+    },
+    {
+      "sku": "340-190-084",
+      "name": "TOOTH FORCEPS N. 190",
+      "catalog": "2500/190",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash190.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001232127"
+    },
+    {
+      "sku": "340-190-087",
+      "name": "TOOTH FORCEPS N. 46",
+      "catalog": "2500/46",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash46.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001232600"
+    },
+    {
+      "sku": "340-190-096",
+      "name": "TOOTH FORCEPS N.22",
+      "catalog": "2500/22",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash22.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001238749"
+    },
+    {
+      "sku": "340-190-100",
+      "name": "TOOTH FORCEPS N.51",
+      "catalog": "2500/51",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash51.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001234492"
+    },
+    {
+      "sku": "340-190-105",
+      "name": "TOOTH FORCEPS N.75",
+      "catalog": "2500/75",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash75.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001238276"
+    },
+    {
+      "sku": "340-190-107",
+      "name": "TOOTH FORCEPS N.76",
+      "catalog": "2500/76",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash76.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001217464"
+    },
+    {
+      "sku": "340-190-108",
+      "name": "TOOTH FORCEPS N.79",
+      "catalog": "2500/79",
+      "url": "https://www.medesy.it/site/wp-content/uploads/2023/01/Immagine_variante_prodotto_2500slash79.jpg",
+      "type": "variante_prodotto",
+      "dims": "300x600",
+      "item_id": "5583220000001216991"
+    }
+  ],
+  "not_found": [
+    {
+      "sku": "340-110-002",
+      "name": "ENDODONTIC BOX ALU. LARGE",
+      "catalog": "5500"
+    },
+    {
+      "sku": "340-110-003",
+      "name": "ENDODONTIC BOX ALUMINIUM",
+      "catalog": "5500/1"
+    },
+    {
+      "sku": "340-110-004",
+      "name": "ENDODONTIC BOX ALUMINIUM (BLUE",
+      "catalog": "5500/1B"
+    },
+    {
+      "sku": "340-110-005",
+      "name": "ENDODONTIC BOX ALUMINIUM (RED)",
+      "catalog": "5500/1R"
+    },
+    {
+      "sku": "340-110-006",
+      "name": "ENDODONTIC TRAY ALUMINIUM",
+      "catalog": "5524"
+    },
+    {
+      "sku": "340-110-007",
+      "name": "INSTRUMENT RACK (17 INST",
+      "catalog": "5506"
+    },
+    {
+      "sku": "340-110-010",
+      "name": "INSTRUMENT TRAY RACK LARGE",
+      "catalog": "5501"
+    },
+    {
+      "sku": "340-110-011",
+      "name": "INSTRUMENT TRAY- TURQUOISE",
+      "catalog": "5503/T"
+    },
+    {
+      "sku": "340-110-012",
+      "name": "INSTRUMENT TRAY- YELLOW",
+      "catalog": "5503/Y"
+    },
+    {
+      "sku": "340-110-025",
+      "name": "TWEEZER GERALD OY CURVED 0.6mm",
+      "catalog": "1029/1"
+    },
+    {
+      "sku": "340-120-006",
+      "name": "MIRRORS DR. COMELLA RODIUM 12p",
+      "catalog": "4912/4"
+    },
+    {
+      "sku": "340-120-008",
+      "name": "Medesy Double-Ended WHO / CP12 Probe",
+      "catalog": "555/22"
+    },
+    {
+      "sku": "340-140-001",
+      "name": "IWANSON CALIPER",
+      "catalog": "4655"
+    },
+    {
+      "sku": "340-140-003",
+      "name": "PK THOMAS INSTRUMENT KIT",
+      "catalog": "486"
+    },
+    {
+      "sku": "340-140-004",
+      "name": "KIT WAX AND MODEL INSTRUMENTS",
+      "catalog": "482"
+    },
+    {
+      "sku": "340-190-027",
+      "name": "FORCEP FOR CROWN & BRIDGES UP",
+      "catalog": "2400"
+    },
+    {
+      "sku": "340-190-033",
+      "name": "NEEDLE HOLDER HALSEY TC 130MM",
+      "catalog": "200/TC"
+    },
+    {
+      "sku": "340-190-034",
+      "name": "NEEDLE HOLDER MATHIEU 170MM",
+      "catalog": "170"
+    },
+    {
+      "sku": "340-190-042",
+      "name": "PLIER CENTURY ANGLE N. 138 TC (3000/86 TC)",
+      "catalog": "3000/86 TC"
+    },
+    {
+      "sku": "340-190-056",
+      "name": "ROOT ELEVATOR HYLIN LEFT 3MM",
+      "catalog": "790/1"
+    },
+    {
+      "sku": "340-190-057",
+      "name": "ROOT ELEVATOR HYLIN RIGHT 3MM",
+      "catalog": "790/2"
+    },
+    {
+      "sku": "340-190-061",
+      "name": "ROOT ELEVATOR LONDON HOSPITAL 975",
+      "catalog": "975"
+    },
+    {
+      "sku": "340-190-062",
+      "name": "ROOT ELEVATOR LONDON HOSPITAL 976",
+      "catalog": "976"
+    },
+    {
+      "sku": "340-190-066",
+      "name": "ROOT ELEVATOR LUSSATORE 4MM (STRAIGHT)",
+      "catalog": "730/4SS"
+    },
+    {
+      "sku": "340-190-068",
+      "name": "ROOT ELEVATOR SCHMECKEBIER LEF",
+      "catalog": "710/1"
+    },
+    {
+      "sku": "340-190-069",
+      "name": "ROOT ELEVATOR SCHMECKEBIER RIG",
+      "catalog": "710/2"
+    },
+    {
+      "sku": "340-190-077",
+      "name": "STAINLESS STEEL MALLET",
+      "catalog": "3660"
+    },
+    {
+      "sku": "340-190-078",
+      "name": "STERILIZING FORCEPS 8\"",
+      "catalog": "1012"
+    },
+    {
+      "sku": "340-190-079",
+      "name": "SCISSOR BEEBEE TC CURVED 110MM",
+      "catalog": "3552/TC"
+    },
+    {
+      "sku": "340-190-083",
+      "name": "TISSUE PUNCH 6.5MM",
+      "catalog": "3625"
+    },
+    {
+      "sku": "340-190-104",
+      "name": "TOOTH FORCEPS N.73-S",
+      "catalog": "2500/73S"
+    },
+    {
+      "sku": "340-190-106",
+      "name": "TOOTH FORCEPS N.75- A",
+      "catalog": "2500/75A"
+    }
+  ],
+  "no_catalog": []
+}

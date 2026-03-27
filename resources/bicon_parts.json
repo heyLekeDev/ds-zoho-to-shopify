@@ -1,0 +1,96 @@
+{
+  "_note": "Maps Dental Solutions Zoho SKU → Bicon catalogue part number and canonical product name",
+  "_catalogue": "Bicon_Catalog_Cond.pdf (2025, Condensed)",
+
+  "320-150-007": {
+    "bicon_part": "101-015",
+    "bicon_name": "Crown Seating Tip",
+    "page": 23,
+    "search_hint": "bicon 101-015 crown seating tip plastic",
+    "notes": "Small single-use plastic tip for seating crowns onto abutments"
+  },
+  "160-120-002": {
+    "bicon_part": "155-701",
+    "bicon_name": "#1557 Regular Length Bur",
+    "page": 23,
+    "search_hint": "bicon 155-701 1557 regular length bur dental",
+    "notes": "Regular length #1557 bur, sold 5 per pack"
+  },
+  "160-120-001": {
+    "bicon_part": "155-704",
+    "bicon_name": "#1557 Latch Type Bur",
+    "page": 23,
+    "search_hint": "bicon 1557 latch type bur dental carbide",
+    "notes": "#4 Round Bur Regular Length (5) — latch type variant"
+  },
+  "160-140-001": {
+    "bicon_part": "201-011",
+    "bicon_name": "11.0mm Abutment Cutting Bur",
+    "page": 23,
+    "search_hint": "bicon 201-011 11mm abutment cutting bur",
+    "notes": "11.0mm abutment cutting bur"
+  },
+  "320-150-010": {
+    "bicon_part": "701-001",
+    "bicon_name": "Paralleling Pin",
+    "page": 22,
+    "search_hint": "bicon 701-001 paralleling pin implant",
+    "notes": "Single paralleling pin for surgical alignment"
+  },
+  "320-130-001": {
+    "bicon_part": "901-460",
+    "bicon_name": "6.0mm Osteotome",
+    "page": 22,
+    "search_hint": "bicon 901-460 6.0mm osteotome",
+    "notes": "6.0mm bone expansion osteotome"
+  },
+  "320-150-009": {
+    "bicon_part": "101-001",
+    "bicon_name": "2.0mm Standard Pilot Drill",
+    "page": 21,
+    "search_hint": "bicon 101-001 2.0mm pilot drill stainless",
+    "notes": "2.0mm Standard Pilot Drill (stainless steel)"
+  },
+  "320-140-034": {
+    "bicon_part": "101-395",
+    "bicon_name": "Preparation Holder with Tips",
+    "page": 23,
+    "search_hint": "bicon 101-395 preparation holder abutment prep tips",
+    "notes": "Abutment preparation holder with 2.0mm and 2.5mm tips (701-382, 701-385)"
+  },
+  "320-150-003": {
+    "bicon_part": "101-440",
+    "bicon_name": "Guide Pins (4) — 4-Series",
+    "page": 22,
+    "search_hint": "bicon guide pins 4 pack 2.0mm surgical alignment",
+    "notes": "Set of 4 guide pins for 4-series (2.0mm dimension). Long thin parallel pins."
+  },
+  "320-150-004": {
+    "bicon_part": "101-450",
+    "bicon_name": "Guide Pins (4) — 5-Series",
+    "page": 22,
+    "search_hint": "bicon 101-450 guide pins 4 pack 2.5mm surgical",
+    "notes": "Set of 4 guide pins for 5-series (2.5mm dimension). Long thin parallel pins."
+  },
+  "320-120-001": {
+    "bicon_part": "100-433",
+    "bicon_name": "Titanium Impression Post and Sleeve",
+    "page": 7,
+    "search_hint": "bicon 100-433 titanium impression post sleeve implant level",
+    "notes": "Implant-level impression component"
+  },
+  "320-120-023": {
+    "bicon_part": "100-434",
+    "bicon_name": "Implant Level Impression Kit — 2.5mm",
+    "page": 7,
+    "search_hint": "bicon impression kit 2.5mm implant level titanium post sleeve analog",
+    "notes": "Contains titanium impression post, sleeves, and implant analog"
+  },
+  "320-120-024": {
+    "bicon_part": "100-434",
+    "bicon_name": "Implant Level Impression Kit — 3.0mm",
+    "page": 7,
+    "search_hint": "bicon impression kit 3.0mm implant level titanium post sleeve analog",
+    "notes": "Contains titanium impression post, sleeves, and implant analog"
+  }
+}

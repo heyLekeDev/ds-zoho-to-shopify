@@ -1,0 +1,149 @@
+Category,Cat Code,Sub-Category,Sub Code,Prefix
+Anaesthetics,100-Anaesthetics,Haemostatic Agents,110-Haemostatic Agents,100-110-xxx
+Anaesthetics,100-Anaesthetics,Injectable Medicaments,120-Injectable Medicaments,100-120-xxx
+Anaesthetics,100-Anaesthetics,Local Anaesthetics,130-Local Anaesthetics,100-130-xxx
+Anaesthetics,100-Anaesthetics,Needles,140-Needles,100-140-xxx
+Anaesthetics,100-Anaesthetics,Syringes,150-Syringes,100-150-xxx
+Anaesthetics,100-Anaesthetics,Topical Anaesthetics,160-Topical Anaesthetics,100-160-xxx
+Anaesthetics,100-Anaesthetics,Topical Medicaments,170-Topical Medicaments,100-170-xxx
+Apparel,120-Apparel,Accessories,110-Accessories,120-110-xxx
+Apparel,120-Apparel,Clinical,120-Clinical,120-120-xxx
+Apparel,120-Apparel,Footware,130-Footware,120-130-xxx
+Apparel,120-Apparel,Non-Clinical,140-Non-Clinical,120-140-xxx
+Biomaterials,140-Biomaterials,Bone Substitutes,110-Bone Substitutes,140-110-xxx
+Biomaterials,140-Biomaterials,Resorbable Membranes,120-Resorbable Membranes,140-120-xxx
+Burs,160-Burs,Accessories,110-Accessories,160-110-xxx
+Burs,160-Burs,Carbide Burs,120-Carbide Burs,160-120-xxx
+Burs,160-Burs,Diamond Burs,130-Diamond Burs,160-130-xxx
+Burs,160-Burs,Surgical Burs,140-Surgical Burs,160-140-xxx
+Burs,160-Burs,Two-Striper Burs,150-Two-Striper Burs,160-150-xxx
+Cosmetics,180-Cosmetics,Whitening Equipment,110-Whitening Equipment,180-110-xxx
+Cosmetics,180-Cosmetics,Whitening Gels,120-Whitening Gels,180-120-xxx
+Cosmetics,180-Cosmetics,Whitening Kits,130-Whitening Kits,180-130-xxx
+Disposable Products,200-Disposable Products,Barrier Products,110-Barrier Products,200-110-xxx
+Disposable Products,200-Disposable Products,Cotton Products,120-Cotton Products,200-120-xxx
+Disposable Products,200-Disposable Products,Equipment Covers,130-Equipment Covers,200-130-xxx
+Disposable Products,200-Disposable Products,Evacuation Tips & Valves,140-Evacuation Tips & Valves,200-140-xxx
+Disposable Products,200-Disposable Products,Face Masks,150-Face Masks,200-150-xxx
+Disposable Products,200-Disposable Products,Gauze Sponges,160-Gauze Sponges,200-160-xxx
+Disposable Products,200-Disposable Products,Gloves,170-Gloves,200-170-xxx
+Disposable Products,200-Disposable Products,Mixing Pads,180-Mixing Pads,200-180-xxx
+Disposable Products,200-Disposable Products,Patient Bibs,190-Patient Bibs,200-190-xxx
+Disposable Products,200-Disposable Products,Plastic Cup & Tray,200-Plastic Cup & Tray,200-200-xxx
+Disposable Products,200-Disposable Products,Surgical Gowns & Caps,210-Surgical Gowns & Caps,200-210-xxx
+Disposable Products,200-Disposable Products,Tongue Depressors,220-Tongue Depressors,200-220-xxx
+Disposable Products,200-Disposable Products,Wipes,230-Wipes,200-230-xxx
+Education,220-Education,Anatomical Models,110-Anatomical Models,220-110-xxx
+Education,220-Education,Instructional Media,120-Instructional Media,220-120-xxx
+Education,220-Education,Posters & Charts,130-Posters & Charts,220-130-xxx
+Emergency,240-Emergency,First Aid Kits,110-First Aid Kits,240-110-xxx
+Emergency,240-Emergency,Oxygen Supplies,120-Oxygen Supplies,240-120-xxx
+Emergency,240-Emergency,Resuscitation Kits,130-Resuscitation Kits,240-130-xxx
+Endodontics,260-Endodontics,Barbed Broaches,110-Barbed Broaches,260-110-xxx
+Endodontics,260-Endodontics,Endo Syringes,120-Endo Syringes,260-120-xxx
+Endodontics,260-Endodontics,Endodontic Instruments,130-Endodontic Instruments,260-130-xxx
+Endodontics,260-Endodontics,Endodontic Stoppers & Markers,140-Endodontic Stoppers & Markers,260-140-xxx
+Endodontics,260-Endodontics,Files & Reamers,150-Files & Reamers,260-150-xxx
+Endodontics,260-Endodontics,Gutta-Percha Points,160-Gutta-Percha Points,260-160-xxx
+Endodontics,260-Endodontics,Intracanal Medicaments,170-Intracanal Medicaments,260-170-xxx
+Endodontics,260-Endodontics,Paper Points,180-Paper Points,260-180-xxx
+Endodontics,260-Endodontics,Root Canal Sealers,190-Root Canal Sealers,260-190-xxx
+Endodontics,260-Endodontics,Rubber Dam Systems,200-Rubber Dam Systems,260-200-xxx
+Endodontics,260-Endodontics,Spreaders & Pluggers,210-Spreaders & Pluggers,260-210-xxx
+Equipment,280-Equipment,Dental Units & Accessories,110-Dental Units & Accessories,280-110-xxx
+Equipment,280-Equipment,Handpieces,120-Handpieces,280-120-xxx
+Equipment,280-Equipment,Lab Equipment,130-Lab Equipment,280-130-xxx
+Equipment,280-Equipment,Small Equipment,140-Small Equipment,280-140-xxx
+Equipment,280-Equipment,Software,150-Software,280-150-xxx
+Equipment,280-Equipment,Wearable,160-Wearable,280-160-xxx
+Equipment,280-Equipment,X-Ray Units & Accessories,170-X-Ray Units & Accessories,280-170-xxx
+Equipment,280-Equipment,Wearable,180-Wearable,280-180-xxx
+Furniture,300-Furniture,Cabinetry,110-Cabinetry,300-110-xxx
+Furniture,300-Furniture,Office Furniture,120-Office Furniture,300-120-xxx
+Furniture,300-Furniture,Operator Stools,130-Operator Stools,300-130-xxx
+Implantology,320-Implantology,Healing Abutments,110-Healing Abutments,320-110-xxx
+Implantology,320-Implantology,Implant Sleeves & Wells,120-Implant Sleeves & Wells,320-120-xxx
+Implantology,320-Implantology,Osteotomes,130-Osteotomes,320-130-xxx
+Implantology,320-Implantology,Permanent Abutments,140-Permanent Abutments,320-140-xxx
+Implantology,320-Implantology,Surgical Kits,150-Surgical Kits,320-150-xxx
+Implantology,320-Implantology,Temporary Abutments,160-Temporary Abutments,320-160-xxx
+Implantology,320-Implantology,Universal Abutments,170-Universal Abutments,320-170-xxx
+Instruments,340-Instruments,Accessories,110-Accessories,340-110-xxx
+Instruments,340-Instruments,Diagnostic Instruments,120-Diagnostic Instruments,340-120-xxx
+Instruments,340-Instruments,Implant Instruments,130-Implant Instruments,340-130-xxx
+Instruments,340-Instruments,Laboratory Instruments,140-Laboratory Instruments,340-140-xxx
+Instruments,340-Instruments,Operative Instruments,150-Operative Instruments,340-150-xxx
+Instruments,340-Instruments,Ortho Instruments,160-Ortho Instruments,340-160-xxx
+Instruments,340-Instruments,Periodontal Instruments,170-Periodontal Instruments,340-170-xxx
+Instruments,340-Instruments,Restorative Instruments,180-Restorative Instruments,340-180-xxx
+Instruments,340-Instruments,Surgical Instruments,190-Surgical Instruments,340-190-xxx
+Janitorial Supplies,360-Janitorial Supplies,Janitorial Waste,110-Janitorial Waste,360-110-xxx
+Janitorial Supplies,360-Janitorial Supplies,Cleaning Chemicals,120-Cleaning Chemicals,360-120-xxx
+Janitorial Supplies,360-Janitorial Supplies,Janitorial Equipment,130-Janitorial Equipment,360-130-xxx
+Lab Products,380-Lab Products,Accessories,110-Accessories,380-110-xxx
+Lab Products,380-Lab Products,Acrylics & Resins,120-Acrylics & Resins,380-120-xxx
+Lab Products,380-Lab Products,Ceramics,122-Ceramics,380-122-xxx
+Lab Products,380-Lab Products,Articulating Papers & Films,130-Articulating Papers & Films,380-130-xxx
+Lab Products,380-Lab Products,Artificial Teeth,140-Artificial Teeth,380-140-xxx
+Lab Products,380-Lab Products,Dental Stone & Gypsum,150-Dental Stone & Gypsum,380-150-xxx
+Lab Products,380-Lab Products,Impression Materials,160-Impression Materials,380-160-xxx
+Lab Products,380-Lab Products,Investment Materials,170-Investment Materials,380-170-xxx
+Lab Products,380-Lab Products,Lab Burs,180-Lab Burs,380-180-xxx
+Lab Products,380-Lab Products,Waxes,190-Waxes,380-190-xxx
+Office Products,400-Office Products,Printer Supplies,110-Printer Supplies,400-110-xxx
+Office Products,400-Office Products,Promotional Items,120-Promotional Items,400-120-xxx
+Office Products,400-Office Products,Stationery,130-Stationery,400-130-xxx
+Office Products,400-Office Products,Storage & Organization,140-Storage & Organization,400-140-xxx
+Orthodontics,420-Orthodontics,Accessories,110-Accessories,420-110-xxx
+Orthodontics,420-Orthodontics,Archwires,120-Archwires,420-120-xxx
+Orthodontics,420-Orthodontics,Bonding & Luting Materials,130-Bonding & Luting Materials,420-130-xxx
+Orthodontics,420-Orthodontics,Brackets,140-Brackets,420-140-xxx
+Orthodontics,420-Orthodontics,Elastics & Ligatures,150-Elastics & Ligatures,420-150-xxx
+Patient Giveaways,440-Patient Giveaways,Adult,110-Adult,440-110-xxx
+Patient Giveaways,440-Patient Giveaways,Children,120-Children,440-120-xxx
+Pharmaceuticals,460-Pharmaceuticals,Oral Analgesics & Anti-inflammatories,110-Oral Analgesics & Anti-inflammatories,460-110-xxx
+Pharmaceuticals,460-Pharmaceuticals,Antibiotics,120-Antibiotics,460-120-xxx
+Preventive Products,480-Preventive Products,Floss & Interdental Aids,110-Floss & Interdental Aids,480-110-xxx
+Preventive Products,480-Preventive Products,Fluoride Gels & Varnishes,120-Fluoride Gels & Varnishes,480-120-xxx
+Preventive Products,480-Preventive Products,Mouthwashes,130-Mouthwashes,480-130-xxx
+Preventive Products,480-Preventive Products,Prophylaxis Pastes & Cups,140-Prophylaxis Pastes & Cups,480-140-xxx
+Preventive Products,480-Preventive Products,Toothbrushes & Tongue Cleaners,150-Toothbrushes & Tongue Cleaners,480-150-xxx
+Preventive Products,480-Preventive Products,Toothpastes,160-Toothpastes,480-160-xxx
+Radiography Supplies,500-Radiography Supplies,Developer & Fixer,110-Developer & Fixer,500-110-xxx
+Radiography Supplies,500-Radiography Supplies,Digital Sensors,120-Digital Sensors,500-120-xxx
+Radiography Supplies,500-Radiography Supplies,Film Holders & Barriers,130-Film Holders & Barriers,500-130-xxx
+Radiography Supplies,500-Radiography Supplies,Radiation Monitoring Badges,140-Radiation Monitoring Badges,500-140-xxx
+Radiography Supplies,500-Radiography Supplies,Film,150-Film,500-150-xxx
+Restorative,520-Restorative,Amalgams,110-Amalgams,520-110-xxx
+Restorative,520-Restorative,Articulating Materials,120-Articulating Materials,520-120-xxx
+Restorative,520-Restorative,Bite Registration Materials,130-Bite Registration Materials,520-130-xxx
+Restorative,520-Restorative,Bonding Agents,140-Bonding Agents,520-140-xxx
+Restorative,520-Restorative,Cements & Liners,150-Cements & Liners,520-150-xxx
+Restorative,520-Restorative,Composites,160-Composites,520-160-xxx
+Restorative,520-Restorative,Finishing & Polishing Kits,170-Finishing & Polishing Kits,520-170-xxx
+Restorative,520-Restorative,Glass Ionomers,180-Glass Ionomers,520-180-xxx
+Restorative,520-Restorative,Matrix Systems,190-Matrix Systems,520-190-xxx
+Restorative,520-Restorative,Pins & Posts,200-Pins & Posts,520-200-xxx
+Restorative,520-Restorative,Temporary Filling Materials,210-Temporary Filling Materials,520-210-xxx
+Restorative,520-Restorative,Denture,220-Denture,520-220-xxx
+Rotary Instruments,540-Rotary Instruments,Endodontic Rotary Files,110-Endodontic Rotary Files,540-110-xxx
+Rotary Instruments,540-Rotary Instruments,Lentulo Spirals,120-Lentulo Spirals,540-120-xxx
+Rotary Instruments,540-Rotary Instruments,Paste Fillers,130-Paste Fillers,540-130-xxx
+Rotary Instruments,540-Rotary Instruments,Peeso Reamers,140-Peeso Reamers,540-140-xxx
+Rotary Instruments,540-Rotary Instruments,Surgical Rotary Instruments,150-Surgical Rotary Instruments,540-150-xxx
+Services,560-Services,Consultation,110-Consultation,560-110-xxx
+Services,560-Services,Equipment Repairs,120-Equipment Repairs,560-120-xxx
+Services,560-Services,Support,130-Support,560-130-xxx
+Sterilisation,580-Sterilisation,Chemical Disinfectants,110-Chemical Disinfectants,580-110-xxx
+Sterilisation,580-Sterilisation,Heat Sterilizers,120-Heat Sterilizers,580-120-xxx
+Sterilisation,580-Sterilisation,Sterilization Pouches,130-Sterilization Pouches,580-130-xxx
+Sterilisation,580-Sterilisation,Sterilization Trays,140-Sterilization Trays,580-140-xxx
+Sterilisation,580-Sterilisation,Ultrasonic Cleaners,150-Ultrasonic Cleaners,580-150-xxx
+Surgical Products,600-Surgical Products,Dry Socket Paste,110-Dry Socket Paste,600-110-xxx
+Surgical Products,600-Surgical Products,Haemostatic Agents,120-Haemostatic Agents,600-120-xxx
+Surgical Products,600-Surgical Products,Normal Saline,130-Normal Saline,600-130-xxx
+Surgical Products,600-Surgical Products,Retractors & Mouth Props,140-Retractors & Mouth Props,600-140-xxx
+Surgical Products,600-Surgical Products,Surgical Blades,150-Surgical Blades,600-150-xxx
+Surgical Products,600-Surgical Products,Sutures,160-Sutures,600-160-xxx
+Training,620-Training,Clinical,110-Clinical,620-110-xxx
+Training,620-Training,Non-Clinical,120-Non-Clinical,620-120-xxx

@@ -1,0 +1,1895 @@
+[
+  {
+    "sku": "280-130-003",
+    "item_id": "5583220000000931680",
+    "name": "ARTICULATOR WITH MAGNETIC PLAT",
+    "description": "Medesy 5222 Non-Arcon Dental Articulator. Constructed from high-quality cast aluminum. Features a quick-release magnetic plate system for efficient model mounting. Provides accurate simulation of condylar paths for precise prosthetic fabrication and occlusion testing.",
+    "category_name": "130-Lab Equipment",
+    "rate": 27947.47333,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Feature",
+      "cf_shopify_var_1_value": "Magnetic Plates",
+      "cf_enriched_title": "Medesy 5222 Non-Arcon Articulator with Magnetic Plates"
+    }
+  },
+  {
+    "sku": "280-130-002",
+    "item_id": "5583220000001210365",
+    "name": "COMPLETE MAGNETE PLATE 5222/12",
+    "description": "Medesy Complete Magnetic Plate (Ref 5222/12). A high-precision replacement magnetic plate designed specifically for the Medesy 5222 dental articulator. Ensures stable and accurate mounting of dental models for occlusal analysis.",
+    "category_name": "130-Lab Equipment",
+    "rate": 9749.39,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Part No",
+      "cf_shopify_var_1_value": "5222/12",
+      "cf_enriched_title": "Medesy Complete Magnetic Plate for Articulator 5222"
+    }
+  },
+  {
+    "sku": "340-110-002",
+    "item_id": "5583220000001200430",
+    "name": "ENDODONTIC BOX ALU. LARGE",
+    "description": "Medesy Endodontic Box (Large). Premium anodized aluminum storage and sterilization box designed to securely hold and organize a high volume of manual or rotary endodontic instruments. Features perforated inserts for efficient autoclaving.",
+    "category_name": "110-Accessories",
+    "rate": 93049.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Large Box",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminum",
+      "cf_enriched_title": "Medesy Endodontic Box Aluminium \u2014 Large"
+    }
+  },
+  {
+    "sku": "340-110-003",
+    "item_id": "5583220000001193808",
+    "name": "ENDODONTIC BOX ALUMINIUM",
+    "description": "Medesy Endodontic Box. Premium anodized aluminum storage and sterilization box designed to securely hold and organize endodontic instruments. Features perforated inserts for efficient autoclaving and a secure lid.",
+    "category_name": "110-Accessories",
+    "rate": 11303.08,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Standard Box",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminum",
+      "cf_enriched_title": "Medesy Endodontic Box Aluminium"
+    }
+  },
+  {
+    "sku": "340-110-004",
+    "item_id": "5583220000001192862",
+    "name": "ENDODONTIC BOX ALUMINIUM (BLUE",
+    "description": "Medesy Endodontic Box (Blue). Premium blue anodized aluminum storage and sterilization box designed to securely organize endodontic instruments. The color-coded finish aids in rapid identification during clinical setups. Includes a secure lid.",
+    "category_name": "110-Accessories",
+    "rate": 11505.37,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Color",
+      "cf_shopify_var_1_value": "Blue",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminum",
+      "cf_enriched_title": "Medesy Endodontic Box Aluminium \u2014 Blue"
+    }
+  },
+  {
+    "sku": "340-110-005",
+    "item_id": "5583220000001193335",
+    "name": "ENDODONTIC BOX ALUMINIUM (RED)",
+    "description": "Medesy Endodontic Box (Red). Premium red anodized aluminum storage and sterilization box designed to securely organize endodontic instruments. The color-coded finish aids in rapid identification during clinical setups. Includes a secure lid.",
+    "category_name": "110-Accessories",
+    "rate": 10874.95,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Color",
+      "cf_shopify_var_1_value": "Red",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminum",
+      "cf_enriched_title": "Medesy Endodontic Box Aluminium \u2014 Red"
+    }
+  },
+  {
+    "sku": "340-110-006",
+    "item_id": "5583220000001198538",
+    "name": "ENDODONTIC TRAY ALUMINIUM",
+    "description": "Medesy Endodontic Tray. Premium anodized aluminum tray specifically designed for the secure organization, washing, and autoclaving of endodontic instruments. Features dedicated instrument holders to prevent contamination or loss.",
+    "category_name": "110-Accessories",
+    "rate": 23816.64,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Material",
+      "cf_shopify_var_1_value": "Anodized Aluminium",
+      "cf_shopify_var_2_name": "Category",
+      "cf_shopify_var_2_value": "Endodontic Tray",
+      "cf_enriched_title": "Medesy Endodontic Tray Aluminium"
+    }
+  },
+  {
+    "sku": "340-190-018",
+    "item_id": "5583220000001228343",
+    "name": "EXCAVATOR N.3 (670/3)",
+    "description": "Medesy Excavator N.3 (Product Code: 670/3). Features a 1.6mm manually sharpened spoon-shaped tip on a Dalila handle for precise cutting and removal of soft carious dentin.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 5470.6,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Model",
+      "cf_shopify_var_1_value": "N.3",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-019",
+    "item_id": "5583220000001220302",
+    "name": "EXCAVATOR SPOON 14 (664/14)",
+    "description": "Medesy Spoon Excavator 14 (Product Code: 664/14). Features a 1.5mm angled, spoon-shaped tip designed for precise material removal from dentin. Crafted from high-quality stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 5324.06,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Model",
+      "cf_shopify_var_1_value": "No. 14",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-021",
+    "item_id": "5583220000001183873",
+    "name": "EXCAVATOR SPOON 18 (664/18)",
+    "description": "Medesy Root Canal Excavator Spoon 18 (Product Code: 664/18). Features a 1.5mm tip on the ergonomic Dalila handle, specifically crafted for deep carious dentin excavation.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 5324.06,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Model",
+      "cf_shopify_var_1_value": "No. 18",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "420-110-002",
+    "item_id": "5583220000003428898",
+    "name": "EXPANDERS SOFT- SMALL (4916/6)",
+    "description": "In addition to the steel models, MEDESY also offers a line of plastic cheek retractors and expanders that are durable and perfectly autoclavable, as well as being even lighter and easier to handle.",
+    "category_name": "110-Accessories",
+    "rate": 18600.0,
+    "custom_fields": {
+      "cf_source_url": "https://www.medesy.it/en/products/plastic-cheek-retractor/",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_sync_notes": "[2026-02-23 10:14] - [Published]: Successfully synced via Bulk Update."
+    }
+  },
+  {
+    "sku": "340-180-011",
+    "item_id": "5583220000003428689",
+    "name": "FILLING INSTRUMENT OT2 (500/2)",
+    "description": "Medesy OT2 Ball Burnisher (Model 500/2). High-quality Italian-made instrument with the iconic ergonomic DALILA handle (6mm diameter). Designed for precise placement and smoothing of restorative materials. Smooth finish avoids material pull-back.",
+    "category_name": "180-Restorative Instruments",
+    "rate": 11500.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Handle",
+      "cf_shopify_var_1_value": "Dalila",
+      "cf_enriched_title": "Medesy Ball Burnisher OT2 (500/2)"
+    }
+  },
+  {
+    "sku": "340-180-012",
+    "item_id": "5583220000003428700",
+    "name": "FILLING INSTRUMENT OT3 (500/3)",
+    "description": "Medesy OT3 Filling Instrument (Model 500/3). Double-ended ball tips (1.9mm and 2.2mm). Features the ergonomic DALILA handle for comfortable, non-slip grip and easy sterilization. Ideal for contouring composite and finishing restoration margins.",
+    "category_name": "180-Restorative Instruments",
+    "rate": 11500.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Handle",
+      "cf_shopify_var_1_value": "Dalila",
+      "cf_enriched_title": "Medesy Ball-Tip Filling Instrument OT3 (500/3)"
+    }
+  },
+  {
+    "sku": "340-190-026",
+    "item_id": "5583220000001235438",
+    "name": "FORCEP FOR CROWN & BRIDGES LOW",
+    "description": "Medesy Crown & Bridge Forceps (Lower). Premium surgical-grade stainless steel forceps with precision-gripping jaws designed for the atraumatic removal of lower dental crowns and bridges.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 41303.01,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Jaw",
+      "cf_shopify_var_1_value": "Lower",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-027",
+    "item_id": "5583220000001234965",
+    "name": "FORCEP FOR CROWN & BRIDGES UP",
+    "description": "Medesy Crown & Bridge Forceps (Upper). Premium surgical-grade stainless steel forceps with precision-gripping jaws designed for the atraumatic removal of upper dental crowns and bridges.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 41303.01,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Jaw",
+      "cf_shopify_var_1_value": "Upper",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-110-007",
+    "item_id": "5583220000001172046",
+    "name": "INSTRUMENT RACK (17 INST",
+    "description": "Medesy Instrument Rack. Durable stainless steel rack designed to securely hold and organize up to 16/17 dental hand instruments during procedures and sterilization. Optimizes tray space and ensures rapid instrument retrieval.",
+    "category_name": "110-Accessories",
+    "rate": 1636.55,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Capacity",
+      "cf_shopify_var_1_value": "16-17 Instruments",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Stainless Steel",
+      "cf_enriched_title": "Medesy Instrument Rack Stainless Steel \u2014 16/17 Position"
+    }
+  },
+  {
+    "sku": "340-110-010",
+    "item_id": "5583220000001169681",
+    "name": "INSTRUMENT TRAY RACK LARGE",
+    "description": "Medesy Large Instrument Tray Rack. Robust stainless steel rack designed to efficiently organize and hold multiple standard dental instrument trays. Ideal for maximizing storage in sterilization centers and operatories.",
+    "category_name": "110-Accessories",
+    "rate": 178900.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "Large",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Stainless Steel",
+      "cf_enriched_title": "Medesy Instrument Tray Rack \u2014 Large"
+    }
+  },
+  {
+    "sku": "340-110-011",
+    "item_id": "5583220000001168262",
+    "name": "INSTRUMENT TRAY- TURQUOISE",
+    "description": "Medesy Aluminium Instrument Tray (Turquoise). Premium anodized aluminum tray designed for the secure organization and autoclaving of dental instruments. The turquoise color-coding aids in rapid identification during clinical setups.",
+    "category_name": "110-Accessories",
+    "rate": 5759.443333,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Color",
+      "cf_shopify_var_1_value": "Turquoise",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminium",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium \u2014 Turquoise"
+    }
+  },
+  {
+    "sku": "340-110-012",
+    "item_id": "5583220000001168735",
+    "name": "INSTRUMENT TRAY- YELLOW",
+    "description": "Medesy Aluminium Instrument Tray (Yellow). Premium anodized aluminum tray designed for the secure organization and autoclaving of dental instruments. The yellow color-coding aids in rapid identification during clinical setups.",
+    "category_name": "110-Accessories",
+    "rate": 5759.443333,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Color",
+      "cf_shopify_var_1_value": "Yellow",
+      "cf_shopify_var_2_name": "Material",
+      "cf_shopify_var_2_value": "Anodized Aluminium",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium \u2014 Yellow"
+    }
+  },
+  {
+    "sku": "340-140-001",
+    "item_id": "5583220000001002690",
+    "name": "IWANSON CALIPER",
+    "description": "Medesy Iwanson Crown Caliper. Precision spring-action stainless steel caliper for measuring the thickness of dental crowns, bridges, inlays, wax patterns, and metal/plastic sheets. Graduated scale in 0.5mm increments. Fully autoclavable.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 7100.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_enriched_title": "Medesy Iwanson Crown Caliper"
+    }
+  },
+  {
+    "sku": "340-140-004",
+    "item_id": "5583220000003428667",
+    "name": "KIT WAX AND MODEL INSTRUMENTS",
+    "description": "Medesy Wax and Model Instrument Kit. Comprehensive set of high-quality stainless steel instruments for dental laboratory wax modelling and model fabrication. Includes spatulas, carvers, and modelling tools for precise wax manipulation and anatomical contouring.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 111700.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_enriched_title": "Medesy Wax and Model Instrument Kit"
+    }
+  },
+  {
+    "sku": "340-190-030",
+    "item_id": "5583220000001242060",
+    "name": "LUCAS BONE CURETTE",
+    "description": "Medesy Lucas Bone Curette. A double-ended surgical instrument with oval, scoop-shaped working ends for scraping alveolar bone, removing cysts, and cleaning periodontal pockets.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 27564.42,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-120-008",
+    "item_id": "5583220000001166843",
+    "name": "Medesy Double-Ended WHO / CP12 Probe",
+    "description": "Dual-ended probe featuring the World Health Organization (WHO) ball-tip screening probe and a standard CP12 probe.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 60000.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Double-Ended (WHO/CP12)",
+      "cf_shopify_var_2_name": "Mount",
+      "cf_shopify_var_2_value": "Cone Socket",
+      "cf_shopify_var_3_name": "Surface",
+      "cf_shopify_var_3_value": "Front Surface",
+      "cf_enriched_title": "Hu-Friedy Mouth Mirror No. 4 Cone Socket \u2014 Front Surface"
+    }
+  },
+  {
+    "sku": "340-120-009",
+    "item_id": "5583220000001167316",
+    "name": "Medesy Double-Ended Williams / Explorer 23",
+    "description": "Integrated Williams periodontal probe and #23 Shepard's Hook explorer for comprehensive clinical examinations.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 168000.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Double-Ended (Williams/23)",
+      "cf_shopify_var_2_name": "Mount",
+      "cf_shopify_var_2_value": "Cone Socket",
+      "cf_shopify_var_3_name": "Surface",
+      "cf_shopify_var_3_value": "Magnifying",
+      "cf_enriched_title": "Hu-Friedy Mouth Mirror No. 4 Cone Socket \u2014 Magnifying"
+    }
+  },
+  {
+    "sku": "340-120-001",
+    "item_id": "5583220000003428865",
+    "name": "MIRROR HANDLE LIGHT MILLIMETER (4902/MM)",
+    "description": "Medesy Mirror Handle Light (REF 4902/MM). Precision stainless steel handle with an integrated millimeter scale for quick intraoral measurements without a separate instrument. Octagonal grip with EU standard thread. Compatible with all Medesy mirror heads.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 10100.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Light",
+      "cf_shopify_var_2_name": "Feature",
+      "cf_shopify_var_2_value": "Millimeter Scale",
+      "cf_enriched_title": "Medesy Mirror Handle Light with Millimeter Scale (REF 4902/MM)"
+    }
+  },
+  {
+    "sku": "340-120-002",
+    "item_id": "5583220000001236384",
+    "name": "MIRROR HANDLE OCTAGONAL",
+    "description": "Medesy Mirror Handle Octagonal (REF 4900). High-quality stainless steel octagonal mirror handle with EU standard thread. Ergonomic, anti-roll design for secure grip and precision during examination. Compatible with the full Medesy mirror range.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 1934.251111,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Octagonal",
+      "cf_enriched_title": "Medesy Mirror Handle Octagonal (REF 4900)"
+    }
+  },
+  {
+    "sku": "340-120-005",
+    "item_id": "5583220000001201378",
+    "name": "MIRROR N.4 RHODIUM DOUBLE (6PC) (4912/4RO)",
+    "description": "Medesy Rhodium Double-Sided Mouth Mirror No. 4 (REF 4912/4RO). Front-surface rhodium-coated dental mirror for a clear, undistorted view. Laser-cut single-piece construction ensures smooth edges for patient comfort. Compatible with standard EU-thread handles. Pack of 6.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 25203.82,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "No. 4",
+      "cf_shopify_var_2_name": "Pack",
+      "cf_shopify_var_2_value": "6",
+      "cf_shopify_var_3_name": "Surface",
+      "cf_shopify_var_3_value": "Double-Sided Rhodium",
+      "cf_enriched_title": "Medesy Rhodium Double-Sided Mouth Mirror No. 4 (REF 4912/4RO) \u2014 Pack of 6"
+    }
+  },
+  {
+    "sku": "340-120-006",
+    "item_id": "5583220000001233073",
+    "name": "MIRRORS DR. COMELLA RODIUM 12p",
+    "description": "Medesy Dr. Comella Rhodium Mouth Mirror. Patented teardrop-shaped, front-surface rhodium-coated mirror designed by Dr. Fabrizio Comella. Laser-cut single-piece construction for smooth edges and enhanced patient comfort. Provides a clear, undistorted reflection. Pack of 12.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 8247.874444,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Pack",
+      "cf_shopify_var_1_value": "12",
+      "cf_shopify_var_2_name": "Surface",
+      "cf_shopify_var_2_value": "Rhodium",
+      "cf_enriched_title": "Medesy Dr. Comella Rhodium Mouth Mirror (Pack of 12)"
+    }
+  },
+  {
+    "sku": "340-120-007",
+    "item_id": "5583220000001218883",
+    "name": "MIRRORS N.5 RHODIUM DOUBLE-6PC (4912/5RO)",
+    "description": "Medesy Rhodium Double-Sided Mouth Mirror No. 5 (REF 4912/5RO). Front-surface rhodium-coated dental mirror for a clear, undistorted view. Laser-cut single-piece construction ensures smooth edges for patient comfort. Compatible with standard EU-thread handles. Pack of 6.",
+    "category_name": "120-Diagnostic Instruments",
+    "rate": 80000.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "No. 5",
+      "cf_shopify_var_2_name": "Pack",
+      "cf_shopify_var_2_value": "6",
+      "cf_shopify_var_3_name": "Surface",
+      "cf_shopify_var_3_value": "Double-Sided Rhodium",
+      "cf_enriched_title": "Medesy Rhodium Double-Sided Mouth Mirror No. 5 (REF 4912/5RO) \u2014 Pack of 6"
+    }
+  },
+  {
+    "sku": "340-190-033",
+    "item_id": "5583220000001230708",
+    "name": "NEEDLE HOLDER HALSEY TC 130MM",
+    "description": "Medesy Halsey Needle Holder with Tungsten Carbide (TC) inserts, 130mm. Features fine jaws with TC inserts for a secure, non-slip grip on suture needles during oral surgery.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 16475.28,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "130mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-034",
+    "item_id": "5583220000001231181",
+    "name": "NEEDLE HOLDER MATHIEU 170MM",
+    "description": "Medesy Mathieu Needle Holder, 170mm. A spring-action needle holder with self-retaining jaws for secure grip on suture needles during oral surgical procedures.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 10438.9,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "170mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-035",
+    "item_id": "5583220000001234019",
+    "name": "NEEDLE HOLDER MAYO-HEGAR 180MM (1741/TC)",
+    "description": "Medesy Mayo-Hegar Needle Holder (Product Code: 1741/TC), 180mm. Features tungsten carbide (TC) inserts electro-welded to the jaws for enhanced durability and superior needle grip.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 18350.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "180mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-140-003",
+    "item_id": "5583220000001264293",
+    "name": "PK THOMAS INSTRUMENT KIT",
+    "description": "Medesy PK Thomas Waxing Instrument Kit. Complete set of stainless steel wax carving instruments (PKT 1\u20135) for precise wax manipulation in restorative and prosthetic dental laboratory procedures. Double-ended design for versatile contouring and detailing of wax patterns.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 24200.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_enriched_title": "Medesy PK Thomas Waxing Instrument Kit"
+    }
+  },
+  {
+    "sku": "340-190-040",
+    "item_id": "5583220000003428810",
+    "name": "PLASTER SHEAR (4559)",
+    "description": "Medesy Plaster Shear (Product Code: 4559). Features curved, extremely sharp, long-lasting blades with a durable plastic handle for precise cutting and finishing of dental plaster casts.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 45400.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-042",
+    "item_id": "5583220000003428854",
+    "name": "PLIER CENTURY ANGLE N. 138 TC (3000/86 TC)",
+    "description": "Medesy Century Angle Plier N.138 TC (Product Code: 3000/86 TC). An orthodontic wire bending plier with tungsten carbide inserts and handcrafted Box-Joint system for superior stability and precision.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 208000.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Model",
+      "cf_shopify_var_1_value": "N.138 TC",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-044",
+    "item_id": "5583220000003430012",
+    "name": "ROOT ELEVATOR 2.5MM MAESTRALE (726/2S. SL)",
+    "description": "Medesy Root Elevator Maestrale 2.5mm (Product Code: 726/2S. SL). Features a curved 2.5mm tempered stainless steel tip on the ergonomic Maestrale techno-polymer handle for atraumatic tooth luxation.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88900.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2.5mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-045",
+    "item_id": "5583220000003429141",
+    "name": "ROOT ELEVATOR 2MM MAESTRALE (726/1S. SL)",
+    "description": "Medesy Root Elevator Maestrale 2mm Straight (Product Code: 726/1S. SL). Features a 2mm tempered stainless steel tip on the ergonomic Maestrale techno-polymer handle for atraumatic tooth luxation.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88900.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-046",
+    "item_id": "5583220000003430023",
+    "name": "ROOT ELEVATOR 3MM MAESTRALE (726/3S. SL)",
+    "description": "Medesy Root Elevator Maestrale 3mm Straight (Product Code: 726/3S. SL). Features a 3mm tempered stainless steel tip on the ergonomic Maestrale techno-polymer handle for atraumatic tooth luxation.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88900.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-049",
+    "item_id": "5583220000003428733",
+    "name": "ROOT ELEVATOR COUPLAND 3.6MM (798/2)",
+    "description": "Medesy Coupland Root Elevator 3.6mm (Product Code: 798/2). Features a flat, wedge-shaped tip designed for initial tooth luxation and periodontal ligament separation prior to forceps extraction.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 39400.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3.6mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-050",
+    "item_id": "5583220000003428722",
+    "name": "ROOT ELEVATOR COUPLAND 3MM (798/1)",
+    "description": "Medesy Coupland Root Elevator 3mm (Product Code: 798/1). Features a flat, wedge-shaped tip for initial tooth luxation and periodontal ligament separation prior to forceps extraction.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 39400.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-051",
+    "item_id": "5583220000001217937",
+    "name": "ROOT ELEVATOR COUPLAND 4.2MM",
+    "description": "Medesy Coupland Root Elevator 4.2mm (Product Code: 798/3). Features a wide flat wedge-shaped tip for luxation and elevation of larger roots during dental extraction procedures.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12230.69,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "4.2mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-052",
+    "item_id": "5583220000005690463",
+    "name": "ROOT ELEVATOR CRYER 12MM LEFT",
+    "description": "Medesy Cryer Root Elevator Left, 12mm (720 Series). A pointed triangular-tip elevator designed for the left-side elevation of retained roots and root fragments.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 101300.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "12mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-053",
+    "item_id": "5583220000001218410",
+    "name": "ROOT ELEVATOR CRYER 15MM LEFT",
+    "description": "Medesy Cryer Root Elevator Left, 15mm (720 Series). A pointed triangular-tip elevator designed for left-side elevation of retained roots with an extended 15mm reach.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 101300.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "15mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-054",
+    "item_id": "5583220000003429097",
+    "name": "ROOT ELEVATOR CRYER 15MM RIGHT (720/28)",
+    "description": "Medesy Cryer Root Elevator Right, 15mm (Product Code: 720/28). A pointed triangular-tip elevator designed for right-side elevation of retained roots with an extended 15mm reach.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 40300.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "15mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-055",
+    "item_id": "5583220000003428931",
+    "name": "ROOT ELEVATOR CRYER 9MM RIGHT MAESTRALE (720/28S.SL)",
+    "description": "Medesy Cryer Root Elevator Right, 9mm Maestrale (Product Code: 720/28S.SL). A pointed triangular-tip elevator on the ergonomic Maestrale techno-polymer handle for right-side elevation of retained roots.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 101300.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "9mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-056",
+    "item_id": "5583220000001206581",
+    "name": "ROOT ELEVATOR HYLIN LEFT 3MM",
+    "description": "Medesy Hylin Root Elevator Left, 3mm (720 Series). A specialised left-handed root elevator with a curved blade designed for precise luxation of retained roots in restricted spaces.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-057",
+    "item_id": "5583220000001207054",
+    "name": "ROOT ELEVATOR HYLIN RIGHT 3MM",
+    "description": "Medesy Hylin Root Elevator Right, 3mm (720 Series). A specialised right-handed root elevator with a curved blade designed for precise luxation of retained roots in restricted spaces.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_var_2_name": "Side",
+      "cf_shopify_var_2_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-058",
+    "item_id": "5583220000003429108",
+    "name": "ROOT ELEVATOR LINDO-LEVIAN 2.5MM MAESTRALE (725/1.SL)",
+    "description": "Medesy Lindo-Levian Root Elevator 2.5mm Maestrale (Product Code: 725/1.SL). Features serrated tips for smooth, rotative extraction with minimal trauma on the ergonomic Maestrale handle.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2.5mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-059",
+    "item_id": "5583220000003429119",
+    "name": "ROOT ELEVATOR LINDO-LEVIAN 3MM MAESTRALE (725/2.SL)",
+    "description": "Medesy Lindo-Levian Root Elevator 3mm Maestrale (Product Code: 725/2.SL). Features serrated tips for smooth, rotative extraction with minimal trauma on the ergonomic Maestrale handle.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-060",
+    "item_id": "5583220000003429130",
+    "name": "ROOT ELEVATOR LINDO-LEVIAN 4MM MAESTRALE (725/3.SL)",
+    "description": "Medesy Lindo-Levian Root Elevator 4mm Maestrale (Product Code: 725/3.SL). Features a 4mm serrated tip designed for smooth, rotative extraction with minimal trauma on the ergonomic Maestrale handle.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 88800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "4mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-061",
+    "item_id": "5583220000001445795",
+    "name": "ROOT ELEVATOR LONDON HOSPITAL 975",
+    "description": "Medesy London Hospital Root Elevator (Figure 1 Pattern). A specialized elevator with an angled, narrow working end designed for controlled and atraumatic root extraction. Crafted from premium stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 10184.19,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "975 (Fig. 1)",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-062",
+    "item_id": "5583220000001446268",
+    "name": "ROOT ELEVATOR LONDON HOSPITAL 976",
+    "description": "Medesy London Hospital Root Elevator (Figure 2 Pattern). A specialized elevator with an angled, narrow working end designed for controlled and atraumatic root extraction. Crafted from premium stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "976 (Fig. 2)",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-063",
+    "item_id": "5583220000001446741",
+    "name": "ROOT ELEVATOR LONDON HOSPITAL 977",
+    "description": "Medesy London Hospital Root Elevator (Figure 3 Pattern). A specialized elevator with an angled, narrow working end designed for controlled and atraumatic root extraction. Crafted from premium stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "977 (Fig. 3)",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-064",
+    "item_id": "5583220000003430034",
+    "name": "ROOT ELEVATOR LUSSATORE 3MM (730/3S)",
+    "description": "Medesy Lussatore Root Elevator 3mm Straight (Product Code: 730/3S). Features an extremely flat and sharp 3mm blade for precise cutting of the periodontal ligament and atraumatic tooth extraction.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 43800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "3mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-065",
+    "item_id": "5583220000001197119",
+    "name": "ROOT ELEVATOR LUSSATORE 4MM (CURVED)",
+    "description": "Medesy Lussatore Root Elevator 4mm Curved (Product Code: 730/4C). Features a curved, extremely flat and sharp 4mm blade for precise cutting of the periodontal ligament and atraumatic tooth extraction.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 43800.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "4mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Curved",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-066",
+    "item_id": "5583220000005515982",
+    "name": "ROOT ELEVATOR LUSSATORE 4MM (STRAIGHT)",
+    "description": "Medesy Lussatore Root Elevator 4mm Straight (Product Code: 730/4S). Features a straight, extremely flat and sharp 4mm blade for precise cutting of the periodontal ligament and atraumatic tooth extraction.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 43800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "4mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Straight",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-067",
+    "item_id": "5583220000001194754",
+    "name": "ROOT ELEVATOR LUSSATORE 5MM",
+    "description": "Medesy Lussatore Root Elevator 5mm (730 Series). Features an extremely flat and sharp 5mm blade for effective penetration and precise cutting of the periodontal ligament during dental extractions.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 13930.49,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "5mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-068",
+    "item_id": "5583220000001205162",
+    "name": "ROOT ELEVATOR SCHMECKEBIER LEF",
+    "description": "Medesy Schmeckebier Root Elevator Left. Features a pointed, hand-sharpened tip with a lightweight hexagonal stainless steel handle for controlled and stable left-side root displacement.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Orientation",
+      "cf_shopify_var_1_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-069",
+    "item_id": "5583220000001206108",
+    "name": "ROOT ELEVATOR SCHMECKEBIER RIG",
+    "description": "Medesy Schmeckebier Root Elevator Right. Features a pointed, hand-sharpened tip with a lightweight hexagonal stainless steel handle for controlled and stable right-side root displacement.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Orientation",
+      "cf_shopify_var_1_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-070",
+    "item_id": "5583220000003428744",
+    "name": "ROOT ELEVATOR SELDIN LEFT (720/23)",
+    "description": "Medesy Seldin Root Elevator Left (Product Code: 720/23). Features a curved stainless steel blade designed for left-side tooth luxation and elevation of roots. Crafted in Italy for precision and durability.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 40300.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Orientation",
+      "cf_shopify_var_1_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-071",
+    "item_id": "5583220000003428755",
+    "name": "ROOT ELEVATOR SELDIN RIGHT (720/22)",
+    "description": "Medesy Seldin Root Elevator Right (Product Code: 720/22). Features a curved stainless steel blade designed for right-side tooth luxation and elevation of roots. Crafted in Italy for precision and durability.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 40300.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Orientation",
+      "cf_shopify_var_1_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-072",
+    "item_id": "5583220000001445322",
+    "name": "ROOT ELEVATOR WARWICK-JAMES RIGHT 2.2MM (796/3)",
+    "description": "Medesy Warwick-James Root Elevator Right, 2.2mm (Product Code: 796/3). A precision instrument with a 2.2mm tipped blade for right-side root luxation during dental extractions. Made from medical-grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12387.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2.2mm",
+      "cf_shopify_var_2_name": "Orientation",
+      "cf_shopify_var_2_value": "Right",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-073",
+    "item_id": "5583220000001444849",
+    "name": "ROOT ELEVATOR WARWICK-JAMES STRAIGHT 2.2MM (i796/1)",
+    "description": "Medesy Warwick-James Root Elevator Straight, 2.2mm (Product Code: 796/1). A precision instrument with a straight 2.2mm tipped blade for atraumatic root luxation during dental extractions. Made from medical-grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12230.69,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2.2mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Straight",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-074",
+    "item_id": "5583220000001223613",
+    "name": "ROOT ELEVTOR WARWICK-JAMES LEFT 2.2MM (796/2)",
+    "description": "Medesy Warwick-James Root Elevator Left, 2.2mm (Product Code: 796/2). A precision instrument with a 2.2mm tipped blade for left-side root luxation during dental extractions. Made from medical-grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 10315.01,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Tip Size",
+      "cf_shopify_var_1_value": "2.2mm",
+      "cf_shopify_var_2_name": "Orientation",
+      "cf_shopify_var_2_value": "Left",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-140-002",
+    "item_id": "5583220000001060875",
+    "name": "RULER ENDODONTIC (6170)",
+    "description": "Medesy Endodontic Ruler (REF 6170). Stainless steel millimetre ruler designed for precise measurement of root canals and endodontic instruments. Calibrated scale for accurate working length determination. Autoclavable and corrosion resistant.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 5148.22,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_enriched_title": "Medesy Endodontic Ruler (REF 6170)"
+    }
+  },
+  {
+    "sku": "340-190-075",
+    "item_id": "5583220000001197592",
+    "name": "SCALPEL BLADE REMONVER 3636",
+    "description": "Medesy Scalpel Blade Remover (Product Code: 3636). Specially designed forceps (Dr. Carrazotto pattern) for the safe and secure removal of surgical scalpel blades from their handles.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 20758.96,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Dr. Carrazotto",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-076",
+    "item_id": "5583220000001204216",
+    "name": "SCISSOR BEEBEE (3550)",
+    "description": "Medesy Beebee Dental Crown Scissors, 110mm (Product Code: 3550). Excellent for precision cutting of thin metals, crowns, and bands, featuring micro-fine saw edges and straight tips.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 7961.67,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "110mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Straight",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-079",
+    "item_id": "5583220000001230235",
+    "name": "SCISSOR BEEBEE TC CURVED 110MM",
+    "description": "Medesy Beebee Dental Scissors with Tungsten Carbide Inserts, 110mm Curved (Product Code: 3551/TC). Premium crown shears featuring highly durable TC inserts and curved blades for precise cutting of dental metals and bands.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 16763.65333,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "110mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "TC Curved",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-081",
+    "item_id": "5583220000001231654",
+    "name": "SCISSOR IRIS TC 115MM (3511/TC",
+    "description": "Medesy Iris Scissors 115mm, Straight with Tungsten Carbide Inserts (Product Code: 3511/TC). Premium surgical scissors featuring highly durable TC inserts and gold-ringed handles for precise, long-lasting cutting efficiency.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 6100.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "115mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "TC Straight",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-082",
+    "item_id": "5583220000001203743",
+    "name": "SCISSOR IRIS TC CURVED (3512/T",
+    "description": "Medesy Iris Scissors 115mm, Curved with Tungsten Carbide Inserts (Product Code: 3512/TC). Premium surgical scissors featuring curved blades with highly durable TC inserts and gold-ringed handles for precise cutting.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 41009.94,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "115mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "TC Curved",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-085",
+    "item_id": "5583220000001204689",
+    "name": "SCISSOR KELLY CURVED (3510)",
+    "description": "Medesy Kelly Surgical Scissors (3510). Curved profile measuring 160mm in length. Premium 'SUPERIOR CUT' design featuring one blade with fine serrations to securely grasp tissue and prevent slippage, and an opposing razor-sharp blade for precise, clean cuts. Crafted from high-grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 12523.76,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Kelly Curved 160mm",
+      "cf_enriched_title": "Medesy Kelly Surgical Scissors - Curved 160mm"
+    }
+  },
+  {
+    "sku": "340-190-086",
+    "item_id": "5583220000001198065",
+    "name": "SCISSOR SPENCER 130MM (3521)",
+    "description": "Medesy Spencer Suture Scissors (3521) - 130mm length. Specialized surgical scissors designed specifically for suture removal. Features a distinctive tip with a concave notch (hook) on one blade to easily isolate, lift, and precisely cut suture wire without damaging surrounding tissue.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 11283.11,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Spencer 130mm",
+      "cf_enriched_title": "Medesy Spencer Suture Scissors - 130mm"
+    }
+  },
+  {
+    "sku": "380-110-027",
+    "item_id": "5583220000003428876",
+    "name": "SPATULA FOR ALGINATE (209)",
+    "description": "Professional stainless steel/plastic spatula for alginate (Medesy Ref 209). Contoured blade for efficient mixing against bowl walls.",
+    "category_name": "110-Accessories",
+    "rate": 10500.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Ref",
+      "cf_shopify_var_1_value": "Medesy 209",
+      "cf_enriched_title": "Medesy 209 Alginate & Plaster Spatula"
+    }
+  },
+  {
+    "sku": "340-190-077",
+    "item_id": "5583220000001243954",
+    "name": "STAINLESS STEEL MALLET",
+    "description": "Medesy Surgical Mallet, Stainless Steel. A high-quality solid stainless steel mallet designed for dental surgery and implantology procedures used in conjunction with precision bone chisels.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 44670.38,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Material",
+      "cf_shopify_var_1_value": "Stainless Steel",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-078",
+    "item_id": "5583220000001288418",
+    "name": "STERILIZING FORCEPS 8\"",
+    "description": "Medesy Sterilizing / Cheatle Forceps 8\" (approx. 200mm). A versatile utility instrument designed for securely grasping, placing, and removing surgical instruments from sterilization containers.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 1761.22,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "8\" (200mm)",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-083",
+    "item_id": "5583220000001244427",
+    "name": "TISSUE PUNCH 6.5MM",
+    "description": "Medesy Surgical Tissue Punch / Trephine Bur 6.5mm. Precision rotary instrument designed for clean and precise excision of soft tissue during implantology and surgical procedures.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 9844.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Size",
+      "cf_shopify_var_1_value": "6.5mm",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-084",
+    "item_id": "5583220000001232127",
+    "name": "TOOTH FORCEPS N. 190",
+    "description": "Medesy English Pattern Extracting Forceps N.190. Designed for the extraction of upper roots and fragments. Crafted in medical-grade stainless steel with a secure grip handle for optimal control.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Image required",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "N.190",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Roots",
+      "cf_shopify_sync_notes": "[IMAGE] (2026-03-04)\nFAIL: No image attached.\nFix: Attach a product image in Zoho, then reset status to Enrichment Complete.",
+      "cf_sync_result": "No image"
+    }
+  },
+  {
+    "sku": "340-190-087",
+    "item_id": "5583220000001232600",
+    "name": "TOOTH FORCEPS N. 46",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #46 (2500/46). Expertly designed for the efficient extraction of lower roots. Features a precise beak anatomy for deep root engagement and double-knurled handles for a secure, comfortable grip during exodontia procedures.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#46 (Lower Roots)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Roots",
+      "cf_enriched_title": "Medesy Extraction Forceps #46 - Lower Roots"
+    }
+  },
+  {
+    "sku": "340-190-089",
+    "item_id": "5583220000003428557",
+    "name": "TOOTH FORCEPS N.1 (2500/1)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #1 (2500/1). Specifically designed for extracting upper central incisors and canines. Features wide beaks with double knurling for a secure, deep grip and a Teflon double disc joint to minimize friction. Made in Italy from high-quality stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#1 (Upper Incisors/Canines)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Centrals/Laterals",
+      "cf_enriched_title": "Medesy Extraction Forceps #1 - Upper Incisors & Canines"
+    }
+  },
+  {
+    "sku": "340-190-090",
+    "item_id": "5583220000001225032",
+    "name": "TOOTH FORCEPS N.122 (2500/122)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #122 (2500/122). Ergonomic design with secure beak grip for atraumatic dental extractions. Hand-finished from high-grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#122",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Centrals/Roots",
+      "cf_enriched_title": "Medesy Extraction Forceps #122"
+    }
+  },
+  {
+    "sku": "340-190-091",
+    "item_id": "5583220000001225505",
+    "name": "TOOTH FORCEPS N.13 (2500/13)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #13 (2500/13). Intended for the precise and safe extraction of lower canines and premolars. Double-knurled beaks provide excellent grasp.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 20547.956,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#13 (Lower Premolars/Canines)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Premolars",
+      "cf_enriched_title": "Medesy Extraction Forceps #13 - Lower Premolars & Canines"
+    }
+  },
+  {
+    "sku": "340-190-092",
+    "item_id": "5583220000001224086",
+    "name": "TOOTH FORCEPS N.130 (2500/130)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #130 (2500/130). Premium stainless steel construction with an anatomical handle design for excellent tactile feedback during extractions.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#130",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Wisdoms",
+      "cf_enriched_title": "Medesy Extraction Forceps #130"
+    }
+  },
+  {
+    "sku": "340-190-093",
+    "item_id": "5583220000003428645",
+    "name": "TOOTH FORCEPS N.17 (2500/17)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #17 (2500/17). Engineered specifically for extracting upper right molars. Anatomic design ensures optimal access and control while minimizing trauma to surrounding tissues.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#17 (Upper Right Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Right Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #17 - Upper Right Molars"
+    }
+  },
+  {
+    "sku": "340-190-094",
+    "item_id": "5583220000003428634",
+    "name": "TOOTH FORCEPS N.18 (2500/18)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #18 (2500/18). Specially designed to adapt securely to the anatomy of upper left molars for safe extraction. Made in Italy.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#18 (Upper Left Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Left Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #18 - Upper Left Molars"
+    }
+  },
+  {
+    "sku": "340-190-095",
+    "item_id": "5583220000003428579",
+    "name": "TOOTH FORCEPS N.187 (2500/187)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #187 (2500/187). Perfectly contoured for reaching and gripping lower roots and fragments. Provides controlled leverage during complex exodontia.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#187 (Lower Roots)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Root Fragments",
+      "cf_enriched_title": "Medesy Extraction Forceps #187 - Lower Roots"
+    }
+  },
+  {
+    "sku": "340-190-096",
+    "item_id": "5583220000001238749",
+    "name": "TOOTH FORCEPS N.22",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #22. Classic pattern for the extraction of lower molar teeth, including wisdom teeth. Ergonomic stainless steel handle with knurled grip.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#22 (Lower Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #22 - Lower Molars"
+    }
+  },
+  {
+    "sku": "340-190-097",
+    "item_id": "5583220000003428590",
+    "name": "TOOTH FORCEPS N.23 (2500/23)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #23 (2500/23). Indicated for the extraction of lower right molars. Features anatomically contoured beaks that securely lock onto the tooth.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#23 (Lower Right Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Right Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #23 - Lower Right Molars"
+    }
+  },
+  {
+    "sku": "340-190-098",
+    "item_id": "5583220000003428601",
+    "name": "TOOTH FORCEPS N.24 (2500/24)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #24 (2500/24). Specifically contoured to securely grasp lower left molars. Reduces hand fatigue and minimizes risk of root fracture.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#24 (Lower Left Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Left Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #24 - Lower Left Molars"
+    }
+  },
+  {
+    "sku": "340-190-099",
+    "item_id": "5583220000003428612",
+    "name": "TOOTH FORCEPS N.33 (2500/33)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #33 (2500/33). Designed for extracting lower incisors, premolars, and roots. Precision beaks ensure excellent control and grip on narrow roots.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#33 (Lower Roots/Premolars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Roots",
+      "cf_enriched_title": "Medesy Extraction Forceps #33 - Lower Roots & Premolars"
+    }
+  },
+  {
+    "sku": "340-190-100",
+    "item_id": "5583220000001234492",
+    "name": "TOOTH FORCEPS N.51",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #51 (2500/51). Features short and narrow beaks designed to adapt flawlessly to the contours of upper roots. Hot-forged and precision polished.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#51 (Upper Roots)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Roots",
+      "cf_enriched_title": "Medesy Extraction Forceps #51 - Upper Roots"
+    }
+  },
+  {
+    "sku": "340-190-101",
+    "item_id": "5583220000001208946",
+    "name": "TOOTH FORCEPS N.67 (2500/67)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #67 (2500/67). Used widely for the extraction of upper wisdom teeth (third molars). Provides optimal access to the posterior maxilla.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#67 (Upper Wisdoms)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Wisdoms",
+      "cf_enriched_title": "Medesy Extraction Forceps #67 - Upper Wisdoms"
+    }
+  },
+  {
+    "sku": "340-190-102",
+    "item_id": "5583220000003428656",
+    "name": "TOOTH FORCEPS N.7 (2500/7)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #7 (2500/7). Specifically engineered for upper premolar extractions. Streamlined handle design and deep-grip double knurling.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#7 (Upper Premolars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Premolars",
+      "cf_enriched_title": "Medesy Extraction Forceps #7 - Upper Premolars"
+    }
+  },
+  {
+    "sku": "340-190-103",
+    "item_id": "5583220000003428623",
+    "name": "TOOTH FORCEPS N.73 (2500/73)",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #73 (2500/73). Essential instrument for lower molar extractions. Equipped with a stable Teflon double disc joint and highly durable beaks.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#73 (Lower Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #73 - Lower Molars"
+    }
+  },
+  {
+    "sku": "340-190-104",
+    "item_id": "5583220000001225978",
+    "name": "TOOTH FORCEPS N.73-S",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #73S (Small/Pediatric profile). Adapted for the extraction of smaller lower molars or pediatric patients.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 21052.03,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#73S (Small Molar)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #73S - Lower Molars"
+    }
+  },
+  {
+    "sku": "340-190-105",
+    "item_id": "5583220000001238276",
+    "name": "TOOTH FORCEPS N.75",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #75 (2500/75). Provides reliable leverage and grip for lower canines and premolars. Crafted from superior surgical grade stainless steel.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#75 (Lower Canine/Premolar)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Canines/Premolars",
+      "cf_enriched_title": "Medesy Extraction Forceps #75 - Lower Canines & Premolars"
+    }
+  },
+  {
+    "sku": "340-190-106",
+    "item_id": "5583220000001224559",
+    "name": "TOOTH FORCEPS N.75- A",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #75A. Narrower beak profile variation designed for complex lower premolar extractions.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 20342.25333,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#75A",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Canines/Premolars",
+      "cf_enriched_title": "Medesy Extraction Forceps #75A - Lower Premolars"
+    }
+  },
+  {
+    "sku": "340-190-107",
+    "item_id": "5583220000001217464",
+    "name": "TOOTH FORCEPS N.76",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #76 (2500/76). Ideal for retrieving retained upper roots. Fine beaks for subgingival access.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 22947.2,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#76 (Upper Roots)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Roots",
+      "cf_enriched_title": "Medesy Extraction Forceps #76 - Upper Roots"
+    }
+  },
+  {
+    "sku": "340-190-108",
+    "item_id": "5583220000001216991",
+    "name": "TOOTH FORCEPS N.79",
+    "description": "Medesy English Pattern Tooth Extraction Forceps #79. Specifically angled for the extraction of lower wisdom teeth (third molars).",
+    "category_name": "190-Surgical Instruments",
+    "rate": 10312.125,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#79 (Lower Third Molars)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Third Molars",
+      "cf_enriched_title": "Medesy Extraction Forceps #79 - Lower Third Molars"
+    }
+  },
+  {
+    "sku": "340-190-111",
+    "item_id": "5583220000003428568",
+    "name": "TOOTH FORCEPS PEDO N.123 (2500/123)",
+    "description": "Medesy Pediatric Extraction Forceps #123 (2500/123). Premium Italian-crafted forceps specifically sized for the atraumatic extraction of children's teeth (Pedo).",
+    "category_name": "190-Surgical Instruments",
+    "rate": 66800.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "#123 (Pedo)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Lower Incisors / Roots",
+      "cf_enriched_title": "Medesy Pediatric Extraction Forceps #123 - Pedo"
+    }
+  },
+  {
+    "sku": "340-190-120",
+    "item_id": "5583220000001221721",
+    "name": "TOOTH FORCEPS WITZEL (2500/221)",
+    "description": "Medesy Extraction Forceps Witzel pattern #221 (2500/221). Distinctive thin, cross-serrated beaks designed to retrieve deep, broken root fragments atraumatically.",
+    "category_name": "190-Surgical Instruments",
+    "rate": 23885.02,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Type",
+      "cf_shopify_var_1_value": "Witzel #221 (Root Fragments)",
+      "cf_shopify_var_2_name": "Target",
+      "cf_shopify_var_2_value": "Upper Roots Universal",
+      "cf_enriched_title": "Medesy Extraction Forceps Witzel #221 - Root Fragments"
+    }
+  },
+  {
+    "sku": "340-110-018",
+    "item_id": "5583220000001172519",
+    "name": "TRAY ALUMINIUM BLUE (998/B)",
+    "description": "Medesy Aluminium Instrument Tray (Blue, Model 998/B). Premium anodized aluminum tray engineered for the precise organization, washing, and sterilization of dental instruments. The durable color-coded finish streamlines procedural workflows.",
+    "category_name": "110-Accessories",
+    "rate": 5197.07,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Queue for Enrichment",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "998/B",
+      "cf_shopify_var_2_name": "Color",
+      "cf_shopify_var_2_value": "Blue",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium (998/B) \u2014 Blue"
+    }
+  },
+  {
+    "sku": "340-110-019",
+    "item_id": "5583220000001173465",
+    "name": "TRAY ALUMINIUM GREEN (998/V)",
+    "description": "Medesy Aluminium Instrument Tray (Green, Model 998/V). Premium anodized aluminum tray engineered for the precise organization, washing, and sterilization of dental instruments. The durable color-coded finish streamlines procedural workflows.",
+    "category_name": "110-Accessories",
+    "rate": 5197.07,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Queue for Enrichment",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "998/V",
+      "cf_shopify_var_2_name": "Color",
+      "cf_shopify_var_2_value": "Green",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium (998/V) \u2014 Green"
+    }
+  },
+  {
+    "sku": "340-110-020",
+    "item_id": "5583220000001173938",
+    "name": "TRAY ALUMINIUM RED (998/R)",
+    "description": "Medesy Aluminium Instrument Tray (Red, Model 998/R). Premium anodized aluminum tray engineered for the precise organization, washing, and sterilization of dental instruments. The durable color-coded finish streamlines procedural workflows.",
+    "category_name": "110-Accessories",
+    "rate": 5197.07,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Queue for Enrichment",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "998/R",
+      "cf_shopify_var_2_name": "Color",
+      "cf_shopify_var_2_value": "Red",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium (998/R) \u2014 Red"
+    }
+  },
+  {
+    "sku": "340-110-021",
+    "item_id": "5583220000001172992",
+    "name": "TRAY ALUMINIUM SILVER (998/AS)",
+    "description": "Medesy Aluminium Instrument Tray (Silver, Model 998/AS). Premium anodized aluminum tray engineered for the precise organization, washing, and sterilization of dental instruments. The durable finish streamlines procedural workflows and infection control.",
+    "category_name": "110-Accessories",
+    "rate": 2535.715,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Queue for Enrichment",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "998/AS",
+      "cf_shopify_var_2_name": "Color",
+      "cf_shopify_var_2_value": "Silver",
+      "cf_enriched_title": "Medesy Instrument Tray Aluminium (998/AS) \u2014 Silver"
+    }
+  },
+  {
+    "sku": "340-110-022",
+    "item_id": "5583220000001199957",
+    "name": "TWEEZER COLLEGE (1026)",
+    "description": "Medesy College Tweezers (Model 1026). Premium medical-grade stainless steel tweezers designed with serrated tips for precision handling of cotton pellets, gauzes, and small objects during dental procedures. Features a knurled anti-slip handle.",
+    "category_name": "110-Accessories",
+    "rate": 9500.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "1026 College",
+      "cf_shopify_var_2_name": "Length",
+      "cf_shopify_var_2_value": "15cm",
+      "cf_enriched_title": "Medesy College Tweezers (1026) \u2014 Serrated"
+    }
+  },
+  {
+    "sku": "340-110-023",
+    "item_id": "5583220000001208473",
+    "name": "TWEEZER FLAGG (1023)",
+    "description": "Medesy Flagg Tweezers (Model 1023). High-quality stainless steel tweezers with serrated tips and a notch, designed for secure and precise manipulation of small dental materials and dressings. Fully autoclavable.",
+    "category_name": "110-Accessories",
+    "rate": 3809.88,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Pattern",
+      "cf_shopify_var_1_value": "1023 Flagg",
+      "cf_shopify_var_2_name": "Length",
+      "cf_shopify_var_2_value": "15cm",
+      "cf_enriched_title": "Medesy Flagg Tweezers (1023) \u2014 Serrated"
+    }
+  },
+  {
+    "sku": "340-110-024",
+    "item_id": "5583220000001201851",
+    "name": "TWEEZER GERALD OY CURVED",
+    "description": "Medesy Gerald OY Tissue Tweezers. Premium curved surgical tweezers specifically designed to grip hard-to-grasp soft tissue with minimal trauma during dental surgery. Features a tapered curved tip and a secure knurled handle.",
+    "category_name": "110-Accessories",
+    "rate": 11100.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Tip Profile",
+      "cf_shopify_var_1_value": "Curved",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Tissue Tweezer",
+      "cf_enriched_title": "Medesy Gerald OY Tissue Tweezers \u2014 Curved Tip"
+    }
+  },
+  {
+    "sku": "340-110-025",
+    "item_id": "5583220000001236857",
+    "name": "TWEEZER GERALD OY CURVED 0.6mm",
+    "description": "Medesy Gerald OY Tissue Tweezers (0.6mm). Ultra-fine curved surgical tweezers designed for the delicate manipulation of soft tissue with minimal trauma. The specialized 0.6mm tip offers enhanced precision during microscopic or delicate dental surgery.",
+    "category_name": "110-Accessories",
+    "rate": 11100.0,
+    "custom_fields": {
+      "cf_uom": "Pieces",
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Tip Profile",
+      "cf_shopify_var_1_value": "Curved 0.6mm",
+      "cf_shopify_var_2_name": "Type",
+      "cf_shopify_var_2_value": "Tissue Tweezer",
+      "cf_enriched_title": "Medesy Gerald OY Tissue Tweezers \u2014 Curved (0.6mm)"
+    }
+  },
+  {
+    "sku": "340-140-005",
+    "item_id": "5583220000003428832",
+    "name": "WAX AND MODELLING INSTRUMENT ZAHLE 120MM (591)",
+    "description": "Medesy Zahle Wax and Modelling Instrument (REF 591, 120mm). Double-ended stainless steel wax carving instrument with knurled grip handle for secure control. Designed for precise detail carving and contouring of wax patterns in dental laboratory applications.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 12000.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "120mm",
+      "cf_enriched_title": "Medesy Zahle Wax and Modelling Instrument 120mm"
+    }
+  },
+  {
+    "sku": "340-140-006",
+    "item_id": "5583220000003428843",
+    "name": "WAX AND MODELLING INSTRUMENT ZAHLE 130MM (592)",
+    "description": "Medesy Zahle Wax and Modelling Instrument (REF 592, 130mm). Double-ended stainless steel wax carving instrument with knurled grip handle for secure control. Designed for precise detail carving and contouring of wax patterns in dental laboratory applications.",
+    "category_name": "140-Laboratory Instruments",
+    "rate": 12000.0,
+    "custom_fields": {
+      "cf_source_url": "https://medesy.it",
+      "cf_shopify_status": "Enrichment Complete",
+      "cf_shopify_var_1_name": "Length",
+      "cf_shopify_var_1_value": "130mm",
+      "cf_enriched_title": "Medesy Zahle Wax and Modelling Instrument 130mm"
+    }
+  }
+]

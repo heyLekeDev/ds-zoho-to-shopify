@@ -1,0 +1,5 @@
+.DS_Store
+.env
+.zoho_token.json
+.sync_cache.json
+__pycache__/

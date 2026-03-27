@@ -1,0 +1,848 @@
+[
+  {
+    "item_id": "5583220000001360368",
+    "sku": "480-110-002",
+    "name": "2-IN-1 FLOSS & INTERDENT BRUSH- BLUE (15/PK)",
+    "brand": "OraTek",
+    "category": "110-Floss & Interdental Aids",
+    "parent_category": "",
+    "rate": 6300.0
+  },
+  {
+    "item_id": "5583220000001359895",
+    "sku": "480-110-003",
+    "name": "2-IN-1 FLOSS & INTERDENT BRUSH- WHITE (15/PK)",
+    "brand": "OraTek",
+    "category": "110-Floss & Interdental Aids",
+    "parent_category": "",
+    "rate": 6300.0
+  },
+  {
+    "item_id": "5583220000001252941",
+    "sku": "320-120-002",
+    "name": "3.0X6.0MM INTEGRA CP 2MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001252468",
+    "sku": "320-120-003",
+    "name": "3.0X8.0MM INTEGRA CP 2MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001251995",
+    "sku": "320-120-004",
+    "name": "3.5X8.0MM INTEGRA CP 2MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001302135",
+    "sku": "320-140-001",
+    "name": "4.0X10.0MM 0* 2MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001302608",
+    "sku": "320-140-002",
+    "name": "4.0X10.0MM 15* 2MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001297405",
+    "sku": "320-140-003",
+    "name": "4.0X10MM 0* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001304027",
+    "sku": "320-140-004",
+    "name": "4.0X10MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001297878",
+    "sku": "320-140-005",
+    "name": "4.0X10MM 15* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001304500",
+    "sku": "320-140-006",
+    "name": "4.0X10MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001379761",
+    "sku": "320-160-001",
+    "name": "4.0X4.5MM TEMP ABUT 2.5MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001381653",
+    "sku": "320-160-002",
+    "name": "4.0X4.5MM TEMP ABUT 3MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001251522",
+    "sku": "320-120-005",
+    "name": "4.0X6.0MM INTEGRA CP 2.5MM WEL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001301189",
+    "sku": "320-140-007",
+    "name": "4.0X6.5MM 0* 2MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001303081",
+    "sku": "320-140-008",
+    "name": "4.0X6.5MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001296932",
+    "sku": "320-140-009",
+    "name": "4.0X6.5MM 15* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001301662",
+    "sku": "320-140-010",
+    "name": "4.0X6.5MM 15* 2MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001303554",
+    "sku": "320-140-011",
+    "name": "4.0X6.5MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001300716",
+    "sku": "320-140-012",
+    "name": "4.0X6.5MM 25* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 149850.0
+  },
+  {
+    "item_id": "5583220000001380234",
+    "sku": "320-160-003",
+    "name": "4.0X6.5MM TEMP ABUT 2.5MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001249157",
+    "sku": "320-120-006",
+    "name": "4.0X8MM INTEGRA CP 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001250576",
+    "sku": "320-120-008",
+    "name": "4.5X11MM INTEGRA CP 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001254360",
+    "sku": "320-120-009",
+    "name": "4.5X11MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001258144",
+    "sku": "320-120-010",
+    "name": "4.5X5.0MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001253414",
+    "sku": "320-120-011",
+    "name": "4.5X6MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001251049",
+    "sku": "320-120-012",
+    "name": "4.5X8MM INTEGRA CP 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001253887",
+    "sku": "320-120-013",
+    "name": "4.5X8MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001249630",
+    "sku": "320-120-014",
+    "name": "4X11MM INTEGRA CP 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001250103",
+    "sku": "320-120-015",
+    "name": "4X5MM INTEGRA CP 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001298824",
+    "sku": "320-140-013",
+    "name": "5.0X10MM 0* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001304973",
+    "sku": "320-140-014",
+    "name": "5.0X10MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001299297",
+    "sku": "320-140-015",
+    "name": "5.0X10MM 15* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001305446",
+    "sku": "320-140-016",
+    "name": "5.0X10MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001256252",
+    "sku": "320-120-016",
+    "name": "5.0X11MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001305919",
+    "sku": "320-140-017",
+    "name": "5.0X12MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001306392",
+    "sku": "320-140-018",
+    "name": "5.0X12MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001380707",
+    "sku": "320-160-007",
+    "name": "5.0X4.5MM TEMP ABUT 2.5MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001382126",
+    "sku": "320-160-008",
+    "name": "5.0X4.5MM TEMP ABUT 3MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001306865",
+    "sku": "320-140-019",
+    "name": "5.0X5.0MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001307338",
+    "sku": "320-140-020",
+    "name": "5.0X5.0MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001254833",
+    "sku": "320-120-017",
+    "name": "5.0X5MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001299770",
+    "sku": "320-140-021",
+    "name": "5.0X6.5MM 0* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001307811",
+    "sku": "320-140-022",
+    "name": "5.0X6.5MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001300243",
+    "sku": "320-140-023",
+    "name": "5.0X6.5MM 15* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001308284",
+    "sku": "320-140-024",
+    "name": "5.0X6.5MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001298351",
+    "sku": "320-140-025",
+    "name": "5.0X6.5MM 25* 2.5MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 149850.0
+  },
+  {
+    "item_id": "5583220000001308757",
+    "sku": "320-140-026",
+    "name": "5.0X6.5MM 25* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 149850.0
+  },
+  {
+    "item_id": "5583220000001381180",
+    "sku": "320-160-009",
+    "name": "5.0X6.5MM TEMP ABUT 2.5MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001382599",
+    "sku": "320-160-010",
+    "name": "5.0X6.5MM TEMP ABUT 3MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001255306",
+    "sku": "320-120-018",
+    "name": "5.0X6MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001255779",
+    "sku": "320-120-019",
+    "name": "5.0X8MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001257198",
+    "sku": "320-120-020",
+    "name": "6.0X5.0MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001257671",
+    "sku": "320-120-021",
+    "name": "6.0X6.0MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001256725",
+    "sku": "320-120-022",
+    "name": "6.0X8MM INTEGRA CP 3MM WELL",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
+    "parent_category": "",
+    "rate": 157500.0
+  },
+  {
+    "item_id": "5583220000001383072",
+    "sku": "320-160-011",
+    "name": "6.5X4.5MM TEMP ABUT 3MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001309230",
+    "sku": "320-140-027",
+    "name": "6.5X5.0MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001309703",
+    "sku": "320-140-028",
+    "name": "6.5X5.0MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001310176",
+    "sku": "320-140-029",
+    "name": "6.5X6.5MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001310649",
+    "sku": "320-140-030",
+    "name": "6.5X6.5MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001383545",
+    "sku": "320-160-012",
+    "name": "6.5X6.5MM TEMP ABUT 3MM POST",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
+    "parent_category": "",
+    "rate": 84200.0
+  },
+  {
+    "item_id": "5583220000001311122",
+    "sku": "320-140-031",
+    "name": "7.5X8.0MM 0* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001311595",
+    "sku": "320-140-032",
+    "name": "7.5X8.0MM 15* 3MM WELL",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
+    "parent_category": "",
+    "rate": 112000.0
+  },
+  {
+    "item_id": "5583220000001207527",
+    "sku": "340-180-001",
+    "name": "AMALGAM CARVER HOLLENBACK 3S",
+    "brand": "Medesy",
+    "category": "180-Restorative Instruments",
+    "parent_category": "",
+    "rate": 7000.0
+  },
+  {
+    "item_id": "5583220000001038171",
+    "sku": "260-110-001",
+    "name": "Barbed Broaches Assorted",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001056618",
+    "sku": "260-110-002",
+    "name": "Barbed Broaches Size 0 (XXXXF) Purple",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001038644",
+    "sku": "260-110-003",
+    "name": "Barbed Broaches Size 1 (XXXF) White",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001039117",
+    "sku": "260-110-004",
+    "name": "Barbed Broaches Size 2 (XXF) Yellow",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001057091",
+    "sku": "260-110-005",
+    "name": "Barbed Broaches Size 3 (XF) Red",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001057564",
+    "sku": "260-110-006",
+    "name": "Barbed Broaches Size 4 (F) Blue",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001058037",
+    "sku": "260-110-007",
+    "name": "Barbed Broaches Size 5 (M) Green",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001058510",
+    "sku": "260-110-008",
+    "name": "Barbed Broaches Size 6 (ST) Black",
+    "brand": "VDW Barbed Broaches",
+    "category": "110-Barbed Broaches",
+    "parent_category": "",
+    "rate": 12900.0
+  },
+  {
+    "item_id": "5583220000001143189",
+    "sku": "200-150-001",
+    "name": "BEESURE FLORAL FACE MASK DAISY",
+    "brand": "BeeSure",
+    "category": "150-Face Masks",
+    "parent_category": "",
+    "rate": 22500.0
+  },
+  {
+    "item_id": "5583220000001143662",
+    "sku": "200-150-002",
+    "name": "BEESURE FLORAL FACE MASK FERN",
+    "brand": "BeeSure",
+    "category": "150-Face Masks",
+    "parent_category": "",
+    "rate": 22500.0
+  },
+  {
+    "item_id": "5583220000001141770",
+    "sku": "200-150-003",
+    "name": "BEESURE FLORAL FACE MASK HIBISCUS",
+    "brand": "BeeSure",
+    "category": "150-Face Masks",
+    "parent_category": "",
+    "rate": 22500.0
+  },
+  {
+    "item_id": "5583220000001142716",
+    "sku": "200-150-004",
+    "name": "BEESURE FLORAL FACE MASK ORCHI",
+    "brand": "BeeSure",
+    "category": "150-Face Masks",
+    "parent_category": "",
+    "rate": 22500.0
+  },
+  {
+    "item_id": "5583220000001142243",
+    "sku": "200-150-005",
+    "name": "BEESURE FLORAL FACE MASK PLUME",
+    "brand": "BeeSure",
+    "category": "150-Face Masks",
+    "parent_category": "",
+    "rate": 22500.0
+  },
+  {
+    "item_id": "5583220000001501248",
+    "sku": "200-170-001",
+    "name": "BEESURE LATEX POWDER FREE GLOVES LARGE (100PK)",
+    "brand": "BeeSure",
+    "category": "170-Gloves",
+    "parent_category": "",
+    "rate": 22900.0
+  },
+  {
+    "item_id": "5583220000001501257",
+    "sku": "200-170-002",
+    "name": "BEESURE LATEX POWDER FREE GLOVES MEDIUM (100PK)",
+    "brand": "BeeSure",
+    "category": "170-Gloves",
+    "parent_category": "",
+    "rate": 22900.0
+  },
+  {
+    "item_id": "5583220000001357530",
+    "sku": "480-110-005",
+    "name": "BRIDGE AID FLOSS THREADER",
+    "brand": "BridgeAid",
+    "category": "110-Floss & Interdental Aids",
+    "parent_category": "",
+    "rate": 300.0
+  },
+  {
+    "item_id": "5583220000000990390",
+    "sku": "520-160-002",
+    "name": "BRILL. NG ENAMEL A1/B1 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000000990863",
+    "sku": "520-160-003",
+    "name": "BRILL. NG ENAMEL A3.5/B3 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000000991336",
+    "sku": "520-160-004",
+    "name": "BRILL. NG ENAMEL A3/D3 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000000991809",
+    "sku": "520-160-005",
+    "name": "BRILL. NG ENAMEL TRANSP. 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000000993228",
+    "sku": "520-160-006",
+    "name": "BRILL.FLOW A2/B2 2.3G",
+    "brand": "Brilliant Flow",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000993701",
+    "sku": "520-160-007",
+    "name": "BRILL.FLOW A3.5/B3 2.3G",
+    "brand": "Brilliant Flow",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000001468613",
+    "sku": "520-160-008",
+    "name": "BRILL.FLOW A3/D3 2.3G",
+    "brand": "Brilliant Flow",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000992755",
+    "sku": "520-160-009",
+    "name": "BRILL.FLOW NG ENAMEL A1/B1 2.3G",
+    "brand": "Brilliant Flow",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000996068",
+    "sku": "520-160-010",
+    "name": "BRILL.NG ENAMEL A2/B2 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000000995593",
+    "sku": "520-160-011",
+    "name": "BRILL.NG ENAMEL C2/C3 4G",
+    "brand": "Brilliant NG",
+    "category": "160-Composites",
+    "parent_category": "",
+    "rate": 25600.0
+  },
+  {
+    "item_id": "5583220000001009789",
+    "sku": "200-190-002",
+    "name": "CROSSTEX BIBS - BLUE",
+    "brand": "Crosstex",
+    "category": "190-Patient Bibs",
+    "parent_category": "",
+    "rate": 101200.0
+  },
+  {
+    "item_id": "5583220000001010262",
+    "sku": "200-190-003",
+    "name": "CROSSTEX BIBS - LAVENDER",
+    "brand": "Crosstex",
+    "category": "190-Patient Bibs",
+    "parent_category": "",
+    "rate": 101200.0
+  },
+  {
+    "item_id": "5583220000001010735",
+    "sku": "200-190-004",
+    "name": "CROSSTEX BIBS - PEACH 500PK",
+    "brand": "Crosstex",
+    "category": "190-Patient Bibs",
+    "parent_category": "",
+    "rate": 101200.0
+  },
+  {
+    "item_id": "5583220000001011208",
+    "sku": "200-190-005",
+    "name": "CROSSTEX BIBS - YELLOW 500PK",
+    "brand": "Crosstex",
+    "category": "190-Patient Bibs",
+    "parent_category": "",
+    "rate": 101200.0
+  }
+]

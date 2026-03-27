@@ -1,0 +1,12 @@
+Category,Rule Name,Validation Rule,Zoho Error Message
+Core Infrastructure,Inventory Tracking Requirement,The Zoho item must actually be stocked and tracked.,"Error: Zoho item must be 'Inventory' type to track on Shopify."
+Core Infrastructure,Description Requirement,The item (or primary group item) MUST have a filled description field,"[ERROR]: Missing Description. Items must have detailed content before syncing to Shopify."
+Core Infrastructure,Mandatory Image Validation,The item must have an image file attached in Zoho.,"Error: Zoho item is missing an image. Shopify products must have an image."
+Core Infrastructure,Mandatory Price Validation,The item's rate/price must be strictly greater than $0.00.,"Error: Zoho item has a price of 0. Shopify products must have a valid price."
+Smart Grouping,Orphaned Variant Names,If a product is Standalone it is not allowed to have data in the Var 1/2/3 - Name columns.,"[ERROR] Data Mismatch: Single products should not have variant names/values."
+Smart Grouping,Duplicate Single Titles,Catches if multiple Standalone products share the exact same Item Name.,"[ERROR] Duplicate Title: Please provide a 'Shopify Collection' name to group these as variants."
+Smart Grouping,Inconsistent Variant Mapping,All variants grouped under the same Shopify Collection must have the exact same option dimensions.,"Conflict: Inconsistent option names in group..."
+Smart Grouping,Cross-Product SKU Collisions,Rejects SKUs that are already attached to a different Product Title on Shopify.,"[ERROR] SKU Collision: SKU [X] is already linked to a different Title on Shopify."
+Visual Integrity,Aspect Ratio Validation,Validates via Pillow that image original dimensions map to an aspect ratio between 0.8 and 1.2.,"[ERROR]: Aspect Ratio Mismatch (Ratio: [X.XX]). Image is too [Wide/Tall]. Please crop to a 1:1 square in Zoho and re-sync."
+Visual Integrity,Minimum Resolution Floor,Validates via Pillow that original image dimensions are at least 800x800px to ensure sharpness.,"[ERROR]: Image Resolution Too Low (Size: {width}x{height}px). Minimum required is 800px for Shopify zoom functionality. Please re-sync a higher quality image."
+Shopify API Fallbacks,Shopify Rejection,Catches any GraphQL API userErrors rejected by Shopify.,"Bulk Add/Update failed: [{'message': '...', 'field': 'variants'}]"

@@ -1,0 +1,17 @@
+
+{
+  "rules": [
+    {"pattern": "APEX#2", "brand": "Ray Foster", "manufacturer": "Ray Foster"},
+    {"pattern": "CATTANI", "brand": "Cattani", "manufacturer": "Cattani"},
+    {"pattern": "DB-686", "brand": "COXO", "manufacturer": "COXO"},
+    {"pattern": "OPTIGUARD", "brand": "Kerr", "manufacturer": "Kerr"},
+    {"pattern": "ARTICULATOR", "brand": "Ray Foster", "manufacturer": "Ray Foster"},
+    {"pattern": "X-RAY|SHS 1LT|POLYLIGHT|PICOSOL|MICROSOL|NEGATOSCOPE|CASTELLINI|BOARD|EJECTOR|HEADREST|BACKREST|SECT.TUBING", "brand": "Castellini", "manufacturer": "Castellini"},
+    {"pattern": "IMPLANTOR", "brand": "Castellini", "manufacturer": "Castellini"}, 
+    {"pattern": "O RING|SUCTION HOSE|FIBRE OPTIC BULB|LAMP BULB|FILTER ELEMENT|LIGHT BULB|BULB|CLEAN WATER SYSTEM", "brand": "Castellini", "manufacturer": "Castellini"},
+    {"pattern": "KAVO", "brand": "KaVo", "manufacturer": "KaVo"},
+    {"pattern": "SENSIMATIC", "brand": "Parkell", "manufacturer": "Parkell"},
+    {"pattern": "VACUVESTOR", "brand": "Whip Mix", "manufacturer": "Whip Mix"},
+    {"pattern": "WRENCH|HAND PIECE|HANDPIECE|CONTRA ANGLE|SLEEVES|GAS BURNER", "brand": "Dental Equipment", "manufacturer": "Dental Equipment"} 
+  ]
+}
