@@ -1,0 +1,272 @@
+[
+  {
+    "item_id": "5583220000000960102",
+    "sku": "340-100-004",
+    "name": "BUR TWO STRIPER 770.10F(DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000961521",
+    "sku": "340-100-007",
+    "name": "BUR TWO STRIPER 780.9C (DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000961994",
+    "sku": "340-100-008",
+    "name": "BUR TWO STRIPER 799.11C (DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000960575",
+    "sku": "340-100-005",
+    "name": "BUR TWO STRIPER L514.4C (DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000961048",
+    "sku": "340-100-006",
+    "name": "BUR TWO STRIPER L770.8C (DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000959629",
+    "sku": "340-100-003",
+    "name": "BUR- TWO STRIPER 770.10C (DD)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 20000.0
+  },
+  {
+    "item_id": "5583220000000939284",
+    "sku": "130-200-002",
+    "name": "BURS - CARBIDE FG 558",
+    "brand": "",
+    "category": "120-Carbide Burs",
+    "parent_category": "160-Burs",
+    "rate": 3800.0
+  },
+  {
+    "item_id": "5583220000000939757",
+    "sku": "130-200-003",
+    "name": "BURS - CARBIDE FG GW2",
+    "brand": "",
+    "category": "120-Carbide Burs",
+    "parent_category": "160-Burs",
+    "rate": 11500.0
+  },
+  {
+    "item_id": "5583220000000949694",
+    "sku": "130-500-002",
+    "name": "BURS - CARBIDE HP2 (SURGICAL)",
+    "brand": "",
+    "category": "140-Surgical Burs",
+    "parent_category": "160-Burs",
+    "rate": 4500.0
+  },
+  {
+    "item_id": "5583220000000959156",
+    "sku": "340-100-002",
+    "name": "BURS- TWO STRIPER - 703.8C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000001501320",
+    "sku": "160-150-008",
+    "name": "BURS-TWO STRIPER  799.11VF (PEARSON)",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000956316",
+    "sku": "130-100-016",
+    "name": "BURS-TWO STRIPER - 283.4C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000958210",
+    "sku": "130-100-020",
+    "name": "BURS-TWO STRIPER - 315.1.75C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000958683",
+    "sku": "130-100-021",
+    "name": "BURS-TWO STRIPER - 320.2C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000951586",
+    "sku": "130-100-006",
+    "name": "BURS-TWO STRIPER - 514.4C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000952059",
+    "sku": "130-100-007",
+    "name": "BURS-TWO STRIPER - 515.5C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000952532",
+    "sku": "130-100-008",
+    "name": "BURS-TWO STRIPER - 520.4C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000953005",
+    "sku": "130-100-009",
+    "name": "BURS-TWO STRIPER - 558",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000953478",
+    "sku": "130-100-010",
+    "name": "BURS-TWO STRIPER - 701",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000953951",
+    "sku": "130-100-011",
+    "name": "BURS-TWO STRIPER - 724.8C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000957264",
+    "sku": "130-100-018",
+    "name": "BURS-TWO STRIPER - 770.10C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000956791",
+    "sku": "130-100-017",
+    "name": "BURS-TWO STRIPER - 770.8C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000957737",
+    "sku": "130-100-019",
+    "name": "BURS-TWO STRIPER - 770.9C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000954424",
+    "sku": "130-100-012",
+    "name": "BURS-TWO STRIPER - 780.9C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000954897",
+    "sku": "130-100-013",
+    "name": "BURS-TWO STRIPER - 784.10C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000955370",
+    "sku": "130-100-014",
+    "name": "BURS-TWO STRIPER - 790.8C",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000000955843",
+    "sku": "130-100-015",
+    "name": "BURS-TWO STRIPER - L1250",
+    "brand": "",
+    "category": "150-Two-Striper Burs",
+    "parent_category": "160-Burs",
+    "rate": 33900.0
+  },
+  {
+    "item_id": "5583220000001500752",
+    "sku": "160-130-001",
+    "name": "BURS-TWO STRIPER SHORT-CUT DIAMOND 285.5C S (PEARSON)",
+    "brand": "",
+    "category": "130-Diamond Burs",
+    "parent_category": "160-Burs",
+    "rate": 42600.0
+  },
+  {
+    "item_id": "5583220000001500761",
+    "sku": "160-120-007",
+    "name": "CARBIDE BUR FINE CUT 47XF",
+    "brand": "",
+    "category": "120-Carbide Burs",
+    "parent_category": "160-Burs",
+    "rate": 28800.0
+  },
+  {
+    "item_id": "5583220000000947802",
+    "sku": "340-400-007",
+    "name": "DIATECH FG 368-314-020-5-XF",
+    "brand": "",
+    "category": "120-Carbide Burs",
+    "parent_category": "160-Burs",
+    "rate": 7500.0
+  }
+]

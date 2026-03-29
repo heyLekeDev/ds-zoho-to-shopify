@@ -1,7 +1,7 @@
 # Enrichment Pipeline — Master SOP
 
 **Project:** Dental Solutions / Zoho → Shopify Sync
-**Version:** 1.0
+**Version:** 1.1
 **Status Machine Field:** `cf_shopify_status` (Zoho custom dropdown)
 **Quick Result Field:** `cf_sync_result` — single-line, visible in list view columns
 **Full Detail Field:** `cf_shopify_sync_notes` — multi-line, overwritten each stage with full detail of what just happened
@@ -171,6 +171,12 @@ All 12 rules are run in order:
 - [ ] If item is in a collection: all items in that collection have identical option name dimensions
 - [ ] No SKU collision — this SKU is not already attached to a different product title on Shopify
 
+**Near-Duplicate Title Check** *(added v1.1 — catches pipeline vs pre-pipeline title divergence)*
+- [ ] No existing Shopify product title is a fuzzy match (>80% similarity) for this item's enriched title with the same brand/vendor. Use token-set ratio comparison. If a fuzzy match is found, flag as `Needs Review` with the matching Shopify product handle so a human can confirm whether it is truly a different product or a duplicate.
+
+**New-SKU Uniqueness Check** *(added v1.1 — prevents CF.SKU-new collision)*
+- [ ] Before Stage 1 (Batch Selection), always run `python execution/fix_sku_collisions.py --dry-run` and verify output shows 0 collisions. If any collision is found, run without `--dry-run` to repair before proceeding. **Never publish a batch if CF.SKU-new collisions exist.** A collision means two different Zoho items have been assigned the same new SKU, which will cause one to silently overwrite the other on Shopify.
+
 **Visual Integrity**
 - [ ] Aspect ratio 0.8–1.2 (re-confirmed from Stage 3)
 - [ ] Minimum 800x800px (re-confirmed from Stage 3)
@@ -202,6 +208,9 @@ After running, **review the Zoho view "Queue for Upload"** to do a final sanity 
 Each stage is a standalone script. Run individually from the project root:
 
 ```bash
+# 0. Pre-flight: verify no new-SKU collisions exist
+python execution/fix_sku_collisions.py --dry-run
+
 # Stage 1 — Select a batch
 python execution/batch_selector.py
 
