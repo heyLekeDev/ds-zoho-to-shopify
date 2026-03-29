@@ -45,10 +45,13 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from duckduckgo_search import DDGS
+    from ddgs import DDGS
 except ImportError:
-    print('✗ duckduckgo-search not installed. Run: python3 -m pip install duckduckgo-search')
-    sys.exit(1)
+    try:
+        from duckduckgo_search import DDGS
+    except ImportError:
+        print('✗ ddgs not installed. Run: python3 -m pip install ddgs')
+        sys.exit(1)
 
 # ── Config ────────────────────────────────────────────────────────────────────
 
@@ -97,6 +100,13 @@ BRAND_TRUSTED_DOMAINS = {
     'beesure':   ['beesure.com', 'be-esure.com'],
     'miltex':    ['miltex.com'],
     'roeko':     ['roeko.com', 'coltene.com'],
+    'oral-b':    ['oral-b.com', 'oralb.com'],
+    'io':        ['oral-b.com', 'oralb.com'],
+    'stages':    ['oral-b.com', 'oralb.com'],
+    'tepe':      ['tepe.com'],
+    'colgate':   ['colgate.com'],
+    'reach':     ['reachtoothbrush.com'],
+    'gum':       ['sunstargum.com', 'gumbrand.com'],
 }
 
 def is_competitor_url(url):
@@ -265,17 +275,18 @@ def build_queries_v2(name, brand, category, enriched_title='', v1_name='', v1_va
 
 # ── DuckDuckGo image search ───────────────────────────────────────────────────
 
-def search_images_ddg(query, max_results=MAX_CANDIDATES, _retries=1):
+def search_images_ddg(query, max_results=MAX_CANDIDATES, _retries=3):
     for attempt in range(_retries + 1):
         try:
-            results = list(DDGS(timeout=8).images(query, max_results=max_results))
+            results = list(DDGS(timeout=12).images(query, max_results=max_results))
+            time.sleep(5)  # cool-down after successful query
             return [{'url': r.get('image', ''), 'width': r.get('width', 0), 'height': r.get('height', 0)}
                     for r in results if r.get('image')]
         except Exception as e:
             msg = str(e)
             if 'Ratelimit' in msg or '429' in msg or '202' in msg:
-                wait = 90 * (attempt + 1)
-                print(f'     ⚠ DDG rate limited — waiting {wait}s...')
+                wait = 60 * (attempt + 1)
+                print(f'     ⚠ DDG rate limited — waiting {wait}s (attempt {attempt+1}/{_retries+1})...')
                 time.sleep(wait)
             else:
                 print(f'     ⚠ DDG search error: {e}')
@@ -831,6 +842,8 @@ def main():
     parser.add_argument('--sku',               help='Process a single SKU only')
     parser.add_argument('--recheck-published', action='store_true',
                         help='Audit all live Shopify products for bad/duplicate images, requeue, then auto-fetch')
+    parser.add_argument('--brands', nargs='+', metavar='BRAND',
+                        help='Only process items whose brand field matches one of these (case-insensitive)')
     args = parser.parse_args()
 
     print('═' * 60)
@@ -841,6 +854,8 @@ def main():
         print('  Mode: RECHECK PUBLISHED (audit Shopify + requeue + fetch)')
     if args.sku:
         print(f'  Filter: SKU = {args.sku}')
+    if args.brands:
+        print(f'  Filter: brands = {", ".join(args.brands)}')
     print('═' * 60)
 
     if not os.path.exists(ENRICHMENT_INPUT):
@@ -887,6 +902,13 @@ def main():
             items_to_process = [it for it in items_to_process if it.get('sku') == args.sku]
             if not items_to_process:
                 print(f'✗ SKU {args.sku} not found in {ENRICHMENT_INPUT}')
+                sys.exit(1)
+        if args.brands:
+            brand_set = {b.lower() for b in args.brands}
+            items_to_process = [it for it in items_to_process
+                                if (it.get('brand') or '').lower() in brand_set]
+            if not items_to_process:
+                print(f'✗ No items found matching brands: {", ".join(args.brands)}')
                 sys.exit(1)
 
     print(f'\n  Processing {len(items_to_process)} item(s)...')

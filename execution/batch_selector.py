@@ -283,6 +283,34 @@ def main():
     print(f'    Zero price          : {skipped["zero_price"]}  (not for sale)')
     print(f'  Eligible candidates   : {len(candidates)}')
 
+    # ── Brand filter ─────────────────────────────────────────────
+    if args.brands:
+        brand_set = {b.lower() for b in args.brands}
+        before = len(candidates)
+        candidates = [r for r in candidates
+                      if r.get('Brand', '').strip().lower() in brand_set]
+        print(f'\n  Brand filter: {args.brands}')
+        print(f'    Before: {before}  →  After: {len(candidates)}')
+
+    # ── Exclude SKUs already on Shopify ──────────────────────────
+    if args.exclude_shopify:
+        shopify_path = args.exclude_shopify
+        if os.path.exists(shopify_path):
+            shopify_skus = set()
+            with open(shopify_path, newline='', encoding='utf-8-sig') as sf:
+                for row in csv.DictReader(sf):
+                    for sku in row.get('skus', '').split(', '):
+                        sku = sku.strip()
+                        if sku:
+                            shopify_skus.add(sku)
+            before = len(candidates)
+            candidates = [r for r in candidates
+                          if r.get('SKU', '').strip() not in shopify_skus]
+            print(f'\n  Shopify exclusion ({len(shopify_skus)} live SKUs):')
+            print(f'    Before: {before}  →  After: {len(candidates)}')
+        else:
+            print(f'\n  ⚠ Shopify audit file not found: {shopify_path}')
+
     if not candidates:
         print('\n  Nothing to select. All items are already in the pipeline.')
         sys.exit(0)

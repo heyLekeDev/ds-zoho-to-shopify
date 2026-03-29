@@ -45,6 +45,8 @@ ASPECT_MIN = 0.8
 ASPECT_MAX = 1.2
 MIN_WIDTH  = 800
 MIN_HEIGHT = 800
+# Shopify limit: 20 megapixels. Use 4472x4472 (≈20MP) as max for square images.
+MAX_PIXELS = 20_000_000
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 
@@ -148,6 +150,10 @@ def check_image(image_bytes):
 
     if w < MIN_WIDTH or h < MIN_HEIGHT:
         return False, w, h, ratio, f'Resolution too low ({w}x{h}px)', img
+
+    # Shopify rejects images over 20 megapixels — flag for auto-downscale
+    if w * h > MAX_PIXELS:
+        return False, w, h, ratio, f'Resolution too high ({w}x{h}px, {w*h/1_000_000:.1f}MP > 20MP)', img
 
     return True, w, h, ratio, None, img
 
@@ -286,6 +292,45 @@ def main():
             print(f'  ✓ {sku}  {name}')
             print(f'    → {sync_result}')
             if not args.dry_run:
+                ok, msg = write_zoho(item_id, 'Image Validated', sync_result, notes, token)
+                if not ok:
+                    print(f'      Write error: {msg}')
+                    error_count += 1
+                    continue
+            validated += 1
+
+        elif pil_img is not None and 'Resolution too high' in (fail_reason or ''):
+            # Auto-downscale: image exceeds Shopify's 20MP limit
+            import math
+            scale = math.sqrt(MAX_PIXELS / (w * h))
+            new_w = int(w * scale)
+            new_h = int(h * scale)
+            resized = pil_img.resize((new_w, new_h), Image.LANCZOS)
+            buf = io.BytesIO()
+            resized.save(buf, format='PNG')
+            downscaled_bytes = buf.getvalue()
+            new_ratio = round(new_w / new_h, 2)
+            filename = f'{sku.replace("/", "-")}_downscaled.png'
+            print(f'  ↓ {sku}  {name}')
+            print(f'    → Downscaled from {w}x{h} ({w*h/1_000_000:.1f}MP) to {new_w}x{new_h} ({new_w*new_h/1_000_000:.1f}MP)')
+            if not args.dry_run:
+                ok_upload = upload_upscaled_image(item_id, downscaled_bytes, filename, token)
+                if not ok_upload:
+                    print(f'      Upload failed — marking as Image required')
+                    ok, msg = write_zoho(item_id, 'Image required', fail_reason,
+                        f'[IMAGE] ({today_str})\nFAIL: {fail_reason}\nDownscale upload failed.', token)
+                    image_required += 1
+                    time.sleep(0.3)
+                    continue
+                sync_result = f'Image OK ({new_w}x{new_h}px, {new_ratio:.2f}) [downscaled from {w}x{h}]'
+                notes = (
+                    '[IMAGE] ({})\n'
+                    'PASS: Image validated (auto-downscaled for Shopify 20MP limit).\n'
+                    'Original: {}x{}px ({:.1f}MP)\n'
+                    'Downscaled: {}x{}px ({:.1f}MP)\n'
+                    'Aspect ratio: {:.2f} (within 0.8–1.2)\n'
+                    'Resolution: OK (under 20MP Shopify limit)'
+                ).format(today_str, w, h, w*h/1_000_000, new_w, new_h, new_w*new_h/1_000_000, new_ratio)
                 ok, msg = write_zoho(item_id, 'Image Validated', sync_result, notes, token)
                 if not ok:
                     print(f'      Write error: {msg}')

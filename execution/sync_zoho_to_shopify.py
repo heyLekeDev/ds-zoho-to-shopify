@@ -480,24 +480,27 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
     col_resp = shopify_graphql("""
         query($q: String!) {
             productVariants(first: 50, query: $q) {
-                edges { node { id sku inventoryItem { id } product { id title } } }
+                edges { node { id sku inventoryItem { id } product { id title } media(first: 5) { edges { node { id alt } } } } }
             }
         }
     """, {"q": sku_query})
 
     collision_edges = col_resp.get('data', {}).get('productVariants', {}).get('edges', [])
-    collision_info = {}  # sku → {variant_id, product_id, inv_item_id, existing_title}
+    collision_info = {}  # sku → {variant_id, product_id, inv_item_id, existing_title, existing_media}
     for edge in collision_edges:
         node = edge['node']
         # If the SKU exists in Shopify under a DIFFERENT product title, it's a collision
         if node['product']['title'] != shopify_title:
             sku_val = node['sku']
+            media_edges = node.get('media', {}).get('edges', [])
+            existing_media = [{'id': m['node']['id'], 'alt': m['node'].get('alt')} for m in media_edges]
             print(f"  [SKU COLLISION] SKU {sku_val} is already linked to '{node['product']['title']}' on Shopify. Will update existing variant.")
             collision_info[sku_val] = {
                 'variant_id':    node['id'],
                 'product_id':    node['product']['id'],
                 'existing_title': node['product']['title'],
                 'inv_item_id':   (node.get('inventoryItem') or {}).get('id'),
+                'existing_media': existing_media,
             }
             
     zoho_id_to_notes = {item['zoho_id']: item.get('notes', '') for item in items}
@@ -931,9 +934,15 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                             }
                         """, {"input": {"reason": "correction", "setQuantities": [{"inventoryItemId": inv_id, "locationId": "gid://shopify/Location/96401326361", "quantity": qty}]}})
 
-                    # Sync image to the collision product
+                    # Sync image to the collision product — check return value
+                    img_success = True
+                    img_err = None
                     if item.get('image_name'):
-                        sync_image_to_shopify(c_p_id, z_id, sku, item['image_name'], variant_id=info['variant_id'])
+                        img_success, _, img_err = sync_image_to_shopify(c_p_id, z_id, sku, item['image_name'], variant_id=info['variant_id'], existing_media=info.get('existing_media', []))
+
+                    if not img_success:
+                        zoho_updates.append((z_id, "Error uploading", f"Collision variant updated but image failed: {img_err}", zoho_id_to_notes.get(z_id, '')))
+                        continue
 
                     collision_note = (
                         f"[COLLISION NOTE] SKU {sku} already existed on Shopify under "
