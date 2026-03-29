@@ -1,1478 +1,344 @@
 [
   {
-    "item_id": "5583220000000931207",
-    "sku": "520-120-001",
-    "name": "ARTICULATING PAPER - HANEL",
-    "brand": "Hanel",
-    "category": "120-Articulating Materials",
+    "item_id": "5583220000001402938",
+    "sku": "320-150-001",
+    "name": "10.5MM DRILLING IMPLANT GUIDE",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 14500.0
+    "rate": 26000.0
   },
   {
-    "item_id": "5583220000001443430",
-    "sku": "380-110-005",
-    "name": "ASSORTMENT PRESIDENT TRAYS (10PK) (C6910)",
-    "brand": "President",
-    "category": "110-Accessories",
+    "item_id": "5583220000000914129",
+    "sku": "160-140-001",
+    "name": "11MM ABUTMENT CUTTING BURS",
+    "brand": "Bicon",
+    "category": "140-Surgical Burs",
     "parent_category": "",
-    "rate": 13760.0
+    "rate": 67400.0
   },
   {
-    "item_id": "5583220000006875204",
-    "sku": "520-140-007",
-    "name": "BOSS ETCH GEL BULK SYRINGE KIT (60GM)",
-    "brand": "Vivid",
-    "category": "140-Bonding Agents",
+    "item_id": "5583220000001403411",
+    "sku": "320-150-002",
+    "name": "12MM DRILLING IMPLANT GUIDE",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 58800.0
+    "rate": 26000.0
   },
   {
-    "item_id": "5583220000001035806",
-    "sku": "400-120-001",
-    "name": "BROCHURE - DENTAL IMPLANTS-NEW",
-    "brand": "",
-    "category": "120-Promotional Items",
-    "parent_category": "",
-    "rate": 200.0
-  },
-  {
-    "item_id": "5583220000001036279",
-    "sku": "400-120-002",
-    "name": "BROCHURE - WHITENING NEW",
-    "brand": "",
-    "category": "120-Promotional Items",
-    "parent_category": "",
-    "rate": 200.0
-  },
-  {
-    "item_id": "5583220000001035333",
-    "sku": "400-140-001",
-    "name": "BROCHURE STAND - CLEAR PLASTIC",
-    "brand": "",
-    "category": "140-Storage & Organization",
-    "parent_category": "",
-    "rate": 4100.0
-  },
-  {
-    "item_id": "5583220000004949364",
-    "sku": "440-120-001",
-    "name": "CHILDRENS DENTAL ACTIVITY FUN BOOK",
-    "brand": "YOUNG INNOVATIONS",
-    "category": "120-Children",
-    "parent_category": "",
-    "rate": 1500.0
-  },
-  {
-    "item_id": "5583220000005575784",
-    "sku": "480-150-030",
-    "name": "COLGATE KIDS BATTERY TOOTHBRUSH MINIONS",
-    "brand": "Colgate",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 23500.0
-  },
-  {
-    "item_id": "5583220000005575773",
-    "sku": "480-150-031",
-    "name": "COLGATE KIDS BATTERY TOOTHBRUSH SPIDER MAN",
-    "brand": "Colgate",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 26100.0
-  },
-  {
-    "item_id": "5583220000001354692",
-    "sku": "480-150-002",
-    "name": "COLGATE MICROSINIC TOOTHBRUSH",
-    "brand": "Colgate",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 26500.0
-  },
-  {
-    "item_id": "5583220000001502316",
-    "sku": "480-150-003",
-    "name": "COLGATE TOOTHBRUSH TRIPLE ACTION MEDIUM",
-    "brand": "Colgate",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 6500.0
-  },
-  {
-    "item_id": "5583220000001761910",
-    "sku": "480-150-004",
-    "name": "COLGATE TOOTHBRUSH ULTRASOFT",
-    "brand": "Colgate",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 2600.0
-  },
-  {
-    "item_id": "5583220000003856378",
-    "sku": "400-140-002",
-    "name": "COMPUTER (HP ProOne 240 G10)",
-    "brand": "",
-    "category": "140-Storage & Organization",
-    "parent_category": "",
-    "rate": 0.0
-  },
-  {
-    "item_id": "5583220000003428766",
-    "sku": "400-140-003",
-    "name": "DRINKING CUP DISPENSER WHITE (6161/W)",
-    "brand": "Medesy",
-    "category": "140-Storage & Organization",
-    "parent_category": "",
-    "rate": 45800.0
-  },
-  {
-    "item_id": "5583220000003675441",
-    "sku": "480-120-001",
-    "name": "DURAPHAT CPL 10ML/PK VARNISH",
-    "brand": "Colgate",
-    "category": "120-Fluoride Gels & Varnishes",
-    "parent_category": "",
-    "rate": 89400.0
-  },
-  {
-    "item_id": "5583220000001322001",
-    "sku": "440-120-002",
-    "name": "EXCELLENT TOYS REFILL (144)",
-    "brand": "",
-    "category": "120-Children",
-    "parent_category": "",
-    "rate": 13020.14
-  },
-  {
-    "item_id": "5583220000003428909",
-    "sku": "420-110-003",
-    "name": "EXPANDERS SOFT- STANDARD (4916/7)",
-    "brand": "Medesy",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 18600.0
-  },
-  {
-    "item_id": "5583220000003428689",
-    "sku": "340-180-011",
-    "name": "FILLING INSTRUMENT OT2 (500/2)",
-    "brand": "Medesy",
-    "category": "180-Restorative Instruments",
-    "parent_category": "",
-    "rate": 11500.0
-  },
-  {
-    "item_id": "5583220000003428700",
-    "sku": "340-180-012",
-    "name": "FILLING INSTRUMENT OT3 (500/3)",
-    "brand": "Medesy",
-    "category": "180-Restorative Instruments",
-    "parent_category": "",
-    "rate": 11500.0
-  },
-  {
-    "item_id": "5583220000001063240",
-    "sku": "260-160-001",
-    "name": "GUTTA PERCHA POINT COLOR 30",
-    "brand": "Roeko",
-    "category": "160-Gutta-Percha Points",
-    "parent_category": "",
-    "rate": 67100.0
-  },
-  {
-    "item_id": "5583220000001063713",
-    "sku": "260-160-002",
-    "name": "GUTTA PERCHA POINT COLOR 40",
-    "brand": "Roeko",
-    "category": "160-Gutta-Percha Points",
-    "parent_category": "",
-    "rate": 67100.0
-  },
-  {
-    "item_id": "5583220000001062767",
-    "sku": "260-160-003",
-    "name": "GUTTA PERCHA POINT COLOR 45-80",
-    "brand": "Roeko",
-    "category": "160-Gutta-Percha Points",
-    "parent_category": "",
-    "rate": 67100.0
-  },
-  {
-    "item_id": "5583220000001061348",
-    "sku": "260-160-004",
-    "name": "GUTTA PERCHA POINTS COLOR 15",
-    "brand": "Roeko",
-    "category": "160-Gutta-Percha Points",
-    "parent_category": "",
-    "rate": 67100.0
-  },
-  {
-    "item_id": "5583220000001064186",
-    "sku": "260-160-007",
-    "name": "GUTTA PERCHA POINTS COLOR 35",
-    "brand": "Roeko",
-    "category": "160-Gutta-Percha Points",
-    "parent_category": "",
-    "rate": 67100.0
-  },
-  {
-    "item_id": "5583220000001502561",
-    "sku": "260-200-002",
-    "name": "HYSOLATE LATEX DENTAL DAM GREEN MEDIUM 127 X 127 (52PK)",
-    "brand": "HySolate",
-    "category": "200-Rubber Dam Systems",
-    "parent_category": "",
-    "rate": 48500.0
-  },
-  {
-    "item_id": "5583220000001169208",
-    "sku": "340-110-008",
-    "name": "INSTRUMENT TRAY COVER",
-    "brand": "Premium Plus",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 15670.0
-  },
-  {
-    "item_id": "5583220000001178670",
-    "sku": "340-110-009",
-    "name": "INSTRUMENT TRAY COVER- SILVER",
-    "brand": "Premium Plus",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 15500.0
-  },
-  {
-    "item_id": "5583220000001002690",
-    "sku": "340-140-001",
-    "name": "IWANSON CALIPER",
-    "brand": "Medesy",
-    "category": "140-Laboratory Instruments",
-    "parent_category": "",
-    "rate": 7100.0
-  },
-  {
-    "item_id": "5583220000003428667",
-    "sku": "340-140-004",
-    "name": "KIT WAX AND MODEL INSTRUMENTS",
-    "brand": "Medesy",
-    "category": "140-Laboratory Instruments",
-    "parent_category": "",
-    "rate": 111700.0
-  },
-  {
-    "item_id": "5583220000001403884",
-    "sku": "500-150-001",
-    "name": "KODAK INSIGHT PERIAPICAL FILM",
-    "brand": "Carestream dental",
-    "category": "150-Film",
-    "parent_category": "",
-    "rate": 263500.0
-  },
-  {
-    "item_id": "5583220000001321055",
-    "sku": "400-140-004",
-    "name": "LEAFLET DISPENSER-3 TIER 1/3 A",
-    "brand": "",
-    "category": "140-Storage & Organization",
-    "parent_category": "",
-    "rate": 1912.015
-  },
-  {
-    "item_id": "5583220000001174411",
-    "sku": "340-110-067",
-    "name": "LID ALUMINIUM SILVER (999/A)",
-    "brand": "UnoDent",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 4675.09375
-  },
-  {
-    "item_id": "5583220000001176303",
-    "sku": "340-110-068",
-    "name": "LID PERFORATED ALUM. SILVER",
-    "brand": "UnoDent",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 5783.2
-  },
-  {
-    "item_id": "5583220000006873605",
-    "sku": "580-140-001",
-    "name": "METAL INSTRUMENT TRAY- GOLD",
-    "brand": "UnoDent",
-    "category": "140-Sterilization Trays",
-    "parent_category": "",
-    "rate": 38500.0
-  },
-  {
-    "item_id": "5583220000003428865",
-    "sku": "340-120-001",
-    "name": "MIRROR HANDLE LIGHT MILLIMETER (4902/MM)",
-    "brand": "Medesy",
-    "category": "120-Diagnostic Instruments",
-    "parent_category": "",
-    "rate": 10100.0
-  },
-  {
-    "item_id": "5583220000001209892",
-    "sku": "340-120-004",
-    "name": "MIRROR N.4 RHODIUM DOUBLE (4910/4RO)",
-    "brand": "Hu-Friedy",
-    "category": "120-Diagnostic Instruments",
-    "parent_category": "",
-    "rate": 80000.0
-  },
-  {
-    "item_id": "5583220000001218883",
-    "sku": "340-120-007",
-    "name": "MIRRORS N.5 RHODIUM DOUBLE-6PC (4912/5RO)",
-    "brand": "Medesy",
-    "category": "120-Diagnostic Instruments",
-    "parent_category": "",
-    "rate": 80000.0
-  },
-  {
-    "item_id": "5583220000000997960",
-    "sku": "520-140-003",
-    "name": "ONE COAT 7.0 REF",
-    "brand": "One Coat",
-    "category": "140-Bonding Agents",
-    "parent_category": "",
-    "rate": 146100.0
-  },
-  {
-    "item_id": "5583220000005598984",
-    "sku": "480-150-041",
-    "name": "ORAL-B CARS/PRINCESS TOOTHBRUSH (3-5 YEAR)",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 3800.0
-  },
-  {
-    "item_id": "5583220000003797550",
-    "sku": "480-150-012",
-    "name": "ORAL-B CROSS ACTION BLACK TOOTHBRUSH HEAD- PACK OF 2 COUNTS",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 21400.0
-  },
-  {
-    "item_id": "5583220000003797539",
-    "sku": "480-150-013",
-    "name": "ORAL-B CROSS ACTION WHITE TOOTHBRUSH HEAD- PACK OF 2 COUNTS",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 21400.0
-  },
-  {
-    "item_id": "5583220000006873062",
-    "sku": "480-150-063",
-    "name": "ORAL-B FLOSS ACTION WHITE TOOTHBRUSH HEAD- PACK OF 2 COUNTS",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 22100.0
-  },
-  {
-    "item_id": "5583220000003797572",
-    "sku": "480-150-015",
-    "name": "ORAL-B iO ULTIMATE CLEAN BLACK TOOTHBRUSH HEADS- PACK OF 2 COUNTS",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 37000.0
-  },
-  {
-    "item_id": "5583220000003797594",
-    "sku": "480-150-016",
-    "name": "ORAL-B iO ULTIMATE CLEAN TOOTHBRUSH HEADS- PACK OF 2 COUNTS",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 37000.0
-  },
-  {
-    "item_id": "5583220000003797605",
-    "sku": "480-150-017",
-    "name": "ORAL-B iO2 FOREST GREEN ELECTRIC TOOTHBRUSH + TRAVEL CASE",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 123600.0
-  },
-  {
-    "item_id": "5583220000003797583",
-    "sku": "480-150-018",
-    "name": "ORAL-B iO2 NIGHT BLACK ELECTRIC TOOTHBRUSH + TRAVEL CASE",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 123600.0
-  },
-  {
-    "item_id": "5583220000003797616",
-    "sku": "480-150-019",
-    "name": "ORAL-B iO2 WHITE ELECTRIC TOOTHBRUSH + TRAVEL CASE",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 123600.0
-  },
-  {
-    "item_id": "5583220000006873088",
-    "sku": "480-150-065",
-    "name": "ORAL-B iOS FOREST GREEN ELECTRIC TOOTHBRUSH",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 135100.0
-  },
-  {
-    "item_id": "5583220000006873075",
-    "sku": "480-150-064",
-    "name": "ORAL-B iOS NIGHT BLACK ELECTRIC TOOTHBRUSH",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 135100.0
-  },
-  {
-    "item_id": "5583220000006873101",
-    "sku": "480-150-066",
-    "name": "ORAL-B iOS PINK ELECTRIC TOOTHBRUSH",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 135100.0
-  },
-  {
-    "item_id": "5583220000006873127",
-    "sku": "480-150-067",
-    "name": "ORAL-B iOS PINK ELECTRIC TOOTHBRUSH + TRAVEL CASE",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 135100.0
-  },
-  {
-    "item_id": "5583220000001501500",
-    "sku": "480-150-059",
-    "name": "ORAL-B KIDS 3+ TOOTHBRUSH \"MARVEL\"",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 3700.0
-  },
-  {
-    "item_id": "5583220000006873114",
-    "sku": "480-160-006",
-    "name": "ORAL-B LION KING TOOTHPASTE 0+ 60ML",
-    "brand": "Oral-B",
-    "category": "160-Toothpastes",
-    "parent_category": "",
-    "rate": 5100.0
-  },
-  {
-    "item_id": "5583220000003797561",
-    "sku": "480-150-020",
-    "name": "ORAL-B PRECISION CLEAN WHITE TOOTHBRUSH HEAD- PACK OF 2 COUNTS",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 17500.0
-  },
-  {
-    "item_id": "5583220000001037225",
-    "sku": "400-120-003",
-    "name": "PATIENT BROCHURES",
-    "brand": "",
-    "category": "120-Promotional Items",
-    "parent_category": "",
-    "rate": 1533.3376
-  },
-  {
-    "item_id": "5583220000001036752",
-    "sku": "400-120-004",
-    "name": "PATIENT TEASERS (25)",
-    "brand": "",
-    "category": "120-Promotional Items",
-    "parent_category": "",
-    "rate": 5574.44
-  },
-  {
-    "item_id": "5583220000001295986",
-    "sku": "400-110-001",
-    "name": "PHOTO PAPER(MATT)170GSM",
-    "brand": "",
-    "category": "110-Printer Supplies",
-    "parent_category": "",
-    "rate": 6800.0
-  },
-  {
-    "item_id": "5583220000001318690",
-    "sku": "440-120-003",
-    "name": "PLAK SMACKER STICKERS",
-    "brand": "",
-    "category": "120-Children",
-    "parent_category": "",
-    "rate": 276.64
-  },
-  {
-    "item_id": "5583220000003428810",
-    "sku": "340-190-040",
-    "name": "PLASTER SHEAR (4559)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 45400.0
-  },
-  {
-    "item_id": "5583220000003428678",
-    "sku": "420-120-002",
-    "name": "PLIER CENTURY ADERER LONG",
-    "brand": "Medesy",
-    "category": "120-Archwires",
-    "parent_category": "",
-    "rate": 130200.0
-  },
-  {
-    "item_id": "5583220000003428854",
-    "sku": "340-190-042",
-    "name": "PLIER CENTURY ANGLE N. 138 TC (3000/86 TC)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 208000.0
-  },
-  {
-    "item_id": "5583220000003725391",
-    "sku": "380-160-011",
-    "name": "PRESIDENT THE ORIGINAL LIGHT BODY (2 X 50ML)",
-    "brand": "President",
-    "category": "160-Impression Materials",
-    "parent_category": "",
-    "rate": 88200.0
-  },
-  {
-    "item_id": "5583220000003725380",
-    "sku": "380-160-013",
-    "name": "PRESIDENT THE ORIGINAL PUTTY SOFT (2 X 300ML)",
-    "brand": "President",
-    "category": "160-Impression Materials",
-    "parent_category": "",
-    "rate": 97800.0
-  },
-  {
-    "item_id": "5583220000003428788",
-    "sku": "340-170-008",
-    "name": "PROBE DOUBLE CP15/23",
-    "brand": "Medesy",
-    "category": "170-Periodontal Instruments",
-    "parent_category": "",
-    "rate": 19500.0
-  },
-  {
-    "item_id": "5583220000003428887",
-    "sku": "340-170-010",
-    "name": "PROBE DOUBLE WHO/CP12 (563/2)",
-    "brand": "Medesy",
-    "category": "170-Periodontal Instruments",
-    "parent_category": "",
-    "rate": 21600.0
-  },
-  {
-    "item_id": "5583220000005504757",
-    "sku": "400-120-005",
-    "name": "PRODUCT CATALOG",
-    "brand": "",
-    "category": "120-Promotional Items",
-    "parent_category": "",
-    "rate": 0.0
-  },
-  {
-    "item_id": "5583220000001033439",
-    "sku": "460-110-002",
-    "name": "RELEV RAPID 550mg TABLETS",
-    "brand": "",
-    "category": "110-Oral Analgesics & Anti-inflammatories",
-    "parent_category": "",
-    "rate": 3350.0
-  },
-  {
-    "item_id": "5583220000001501581",
-    "sku": "420-120-001",
-    "name": "REMANIUM ROUND WIRE SPOOL 30M HARD",
-    "brand": "",
-    "category": "120-Archwires",
-    "parent_category": "",
-    "rate": 124600.0
-  },
-  {
-    "item_id": "5583220000001006001",
-    "sku": "520-190-029",
-    "name": "RETRACTION CORD - STAY PUT 0 X",
-    "brand": "Roeko",
-    "category": "190-Matrix Systems",
-    "parent_category": "",
-    "rate": 24700.0
-  },
-  {
-    "item_id": "5583220000001006474",
-    "sku": "520-190-030",
-    "name": "RETRACTION CORD - STAY PUT 1",
-    "brand": "Roeko",
-    "category": "190-Matrix Systems",
-    "parent_category": "",
-    "rate": 24700.0
-  },
-  {
-    "item_id": "5583220000001006947",
-    "sku": "520-190-031",
-    "name": "RETRACTION CORD - STAY PUT 2",
-    "brand": "Roeko",
-    "category": "190-Matrix Systems",
-    "parent_category": "",
-    "rate": 24700.0
-  },
-  {
-    "item_id": "5583220000001007420",
-    "sku": "520-190-032",
-    "name": "RETRACTION CORD - STAY PUT 3",
-    "brand": "Roeko",
-    "category": "190-Matrix Systems",
-    "parent_category": "",
-    "rate": 24700.0
-  },
-  {
-    "item_id": "5583220000001323420",
-    "sku": "400-140-005",
-    "name": "REXEL BUDGET POCKET",
-    "brand": "",
-    "category": "140-Storage & Organization",
-    "parent_category": "",
-    "rate": 3051.111111
-  },
-  {
-    "item_id": "5583220000001502588",
-    "sku": "260-180-011",
-    "name": "ROEKO PAPER POINT TOP COLOR ISO 30 (200PK)",
-    "brand": "Roeko",
-    "category": "180-Paper Points",
-    "parent_category": "",
-    "rate": 24400.0
-  },
-  {
-    "item_id": "5583220000003430012",
-    "sku": "340-190-044",
-    "name": "ROOT ELEVATOR 2.5MM MAESTRALE (726/2S. SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88900.0
-  },
-  {
-    "item_id": "5583220000003429141",
-    "sku": "340-190-045",
-    "name": "ROOT ELEVATOR 2MM MAESTRALE (726/1S. SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88900.0
-  },
-  {
-    "item_id": "5583220000003430023",
-    "sku": "340-190-046",
-    "name": "ROOT ELEVATOR 3MM MAESTRALE (726/3S. SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88900.0
-  },
-  {
-    "item_id": "5583220000003428733",
-    "sku": "340-190-049",
-    "name": "ROOT ELEVATOR COUPLAND 3.6MM (798/2)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 39400.0
-  },
-  {
-    "item_id": "5583220000003428722",
-    "sku": "340-190-050",
-    "name": "ROOT ELEVATOR COUPLAND 3MM (798/1)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 39400.0
-  },
-  {
-    "item_id": "5583220000005690463",
-    "sku": "340-190-052",
-    "name": "ROOT ELEVATOR CRYER 12MM LEFT",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 101300.0
-  },
-  {
-    "item_id": "5583220000001218410",
-    "sku": "340-190-053",
-    "name": "ROOT ELEVATOR CRYER 15MM LEFT",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 101300.0
-  },
-  {
-    "item_id": "5583220000003429097",
-    "sku": "340-190-054",
-    "name": "ROOT ELEVATOR CRYER 15MM RIGHT (720/28)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 40300.0
-  },
-  {
-    "item_id": "5583220000003429108",
-    "sku": "340-190-058",
-    "name": "ROOT ELEVATOR LINDO-LEVIAN 2.5MM MAESTRALE (725/1.SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88800.0
-  },
-  {
-    "item_id": "5583220000003429119",
-    "sku": "340-190-059",
-    "name": "ROOT ELEVATOR LINDO-LEVIAN 3MM MAESTRALE (725/2.SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88800.0
-  },
-  {
-    "item_id": "5583220000003429130",
-    "sku": "340-190-060",
-    "name": "ROOT ELEVATOR LINDO-LEVIAN 4MM MAESTRALE (725/3.SL)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 88800.0
-  },
-  {
-    "item_id": "5583220000003430034",
-    "sku": "340-190-064",
-    "name": "ROOT ELEVATOR LUSSATORE 3MM (730/3S)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 43800.0
-  },
-  {
-    "item_id": "5583220000001197119",
-    "sku": "340-190-065",
-    "name": "ROOT ELEVATOR LUSSATORE 4MM (CURVED)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 43800.0
-  },
-  {
-    "item_id": "5583220000005515982",
-    "sku": "340-190-066",
-    "name": "ROOT ELEVATOR LUSSATORE 4MM (STRAIGHT)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 43800.0
-  },
-  {
-    "item_id": "5583220000003428744",
-    "sku": "340-190-070",
-    "name": "ROOT ELEVATOR SELDIN LEFT (720/23)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 40300.0
-  },
-  {
-    "item_id": "5583220000003428755",
-    "sku": "340-190-071",
-    "name": "ROOT ELEVATOR SELDIN RIGHT (720/22)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 40300.0
-  },
-  {
-    "item_id": "5583220000003346929",
-    "sku": "480-160-002",
-    "name": "SENSODYNE RAPID ACTION",
-    "brand": "GSK GROUP OF COMPANIES",
-    "category": "160-Toothpastes",
-    "parent_category": "",
-    "rate": 3520.0
-  },
-  {
-    "item_id": "5583220000003428876",
-    "sku": "380-110-027",
-    "name": "SPATULA FOR ALGINATE (209)",
-    "brand": "Medesy",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 10500.0
-  },
-  {
-    "item_id": "5583220000001448160",
-    "sku": "480-110-014",
-    "name": "TEPE INTERDENTAL BRUSHES (0.6MM)- BLUE (SINGLE PACK)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001448633",
-    "sku": "480-110-015",
-    "name": "TEPE INTERDENTAL BRUSHES (0.7MM)- yellow (SINGLE PACK)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001449106",
-    "sku": "480-110-016",
-    "name": "TEPE INTERDENTAL BRUSHES (0.8MM)- GREEN (SINGLE PACK)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001330988",
-    "sku": "480-110-017",
-    "name": "TEPE INTERDENTAL BRUSHES 0.45- ORANGE (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001330515",
-    "sku": "480-110-018",
-    "name": "TEPE INTERDENTAL BRUSHES 0.4MM- PINK (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001331461",
-    "sku": "480-110-019",
-    "name": "TEPE INTERDENTAL BRUSHES 0.5MM- RED (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001331934",
-    "sku": "480-110-020",
-    "name": "TEPE INTERDENTAL BRUSHES 0.6MM- BLUE (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001333407",
-    "sku": "480-110-021",
-    "name": "TEPE INTERDENTAL BRUSHES 0.7MM- YELLOW (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001333880",
-    "sku": "480-110-022",
-    "name": "TEPE INTERDENTAL BRUSHES 0.8MM- GREEN (10 X 8pcs)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 83370.0
-  },
-  {
-    "item_id": "5583220000001346651",
-    "sku": "480-110-023",
-    "name": "TEPE INTERDENTAL BULK PACK- YELLOW",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
-    "parent_category": "",
-    "rate": 10980.0
-  },
-  {
-    "item_id": "5583220000003428557",
-    "sku": "340-190-089",
-    "name": "TOOTH FORCEPS N.1 (2500/1)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428645",
-    "sku": "340-190-093",
-    "name": "TOOTH FORCEPS N.17 (2500/17)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428634",
-    "sku": "340-190-094",
-    "name": "TOOTH FORCEPS N.18 (2500/18)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428579",
-    "sku": "340-190-095",
-    "name": "TOOTH FORCEPS N.187 (2500/187)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428590",
-    "sku": "340-190-097",
-    "name": "TOOTH FORCEPS N.23 (2500/23)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428601",
-    "sku": "340-190-098",
-    "name": "TOOTH FORCEPS N.24 (2500/24)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428612",
-    "sku": "340-190-099",
-    "name": "TOOTH FORCEPS N.33 (2500/33)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428656",
-    "sku": "340-190-102",
-    "name": "TOOTH FORCEPS N.7 (2500/7)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428623",
-    "sku": "340-190-103",
-    "name": "TOOTH FORCEPS N.73 (2500/73)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000003428568",
-    "sku": "340-190-111",
-    "name": "TOOTH FORCEPS PEDO N.123 (2500/123)",
-    "brand": "Medesy",
-    "category": "190-Surgical Instruments",
-    "parent_category": "",
-    "rate": 66800.0
-  },
-  {
-    "item_id": "5583220000001356584",
-    "sku": "480-160-003",
-    "name": "TOOTHPASTE-DINO",
-    "brand": "",
-    "category": "160-Toothpastes",
-    "parent_category": "",
-    "rate": 4800.0
-  },
-  {
-    "item_id": "5583220000001357057",
-    "sku": "480-160-005",
-    "name": "TOOTHPASTE-SHARK",
-    "brand": "",
-    "category": "160-Toothpastes",
-    "parent_category": "",
-    "rate": 4800.0
-  },
-  {
-    "item_id": "5583220000001319163",
-    "sku": "440-120-004",
-    "name": "TOY CHEST",
-    "brand": "",
-    "category": "120-Children",
-    "parent_category": "",
-    "rate": 13700.0
-  },
-  {
-    "item_id": "5583220000001319636",
-    "sku": "440-120-005",
-    "name": "TOY CHEST REFILL 200PK",
-    "brand": "",
-    "category": "120-Children",
-    "parent_category": "",
-    "rate": 85000.0
-  },
-  {
-    "item_id": "5583220000001175357",
-    "sku": "340-110-064",
-    "name": "TRAY PERFORATED ALUM. BLUE",
-    "brand": "UnoDent",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 5451.06
-  },
-  {
-    "item_id": "5583220000001175830",
-    "sku": "340-110-065",
-    "name": "TRAY PERFORATED ALUM. SILVER",
-    "brand": "UnoDent",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 3222.31
-  },
-  {
-    "item_id": "5583220000001179143",
-    "sku": "340-110-066",
-    "name": "TRAY PERFORATED ALUMINIUM",
-    "brand": "UnoDent",
-    "category": "110-Accessories",
-    "parent_category": "",
-    "rate": 5451.06
-  },
-  {
-    "item_id": "5583220000001361314",
-    "sku": "480-160-004",
-    "name": "TUNG-GEL W/30Z GEL",
-    "brand": "",
-    "category": "160-Toothpastes",
-    "parent_category": "",
-    "rate": 7300.0
-  },
-  {
-    "item_id": "5583220000006873578",
-    "sku": "200-170-026",
-    "name": "UNODENT NITRISOFT NITRILE EXAMINATION GLOVES BLUE X-SMALL (200 PACK)",
-    "brand": "UnoDent",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 15100.0
-  },
-  {
-    "item_id": "5583220000006875389",
-    "sku": "520-160-033",
-    "name": "UNOLUX BCS COMP A3.5",
-    "brand": "UnoDent",
-    "category": "160-Composites",
-    "parent_category": "",
-    "rate": 78800.0
-  },
-  {
-    "item_id": "5583220000006875376",
-    "sku": "520-160-032",
-    "name": "UNOLUX BCS FLOW COMP A3",
-    "brand": "UnoDent",
-    "category": "160-Composites",
-    "parent_category": "",
-    "rate": 114200.0
-  },
-  {
-    "item_id": "5583220000006904140",
-    "sku": "520-160-034",
-    "name": "VENUS PEARL ART COMPOSITE SYRINGE REFILL BL",
-    "brand": "Kulzer",
-    "category": "160-Composites",
-    "parent_category": "",
-    "rate": 160500.0
-  },
-  {
-    "item_id": "5583220000003428832",
-    "sku": "340-140-005",
-    "name": "WAX AND MODELLING INSTRUMENT ZAHLE 120MM (591)",
-    "brand": "Medesy",
-    "category": "140-Laboratory Instruments",
-    "parent_category": "",
-    "rate": 12000.0
-  },
-  {
-    "item_id": "5583220000003428843",
-    "sku": "340-140-006",
-    "name": "WAX AND MODELLING INSTRUMENT ZAHLE 130MM (592)",
-    "brand": "Medesy",
-    "category": "140-Laboratory Instruments",
-    "parent_category": "",
-    "rate": 12000.0
-  },
-  {
-    "item_id": "5583220000003428799",
-    "sku": "380-190-002",
-    "name": "WAX KNIVES FAHNENSTOCK 180MM",
-    "brand": "Lab Instruments",
-    "category": "190-Waxes",
-    "parent_category": "",
-    "rate": 13200.0
-  },
-  {
-    "item_id": "5583220000001341448",
-    "sku": "480-150-050",
-    "name": "ANGRY BIRDS TURBO POWER",
-    "brand": "Dr. Fresh",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 5500.0
-  },
-  {
-    "item_id": "5583220000001352800",
-    "sku": "480-150-052",
-    "name": "BATMAN TURBO POWER TOOTHBRUSH",
-    "brand": "DC Comics",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 6000.0
-  },
-  {
-    "item_id": "5583220000001355165",
-    "sku": "480-150-032",
-    "name": "CRAYOLA KIDS POWER TOOTHBRUSH",
-    "brand": "Crayola",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 17300.0
-  },
-  {
-    "item_id": "5583220000001344759",
-    "sku": "480-150-033",
-    "name": "CRAYOLA PIP-SQUEAKS TOOTHBRUSH",
-    "brand": "Crayola",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 3900.0
-  },
-  {
-    "item_id": "5583220000001502214",
-    "sku": "480-150-006",
-    "name": "GENERIC ORAL-B PRECISION CLEAN TB HEAD (4PK)",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 12000.0
-  },
-  {
-    "item_id": "5583220000001501446",
-    "sku": "480-150-034",
-    "name": "GUM BARBIE MANUAL TOOTHBRUSH",
-    "brand": "Barbie",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 3600.0
-  },
-  {
-    "item_id": "5583220000001501455",
-    "sku": "480-150-035",
-    "name": "GUM BARBIE POWERED TOOTHBRUSH",
-    "brand": "Barbie",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 18100.0
-  },
-  {
-    "item_id": "5583220000001345232",
-    "sku": "480-150-036",
-    "name": "GUM CRAYOLA TIMER LIGHT",
-    "brand": "Crayola",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 2100.0
-  },
-  {
-    "item_id": "5583220000001351381",
-    "sku": "480-150-038",
-    "name": "LION KING TURBO POWER T/BRUSH",
-    "brand": "Lion King",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 3800.0
-  },
-  {
-    "item_id": "5583220000001501482",
-    "sku": "480-150-007",
-    "name": "ORAL B PRECISION STYLE TOOTHBRUSH HEAD (4PK)",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 12000.0
-  },
-  {
-    "item_id": "5583220000001345705",
-    "sku": "480-150-008",
-    "name": "ORAL B REFILL SENSI ULTRA THIN",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 14000.0
-  },
-  {
-    "item_id": "5583220000001342394",
-    "sku": "480-150-009",
-    "name": "ORAL B SENSITIVE HEAD TWIN PK",
-    "brand": "Oral-B",
-    "category": "150-Toothbrushes & Tongue Cleaners",
-    "parent_category": "",
-    "rate": 11910.0
-  },
-  {
-    "item_id": "5583220000001347124",
-    "sku": "480-150-010",
-    "name": "ORAL B STAGES 3+ PRINCESS &",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000914602",
+    "sku": "160-120-001",
+    "name": "1557 LATCH TYPE BUR",
+    "brand": "Bicon",
+    "category": "120-Carbide Burs",
     "parent_category": "",
     "rate": 4200.0
   },
   {
-    "item_id": "5583220000001355638",
-    "sku": "480-150-011",
-    "name": "ORAL B STAGES TOTHBRUSH 1",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000913656",
+    "sku": "160-120-002",
+    "name": "1557 REGULAR LENGTH BUR",
+    "brand": "Bicon",
+    "category": "120-Carbide Burs",
     "parent_category": "",
-    "rate": 3700.0
+    "rate": 810.0
   },
   {
-    "item_id": "5583220000001358003",
-    "sku": "480-110-010",
-    "name": "ORAL B SUPER FLOSS",
-    "brand": "Oral-B",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001248211",
+    "sku": "320-150-003",
+    "name": "2.0MM STANDARD GUIDE PIN (4)",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 769.091765
+    "rate": 23674.93
   },
   {
-    "item_id": "5583220000001503378",
-    "sku": "480-150-014",
-    "name": "ORAL-B IO SPECIALISED CLEAN TOOTHBRUSH HEADS (2 PACK)",
-    "brand": "iO",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000005538012",
+    "sku": "320-120-023",
+    "name": "2.5MM IMPRESSION KIT",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 73400.0
   },
   {
-    "item_id": "5583220000001501491",
-    "sku": "480-150-061",
-    "name": "ORAL-B KIDS 3+ TOOTHBRUSH \"FROZEN\"",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001245373",
+    "sku": "320-150-004",
+    "name": "2.5MM STANDARD GUIDE PIN (4)",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 37000.0
+    "rate": 14747.15
   },
   {
-    "item_id": "5583220000001501509",
-    "sku": "480-150-060",
-    "name": "ORAL-B KIDS 3+ TOOTHBRUSH \"PIXAR\"",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000005041012",
+    "sku": "320-150-005",
+    "name": "3.0MM DIGITAL IMPLANT ANALOG KIT",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 3700.0
+    "rate": 104300.0
   },
   {
-    "item_id": "5583220000001503387",
-    "sku": "480-150-044",
-    "name": "ORAL-B KIDS ELECTRIC TOOTHBRUSH SPIDERMAN- VITALITY PRO",
-    "brand": "Kids Series",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000005538001",
+    "sku": "320-120-024",
+    "name": "3.0MM IMPRESSION KIT",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 73400.0
   },
   {
-    "item_id": "5583220000001501518",
-    "sku": "480-150-045",
-    "name": "ORAL-B KIDS STAGES 1 DISNEY POOH TOOTHBRUSH",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000005041023",
+    "sku": "320-120-001",
+    "name": "3.0MM TITANIUM IMPRESSION POST & SLEEVE",
+    "brand": "Bicon",
+    "category": "120-Implant Sleeves & Wells",
     "parent_category": "",
-    "rate": 3700.0
+    "rate": 73000.0
   },
   {
-    "item_id": "5583220000001501527",
-    "sku": "480-150-046",
-    "name": "ORAL-B KIDS STAGES 4 'FOR ME' TOOTHBRUSH",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001384491",
+    "sku": "320-160-005",
+    "name": "4MM NON SHOULDER TEMP SLEEVE",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
     "parent_category": "",
-    "rate": 3700.0
+    "rate": 3045.51
   },
   {
-    "item_id": "5583220000001503396",
-    "sku": "480-150-021",
-    "name": "ORAL-B PRO 3 - 3000 - CROSS ACTION BLACK ELECTRIC TOOTHBRUSH",
-    "brand": "Pro Series",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001384018",
+    "sku": "320-160-006",
+    "name": "5.0MM NON SHOULDER TEMP SLEEVE",
+    "brand": "Bicon",
+    "category": "160-Temporary Abutments",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 2856.755
   },
   {
-    "item_id": "5583220000001503405",
-    "sku": "480-150-022",
-    "name": "ORAL-B PRO 3 - 3000 - WHITE ELECTRIC TOOTHBRUSH WITH BONUS CASE",
-    "brand": "Pro Series",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000913180",
+    "sku": "320-130-001",
+    "name": "6.0MM OSTEOTOME",
+    "brand": "Bicon",
+    "category": "130-Osteotomes",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 29900.0
   },
   {
-    "item_id": "5583220000001503414",
-    "sku": "480-150-023",
-    "name": "ORAL-B PRO 3 - 3500 - BLACK ELECTRIC TOOTHBRUSH WITH BONUS CASE",
-    "brand": "Pro Series",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001402465",
+    "sku": "320-150-006",
+    "name": "9MM DRILLING IMPLANT GUIDE",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 26000.0
   },
   {
-    "item_id": "5583220000001503423",
-    "sku": "480-110-011",
-    "name": "ORAL-B PRO EXPERT DEEP CLEAN FLOSSING TAPE 50M WHITE",
-    "brand": "Oral-B",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001244900",
+    "sku": "320-150-007",
+    "name": "ABUTMENT SEATING TIP",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 117600.0
+    "rate": 5586.46
   },
   {
-    "item_id": "5583220000001503432",
-    "sku": "480-130-004",
-    "name": "ORAL-B PRO-EXPERT PROFESSIONAL PROTECTION MOUTHWASH 500ML",
-    "brand": "Oral-B",
-    "category": "130-Mouthwashes",
+    "item_id": "5583220000000937865",
+    "sku": "160-110-001",
+    "name": "BUR BLOCK - LARGE - ROUND-BLUE",
+    "brand": "UnoDent",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 12500.0
   },
   {
-    "item_id": "5583220000001500905",
-    "sku": "480-150-047",
-    "name": "ORAL-B STAGES 3 SPIDERMAN (MARVEL)",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000938338",
+    "sku": "160-110-002",
+    "name": "BUR BLOCK - LID - ROUND-BLUE",
+    "brand": "UnoDent",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 4600.0
+    "rate": 10100.0
   },
   {
-    "item_id": "5583220000001351854",
-    "sku": "480-150-048",
-    "name": "ORAL-B STAGES 4 GALAXY",
-    "brand": "Stages",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000937392",
+    "sku": "160-110-003",
+    "name": "BUR CLEANER - PULIMANT",
+    "brand": "Komet",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 4600.0
+    "rate": 6700.0
   },
   {
-    "item_id": "5583220000001344286",
-    "sku": "480-150-054",
-    "name": "REACH ADVANCE SOFT COMPACT",
-    "brand": "Reach",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000935973",
+    "sku": "160-110-004",
+    "name": "BUR CLEANING BRUSH - METAL",
+    "brand": "UnoDent",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 3750.0
+    "rate": 7200.0
   },
   {
-    "item_id": "5583220000001338137",
-    "sku": "480-150-053",
-    "name": "REACH BARBIE TOOTHBRUSH",
-    "brand": "Reach",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000000936919",
+    "sku": "160-110-006",
+    "name": "BUR HOLDER METAL MESH",
+    "brand": "UnoDent",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 2500.0
+    "rate": 12500.0
   },
   {
-    "item_id": "5583220000001336245",
-    "sku": "480-150-024",
-    "name": "REACH TOTAL CARE TOOTHBRUSH",
-    "brand": "Reach",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001401519",
+    "sku": "320-150-008",
+    "name": "MD GUIDE- DRILLING IMPLANT",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 3750.0
+    "rate": 171500.0
   },
   {
-    "item_id": "5583220000001433495",
-    "sku": "480-110-012",
-    "name": "TEPE COMPLETE KIT",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001247265",
+    "sku": "320-150-010",
+    "name": "PARALLELING PIN 0*",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 1.0
+    "rate": 5961.68
   },
   {
-    "item_id": "5583220000001449579",
-    "sku": "480-110-013",
-    "name": "TEPE INTERDENTAL BRUSHES (0.45MM)- ORANGE (SINGLE PACK)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001243006",
+    "sku": "320-150-009",
+    "name": "PILOT DRILL 2.0",
+    "brand": "Bicon",
+    "category": "150-Surgical Kits",
     "parent_category": "",
-    "rate": 15000.0
+    "rate": 56200.0
   },
   {
-    "item_id": "5583220000001503593",
-    "sku": "480-110-024",
-    "name": "TEPE MINI FLOSSER (36/PK)",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001245846",
+    "sku": "320-140-034",
+    "name": "THREADED ABUT PREP HOLDER",
+    "brand": "Bicon",
+    "category": "140-Permanent Abutments",
     "parent_category": "",
-    "rate": 2800.0
+    "rate": 48251.18
   },
   {
-    "item_id": "5583220000001433968",
-    "sku": "220-110-001",
-    "name": "TEPE MODEL",
-    "brand": "Anatomical",
-    "category": "110-Anatomical Models",
+    "item_id": "5583220000001020195",
+    "sku": "200-120-001",
+    "name": "COTTON ROLL -ROEKO",
+    "brand": "Roeko",
+    "category": "120-Cotton Products",
     "parent_category": "",
-    "rate": 1.0
+    "rate": 32300.0
   },
   {
-    "item_id": "5583220000001437752",
-    "sku": "480-110-027",
-    "name": "TEPE STAND LID STAND",
-    "brand": "Tepe",
-    "category": "110-Floss & Interdental Aids",
+    "item_id": "5583220000001023506",
+    "sku": "200-120-002",
+    "name": "COTTON ROLL DISP.PULL WHITE",
+    "brand": "One-Touch",
+    "category": "120-Cotton Products",
     "parent_category": "",
-    "rate": 0.0
+    "rate": 23000.0
   },
   {
-    "item_id": "5583220000001502922",
-    "sku": "480-150-058",
-    "name": "TEPE TONGUE CLEANER",
-    "brand": "Tepe",
-    "category": "150-Toothbrushes & Tongue Cleaners",
+    "item_id": "5583220000001023979",
+    "sku": "200-120-003",
+    "name": "COTTON ROLL DISP.PUSH BIEGE",
+    "brand": "Push-Style",
+    "category": "120-Cotton Products",
     "parent_category": "",
-    "rate": 11800.0
+    "rate": 23000.0
+  },
+  {
+    "item_id": "5583220000001023033",
+    "sku": "200-120-004",
+    "name": "COTTON ROLL DISPENSER- WHITE",
+    "brand": "Push-Style",
+    "category": "120-Cotton Products",
+    "parent_category": "",
+    "rate": 17500.0
+  },
+  {
+    "item_id": "5583220000000945910",
+    "sku": "160-130-011",
+    "name": "DIATECH FG 835-314-010-4-ML",
+    "brand": "Diatech",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 7500.0
+  },
+  {
+    "item_id": "5583220000000946383",
+    "sku": "160-130-012",
+    "name": "DIATECH FG 835-314-014-4-ML",
+    "brand": "Diatech",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 7500.0
+  },
+  {
+    "item_id": "5583220000000948275",
+    "sku": "160-130-013",
+    "name": "DIATECH FG 850-314-016-10-ML",
+    "brand": "Diatech",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 7500.0
+  },
+  {
+    "item_id": "5583220000000944964",
+    "sku": "160-130-014",
+    "name": "DIATECH FG 859-314-010-10-F",
+    "brand": "Diatech",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 7500.0
+  },
+  {
+    "item_id": "5583220000000947329",
+    "sku": "160-130-015",
+    "name": "DIATECH FG 859-314-010-10UF",
+    "brand": "Diatech",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 7500.0
+  },
+  {
+    "item_id": "5583220000000944018",
+    "sku": "160-130-003",
+    "name": "EDENTA F.G DIAMOND 830/014 CRS",
+    "brand": "Edenta",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 6100.0
+  },
+  {
+    "item_id": "5583220000000944491",
+    "sku": "160-130-004",
+    "name": "EDENTA F.G DIAMOND 835/014 CRS",
+    "brand": "Edenta",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 6100.0
+  },
+  {
+    "item_id": "5583220000000942597",
+    "sku": "160-130-006",
+    "name": "HI-DI DIAMOND BUR FG 650 XF",
+    "brand": "Hi-Di",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 1856.12
+  },
+  {
+    "item_id": "5583220000000943072",
+    "sku": "160-130-007",
+    "name": "HI-DI DIAMOND BUR FG 675 EXTRA",
+    "brand": "Hi-Di",
+    "category": "130-Diamond Burs",
+    "parent_category": "",
+    "rate": 1856.12
   }
 ]
