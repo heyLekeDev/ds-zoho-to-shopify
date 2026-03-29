@@ -100,6 +100,10 @@ BRAND_TRUSTED_DOMAINS = {
     'beesure':   ['beesure.com', 'be-esure.com'],
     'miltex':    ['miltex.com'],
     'roeko':     ['roeko.com', 'coltene.com'],
+    # Clinical bur brands — added in Batch B (2026-03-29)
+    'diatech':   ['coltene.com', 'diatechdentalusa.com'],  # Diatech is a Coltene brand
+    'edenta':    ['edenta.ch', 'edenta.com'],
+    'hi-di':     ['hi-di.com', 'hidi.com'],
     'oral-b':    ['oral-b.com', 'oralb.com'],
     'io':        ['oral-b.com', 'oralb.com'],
     'stages':    ['oral-b.com', 'oralb.com'],
@@ -293,9 +297,33 @@ def search_images_ddg(query, max_results=MAX_CANDIDATES, _retries=3):
                 return []
     return []
 
+# ── SKU-level manual image URL overrides ─────────────────────────────────────
+# Key = Zoho SKU, Value = direct image URL.
+# Used when automated search reliably fails (niche surgical items, geo-blocked
+# manufacturer sites, etc.). These are tried FIRST before any DDG queries.
+# Add entries here after confirming the URL returns an image that passes
+# the Pillow aspect-ratio and resolution checks.
+
+MANUAL_OVERRIDES: dict = {
+    # Example template — add confirmed URLs as they are discovered:
+    # '320-150-008': 'https://store.bicon.com/product/image/large/260-101-xxx_1.jpg',
+}
+
 # ── Image download + validation ───────────────────────────────────────────────
 
+def _normalize_url(url: str) -> str:
+    """Strip Amazon CDN resolution/quality suffixes to get the full-size image.
+
+    e.g. https://m.media-amazon.com/images/I/61XYZ._AC_UF350,350_QL50_.jpg
+      →  https://m.media-amazon.com/images/I/61XYZ.jpg
+    """
+    import re as _re
+    if 'm.media-amazon.com' in url or 'images-na.ssl-images-amazon.com' in url:
+        url = _re.sub(r'\._[A-Z0-9_,]+_(\.[a-zA-Z]+)$', r'\1', url)
+    return url
+
 def download_image(url):
+    url = _normalize_url(url)
     try:
         resp = requests.get(url, timeout=20, headers={
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
@@ -491,8 +519,14 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
 
         candidates = []
 
-        # Priority: try saved source URL on first pass only
-        if not forced_specific and source_url:
+        # Priority 0: MANUAL_OVERRIDES — tried before any search query, first pass only
+        if not forced_specific and sku in MANUAL_OVERRIDES:
+            override_url = MANUAL_OVERRIDES[sku]
+            print(f'     📌 Manual override: {override_url[:80]}')
+            candidates.append({'url': override_url, 'width': 0, 'height': 0})
+
+        # Priority 1: try saved source URL on first pass only
+        elif not forced_specific and source_url:
             print(f'     Trying saved source URL...')
             candidates.append({'url': source_url, 'width': 0, 'height': 0})
 

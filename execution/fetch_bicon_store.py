@@ -27,10 +27,13 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from duckduckgo_search import DDGS
+    from ddgs import DDGS
 except ImportError:
-    print('✗ duckduckgo-search not installed. Run: python3 -m pip install duckduckgo-search')
-    sys.exit(1)
+    try:
+        from duckduckgo_search import DDGS
+    except ImportError:
+        print('✗ ddgs not installed. Run: python3 -m pip install ddgs')
+        sys.exit(1)
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -300,17 +303,18 @@ def fetch_from_store(store_part):
 
 # ── DDG fallback ──────────────────────────────────────────────────────────────
 
-def search_ddg(query, max_results=5):
-    for attempt in range(2):
+def search_ddg(query, max_results=5, _retries=3):
+    for attempt in range(_retries + 1):
         try:
-            results = list(DDGS(timeout=8).images(query, max_results=max_results))
+            results = list(DDGS(timeout=12).images(query, max_results=max_results))
+            time.sleep(5)  # cool-down after successful query
             return [{'url': r.get('image', ''), 'width': r.get('width', 0), 'height': r.get('height', 0)}
                     for r in results if r.get('image')]
         except Exception as e:
             msg = str(e)
             if 'Ratelimit' in msg or '429' in msg or '202' in msg:
-                wait = 90 * (attempt + 1)
-                print(f'     ⚠ DDG rate limited — waiting {wait}s...')
+                wait = 60 * (attempt + 1)
+                print(f'     ⚠ DDG rate limited — waiting {wait}s (attempt {attempt+1}/{_retries+1})...')
                 time.sleep(wait)
             else:
                 print(f'     ⚠ DDG error: {e}')
