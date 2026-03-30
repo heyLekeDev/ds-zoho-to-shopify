@@ -186,7 +186,7 @@ def load_candidates(csv_path):
                 skipped['spare_part'] += 1
                 continue
 
-            # Skip zero-price items — likely not intended for sale
+            # Skip items priced under ₦100 — zero, placeholder (₦1), or nonsensical prices
             try:
                 raw_price = row.get('Selling Price', '0') or '0'
                 # Strip currency prefix (e.g. "NGN 29900.00" → "29900.00")
@@ -196,7 +196,7 @@ def load_candidates(csv_path):
                 price = float(raw_price.strip())
             except ValueError:
                 price = 0.0
-            if price <= 0:
+            if price < 100:
                 skipped['zero_price'] += 1
                 continue
 
@@ -280,7 +280,7 @@ def main():
     print(f'    Non-inventory type  : {skipped["non_inventory"]}')
     print(f'    Excluded categories : {skipped["skip_category"]}  (Services, Training)')
     print(f'    Spare parts         : {skipped["spare_part"]}')
-    print(f'    Zero price          : {skipped["zero_price"]}  (not for sale)')
+    print(f'    Under ₦100          : {skipped["zero_price"]}  (zero, ₦1 placeholders, or nonsensical)')
     print(f'  Eligible candidates   : {len(candidates)}')
 
     # ── Brand filter ─────────────────────────────────────────────

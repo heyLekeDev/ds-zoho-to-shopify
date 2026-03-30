@@ -343,9 +343,9 @@ def group_and_audit(items):
             elif not item.get('image_name'):
                 print(f"  [IMAGE ERROR] {item['sku']} is missing an image.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item is missing an image. Shopify products must have an image.", existing_note=item.get('notes', ''))
-            elif float(item.get('rate') or 0) == 0:
-                print(f"  [PRICE ERROR] {item['sku']} has a price of 0.")
-                update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item has a price of 0. Shopify products must have a valid price.", existing_note=item.get('notes', ''))
+            elif float(item.get('rate') or 0) < 100:
+                print(f"  [PRICE ERROR] {item['sku']} has a price under ₦100 ({item.get('rate')}).")
+                update_zoho_status(item['zoho_id'], "Error uploading", f"Error: Zoho item price ({item.get('rate')}) is under ₦100. Shopify products must have a valid selling price.", existing_note=item.get('notes', ''))
             else:
                 valid_group.append(item)
                 
@@ -371,9 +371,9 @@ def group_and_audit(items):
             elif not item.get('image_name'):
                 print(f"  [IMAGE ERROR] {item['sku']} is missing an image.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item is missing an image. Shopify products must have an image.", existing_note=item.get('notes', ''))
-            elif float(item.get('rate') or 0) == 0:
-                print(f"  [PRICE ERROR] {item['sku']} has a price of 0.")
-                update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item has a price of 0. Shopify products must have a valid price.", existing_note=item.get('notes', ''))
+            elif float(item.get('rate') or 0) < 100:
+                print(f"  [PRICE ERROR] {item['sku']} has a price under ₦100 ({item.get('rate')}).")
+                update_zoho_status(item['zoho_id'], "Error uploading", f"Error: Zoho item price ({item.get('rate')}) is under ₦100. Shopify products must have a valid selling price.", existing_note=item.get('notes', ''))
             elif not item.get('description', '').strip():
                 print(f"  [DESCRIPTION ERROR] {item['sku']} is missing a description.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "[ERROR]: Missing Description. Items must have detailed content before syncing to Shopify.", existing_note=item.get('notes', ''))

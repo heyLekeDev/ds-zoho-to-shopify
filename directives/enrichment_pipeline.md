@@ -56,7 +56,8 @@ All 12 statuses. Scripts only process items in their input status and write to t
 1. Reads the local inventory CSV (e.g., `DS inventory Jan 31 26.csv`) — **no API call needed for selection**.
 2. Excludes items with any existing status (blank check on `cf_shopify_status`).
 3. Excludes items with status `Ignore`.
-4. Sorts candidates by priority:
+4. Excludes items with Selling Price < ₦100 — zero prices, ₦1 placeholders, and any price below ₦100 are silently skipped. These are not intended for sale.
+5. Sorts candidates by priority:
    - Primary: Sales volume (if available in CSV)
    - Secondary: Category (implants → instruments → consumables → apparel)
 5. Takes the top N items (default batch size: 50).
@@ -163,7 +164,7 @@ All 12 rules are run in order:
 - [ ] Item is `Inventory` type (tracked stock)
 - [ ] Description field is not empty (`cf_description_html`)
 - [ ] Image is attached (already confirmed in Stage 3, re-verified here)
-- [ ] Price > $0.00
+- [ ] Price ≥ ₦100 — items priced below ₦100 (including ₦0 and ₦1 placeholder prices) are excluded entirely. These are either unpriced items, data entry errors, or internal records not intended for sale.
 
 **Smart Grouping**
 - [ ] If item is Standalone: no variant name/value fields populated
@@ -200,6 +201,84 @@ On any failure:
 ### Human confirmation gate
 
 After running, **review the Zoho view "Queue for Upload"** to do a final sanity check before triggering the live sync to Shopify.
+
+---
+
+## Out-of-Band Shopify Changes — Zoho Write-Back (MANDATORY)
+
+When any grouping, restructuring, or metadata change is made **directly on Shopify** (outside the normal pipeline flow), the corresponding Zoho custom fields **must be updated immediately** to keep Zoho as the source of truth.
+
+### Fields that must stay in sync
+
+Only the following Shopify sync fields may be written. Core item fields (name, sku, rate, unit, item_type, stock, tax, vendor fields) must never be touched.
+
+| Zoho Custom Field | What it holds |
+|---|---|
+| `cf_source_url` | URL where the product image was sourced |
+| `cf_shopify_status` | Pipeline stage (Queue for Enrichment → Published) |
+| `cf_shopify_collection` | Shopify product group name (= product title when grouped) |
+| `cf_shopify_var_1_name` | Option 1 name (e.g., `Shape & ISO Code`) |
+| `cf_shopify_var_1_value` | Option 1 value for this specific SKU |
+| `cf_shopify_var_2_name` | Option 2 name |
+| `cf_shopify_var_2_value` | Option 2 value for this specific SKU |
+| `cf_shopify_var_3_name` | Option 3 name |
+| `cf_shopify_var_3_value` | Option 3 value for this specific SKU |
+| `cf_shopify_sync_notes` | Detailed notes on what was done and why |
+| `cf_sync_result` | Short result summary visible in list view |
+| `cf_enriched_title` | The Shopify product title this item belongs to |
+| `cf_shopify_tags` | Comma-separated Shopify tags |
+| `cf_shopify_product_type` | Shopify product type |
+| `cf_description_html` | HTML product description |
+
+### When to trigger a write-back
+
+Any time you:
+- Merge standalone products into a group (add `cf_shopify_collection`, `cf_shopify_var_1_name/value`)
+- Rename a Shopify product (`cf_enriched_title`)
+- Change option names or values for a variant (`cf_shopify_var_*`)
+- Archive a duplicate product (note the reason in `cf_shopify_sync_notes`)
+
+### How to write back
+
+Use the Zoho Inventory API:
+```python
+requests.put(f'https://www.zohoapis.com/inventory/v1/items/{item_id}',
+    headers={'Authorization': f'Zoho-oauthtoken {token}'},
+    params={'organization_id': ORG},
+    json={'custom_fields': [
+        {'api_name': 'cf_shopify_collection', 'value': 'Diatech FG Diamond Bur'},
+        {'api_name': 'cf_enriched_title',     'value': 'Diatech FG Diamond Bur'},
+        {'api_name': 'cf_shopify_var_1_name',  'value': 'Shape & Detail'},
+        {'api_name': 'cf_shopify_var_1_value', 'value': '368 — 020 / Extra Fine'},
+    ]}
+)
+```
+
+Locate items by SKU:
+```python
+requests.get('https://www.zohoapis.com/inventory/v1/items',
+    headers=..., params={'organization_id': ORG, 'sku': '160-130-008'})
+```
+
+If a SKU is not found, try searching by name (`search_text`) — legacy pipeline items may have been uploaded to Shopify with incorrect SKUs. In that case, **correct the SKU on Shopify** to match Zoho (Zoho SKU is always the source of truth).
+
+### Safety enforcement
+
+The write-back function must enforce an explicit allowlist. Any attempt to write a field not in the list above must abort with an error:
+```python
+ALLOWED_FIELDS = {
+    'cf_source_url', 'cf_shopify_status', 'cf_shopify_collection',
+    'cf_shopify_var_1_name', 'cf_shopify_var_1_value',
+    'cf_shopify_var_2_name', 'cf_shopify_var_2_value',
+    'cf_shopify_var_3_name', 'cf_shopify_var_3_value',
+    'cf_shopify_sync_notes', 'cf_sync_result',
+    'cf_enriched_title', 'cf_shopify_tags',
+    'cf_shopify_product_type', 'cf_description_html',
+}
+for key in fields_to_write:
+    if key not in ALLOWED_FIELDS:
+        raise ValueError(f'SAFETY ABORT: attempt to write prohibited field {key!r}')
+```
 
 ---
 

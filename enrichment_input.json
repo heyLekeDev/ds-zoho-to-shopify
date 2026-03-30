@@ -1,119 +1,245 @@
 [
   {
-    "item_id": "5583220000000944018",
-    "sku": "160-130-003",
-    "name": "EDENTA F.G DIAMOND 830/014 CRS",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 6100.0
+    "item_id": "5583220000000933099",
+    "sku": "140-120-001",
+    "name": "15X20MM RESORBABLE MEMBRANE",
+    "brand": "Bicon",
+    "category": "120-Resorbable Membranes",
+    "parent_category": "",
+    "rate": 224500.0
   },
   {
-    "item_id": "5583220000000944491",
-    "sku": "160-130-004",
-    "name": "EDENTA F.G DIAMOND 835/014 CRS",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 6100.0
+    "item_id": "5583220000000933572",
+    "sku": "140-120-002",
+    "name": "20X30MM RESORBABLE MEMBRANE",
+    "brand": "Bicon",
+    "category": "120-Resorbable Membranes",
+    "parent_category": "",
+    "rate": 245900.0
   },
   {
-    "item_id": "5583220000000943545",
-    "sku": "160-130-005",
-    "name": "H/KULZER DIAMOND BUR FG 646SF",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7200.0
+    "item_id": "5583220000000973833",
+    "sku": "140-120-003",
+    "name": "30PCS MEMBRANE FOR EV DIST.",
+    "brand": "Generic",
+    "category": "120-Resorbable Membranes",
+    "parent_category": "",
+    "rate": 13719.856
   },
   {
-    "item_id": "5583220000000942597",
-    "sku": "160-130-006",
-    "name": "HI-DI DIAMOND BUR FG 650 XF",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 1856.12
+    "item_id": "5583220000000915075",
+    "sku": "260-150-007",
+    "name": "4.0MM LATCH REAMER",
+    "brand": "Bicon",
+    "category": "150-Files & Reamers",
+    "parent_category": "",
+    "rate": 119500.0
   },
   {
-    "item_id": "5583220000000943072",
-    "sku": "160-130-007",
-    "name": "HI-DI DIAMOND BUR FG 675 EXTRA",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 1856.12
+    "item_id": "5583220000000915548",
+    "sku": "260-150-010",
+    "name": "4.5MM LATCH REAMER",
+    "brand": "Bicon",
+    "category": "150-Files & Reamers",
+    "parent_category": "",
+    "rate": 119500.0
   },
   {
-    "item_id": "5583220000000947802",
-    "sku": "160-130-008",
-    "name": "DIATECH FG 368-314-020-5-XF",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000916021",
+    "sku": "260-150-012",
+    "name": "5.0MM LATCH REAMER",
+    "brand": "Bicon",
+    "category": "150-Files & Reamers",
+    "parent_category": "",
+    "rate": 119500.0
   },
   {
-    "item_id": "5583220000000945437",
-    "sku": "160-130-009",
-    "name": "DIATECH FG 368-314-023-5-F",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000916494",
+    "sku": "260-150-016",
+    "name": "5.5MM LATCH REAMER",
+    "brand": "Bicon",
+    "category": "150-Files & Reamers",
+    "parent_category": "",
+    "rate": 119500.0
   },
   {
-    "item_id": "5583220000000946856",
-    "sku": "160-130-010",
-    "name": "DIATECH FG 830-314-012-2.7-ML",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000001502493",
+    "sku": "140-120-004",
+    "name": "BIO-GIDE (25x25MM)",
+    "brand": "Geistlich",
+    "category": "120-Resorbable Membranes",
+    "parent_category": "",
+    "rate": 390750.0
   },
   {
-    "item_id": "5583220000000945910",
-    "sku": "160-130-011",
-    "name": "DIATECH FG 835-314-010-4-ML",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000934536",
+    "sku": "140-110-001",
+    "name": "BIO-OSS - 0.5GM",
+    "brand": "Geistlich",
+    "category": "110-Bone Substitutes",
+    "parent_category": "",
+    "rate": 271500.0
   },
   {
-    "item_id": "5583220000000946383",
-    "sku": "160-130-012",
-    "name": "DIATECH FG 835-314-014-4-ML",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000939284",
+    "sku": "160-120-004",
+    "name": "BURS - CARBIDE FG 558",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 3800.0
   },
   {
-    "item_id": "5583220000000948275",
-    "sku": "160-130-013",
-    "name": "DIATECH FG 850-314-016-10-ML",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000939757",
+    "sku": "160-120-005",
+    "name": "BURS - CARBIDE FG GW2",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 11500.0
   },
   {
-    "item_id": "5583220000000944964",
-    "sku": "160-130-014",
-    "name": "DIATECH FG 859-314-010-10-F",
-    "brand": "",
-    "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "item_id": "5583220000000941649",
+    "sku": "160-120-006",
+    "name": "BURS - CARBIDE HP8",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 500.138333
   },
   {
-    "item_id": "5583220000000947329",
-    "sku": "160-130-015",
-    "name": "DIATECH FG 859-314-010-10UF",
-    "brand": "",
+    "item_id": "5583220000000940230",
+    "sku": "160-140-003",
+    "name": "BURS - SSW RA-3 - SLOW ROUND",
+    "brand": "SS White",
+    "category": "140-Surgical Burs",
+    "parent_category": "",
+    "rate": 496.263125
+  },
+  {
+    "item_id": "5583220000000940703",
+    "sku": "160-140-004",
+    "name": "BURS - SSW RA-5 - SLOW ROUND",
+    "brand": "SS White",
+    "category": "140-Surgical Burs",
+    "parent_category": "",
+    "rate": 1122.626667
+  },
+  {
+    "item_id": "5583220000000941176",
+    "sku": "160-140-005",
+    "name": "BURS - SSW RA-8 - SLOW ROUND",
+    "brand": "SS White",
+    "category": "140-Surgical Burs",
+    "parent_category": "",
+    "rate": 4750.0
+  },
+  {
+    "item_id": "5583220000000948748",
+    "sku": "160-140-006",
+    "name": "BURS - SURGICAL CARBIDE FG957",
+    "brand": "SS White",
+    "category": "140-Surgical Burs",
+    "parent_category": "",
+    "rate": 4800.0
+  },
+  {
+    "item_id": "5583220000001441063",
+    "sku": "160-130-002",
+    "name": "DIAMOND BURS FG 557-UNODENT",
+    "brand": "UnoDent",
     "category": "130-Diamond Burs",
-    "parent_category": "160-Burs",
-    "rate": 7500.0
+    "parent_category": "",
+    "rate": 3600.0
+  },
+  {
+    "item_id": "5583220000001040536",
+    "sku": "160-120-010",
+    "name": "ENDO - Z CARBIDE BUR (3PK)",
+    "brand": "Maillefer",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 28000.0
+  },
+  {
+    "item_id": "5583220000001060402",
+    "sku": "160-120-011",
+    "name": "ENDO - Z CARBIDE BUR (5PK)",
+    "brand": "Maillefer",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 45000.0
+  },
+  {
+    "item_id": "5583220000000935027",
+    "sku": "140-110-002",
+    "name": "ETHOSS 0.5CC SYNTHETIC BONE",
+    "brand": "Ethoss",
+    "category": "110-Bone Substitutes",
+    "parent_category": "",
+    "rate": 490200.0
+  },
+  {
+    "item_id": "5583220000000935500",
+    "sku": "140-110-003",
+    "name": "ETHOSS 1CC SYNTHETIC BONE",
+    "brand": "Ethoss",
+    "category": "110-Bone Substitutes",
+    "parent_category": "",
+    "rate": 649760.0
+  },
+  {
+    "item_id": "5583220000000942122",
+    "sku": "160-120-008",
+    "name": "SSW FG BURS #1557",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 4200.0
+  },
+  {
+    "item_id": "5583220000000950167",
+    "sku": "160-120-012",
+    "name": "STERILE SURGERY HP #702 51MM",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 17700.0
+  },
+  {
+    "item_id": "5583220000000950640",
+    "sku": "160-120-013",
+    "name": "STERILE SURGERY HP #703 51MM",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 17700.0
+  },
+  {
+    "item_id": "5583220000000949221",
+    "sku": "160-120-014",
+    "name": "STERILE SURGERY HP #8 51MM",
+    "brand": "SS White",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 17700.0
+  },
+  {
+    "item_id": "5583220000000932626",
+    "sku": "140-110-004",
+    "name": "SYNTHOGRAFT 1.0G (500-1000)",
+    "brand": "Bicon",
+    "category": "110-Bone Substitutes",
+    "parent_category": "",
+    "rate": 150100.0
+  },
+  {
+    "item_id": "5583220000000951113",
+    "sku": "160-120-009",
+    "name": "TRI HAWK BURS TALON 12",
+    "brand": "Tri Hawk",
+    "category": "120-Carbide Burs",
+    "parent_category": "",
+    "rate": 3800.0
   }
 ]
