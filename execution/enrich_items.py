@@ -361,6 +361,8 @@ def run_write(dry_run):
                     {'api_name': 'cf_shopify_var_1_value',  'value': result.get('variant_1_value') or ''},
                     {'api_name': 'cf_shopify_var_2_name',   'value': result.get('variant_2_name') or ''},
                     {'api_name': 'cf_shopify_var_2_value',  'value': result.get('variant_2_value') or ''},
+                    {'api_name': 'cf_shopify_var_3_name',   'value': result.get('variant_3_name') or ''},
+                    {'api_name': 'cf_shopify_var_3_value',  'value': result.get('variant_3_value') or ''},
                 ]
             }
             if desc:

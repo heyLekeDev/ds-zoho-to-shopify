@@ -297,7 +297,8 @@ def group_and_audit(items):
             item = group[0]
             
             # 1. Orphaned Variant Name Check
-            if item.get('v1_name') or item.get('v2_name') or item.get('v3_name'):
+            # Only v1_name is authoritative — v2/v3 stale values from old enrichment are ignored
+            if item.get('v1_name'):
                 print(f"  [ORPHANED VARIANT ERROR] {item['sku']} is standalone but has variant names.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "[ERROR] Data Mismatch: Single products should not have variant names/values.", existing_note=item.get('notes', ''))
                 continue
@@ -432,7 +433,7 @@ def check_image_aspect_ratio(zoho_id, image_name):
     Returns (True, None) if safe (0.8 - 1.2), or (False, ErrorMsg) if invalid.
     """
     url = f"{ZOHO_API_BASE}/items/{zoho_id}/image"
-    resp = requests.get(url, headers=zoho_headers(), timeout=15)
+    resp = requests.get(url, headers=zoho_headers(), params={'organization_id': ZOHO_ORG_ID}, timeout=15)
     if not resp.ok:
         return False, f"Image download failed: {resp.status_code}"
     
@@ -539,9 +540,10 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                 
     if ratio_error:
         print(f"  [GROUP ABORT] Group '{group_name}' failed visual integrity check (Aspect Ratio).")
+        abort_updates = []
         for item in items:
-             zoho_updates.append((item['zoho_id'], "Error uploading", ratio_error, zoho_id_to_notes.get(item['zoho_id'], '')))
-        return zoho_updates
+            abort_updates.append((item['zoho_id'], "Error uploading", ratio_error, zoho_id_to_notes.get(item['zoho_id'], '')))
+        return abort_updates
 
     # 1. Search for existing Shopify Product by resolved title
     search_q = f'title:"{shopify_title}"'
@@ -587,7 +589,20 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                 media_edges = node.get('media', {}).get('edges', [])
                 shopify_media[node['sku']] = [{'id': m['node']['id'], 'alt': m['node'].get('alt')} for m in media_edges]
 
-    # 2. Categorize items into Bulk Operations
+    # 2. Pre-scan group to collect ALL option values for product shell creation.
+    # Without this, the shell is created with only the first item's value, and
+    # productVariantsBulkCreate fails with "Option does not exist" for subsequent variants.
+    product_option_map = {}  # {option_name: [ordered list of values]}
+    for _item in items:
+        for dim in ['v1', 'v2', 'v3']:
+            n = _item.get(f'{dim}_name')
+            v = _item.get(f'{dim}_val')
+            if n and v:
+                product_option_map.setdefault(n, [])
+                if v not in product_option_map[n]:
+                    product_option_map[n].append(v)
+
+    # 2b. Categorize items into Bulk Operations
     to_update = [] # (z_id, v_input, sku, hash, shopify_media)
     to_create = [] # (z_id, v_input, sku, hash, shopify_media)
     to_delete = [] # (z_id, v_id, sku)
@@ -663,11 +678,14 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
             # Mandate: Use bulk mutations for ALL variants. 
             print(f"  Action: Initial Product Shell Create for {sku}")
             if not dry_run:
-                # Build productOptions with at least one value each (Mandatory in 2024-01)
-                p_opts = []
-                if item.get('v1_name'): p_opts.append({"name": item['v1_name'], "values": [{"name": item['v1_val']}]})
-                if item.get('v2_name'): p_opts.append({"name": item['v2_name'], "values": [{"name": item['v2_val']}]})
-                if item.get('v3_name'): p_opts.append({"name": item['v3_name'], "values": [{"name": item['v3_val']}]})
+                # Build productOptions using ALL values pre-scanned from the group,
+                # so every variant's option value already exists when productVariantsBulkCreate runs.
+                p_opts = [
+                    {"name": opt_name, "values": [{"name": val} for val in vals]}
+                    for opt_name, vals in product_option_map.items()
+                ]
+                if not p_opts and item.get('v1_name'):
+                    p_opts = [{"name": item['v1_name'], "values": [{"name": item['v1_val']}]}]
 
                 # Build Product Metadata
                 raw_tags = item.get('shopify_tags', '')
