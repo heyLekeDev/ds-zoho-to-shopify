@@ -271,6 +271,78 @@ def fetch_pending_items():
     print(f"\nPhase 1 Complete: Found total {len(pending)} items to sync (max 200).")
     return pending
 
+
+def fetch_items_by_skus(skus: list) -> list:
+    """
+    Phase 1 alternative: fetch specific items by SKU directly from the Zoho
+    item-detail API, bypassing the custom view.  Used when the custom view
+    does not include a given item's category.
+    """
+    import json as _json
+
+    # Build a sku→item_id map from enrichment_input.json (if present)
+    input_file = os.path.join(os.path.dirname(__file__), '..', 'enrichment_input.json')
+    sku_to_id: dict = {}
+    if os.path.exists(input_file):
+        with open(input_file) as f:
+            for entry in _json.load(f):
+                if entry.get('sku'):
+                    sku_to_id[entry['sku']] = entry['item_id']
+
+    print(f"Phase 1 (SKU override): Fetching {len(skus)} item(s) directly from Zoho...")
+    pending = []
+
+    for sku in skus:
+        item_id = sku_to_id.get(sku)
+        if not item_id:
+            print(f"      ✗ {sku}: not found in enrichment_input.json")
+            continue
+
+        url = f"{ZOHO_API_BASE}/items/{item_id}"
+        resp = requests.get(url, headers=zoho_headers(),
+                            params={'organization_id': ZOHO_ORG_ID}, timeout=15)
+        if not resp.ok:
+            print(f"      ✗ {sku}: HTTP {resp.status_code}")
+            continue
+
+        item = resp.json().get('item', {})
+        cfs = {cf['api_name']: cf.get('value', '') for cf in item.get('custom_fields', [])}
+
+        status_str = cfs.get('cf_shopify_status', '')
+        flat_item = {
+            'zoho_id':              item['item_id'],
+            'sku':                  item.get('sku', sku),
+            'name':                 item.get('name', ''),
+            'rate':                 item.get('rate', 0),
+            'description':          cfs.get('cf_description_html', '') or item.get('description', ''),
+            'brand':                item.get('brand', ''),
+            'enriched_title':       cfs.get('cf_enriched_title', ''),
+            'shopify_product_type': cfs.get('cf_shopify_product_type', ''),
+            'shopify_tags':         cfs.get('cf_shopify_tags', ''),
+            'category':             item.get('category_name', ''),
+            'subcategory':          item.get('sub_category_name', ''),
+            'status':               status_str,
+            'collection':           cfs.get('cf_shopify_collection', ''),
+            'v1_name':              cfs.get('cf_shopify_var_1_name', ''),
+            'v1_val':               cfs.get('cf_shopify_var_1_value', ''),
+            'v2_name':              cfs.get('cf_shopify_var_2_name', ''),
+            'v2_val':               cfs.get('cf_shopify_var_2_value', ''),
+            'v3_name':              cfs.get('cf_shopify_var_3_name', ''),
+            'v3_val':               cfs.get('cf_shopify_var_3_value', ''),
+            'image_name':           item.get('image_name', ''),
+            'image_type':           item.get('image_type', ''),
+            'notes':                cfs.get('cf_shopify_sync_notes', ''),
+            'item_type':            item.get('item_type', ''),
+            'stock_on_hand':        item.get('stock_on_hand', 0),
+        }
+
+        pending.append(flat_item)
+        print(f"      ✓ {sku} [{status_str}] (Direct Fetch)")
+
+    print(f"\nPhase 1 Complete: Found total {len(pending)} items to sync.")
+    return pending
+
+
 # --- Phase 2: Group & Audit ---
 def group_and_audit(items):
     """
@@ -1219,11 +1291,16 @@ def sync_all(groups, dry_run=False, cache=None, active_publications=None):
 def main():
     parser = argparse.ArgumentParser(description="Zoho to Shopify Overhaul Sync")
     parser.add_argument("--dry-run", action="store_true", help="Preview actions without sync")
+    parser.add_argument("--skus", help="Comma-separated SKUs to sync directly (bypasses custom view)")
     args = parser.parse_args()
 
     cache = load_cache()
     try:
-        pending = fetch_pending_items()
+        if args.skus:
+            skus = [s.strip() for s in args.skus.split(',') if s.strip()]
+            pending = fetch_items_by_skus(skus)
+        else:
+            pending = fetch_pending_items()
         if not pending:
             print("No items pending sync. Exiting.")
             return
