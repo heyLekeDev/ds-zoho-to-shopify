@@ -410,7 +410,7 @@ def group_and_audit(items):
             
         valid_group = []
         for item in group:
-            if item.get('item_type') != 'inventory':
+            if item.get('item_type') not in ('inventory', 'sales_and_purchases', 'sales', 'purchases'):
                 print(f"  [INVENTORY ERROR] {item['sku']} is not an inventory type.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item must be 'Inventory' type to track on Shopify.", existing_note=item.get('notes', ''))
             elif not item.get('image_name'):
@@ -438,7 +438,7 @@ def group_and_audit(items):
             key = f"STANDALONE-{item['sku']}"
             
             # Apply standard inventory/image/price checks to the valid standalone item
-            if item.get('item_type') != 'inventory':
+            if item.get('item_type') not in ('inventory', 'sales_and_purchases', 'sales', 'purchases'):
                 print(f"  [INVENTORY ERROR] {item['sku']} is not an inventory type.")
                 update_zoho_status(item['zoho_id'], "Error uploading", "Error: Zoho item must be 'Inventory' type to track on Shopify.", existing_note=item.get('notes', ''))
             elif not item.get('image_name'):
@@ -700,17 +700,19 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
 
         # Prepare variant input
         # Prepare variant input (Mandate: Nest SKU for 2024-01/04 compatibility)
+        _is_service = item.get('item_type') != 'inventory'
         v_input = {
             "price": str(item['rate']),
-            "inventoryItem": {"sku": sku, "tracked": True},
-            "inventoryPolicy": "DENY",
-            "inventoryQuantities": [
+            "inventoryItem": {"sku": sku, "tracked": not _is_service},
+            "inventoryPolicy": "CONTINUE" if _is_service else "DENY",
+        }
+        if not _is_service:
+            v_input["inventoryQuantities"] = [
                 {
                     "locationId": "gid://shopify/Location/96401326361",
                     "availableQuantity": int(float(item.get('stock_on_hand', 0)))
                 }
             ]
-        }
         
         # Map options for Bulk Creation compatibility
         opt_names = [item.get('v1_name'), item.get('v2_name'), item.get('v3_name')]
@@ -892,7 +894,7 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                     if success:
                         # Phase 17: Secondary execution to align inventory for updated variants
                         inv_id = shopify_inv_items.get(sku)
-                        if item_data and inv_id:
+                        if item_data and inv_id and item_data.get('item_type') == 'inventory':
                             qty = int(float(item_data.get('stock_on_hand', 0)))
                             inv_res = shopify_graphql("""
                                 mutation inventorySetOnHandQuantities($input: InventorySetOnHandQuantitiesInput!) {
@@ -992,11 +994,12 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                 c_variants = []
                 for item, info in item_infos:
                     sku = item['sku']
+                    _is_svc = item.get('item_type') != 'inventory'
                     v_input = {
                         "id": info['variant_id'],
                         "price": str(item['rate']),
-                        "inventoryItem": {"sku": sku, "tracked": True},
-                        "inventoryPolicy": "DENY",
+                        "inventoryItem": {"sku": sku, "tracked": not _is_svc},
+                        "inventoryPolicy": "CONTINUE" if _is_svc else "DENY",
                     }
                     c_variants.append((item, info, v_input))
 
@@ -1014,9 +1017,9 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                         zoho_updates.append((z_id, "Error uploading", f"Collision update failed: {json.dumps(errs)}", zoho_id_to_notes.get(z_id, '')))
                         continue
 
-                    # Sync inventory for the collision variant
+                    # Sync inventory for the collision variant (skip for service items)
                     inv_id = info.get('inv_item_id')
-                    if inv_id:
+                    if inv_id and item.get('item_type') == 'inventory':
                         qty = int(float(item.get('stock_on_hand', 0)))
                         shopify_graphql("""
                             mutation inventorySetOnHandQuantities($input: InventorySetOnHandQuantitiesInput!) {

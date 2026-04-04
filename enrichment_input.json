@@ -1,974 +1,344 @@
 [
   {
-    "item_id": "5583220000001282742",
-    "sku": "200-230-003",
-    "name": "ALCOHOL PAD (100PK)",
-    "brand": "Prep-Pad",
-    "category": "230-Wipes",
-    "parent_category": "",
-    "rate": 610.0
-  },
-  {
-    "item_id": "5583220000001124265",
-    "sku": "200-210-001",
-    "name": "APRONS POLYTHENE 686  X 1066MM",
-    "brand": "Disposable",
-    "category": "210-Surgical Gowns & Caps",
-    "parent_category": "",
-    "rate": 7500.0
-  },
-  {
-    "item_id": "5583220000001502419",
-    "sku": "580-120-001",
-    "name": "AUTOCLAVE C-17",
-    "brand": "Euronda",
-    "category": "120-Heat Sterilizers",
-    "parent_category": "",
-    "rate": 6750000.0
-  },
-  {
-    "item_id": "5583220000001086421",
-    "sku": "580-120-002",
-    "name": "AUTOCLAVE SEALS",
-    "brand": "Eschmann",
-    "category": "120-Heat Sterilizers",
-    "parent_category": "",
-    "rate": 6550.0
-  },
-  {
-    "item_id": "5583220000001132781",
-    "sku": "200-110-001",
-    "name": "BARRIER FILM DISPENSER",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 23450.0
-  },
-  {
-    "item_id": "5583220000001014046",
-    "sku": "200-170-003",
-    "name": "BRIGHTWAY POWDER-FREE NITRILE",
-    "brand": "Brightway",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 7950.0
-  },
-  {
-    "item_id": "5583220000001761301",
-    "sku": "200-230-002",
-    "name": "CLEANCIDE WIPES (80/PK)",
-    "brand": "CleanCide",
-    "category": "230-Wipes",
-    "parent_category": "",
-    "rate": 8100.0
-  },
-  {
-    "item_id": "5583220000001502803",
-    "sku": "200-230-001",
-    "name": "CLINELL UNIV. SANITIZING WIPES",
-    "brand": "Clinell",
-    "category": "230-Wipes",
-    "parent_category": "",
-    "rate": 29700.0
-  },
-  {
-    "item_id": "5583220000001117170",
-    "sku": "200-110-002",
-    "name": "DISPOSA SHIELD NO. 2- 65090002",
-    "brand": "Disposa-Shield",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 54900.0
-  },
-  {
-    "item_id": "5583220000001117643",
-    "sku": "200-110-024",
-    "name": "DISPOSA SHIELD NO. 3- 65090003",
-    "brand": "Disposa-Shield",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 54900.0
-  },
-  {
-    "item_id": "5583220000001118116",
-    "sku": "200-110-023",
-    "name": "DISPOSA SHIELD NO. 4- 65090004",
-    "brand": "Disposa-Shield",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 54900.0
-  },
-  {
-    "item_id": "5583220000000997487",
-    "sku": "200-110-025",
-    "name": "EVA BAGS",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 19400.0
-  },
-  {
-    "item_id": "5583220000001086894",
-    "sku": "200-140-001",
-    "name": "EVACUATOR TIPS",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 9500.0
-  },
-  {
-    "item_id": "5583220000001113386",
-    "sku": "200-150-006",
-    "name": "FACE MASKS - COMFIT",
-    "brand": "ComFit",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 18000.0
-  },
-  {
-    "item_id": "5583220000001014519",
-    "sku": "200-170-004",
-    "name": "GLOVES NITRILE UTILITY - SIZE7",
-    "brand": "Generic",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 22000.0
-  },
-  {
-    "item_id": "5583220000001017357",
-    "sku": "200-170-005",
-    "name": "GLOVES NITRILE UTILITY - SIZE8",
-    "brand": "Generic",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 22000.0
-  },
-  {
-    "item_id": "5583220000001017830",
-    "sku": "200-170-006",
-    "name": "GLOVES NITRILE UTILITY - SIZE9",
-    "brand": "Generic",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 22000.0
-  },
-  {
-    "item_id": "5583220000001018776",
-    "sku": "200-170-008",
-    "name": "GLOVES NITRILE UTILITY -SIZE10",
-    "brand": "Generic",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 22000.0
-  },
-  {
-    "item_id": "5583220000001018303",
-    "sku": "200-170-009",
-    "name": "GLOVES-LARGE-BLOSSOM/POWDER FREE",
-    "brand": "Blossom",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 25230.0
-  },
-  {
-    "item_id": "5583220000001122846",
-    "sku": "200-110-003",
-    "name": "GOOGLES OFFICE PACK",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 23700.0
-  },
-  {
-    "item_id": "5583220000001124740",
-    "sku": "200-210-002",
-    "name": "HEAD CAPS DISPOSABLE BLUE (20)",
-    "brand": "Bouffant",
-    "category": "210-Surgical Gowns & Caps",
-    "parent_category": "",
-    "rate": 9000.0
-  },
-  {
-    "item_id": "5583220000001122373",
-    "sku": "200-210-003",
-    "name": "HEAD COVERS 100PK (D NOTEC)",
-    "brand": "Spunbond",
-    "category": "210-Surgical Gowns & Caps",
-    "parent_category": "",
-    "rate": 2000.0
-  },
-  {
-    "item_id": "5583220000001121900",
-    "sku": "200-210-004",
-    "name": "HEAD NET",
-    "brand": "Mesh-Net",
-    "category": "210-Surgical Gowns & Caps",
-    "parent_category": "",
-    "rate": 6600.0
-  },
-  {
-    "item_id": "5583220000001115278",
-    "sku": "200-110-018",
-    "name": "HEADREST COVERS 9 1/2 X 11",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 41000.0
-  },
-  {
-    "item_id": "5583220000000978090",
-    "sku": "580-120-003",
-    "name": "IMPLANTOR L STERIL (F65200000)",
-    "brand": "CEFLA",
-    "category": "120-Heat Sterilizers",
-    "parent_category": "",
-    "rate": 882929.95
-  },
-  {
-    "item_id": "5583220000001100613",
-    "sku": "200-140-013",
-    "name": "INTRA ORAL TIPS (YELLOW)",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 34100.0
-  },
-  {
-    "item_id": "5583220000001145554",
-    "sku": "200-150-007",
-    "name": "N'SURE PATTERN MASK FLOWER BLUE (50/PK)",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 21100.0
-  },
-  {
-    "item_id": "5583220000001130416",
-    "sku": "200-150-008",
-    "name": "N'SURE PATTERN MASK LEAF GREEN",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 21100.0
-  },
-  {
-    "item_id": "5583220000001145081",
-    "sku": "200-150-009",
-    "name": "N'SURE PATTERN MASK LEAFS BLUE",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 21100.0
-  },
-  {
-    "item_id": "5583220000001126159",
-    "sku": "200-150-010",
-    "name": "N'SURE SAFEMARK L3 BLUE MASK",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 19400.0
-  },
-  {
-    "item_id": "5583220000001127105",
-    "sku": "200-150-011",
-    "name": "N'SURE SAFEMARK L3 LAVENDER",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 19400.0
-  },
-  {
-    "item_id": "5583220000001126632",
-    "sku": "200-150-012",
-    "name": "N'SURE SAFEMARK L3 PINK MASK",
-    "brand": "N'SURE",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 19400.0
-  },
-  {
-    "item_id": "5583220000001120481",
-    "sku": "500-130-001",
-    "name": "N'SURE SENSOR COVER 2 1/2 X10",
-    "brand": "N'SURE",
-    "category": "130-Film Holders & Barriers",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001120008",
-    "sku": "500-130-002",
-    "name": "N'SURE SENSOR COVER 8 X 1.3/8",
-    "brand": "N'SURE",
-    "category": "130-Film Holders & Barriers",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001119535",
-    "sku": "500-130-003",
-    "name": "N'SURE SENSOR COVER 8 X 1.5/8",
-    "brand": "N'SURE",
-    "category": "130-Film Holders & Barriers",
-    "parent_category": "",
-    "rate": 15000.0
-  },
-  {
-    "item_id": "5583220000001137986",
-    "sku": "200-110-019",
-    "name": "OMNIA HEADREST COVER WATERPROO",
-    "brand": "Omnia",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 16800.0
-  },
-  {
-    "item_id": "5583220000001121427",
-    "sku": "200-110-004",
-    "name": "OP-D-OP II VISOR - MINT GREEN",
-    "brand": "OP-D-OP",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 179400.0
-  },
-  {
-    "item_id": "5583220000001128524",
-    "sku": "200-110-005",
-    "name": "OP-D-OP VISOR W/3 SHIELDS BLUE",
-    "brand": "OP-D-OP",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 173900.0
-  },
-  {
-    "item_id": "5583220000001128997",
-    "sku": "200-110-006",
-    "name": "OP-D-OP VISOR W/3 SHIELDS PEAC",
-    "brand": "OP-D-OP",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 173900.0
-  },
-  {
-    "item_id": "5583220000001131362",
-    "sku": "200-110-007",
-    "name": "OP-D-OP VISOR W/3 SHIELDS VIOL",
-    "brand": "OP-D-OP",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 173900.0
-  },
-  {
-    "item_id": "5583220000001272807",
-    "sku": "200-110-008",
-    "name": "ORO-GUARD FILM (LARGE) (5/PK)",
-    "brand": "ORO",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 1002.18211
-  },
-  {
-    "item_id": "5583220000001272334",
-    "sku": "200-110-009",
-    "name": "ORO-GUARD FILM (MEDIUM) (5/PK)",
-    "brand": "ORO",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 1002.182122
-  },
-  {
-    "item_id": "5583220000001271861",
-    "sku": "200-110-010",
-    "name": "ORO-GUARD FILM (SMALL) (5/PK)",
-    "brand": "ORO",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 1002.18205
-  },
-  {
-    "item_id": "5583220000001501563",
-    "sku": "580-130-001",
-    "name": "PQ POUCHES 12\" X 15\" (100PK) (PEARSON)",
-    "brand": "Pearson",
-    "category": "130-Sterilization Pouches",
-    "parent_category": "",
-    "rate": 56500.0
-  },
-  {
-    "item_id": "5583220000005332224",
-    "sku": "200-110-011",
-    "name": "PROTECTIVE EYE GOOGLE- GREEN",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 9450.0
-  },
-  {
-    "item_id": "5583220000005356019",
-    "sku": "200-110-012",
-    "name": "PROTECTIVE GOOGLE- RED",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 10125.0
-  },
-  {
-    "item_id": "5583220000001138932",
-    "sku": "200-110-013",
-    "name": "SAFETY GLASSES CLEAR - BLACK",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 6000.0
-  },
-  {
-    "item_id": "5583220000001138459",
-    "sku": "200-110-014",
-    "name": "SAFETY GLASSES CLEAR - BLUE",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 6000.0
-  },
-  {
-    "item_id": "5583220000001139405",
-    "sku": "200-110-015",
-    "name": "SAFETY GLASSES CLEAR - YELLOW",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 6000.0
-  },
-  {
-    "item_id": "5583220000001501599",
-    "sku": "200-140-011",
-    "name": "SALIVA EJECTOR WHITE WITH WHITE TIPS (100)",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 8500.0
-  },
-  {
-    "item_id": "5583220000001087367",
-    "sku": "200-140-012",
-    "name": "SALIVA EJECTORS - CLEAR UNO",
+    "item_id": "5583220000000936446",
+    "sku": "160-110-005",
+    "name": "BUR DISINFECTING BOX",
     "brand": "UnoDent",
-    "category": "140-Evacuation Tips & Valves",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 8500.0
+    "rate": 24900.0
   },
   {
-    "item_id": "5583220000001501608",
-    "sku": "200-140-003",
-    "name": "SALIVA TIP CLEAR ASSORTED TIP (100PK)",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
+    "item_id": "5583220000000961994",
+    "sku": "160-150-003",
+    "name": "BUR TWO STRIPER 799.11C (DD)",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 9900.0
+    "rate": 20000.0
   },
   {
-    "item_id": "5583220000001084527",
-    "sku": "580-120-005",
-    "name": "SES 2000 BENCH TOP AUTOCLAVE",
-    "brand": "Eschmann",
-    "category": "120-Heat Sterilizers",
+    "item_id": "5583220000000959629",
+    "sku": "160-150-006",
+    "name": "BUR- TWO STRIPER 770.10C (DD)",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 1603000.0
+    "rate": 20000.0
   },
   {
-    "item_id": "5583220000001500941",
-    "sku": "580-130-002",
-    "name": "SHIELD POUCH 10.5\" X 17\"",
-    "brand": "Pearson",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000959156",
+    "sku": "160-150-007",
+    "name": "BURS- TWO STRIPER - 703.8C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 101400.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001104870",
-    "sku": "200-140-004",
-    "name": "SPLASH INTRAORAL TIPS-WHITE",
-    "brand": "Splash!",
-    "category": "140-Evacuation Tips & Valves",
+    "item_id": "5583220000001501320",
+    "sku": "160-150-008",
+    "name": "BURS-TWO STRIPER  799.11VF (PEARSON)",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 1818.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001118589",
-    "sku": "580-130-003",
-    "name": "STERI POUCHES 3.5 X 9 UNODENT",
-    "brand": "UnoDent",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000957264",
+    "sku": "160-150-018",
+    "name": "BURS-TWO STRIPER - 770.10C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 11500.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001119062",
-    "sku": "580-130-004",
-    "name": "STERI POUCHES 5.25 X 10",
-    "brand": "SurgiMac",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000956791",
+    "sku": "160-150-019",
+    "name": "BURS-TWO STRIPER - 770.8C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 15000.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001132308",
-    "sku": "580-130-005",
-    "name": "STERI POUCHES 7.5 X 13 UNODENT",
-    "brand": "UnoDent",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000957737",
+    "sku": "160-150-020",
+    "name": "BURS-TWO STRIPER - 770.9C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 21360.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001135619",
-    "sku": "580-130-006",
-    "name": "STERI POUCHES- 2.25X5 (N'SURE)",
-    "brand": "N'SURE",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000954424",
+    "sku": "160-150-021",
+    "name": "BURS-TWO STRIPER - 780.9C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 9978.118
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001139878",
-    "sku": "580-130-007",
-    "name": "STERI POUCHES-PEELPRO 3.25X6.5",
-    "brand": "Peelpro",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000000954897",
+    "sku": "160-150-022",
+    "name": "BURS-TWO STRIPER - 784.10C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 4040.650833
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001136092",
-    "sku": "200-110-020",
-    "name": "STERI SHIELD",
-    "brand": "Steri-shield",
-    "category": "110-Barrier Products",
+    "item_id": "5583220000000955370",
+    "sku": "160-150-023",
+    "name": "BURS-TWO STRIPER - 790.8C",
+    "brand": "Two Striper",
+    "category": "150-Two-Striper Burs",
     "parent_category": "",
-    "rate": 99900.0
+    "rate": 33900.0
   },
   {
-    "item_id": "5583220000001136565",
-    "sku": "580-110-001",
-    "name": "STERILEX ULTRA POWDER",
-    "brand": "Sterilex",
-    "category": "110-Chemical Disinfectants",
-    "parent_category": "",
-    "rate": 19110.0
-  },
-  {
-    "item_id": "5583220000001502232",
-    "sku": "200-110-021",
-    "name": "STICKY WRAP BLUE 4 X 6 W/STAND (VIVID)",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 41900.0
-  },
-  {
-    "item_id": "5583220000001129470",
-    "sku": "200-110-022",
-    "name": "STICKY WRAP ECO-PACK BLUE",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
-    "parent_category": "",
-    "rate": 45300.0
-  },
-  {
-    "item_id": "5583220000001107235",
-    "sku": "200-140-005",
-    "name": "SULTAN INTRAORAL TIPS-YELLOW",
-    "brand": "Sultan",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 21200.0
-  },
-  {
-    "item_id": "5583220000001088313",
-    "sku": "200-140-006",
-    "name": "SURGICAL ASPIRATOR TIPS-BLUE",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 25500.0
-  },
-  {
-    "item_id": "5583220000001087840",
-    "sku": "200-140-007",
-    "name": "SURGICAL ASPIRATOR TIPS-WHITE",
-    "brand": "Generic",
-    "category": "140-Evacuation Tips & Valves",
-    "parent_category": "",
-    "rate": 20900.0
-  },
-  {
-    "item_id": "5583220000001144608",
-    "sku": "200-150-013",
-    "name": "ULTIMATE EARLOOP MASK LAVENDER",
-    "brand": "Ultimate",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 12500.0
-  },
-  {
-    "item_id": "5583220000001144135",
-    "sku": "200-150-014",
-    "name": "ULTIMATE EARLOOP MASK PINK",
-    "brand": "Ultimate",
-    "category": "150-Face Masks",
-    "parent_category": "",
-    "rate": 12500.0
-  },
-  {
-    "item_id": "5583220000001014992",
-    "sku": "200-170-015",
-    "name": "UNBEATABLE NITRILE GLOVES- L",
-    "brand": "Generic",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 7500.0
-  },
-  {
-    "item_id": "5583220000001016884",
-    "sku": "200-170-016",
-    "name": "UNICARE NITRILE WHITE (MEDIUM)",
-    "brand": "Unicare",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 5700.0
-  },
-  {
-    "item_id": "5583220000001503546",
-    "sku": "200-170-017",
-    "name": "UNIGLOVES KOOLTOUCH MEDICAL NITRILE P/FREE BLUE GLOVES LARGE (LATEX FREE)",
-    "brand": "Unigloves",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 8500.0
-  },
-  {
-    "item_id": "5583220000001503680",
-    "sku": "200-170-018",
-    "name": "UNIGLOVES KOOLTOUCH MEDICAL NITRILE P/FREE BLUE GLOVES MEDIUM (LATEX FREE)",
-    "brand": "Unigloves",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 8500.0
-  },
-  {
-    "item_id": "5583220000001404357",
-    "sku": "500-130-004",
-    "name": "UNIVERSAL X-RAY FILM MOUNTS",
-    "brand": "Flow",
-    "category": "130-Film Holders & Barriers",
-    "parent_category": "",
-    "rate": 15600.0
-  },
-  {
-    "item_id": "5583220000006993445",
-    "sku": "360-140-002",
-    "name": "UNODENT 70% HAND DISINFECTANT GEL WITH ALOE VERA ECONOMY 5L",
-    "brand": "UnoDent",
-    "category": "140-Disinfectants",
-    "parent_category": "",
-    "rate": 139600.0
-  },
-  {
-    "item_id": "5583220000001013573",
-    "sku": "200-170-019",
-    "name": "UNODENT LATEX GLOVES SMALL",
-    "brand": "UnoDent",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 12532.83167
-  },
-  {
-    "item_id": "5583220000001013100",
-    "sku": "200-170-020",
-    "name": "UNODENT NITRISOFT NITRILE EXAMINATION GLOVES BLUE SMALL (200 PK)",
-    "brand": "UnoDent",
-    "category": "170-Gloves",
-    "parent_category": "",
-    "rate": 15100.0
-  },
-  {
-    "item_id": "5583220000005563273",
-    "sku": "580-130-008",
-    "name": "UNODENT STERILISATION POUCHES 250 X 370MM (9.8 x 14.6) (200PK)",
-    "brand": "UnoDent",
-    "category": "130-Sterilization Pouches",
-    "parent_category": "",
-    "rate": 69400.0
-  },
-  {
-    "item_id": "5583220000005575434",
-    "sku": "580-130-009",
-    "name": "UNODENT STERILISATION POUCHES 57 X 95MM (2.25 x 3.7) (200/PK)",
-    "brand": "UnoDent",
-    "category": "130-Sterilization Pouches",
-    "parent_category": "",
-    "rate": 14800.0
-  },
-  {
-    "item_id": "5583220000005575738",
-    "sku": "580-130-010",
-    "name": "UNODENT STERILISATION POUCHES 70 X 230MM (2.75 x 9) (200/PK)",
-    "brand": "UnoDent",
-    "category": "130-Sterilization Pouches",
-    "parent_category": "",
-    "rate": 25500.0
-  },
-  {
-    "item_id": "5583220000005602077",
-    "sku": "200-110-016",
-    "name": "UNODENT WRAP AROUND BLUE FILM (1,200/ROLL)",
-    "brand": "UnoDent",
-    "category": "110-Barrier Products",
+    "item_id": "5583220000001502561",
+    "sku": "260-200-002",
+    "name": "HYSOLATE LATEX DENTAL DAM GREEN MEDIUM 127 X 127 (52PK)",
+    "brand": "HySolate",
+    "category": "200-Rubber Dam Systems",
     "parent_category": "",
     "rate": 42500.0
   },
   {
-    "item_id": "5583220000001120954",
-    "sku": "200-150-015",
-    "name": "VIVID 2 IN 1 COMBO FACE MASK",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000002663195",
+    "sku": "620-110-001",
+    "name": "INTRODUCTION TO IMPLANTOLOGY TRAINING- ONLINE (VAT INCLUSIVE)",
+    "brand": "Dental Solutions",
+    "category": "110-Clinical-training",
     "parent_category": "",
-    "rate": 17500.0
+    "rate": 25000.0
   },
   {
-    "item_id": "5583220000001127578",
-    "sku": "200-210-005",
-    "name": "VIVID BOUFFANT CAPS 24\" BLUE",
-    "brand": "Vivid",
-    "category": "210-Surgical Gowns & Caps",
+    "item_id": "5583220000002589554",
+    "sku": "620-110-002",
+    "name": "INTRODUCTION TO IMPLANTOLOGY WITH HANDS-ON TRAINING- PHYSICAL (VAT INCLUSIVE)",
+    "brand": "Dental Solutions",
+    "category": "110-Clinical-training",
     "parent_category": "",
-    "rate": 21200.0
+    "rate": 55000.0
   },
   {
-    "item_id": "5583220000001129943",
-    "sku": "200-150-016",
-    "name": "VIVID DAILY MASK 3PLY BLUE L3",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000006873062",
+    "sku": "480-150-063",
+    "name": "ORAL-B FLOSS ACTION WHITE TOOTHBRUSH HEAD- PACK OF 2 COUNTS",
+    "brand": "Oral-B",
+    "category": "150-Toothbrushes & Tongue Cleaners",
     "parent_category": "",
-    "rate": 12500.0
+    "rate": 22100.0
   },
   {
-    "item_id": "5583220000001123319",
-    "sku": "200-110-017",
-    "name": "VIVID FIT SHIELD REPLACE",
-    "brand": "Vivid",
-    "category": "110-Barrier Products",
+    "item_id": "5583220000006873088",
+    "sku": "480-150-065",
+    "name": "ORAL-B iOS FOREST GREEN ELECTRIC TOOTHBRUSH",
+    "brand": "Oral-B",
+    "category": "150-Toothbrushes & Tongue Cleaners",
     "parent_category": "",
-    "rate": 7500.0
+    "rate": 135100.0
   },
   {
-    "item_id": "5583220000001501779",
-    "sku": "200-170-021",
-    "name": "VIVID GRIP TOUCH LATEX POWDER FREE GLOVES LARGE (100PK)",
-    "brand": "Vivid",
-    "category": "170-Gloves",
+    "item_id": "5583220000006873075",
+    "sku": "480-150-064",
+    "name": "ORAL-B iOS NIGHT BLACK ELECTRIC TOOTHBRUSH",
+    "brand": "Oral-B",
+    "category": "150-Toothbrushes & Tongue Cleaners",
     "parent_category": "",
-    "rate": 17000.0
+    "rate": 135100.0
   },
   {
-    "item_id": "5583220000001501788",
-    "sku": "200-170-022",
-    "name": "VIVID GRIP TOUCH LATEX POWDER FREE GLOVES MEDIUM (100PK)",
-    "brand": "Vivid",
-    "category": "170-Gloves",
+    "item_id": "5583220000006873101",
+    "sku": "480-150-066",
+    "name": "ORAL-B iOS PINK ELECTRIC TOOTHBRUSH",
+    "brand": "Oral-B",
+    "category": "150-Toothbrushes & Tongue Cleaners",
     "parent_category": "",
-    "rate": 17000.0
+    "rate": 135100.0
   },
   {
-    "item_id": "5583220000001501797",
-    "sku": "200-170-023",
-    "name": "VIVID GRIP TOUCH LATEX POWDER FREE GLOVES SMALL (100PK)",
-    "brand": "Vivid",
-    "category": "170-Gloves",
+    "item_id": "5583220000006873127",
+    "sku": "480-150-067",
+    "name": "ORAL-B iOS PINK ELECTRIC TOOTHBRUSH + TRAVEL CASE",
+    "brand": "Oral-B",
+    "category": "150-Toothbrushes & Tongue Cleaners",
     "parent_category": "",
-    "rate": 17000.0
+    "rate": 135100.0
   },
   {
-    "item_id": "5583220000001378815",
-    "sku": "200-210-006",
-    "name": "VIVID ISO GOWN CPE 25GM W/THUM",
-    "brand": "Vivid",
-    "category": "210-Surgical Gowns & Caps",
+    "item_id": "5583220000006873114",
+    "sku": "480-160-006",
+    "name": "ORAL-B LION KING TOOTHPASTE 0+ 60ML",
+    "brand": "Oral-B",
+    "category": "160-Toothpastes",
     "parent_category": "",
-    "rate": 12500.0
+    "rate": 5100.0
   },
   {
-    "item_id": "5583220000001501815",
-    "sku": "200-140-008",
-    "name": "VIVID MICROFOAM TIP FINE/PINK (100PK)",
-    "brand": "Vivid",
-    "category": "140-Evacuation Tips & Valves",
+    "item_id": "5583220000001217937",
+    "sku": "340-190-051",
+    "name": "ROOT ELEVATOR COUPLAND 4.2MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 8600.0
+    "rate": 12230.69
   },
   {
-    "item_id": "5583220000001501824",
-    "sku": "200-170-024",
-    "name": "VIVID NOVOTOUCH POWDER FREE LATEX LARGE (100PK)",
-    "brand": "Vivid",
-    "category": "170-Gloves",
+    "item_id": "5583220000001206581",
+    "sku": "340-190-056",
+    "name": "ROOT ELEVATOR HYLIN LEFT 3MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 18400.0
+    "rate": 12387.0
   },
   {
-    "item_id": "5583220000001501833",
-    "sku": "200-170-025",
-    "name": "VIVID NOVOTOUCH POWDER FREE LATEX MEDIUM (100PK)",
-    "brand": "Vivid",
-    "category": "170-Gloves",
+    "item_id": "5583220000001207054",
+    "sku": "340-190-057",
+    "name": "ROOT ELEVATOR HYLIN RIGHT 3MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 18400.0
+    "rate": 12387.0
   },
   {
-    "item_id": "5583220000001378342",
-    "sku": "200-210-007",
-    "name": "VIVID RITE GOWN BLUE 25GM SMS",
-    "brand": "Vivid",
-    "category": "210-Surgical Gowns & Caps",
+    "item_id": "5583220000001445795",
+    "sku": "340-190-061",
+    "name": "ROOT ELEVATOR LONDON HOSPITAL 975",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 28300.0
+    "rate": 10184.19
   },
   {
-    "item_id": "5583220000001379288",
-    "sku": "200-210-008",
-    "name": "VIVID RITE GOWN PINK 25GM SMS",
-    "brand": "Vivid",
-    "category": "210-Surgical Gowns & Caps",
+    "item_id": "5583220000001446268",
+    "sku": "340-190-062",
+    "name": "ROOT ELEVATOR LONDON HOSPITAL 976",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 28300.0
+    "rate": 12387.0
   },
   {
-    "item_id": "5583220000001501067",
-    "sku": "580-130-011",
-    "name": "VIVID SAFE POUCH BLUE 2 1/4 X 4 (200PK)",
-    "brand": "Vivid SafePouch",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000001194754",
+    "sku": "340-190-067",
+    "name": "ROOT ELEVATOR LUSSATORE 5MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 10600.0
+    "rate": 13930.49
   },
   {
-    "item_id": "5583220000001501869",
-    "sku": "580-130-012",
-    "name": "VIVID SANIPOUCH CLEAR 2 1/4 X 4 (200)",
-    "brand": "Vivid SaniPouch",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000001205162",
+    "sku": "340-190-068",
+    "name": "ROOT ELEVATOR SCHMECKEBIER LEF",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 10600.0
+    "rate": 12387.0
   },
   {
-    "item_id": "5583220000001133727",
-    "sku": "580-130-013",
-    "name": "VIVID SANIPOUCH CLEAR 2 3/4 X 10 (200/PK)",
-    "brand": "Vivid SaniPouch",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000001206108",
+    "sku": "340-190-069",
+    "name": "ROOT ELEVATOR SCHMECKEBIER RIG",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 13700.0
+    "rate": 12387.0
   },
   {
-    "item_id": "5583220000001134200",
-    "sku": "580-130-014",
-    "name": "VIVID SANIPOUCH CLEAR 3 1/2 X 10 POUCH (200/PK)",
-    "brand": "Vivid SaniPouch",
-    "category": "130-Sterilization Pouches",
+    "item_id": "5583220000001230235",
+    "sku": "340-190-079",
+    "name": "SCISSOR BEEBEE TC CURVED 110MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 16000.0
+    "rate": 16763.65333
   },
   {
-    "item_id": "5583220000001130889",
-    "sku": "200-150-017",
-    "name": "VIVID SMILEY MASK",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000001243954",
+    "sku": "340-190-077",
+    "name": "STAINLESS STEEL MALLET",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 13500.0
+    "rate": 44670.38
   },
   {
-    "item_id": "5583220000001146027",
-    "sku": "200-150-018",
-    "name": "VIVID SUPREMEMASK BLUE (50)",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000001244427",
+    "sku": "340-190-083",
+    "name": "TISSUE PUNCH 6.5MM",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 12500.0
+    "rate": 9844.0
   },
   {
-    "item_id": "5583220000001146500",
-    "sku": "200-150-019",
-    "name": "VIVID SUPREMEMASK PINK (50)",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000001232600",
+    "sku": "340-190-087",
+    "name": "TOOTH FORCEPS N. 46",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 12500.0
+    "rate": 22947.2
   },
   {
-    "item_id": "5583220000001125686",
-    "sku": "200-150-020",
-    "name": "VIVID SUREMASK 3PLY EARLOOP",
-    "brand": "Vivid",
-    "category": "150-Face Masks",
+    "item_id": "5583220000003428579",
+    "sku": "340-190-095",
+    "name": "TOOTH FORCEPS N.187 (2500/187)",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 6720.5474
+    "rate": 66800.0
   },
   {
-    "item_id": "5583220000001088786",
-    "sku": "200-140-009",
-    "name": "VIVID SURGICAL ASPIRATOR TIPS GREEN 1/4",
-    "brand": "Vivid",
-    "category": "140-Evacuation Tips & Valves",
+    "item_id": "5583220000001234492",
+    "sku": "340-190-100",
+    "name": "TOOTH FORCEPS N.51",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 14800.0
+    "rate": 22947.2
   },
   {
-    "item_id": "5583220000001125213",
-    "sku": "200-210-009",
-    "name": "VIVID TUFFCAP 21\" BLUE BOUFFANT CAP",
-    "brand": "Vivid",
-    "category": "210-Surgical Gowns & Caps",
+    "item_id": "5583220000001208946",
+    "sku": "340-190-101",
+    "name": "TOOTH FORCEPS N.67 (2500/67)",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 21200.0
+    "rate": 22947.2
   },
   {
-    "item_id": "5583220000001501896",
-    "sku": "200-140-010",
-    "name": "VIVID YELLOW INTRAORAL TIPS (100PK)",
-    "brand": "Vivid",
-    "category": "140-Evacuation Tips & Valves",
+    "item_id": "5583220000001225978",
+    "sku": "340-190-104",
+    "name": "TOOTH FORCEPS N.73-S",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 12600.0
+    "rate": 21052.03
   },
   {
-    "item_id": "5583220000001404830",
-    "sku": "500-130-005",
-    "name": "X-RAY FILM HOLDER -SINGLE CLIP",
-    "brand": "Odontomed",
-    "category": "130-Film Holders & Barriers",
+    "item_id": "5583220000001224559",
+    "sku": "340-190-106",
+    "name": "TOOTH FORCEPS N.75- A",
+    "brand": "Medesy",
+    "category": "190-Surgical Instruments",
     "parent_category": "",
-    "rate": 4800.0
+    "rate": 20342.25333
   },
   {
-    "item_id": "5583220000001406249",
-    "sku": "500-130-006",
-    "name": "X-RAY FILM HOLDER -SNAP-A-RAY (3 PACK)",
-    "brand": "Dentsply",
-    "category": "130-Film Holders & Barriers",
+    "item_id": "5583220000001208473",
+    "sku": "340-110-023",
+    "name": "TWEEZER FLAGG (1023)",
+    "brand": "Medesy",
+    "category": "110-Accessories",
     "parent_category": "",
-    "rate": 3000.0
-  },
-  {
-    "item_id": "5583220000001405303",
-    "sku": "500-130-007",
-    "name": "X-RAY FILM HOLDER- SNAP-A-RAY (SINGLE PACK)",
-    "brand": "Dentsply",
-    "category": "130-Film Holders & Barriers",
-    "parent_category": "",
-    "rate": 15000.0
+    "rate": 3809.88
   }
 ]
