@@ -1,0 +1,83 @@
+{
+  "_description": "Image search hints for fetch_images.py. Loaded at startup. Edit this file to improve future image fetches without touching the script.",
+
+  "brand_preferred_sources": {
+    "_note": "Domains added here merge with BRAND_TRUSTED_DOMAINS in fetch_images.py (not replaced). Brand key must be lowercase.",
+    "fixodent":    ["pg.com", "fixodent.co.uk", "fixodent.com"],
+    "poligrip":    ["poligrip.com", "seabonddental.com"],
+    "pearson":     ["pearsondentaluk.com", "pearsondentalusa.com"],
+    "dentek":      ["dentek.com"],
+    "dentaurum":   ["dentaurum.de", "dentaurum.com"],
+    "alpro":       ["alpro-dental.com", "alprodental.com"],
+    "philips zoom":["philips.com", "usa.philips.com"],
+    "carestream":  ["carestreamdental.com", "carestream.com"],
+    "planmeca":    ["planmeca.com"],
+    "cefla":       ["cefladental.com", "cefla.com"],
+    "cattani":     ["cattani.it", "cattaniuk.com"],
+    "tavom":       ["tavom.com"],
+    "swann-morton":["swann-morton.com", "swannmorton.com"],
+    "castellini":  ["castellini.it", "castellini.com"],
+    "ethicon":     ["ethicon.com", "jnjmedtech.com"],
+    "vivid":       ["vividcarts.com", "vividarts.co.uk"]
+  },
+
+  "globally_blocked_domains": [
+    "_note_remove_me_before_use",
+    "linkedin.com",
+    "licdn.com",
+    "seeklogo.com",
+    "nutridentcompany.com",
+    "facebook.com",
+    "instagram.com",
+    "twitter.com",
+    "pinterest.com",
+    "youtube.com",
+    "tiktok.com"
+  ],
+
+  "sku_image_overrides": {
+    "_note": "Map SKU → direct image URL. URL must pass Pillow aspect-ratio (0.8–1.2) and resolution (800×800) checks. Tried FIRST before any DDG query."
+  },
+
+  "manual_only_skus": [
+    "_note_remove_me_before_use",
+    "360-120-004",
+    "400-120-001",
+    "400-120-002",
+    "400-120-003",
+    "400-120-004",
+    "420-110-001",
+    "580-130-001"
+  ],
+
+  "manual_only_collections": [
+    "_note_remove_me_before_use",
+    "SNL Brochures & Catalogues"
+  ],
+
+  "lessons_log": [
+    {
+      "date": "2026-04-05",
+      "sku": "360-120-004",
+      "item": "ISO-Prophyl Isopropyl Alcohol",
+      "lesson": "Auto-search returned LinkedIn company logo (media.licdn.com). Added linkedin.com to globally_blocked_domains. Item requires manual image — alcohol/chemical products often have no clean studio photo on DDG."
+    },
+    {
+      "date": "2026-04-05",
+      "sku": "420-110-001",
+      "item": "Clear Mouthguard Material Sheeting",
+      "lesson": "Auto-search returned a KOHEEL night guard appliance instead of flat thermoplastic sheeting. Product is raw material, not a finished appliance — stock images mislead. Added to manual_only_skus."
+    },
+    {
+      "date": "2026-04-05",
+      "collection": "SNL Brochures & Catalogues",
+      "lesson": "SKUs 400-120-001 through 400-120-004 are SNL's own brochures/catalogues. No valid product image exists on the web. All must be supplied manually by the SNL team. Added collection to manual_only_collections."
+    },
+    {
+      "date": "2026-04-05",
+      "sku": "580-130-001",
+      "item": "Pearson PQ Pouches",
+      "lesson": "nutridentcompany.com appeared repeatedly in DDG results with low-quality images for Pearson products. Added to globally_blocked_domains. Pearsondentaluk.com is the preferred source."
+    }
+  ]
+}

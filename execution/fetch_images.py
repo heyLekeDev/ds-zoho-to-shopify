@@ -36,7 +36,7 @@ import requests
 from datetime import date
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='.env')
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env'))
 
 try:
     from PIL import Image
@@ -309,6 +309,71 @@ MANUAL_OVERRIDES: dict = {
     # '320-150-008': 'https://store.bicon.com/product/image/large/260-101-xxx_1.jpg',
 }
 
+# ── Feedback / continuous-improvement hints ───────────────────────────────────
+# Loaded from feedback/image_hints.json at startup.
+# Edit that file — never edit these globals directly.
+
+_FEEDBACK_DIR       = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'feedback')
+_IMAGE_HINTS_FILE   = os.path.join(_FEEDBACK_DIR, 'image_hints.json')
+
+MANUAL_ONLY_SKUS:        set = set()   # SKUs that must be imaged manually — skip auto-fetch
+MANUAL_ONLY_COLLECTIONS: set = set()   # Collections where every item is manual-only
+
+
+def load_image_hints():
+    """
+    Merge feedback/image_hints.json into the live config dicts at startup.
+
+    Merges:
+      brand_preferred_sources    → BRAND_TRUSTED_DOMAINS
+      globally_blocked_domains   → COMPETITOR_DOMAINS
+      sku_image_overrides        → MANUAL_OVERRIDES
+      manual_only_skus           → MANUAL_ONLY_SKUS
+      manual_only_collections    → MANUAL_ONLY_COLLECTIONS
+    """
+    global MANUAL_ONLY_SKUS, MANUAL_ONLY_COLLECTIONS
+
+    if not os.path.exists(_IMAGE_HINTS_FILE):
+        return
+
+    try:
+        with open(_IMAGE_HINTS_FILE) as f:
+            hints = json.load(f)
+    except Exception as e:
+        print(f'  ⚠  Could not load image hints: {e}')
+        return
+
+    # Brand preferred sources — merge into BRAND_TRUSTED_DOMAINS
+    for brand, domains in hints.get('brand_preferred_sources', {}).items():
+        if brand.startswith('_'):
+            continue
+        key = brand.lower()
+        if key not in BRAND_TRUSTED_DOMAINS:
+            BRAND_TRUSTED_DOMAINS[key] = []
+        for d in domains:
+            if d not in BRAND_TRUSTED_DOMAINS[key]:
+                BRAND_TRUSTED_DOMAINS[key].append(d)
+
+    # Globally blocked domains — add to COMPETITOR_DOMAINS
+    for domain in hints.get('globally_blocked_domains', []):
+        if not domain.startswith('_'):
+            COMPETITOR_DOMAINS.add(domain)
+
+    # SKU-level manual overrides
+    for sku, url in hints.get('sku_image_overrides', {}).items():
+        if not sku.startswith('_'):
+            MANUAL_OVERRIDES[sku] = url
+
+    # Manual-only SKUs and collections (skip auto-fetch entirely)
+    MANUAL_ONLY_SKUS = {s for s in hints.get('manual_only_skus', []) if not s.startswith('_')}
+    MANUAL_ONLY_COLLECTIONS = {c for c in hints.get('manual_only_collections', []) if not c.startswith('_')}
+
+    print(f'  ✓ image_hints.json loaded — '
+          f'{len(MANUAL_ONLY_SKUS)} manual-only SKUs, '
+          f'{len(MANUAL_ONLY_COLLECTIONS)} manual-only collection(s), '
+          f'{len(COMPETITOR_DOMAINS)} blocked domain(s)')
+
+
 # ── Image download + validation ───────────────────────────────────────────────
 
 def _normalize_url(url: str) -> str:
@@ -494,6 +559,14 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
         print(f'  ⬜ {sku}  {name[:45]}  [{status}]')
         return 'skipped'
 
+    # Manual-only gate — skip auto-fetch for items/collections flagged in image_hints.json
+    if sku in MANUAL_ONLY_SKUS:
+        print(f'  📌 {sku}  {name[:45]}  [Manual only — skipping auto-fetch]')
+        return 'skipped'
+    if collection and collection in MANUAL_ONLY_COLLECTIONS:
+        print(f'  📌 {sku}  {name[:45]}  [Collection "{collection}" is manual-only — skipping]')
+        return 'skipped'
+
     print(f'\n  🔍 {sku}  {name[:45]}')
     if enriched_title:
         print(f'     Enriched title: "{enriched_title}"')
@@ -527,8 +600,11 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
 
         # Priority 1: try saved source URL on first pass only
         elif not forced_specific and source_url:
-            print(f'     Trying saved source URL...')
-            candidates.append({'url': source_url, 'width': 0, 'height': 0})
+            if is_competitor_url(source_url):
+                print(f'     ⚠  Saved source URL is from a blocked domain — skipping cached URL.')
+            else:
+                print(f'     Trying saved source URL...')
+                candidates.append({'url': source_url, 'width': 0, 'height': 0})
 
         for query in queries:
             print(f'     Searching: "{query}"')
@@ -891,6 +967,10 @@ def main():
     if args.brands:
         print(f'  Filter: brands = {", ".join(args.brands)}')
     print('═' * 60)
+
+    # Load feedback hints (merges into BRAND_TRUSTED_DOMAINS, COMPETITOR_DOMAINS,
+    # MANUAL_OVERRIDES, MANUAL_ONLY_SKUS, MANUAL_ONLY_COLLECTIONS)
+    load_image_hints()
 
     if not os.path.exists(ENRICHMENT_INPUT):
         print(f'✗ {ENRICHMENT_INPUT} not found. Run Stage 1 + Stage 2 first.')

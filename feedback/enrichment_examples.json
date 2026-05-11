@@ -1,0 +1,60 @@
+{
+  "_description": "Corrected enrichment examples for enrich_items.py. Loaded at --prepare time and injected into enrichment_input.json as a feedback_context block so Claude can learn from past corrections without re-enriching already-done items.",
+
+  "_inject_instructions": "When you see an object with _type=feedback_context in enrichment_input.json, read these examples before enriching the items. Apply the same patterns, groupings, and naming conventions shown here.",
+
+  "examples": [
+    {
+      "_note": "ADD CORRECTED EXAMPLES HERE AS THE PROJECT PROGRESSES",
+      "_format": {
+        "sku": "the item SKU",
+        "original_enrichment": { "field": "what was originally generated" },
+        "correction": { "field": "what it should have been" },
+        "reason": "why the correction was needed",
+        "lesson": "the generalised rule to apply to future similar items"
+      }
+    }
+  ],
+
+  "grouping_rules": [
+    {
+      "rule": "Bur grouping by shank type",
+      "detail": "FG (friction grip), RA (right angle / slow-speed), and HP (handpiece / straight) burs are ALWAYS separate Shopify products even if they are the same shape and grit. Shank type determines the handpiece — a dentist ordering FG burs cannot use RA burs.",
+      "source": "feedback_bur_grouping.md"
+    },
+    {
+      "rule": "Never group across manufacturers",
+      "detail": "Even if two burs look identical, if one is Komet and one is Diatech they must be separate Shopify products. Brand provenance matters for ordering and quality assurance.",
+      "source": "feedback_bur_grouping.md"
+    },
+    {
+      "rule": "Generic / unknown vendor items cannot be grouped",
+      "detail": "If the brand field is blank or 'Generic', treat as unknown manufacturer. Do not group with any named brand. Give it a standalone Shopify product.",
+      "source": "feedback_bur_grouping.md"
+    }
+  ],
+
+  "variant_naming_rules": [
+    {
+      "rule": "Use clinical option names, never Option 1 / Option 2 / Config",
+      "examples": [
+        { "wrong": "Option 1", "right": "ISO Code" },
+        { "wrong": "Option 2", "right": "Head Diameter" },
+        { "wrong": "Config",   "right": "Grit" }
+      ]
+    },
+    {
+      "rule": "Avoid ' / ' in option names — Shopify rejects it",
+      "examples": [
+        { "wrong": "Shape / ISO Code", "right": "Shape & ISO Code" }
+      ]
+    }
+  ],
+
+  "lessons_log": [
+    {
+      "date": "2026-04-09",
+      "lesson": "feedback/enrichment_examples.json created. Add corrected examples here as issues are identified through the Fix Tracker sheet or manual review."
+    }
+  ]
+}

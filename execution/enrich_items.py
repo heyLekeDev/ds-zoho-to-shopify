@@ -40,8 +40,12 @@ SHOPIFY_SHOP_URL     = os.getenv('SHOPIFY_SHOP_URL')
 SHOPIFY_ACCESS_TOKEN = os.getenv('SHOPIFY_ACCESS_TOKEN')
 SHOPIFY_API_VERSION  = '2024-01'
 
-INPUT_FILE  = 'enrichment_input.json'
-OUTPUT_FILE = 'enrichment_output.json'
+INPUT_FILE       = 'enrichment_input.json'
+OUTPUT_FILE      = 'enrichment_output.json'
+ENRICHMENT_FEEDBACK_FILE = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+    'feedback', 'enrichment_examples.json'
+)
 
 # ── Auth ──────────────────────────────────────────────────────────────────────
 
@@ -217,8 +221,38 @@ def run_prepare():
         items_data.append(entry)
         time.sleep(0.2)
 
+    # ── Inject feedback context ────────────────────────────────────────────────
+    # Prepend a special feedback_context object so Claude can learn from past
+    # corrections without this affecting the --write step (which skips objects
+    # that have no item_id key).
+    output_payload = list(items_data)
+    if os.path.exists(ENRICHMENT_FEEDBACK_FILE):
+        try:
+            with open(ENRICHMENT_FEEDBACK_FILE) as f:
+                feedback = json.load(f)
+            examples   = feedback.get('examples', [])
+            grp_rules  = feedback.get('grouping_rules', [])
+            var_rules  = feedback.get('variant_naming_rules', [])
+            if examples or grp_rules or var_rules:
+                context_block = {
+                    '_type':               'feedback_context',
+                    '_description':        (
+                        'Past corrections and standing rules. '
+                        'Read these BEFORE enriching the items below. '
+                        'Apply the same patterns and naming conventions.'
+                    ),
+                    'examples':            examples,
+                    'grouping_rules':      grp_rules,
+                    'variant_naming_rules': var_rules,
+                }
+                output_payload.insert(0, context_block)
+                print(f'  ✓ Feedback context injected ({len(examples)} example(s), '
+                      f'{len(grp_rules)} grouping rule(s)).')
+        except Exception as e:
+            print(f'  ⚠  Could not load enrichment feedback: {e}')
+
     with open(INPUT_FILE, 'w') as f:
-        json.dump(items_data, f, indent=2)
+        json.dump(output_payload, f, indent=2)
 
     print()
     print('═' * 60)

@@ -148,18 +148,20 @@ def upscale_to_canvas(pil_img, min_side=1000, max_canvas=1920, padding=80):
 
 def auto_upscale(image_bytes):
     """
-    Auto-detect background, optionally remove it, upscale to white canvas.
+    Upscale image so shortest side >= 1000px, place on white square canvas.
     Returns (png_bytes, width, height) or None on failure.
+
+    NOTE: Background removal is intentionally NOT performed here.
+    Per project rules, background removal is never run automatically —
+    a bad cut-out is worse than a coloured background, and dental
+    professionals will notice any artefacts immediately. If the source
+    image has a non-white background the padded white canvas still looks
+    acceptable; the team can source a cleaner image manually if needed.
     """
     try:
         pil_img = Image.open(io.BytesIO(image_bytes)).convert('RGBA')
     except Exception:
         return None
-
-    if detect_non_white_background(pil_img):
-        pil_img = remove_background(pil_img)
-        if pil_img is None:
-            return None
 
     png_bytes = upscale_to_canvas(pil_img)
 
