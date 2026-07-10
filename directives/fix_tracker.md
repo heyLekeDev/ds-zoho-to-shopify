@@ -6,6 +6,25 @@
 **Executor script**: `execution/process_fix_tracker.py`
 **Feedback stores**: `feedback/image_hints.json`, `feedback/enrichment_examples.json`
 
+## Image Queue tab (same spreadsheet, tab "Image Queue")
+
+The work queue for items at `Image required` that auto-search cannot solve. Claude populates
+rows (SKU, name, enriched title, why manual, suggested source); the team pastes an image URL
+in column F. On each run (daily maintenance or on demand):
+1. For each row with a URL and Status "Open": download → validate (square/1080+, no bg removal)
+   → **visually review** → delete old Zoho image → upload → `Queue for Upload` → row Status "Fetched".
+   Bad URL → Status "URL Rejected" + reason in Notes.
+2. Every accepted URL's domain gets added to `brand_preferred_sources` in
+   `feedback/image_hints.json` so future auto-fetches learn the source.
+3. Whenever any run resets an item to `Image required`, append it to this tab.
+
+## Daily maintenance routine
+
+Scheduled task `ds-daily-maintenance` (07:07 daily, runs while the Claude app is open):
+Image Queue → auto-retry fetch (fresh CSE quota) → audit gate → sync (+ `--skus` for
+view-excluded categories) → verify → Fix Tracker rows → Shopify hygiene report.
+It never publishes an unaudited image.
+
 ## Sheet columns
 
 | Col | Field | Who fills it |
