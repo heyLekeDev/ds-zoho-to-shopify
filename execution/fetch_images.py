@@ -277,7 +277,74 @@ def build_queries_v2(name, brand, category, enriched_title='', v1_name='', v1_va
 
     return queries
 
-# ── DuckDuckGo image search ───────────────────────────────────────────────────
+# ── Google Custom Search (primary — free tier, 100 queries/day) ──────────────
+
+CSE_KEY         = os.getenv('SEARCH_API_KEY')
+CSE_CX          = os.getenv('GOOGLE_CX')
+CSE_QUOTA_FILE  = '.cse_quota.json'
+CSE_DAILY_LIMIT = 95   # stay safely under the 100/day free tier
+
+def _cse_quota():
+    """Return (used_today, limit). Resets automatically each day."""
+    today = date.today().isoformat()
+    try:
+        with open(CSE_QUOTA_FILE) as f:
+            q = json.load(f)
+        if q.get('date') == today:
+            return q.get('used', 0), CSE_DAILY_LIMIT
+    except Exception:
+        pass
+    return 0, CSE_DAILY_LIMIT
+
+def _cse_quota_bump():
+    today = date.today().isoformat()
+    used, _ = _cse_quota()
+    with open(CSE_QUOTA_FILE, 'w') as f:
+        json.dump({'date': today, 'used': used + 1}, f)
+
+def search_images_google(query, max_results=MAX_CANDIDATES):
+    """
+    Google Custom Search image results. Returns a list of candidate dicts,
+    or None if CSE is unavailable (no key, quota exhausted, or API error) —
+    None signals the caller to fall back to DDG.
+    """
+    if not CSE_KEY or not CSE_CX:
+        return None
+    used, limit = _cse_quota()
+    if used >= limit:
+        return None
+    try:
+        resp = requests.get('https://www.googleapis.com/customsearch/v1', params={
+            'key': CSE_KEY, 'cx': CSE_CX, 'q': query,
+            'searchType': 'image', 'num': min(max_results, 10),
+        }, timeout=15)
+        _cse_quota_bump()
+        data = resp.json()
+        if 'error' in data:
+            msg = data['error'].get('message', '')
+            if 'quota' in msg.lower() or resp.status_code == 429:
+                # Mark quota exhausted for the rest of the day
+                with open(CSE_QUOTA_FILE, 'w') as f:
+                    json.dump({'date': date.today().isoformat(), 'used': CSE_DAILY_LIMIT}, f)
+            else:
+                print(f'     ⚠ CSE error: {msg[:80]}')
+            return None
+        return [{'url': it.get('link', ''),
+                 'width':  int(it.get('image', {}).get('width', 0) or 0),
+                 'height': int(it.get('image', {}).get('height', 0) or 0)}
+                for it in data.get('items', []) if it.get('link')]
+    except Exception as e:
+        print(f'     ⚠ CSE request failed: {e}')
+        return None
+
+def search_images(query, max_results=MAX_CANDIDATES):
+    """Unified search: Google CSE first (fast, reliable, free tier), DDG fallback."""
+    results = search_images_google(query, max_results)
+    if results is not None:
+        return results, 'cse'
+    return search_images_ddg(query, max_results), 'ddg'
+
+# ── DuckDuckGo image search (fallback) ────────────────────────────────────────
 
 def search_images_ddg(query, max_results=MAX_CANDIDATES, _retries=3):
     for attempt in range(_retries + 1):
@@ -608,7 +675,9 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
 
         for query in queries:
             print(f'     Searching: "{query}"')
-            results = search_images_ddg(query, max_results=MAX_CANDIDATES)
+            results, engine = search_images(query, max_results=MAX_CANDIDATES)
+            if engine == 'cse' and results:
+                print(f'     [CSE] {len(results)} result(s)')
             candidates.extend(results)
 
             hit = try_candidates(candidates, brand=brand, exclude_hashes=col_hashes)
@@ -1038,7 +1107,9 @@ def main():
             print(f'  ✗ Unhandled error for {item.get("sku", "?")}: {e}')
             result = 'error'
         counts[result] = counts.get(result, 0) + 1
-        time.sleep(20)
+        # DDG needs a 20s cool-down between items; CSE does not.
+        used, limit = _cse_quota()
+        time.sleep(3 if used < limit else 20)
 
     print()
     print('═' * 60)
