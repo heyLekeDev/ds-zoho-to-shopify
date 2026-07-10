@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
 """
-Stage 1 — Batch Selector
-Reads the local inventory CSV, selects unprocessed items by priority,
-and tags them as 'Queue for Enrichment' in Zoho.
+Stage 1 — Batch Selector (live-truth edition)
+
+Selects unprocessed items directly from LIVE Zoho — never from a CSV snapshot.
+"Unprocessed" = active inventory item whose cf_shopify_status is blank
+(computed as: all items − every item carrying any pipeline status, fetched via
+the cf_shopify_status list filter, which is verified to work).
+
+The final batch is additionally probed against LIVE Shopify by SKU so an
+already-published item can never be re-selected (this replaces the stale
+shopify_audit.csv exclusion that caused the 32-of-40-already-live incident).
+Each write is guarded by a read-before-write status check.
 
 Usage:
-    python execution/batch_selector.py                        # default 50 items
-    python execution/batch_selector.py --batch-size 25
-    python execution/batch_selector.py --dry-run             # preview only, no writes
-    python execution/batch_selector.py --csv "DS inventory Jan 31 26.csv"
+    python execution/batch_selector.py                        # default 25 items
+    python execution/batch_selector.py --batch-size 40
+    python execution/batch_selector.py --dry-run              # preview only
+    python execution/batch_selector.py --yes                  # non-interactive
+    python execution/batch_selector.py --no-shopify-check     # skip live probe
 """
 
 import os
@@ -107,19 +116,114 @@ def zoho_headers(token):
         'Content-Type': 'application/json',
     }
 
-# ── CSV ───────────────────────────────────────────────────────────────────────
+# ── Live Zoho selection ───────────────────────────────────────────────────────
 
-def find_inventory_csv():
-    """Auto-detect the most recently modified inventory CSV in the project root."""
-    candidates = glob.glob('DS inventory*.csv') + glob.glob('*.inventory*.csv')
-    if not candidates:
-        # fallback — any CSV that looks like inventory
-        candidates = [f for f in glob.glob('*.csv')
-                      if 'inventory' in f.lower() and 'sync' not in f.lower()
-                      and 'rules' not in f.lower() and 'sku' not in f.lower()]
-    if not candidates:
-        return None
-    return max(candidates, key=os.path.getmtime)
+# SKU prefixes excluded entirely (mirror of SKIP_PARENT_CATEGORIES)
+SKIP_SKU_PREFIXES = {'560', '620'}
+
+def _fetch_status_item_ids(token, status):
+    """All item_ids currently carrying the given cf_shopify_status (paginated)."""
+    ids, page = set(), 1
+    while True:
+        resp = requests.get(
+            f'{ZOHO_API_BASE}/items',
+            headers=zoho_headers(token),
+            params={'organization_id': ZOHO_ORG_ID, 'cf_shopify_status': status,
+                    'per_page': 200, 'page': page},
+            timeout=20,
+        )
+        if resp.status_code == 429:
+            time.sleep(60)
+            continue
+        data = resp.json()
+        items = data.get('items', [])
+        ids |= {it['item_id'] for it in items}
+        if not data.get('page_context', {}).get('has_more_page'):
+            break
+        page += 1
+    return ids
+
+def load_candidates_live(token):
+    """
+    Select candidates from LIVE Zoho (the source of truth):
+    - not carrying any pipeline status (fetched live, per status, via the
+      cf_shopify_status filter)
+    - active, Inventory type, not an excluded category (by SKU prefix),
+      not a spare part, priced ≥ ₦100
+    Returns (candidates, skipped) — candidates shaped like the old CSV rows
+    so downstream sorting/preview/write code is unchanged.
+    """
+    skipped = {
+        'already_statusd': 0,
+        'inactive':        0,
+        'non_inventory':   0,
+        'skip_category':   0,
+        'spare_part':      0,
+        'zero_price':      0,
+    }
+
+    print('  Fetching pipeline statuses from live Zoho...')
+    statused = set()
+    for status in sorted(SKIP_STATUSES):
+        ids = _fetch_status_item_ids(token, status)
+        if ids:
+            print(f'    {status:<22} {len(ids)}')
+        statused |= ids
+        time.sleep(0.2)
+    print(f'    → {len(statused)} items already in the pipeline')
+
+    candidates = []
+    page = 1
+    while True:
+        resp = requests.get(
+            f'{ZOHO_API_BASE}/items',
+            headers=zoho_headers(token),
+            params={'organization_id': ZOHO_ORG_ID, 'per_page': 200, 'page': page},
+            timeout=20,
+        )
+        if resp.status_code == 429:
+            time.sleep(60)
+            continue
+        data = resp.json()
+        items = data.get('items', [])
+        for it in items:
+            sku  = (it.get('sku') or '').strip()
+            name = it.get('name', '') or ''
+
+            if it['item_id'] in statused:
+                skipped['already_statusd'] += 1
+                continue
+            if (it.get('status') or '').lower() != 'active':
+                skipped['inactive'] += 1
+                continue
+            if (it.get('item_type') or '').lower() != 'inventory':
+                skipped['non_inventory'] += 1
+                continue
+            prefix = sku.split('-')[0] if '-' in sku else ''
+            if prefix in SKIP_SKU_PREFIXES:
+                skipped['skip_category'] += 1
+                continue
+            if any(kw in name.lower() for kw in SKIP_NAME_KEYWORDS):
+                skipped['spare_part'] += 1
+                continue
+            if (it.get('rate') or 0) < 100:
+                skipped['zero_price'] += 1
+                continue
+
+            candidates.append({
+                'Item ID':        it['item_id'],
+                'Item Name':      name,
+                'SKU':            sku,
+                'CF.SKU - new':   sku,
+                'Parent Category': f"{prefix}-{it.get('category_name', '')}" if prefix else (it.get('category_name', '') or ''),
+                'Brand':          it.get('brand', '') or '',
+            })
+        if not data.get('page_context', {}).get('has_more_page'):
+            break
+        page += 1
+        time.sleep(0.2)
+
+    return candidates, skipped
 
 def category_sort_key(row):
     """Returns a (priority, category_name) tuple for sorting."""
@@ -134,82 +238,30 @@ def is_spare_part(row):
     name = row.get('Item Name', '').lower()
     return any(kw in name for kw in SKIP_NAME_KEYWORDS)
 
-def load_candidates(csv_path):
-    """
-    Read the CSV and return items eligible for enrichment:
-    - Active status
-    - Item Type = Inventory
-    - CF.Shopify status is blank
-    - Not in a skipped parent category
-    - Not a spare part (by name keyword)
-    """
-    candidates = []
-    skipped = {
-        'already_statusd': 0,
-        'inactive':        0,
-        'non_inventory':   0,
-        'skip_category':   0,
-        'spare_part':      0,
-        'zero_price':      0,
-    }
-
-    with open(csv_path, newline='', encoding='utf-8-sig') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            shopify_status = row.get('CF.Shopify status', '').strip()
-            item_status    = row.get('Status', '').strip()
-            item_type      = row.get('Item Type', '').strip()
-            parent_cat     = row.get('Parent Category', '').strip()
-
-            # Skip inactive
-            if item_status.lower() != 'active':
-                skipped['inactive'] += 1
-                continue
-
-            # Skip non-inventory types
-            if item_type.lower() != 'inventory':
-                skipped['non_inventory'] += 1
-                continue
-
-            # Skip already-in-pipeline
-            if shopify_status in SKIP_STATUSES:
-                skipped['already_statusd'] += 1
-                continue
-
-            # Skip entire excluded categories (services, training, etc.)
-            if parent_cat in SKIP_PARENT_CATEGORIES:
-                skipped['skip_category'] += 1
-                continue
-
-            # Skip spare parts anywhere in the inventory
-            if is_spare_part(row):
-                skipped['spare_part'] += 1
-                continue
-
-            # Skip items priced under ₦100 — zero, placeholder (₦1), or nonsensical prices
-            try:
-                raw_price = row.get('Selling Price', '0') or '0'
-                # Strip currency prefix (e.g. "NGN 29900.00" → "29900.00")
-                raw_price = raw_price.replace(',', '')
-                for prefix in ('NGN ', 'USD ', 'GBP ', '£', '$', '₦'):
-                    raw_price = raw_price.replace(prefix, '')
-                price = float(raw_price.strip())
-            except ValueError:
-                price = 0.0
-            if price < 100:
-                skipped['zero_price'] += 1
-                continue
-
-            candidates.append(row)
-
-    return candidates, skipped
-
 # ── Zoho Write ────────────────────────────────────────────────────────────────
 
 def update_item(item_id, item_name, sku, today_str, token, dry_run):
-    """Write Queue for Enrichment status + sync fields to one Zoho item."""
+    """Write Queue for Enrichment status + sync fields to one Zoho item.
+    Guarded: reads the live status first and refuses to overwrite a non-blank one."""
     if dry_run:
         return item_id, True, 'dry-run'
+
+    # Read-before-write guard — never clobber an item that entered the
+    # pipeline since selection ran (or that selection mis-identified).
+    resp = requests.get(
+        f'{ZOHO_API_BASE}/items/{item_id}',
+        headers=zoho_headers(token),
+        params={'organization_id': ZOHO_ORG_ID},
+        timeout=15,
+    )
+    if resp.status_code == 429:
+        time.sleep(60)
+        return update_item(item_id, item_name, sku, today_str, token, dry_run)
+    detail = resp.json().get('item', {})
+    cfs = {c['api_name']: c.get('value') for c in detail.get('custom_fields', [])}
+    live_status = (cfs.get('cf_shopify_status') or '').strip()
+    if live_status:
+        return item_id, False, f'GUARD: live status is "{live_status}" — not overwriting'
 
     payload = {
         'custom_fields': [
@@ -251,30 +303,23 @@ def update_item(item_id, item_name, sku, today_str, token, dry_run):
 
 def main():
     parser = argparse.ArgumentParser(description='Stage 1 — Batch Selector')
-    parser.add_argument('--csv',        default=None, help='Path to inventory CSV')
     parser.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE)
     parser.add_argument('--dry-run',    action='store_true', help='Preview without writing to Zoho')
     parser.add_argument('--yes',        action='store_true',
                         help='Skip the confirmation prompt (required for non-interactive/scheduled runs)')
     parser.add_argument('--brands',     nargs='+', default=None,
                         help='Only select items matching these brands (case-insensitive)')
-    parser.add_argument('--exclude-shopify', default=None,
-                        help='Path to shopify_audit.csv — skip SKUs already on Shopify')
+    parser.add_argument('--no-shopify-check', action='store_true',
+                        help='Skip the live Shopify SKU probe on the final batch (not recommended)')
     args = parser.parse_args()
 
     print('═' * 60)
-    print('  Stage 1 — Batch Selector')
+    print('  Stage 1 — Batch Selector (live Zoho selection)')
     print('═' * 60)
 
-    # ── Locate CSV ────────────────────────────────────────────────
-    csv_path = args.csv or find_inventory_csv()
-    if not csv_path or not os.path.exists(csv_path):
-        print(f'\n✗ No inventory CSV found. Use --csv to specify one.')
-        sys.exit(1)
-    print(f'\n  CSV: {csv_path}')
-
-    # ── Load & filter ─────────────────────────────────────────────
-    candidates, skipped = load_candidates(csv_path)
+    # ── Load & filter from LIVE Zoho ─────────────────────────────
+    token = get_zoho_token()
+    candidates, skipped = load_candidates_live(token)
 
     print(f'\n  Skipped:')
     print(f'    Already in pipeline : {skipped["already_statusd"]}')
@@ -294,25 +339,6 @@ def main():
         print(f'\n  Brand filter: {args.brands}')
         print(f'    Before: {before}  →  After: {len(candidates)}')
 
-    # ── Exclude SKUs already on Shopify ──────────────────────────
-    if args.exclude_shopify:
-        shopify_path = args.exclude_shopify
-        if os.path.exists(shopify_path):
-            shopify_skus = set()
-            with open(shopify_path, newline='', encoding='utf-8-sig') as sf:
-                for row in csv.DictReader(sf):
-                    for sku in row.get('skus', '').split(', '):
-                        sku = sku.strip()
-                        if sku:
-                            shopify_skus.add(sku)
-            before = len(candidates)
-            candidates = [r for r in candidates
-                          if r.get('SKU', '').strip() not in shopify_skus]
-            print(f'\n  Shopify exclusion ({len(shopify_skus)} live SKUs):')
-            print(f'    Before: {before}  →  After: {len(candidates)}')
-        else:
-            print(f'\n  ⚠ Shopify audit file not found: {shopify_path}')
-
     if not candidates:
         print('\n  Nothing to select. All items are already in the pipeline.')
         sys.exit(0)
@@ -320,9 +346,35 @@ def main():
     # ── Sort by priority ──────────────────────────────────────────
     candidates.sort(key=category_sort_key)
 
-    # ── Take batch ────────────────────────────────────────────────
-    batch = candidates[:args.batch_size]
+    # ── Take batch, probing LIVE Shopify so already-published items
+    #    can never be re-selected ─────────────────────────────────
     today_str = date.today().isoformat()
+    if args.no_shopify_check:
+        batch = candidates[:args.batch_size]
+    else:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        from common import shopify_variant_by_sku
+        print(f'\n  Probing live Shopify for the top candidates...')
+        batch, already_live = [], 0
+        for row in candidates:
+            if len(batch) >= args.batch_size:
+                break
+            sku = row.get('SKU', '')
+            try:
+                existing = shopify_variant_by_sku(sku) if sku else None
+            except Exception as e:
+                print(f'    ⚠ Probe failed for {sku} ({e}) — including item unprobed')
+                existing = None
+            if existing:
+                already_live += 1
+                prod_title = (existing.get('product') or {}).get('title', '?')
+                print(f'    ⏭  {sku} already live on Shopify ("{prod_title[:45]}") — skipped')
+                continue
+            batch.append(row)
+            time.sleep(0.2)
+        if already_live:
+            print(f'    → {already_live} already-live item(s) excluded '
+                  f'(these need a Zoho status write-back — flag them for reconciliation)')
 
     print(f'\n  Batch size  : {args.batch_size}')
     print(f'  Selected    : {len(batch)}')

@@ -225,48 +225,101 @@ def get_active_publications():
     return [{"publicationId": e['node']['id']} for e in edges]
 
 # --- Phase 1: Targeted Fetch (Zero-Detail) ---
+def fetch_item_detail_flat(item_id, sku):
+    """
+    Fetches full item detail (including custom fields) for a single Zoho item
+    and returns it as a flat_item dict matching the Phase 1 schema.
+    Returns None if the detail fetch fails.
+    """
+    url = f"{ZOHO_API_BASE}/items/{item_id}"
+    resp = requests.get(url, headers=zoho_headers(),
+                        params={'organization_id': ZOHO_ORG_ID}, timeout=15)
+    if resp.status_code == 429:
+        print("    Zoho Rate Limit (429). Sleeping 60s and retrying...")
+        time.sleep(60)
+        resp = requests.get(url, headers=zoho_headers(),
+                            params={'organization_id': ZOHO_ORG_ID}, timeout=15)
+    if not resp.ok:
+        print(f"      ✗ {sku}: HTTP {resp.status_code}")
+        return None
+
+    item = resp.json().get('item', {})
+    cfs = {cf['api_name']: cf.get('value', '') for cf in item.get('custom_fields', [])}
+
+    status_str = cfs.get('cf_shopify_status', '')
+    return {
+        'zoho_id':              item['item_id'],
+        'sku':                  item.get('sku', sku),
+        'name':                 item.get('name', ''),
+        'rate':                 item.get('rate', 0),
+        'description':          cfs.get('cf_description_html', '') or item.get('description', ''),
+        'brand':                item.get('brand', ''),
+        'enriched_title':       cfs.get('cf_enriched_title', ''),
+        'shopify_product_type': cfs.get('cf_shopify_product_type', ''),
+        'shopify_tags':         cfs.get('cf_shopify_tags', ''),
+        'category':             item.get('category_name', ''),
+        'subcategory':          item.get('sub_category_name', ''),
+        'status':               status_str,
+        'collection':           cfs.get('cf_shopify_collection', ''),
+        'v1_name':              cfs.get('cf_shopify_var_1_name', ''),
+        'v1_val':               cfs.get('cf_shopify_var_1_value', ''),
+        'v2_name':              cfs.get('cf_shopify_var_2_name', ''),
+        'v2_val':               cfs.get('cf_shopify_var_2_value', ''),
+        'v3_name':              cfs.get('cf_shopify_var_3_name', ''),
+        'v3_val':               cfs.get('cf_shopify_var_3_value', ''),
+        'image_name':           item.get('image_name', ''),
+        'image_type':           item.get('image_type', ''),
+        'notes':                cfs.get('cf_shopify_sync_notes', ''),
+        'item_type':            item.get('item_type', ''),
+        'stock_on_hand':        item.get('stock_on_hand', 0),
+    }
+
+
 def fetch_pending_items():
     """
     Phase 1: Mandatory Fetch Protocol (Targeted Discovery via Custom View).
     Bypasses individual detail calls. Reads directly from the predefined Custom View.
-    Enforces required columns presence and caps at 200 records.
+    Paginates through all pages, then reconciles against a status-filtered fetch
+    to catch queued items the custom view cannot see (category gaps).
     """
     if not ZOHO_VIEW_ID:
         raise Exception("ZOHO_VIEW_ID is missing from environment variables.")
-        
+
     print(f"Phase 1: Fetching pending items from Zoho Custom View ({ZOHO_VIEW_ID})...")
-    
+
     url = f"{ZOHO_API_BASE}/items"
     pending = []
-    
-    params = {
-        'customview_id': ZOHO_VIEW_ID,  # Use the specified Custom View
-        'page': 1,
-        'per_page': 200               # Fetch up to max cap per page
-    }
-    
-    resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
-    
-    if resp.status_code == 429:
-        print("    Zoho Rate Limit (429). Sleeping 60s and retrying...")
-        time.sleep(60)
+
+    items = []
+    page = 1
+    while True:
+        params = {
+            'customview_id': ZOHO_VIEW_ID,  # Use the specified Custom View
+            'page': page,
+            'per_page': 200               # Fetch up to max cap per page
+        }
+
         resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
-        
-    if not resp.ok:
-        raise Exception(f"Error fetching Custom View: {resp.status_code} {resp.text}")
 
-    data = resp.json()
-    items = data.get('items', [])
-    
-    if not items:
-        print("\nPhase 1 Complete: Found total 0 items to sync.")
-        return []
+        if resp.status_code == 429:
+            print("    Zoho Rate Limit (429). Sleeping 60s and retrying...")
+            time.sleep(60)
+            resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
 
-    print(f"    Found {len(items)} items in Custom View.")
-    
-    # Process up to the first 200 items (Phase 1 Cap)
-    items_to_process = items[:200]
-    
+        if not resp.ok:
+            raise Exception(f"Error fetching Custom View: {resp.status_code} {resp.text}")
+
+        data = resp.json()
+        items.extend(data.get('items', []))
+
+        if not data.get('page_context', {}).get('has_more_page'):
+            break
+        page += 1
+
+    print(f"    Found {len(items)} items in Custom View ({page} page(s)).")
+
+    items_to_process = items
+
     if items_to_process:
         first_item = items_to_process[0]
         # Validate that custom fields are generally being returned in the View.
@@ -310,8 +363,74 @@ def fetch_pending_items():
         pending.append(flat_item)
         print(f"      ✓ {sku} [{status_str}] (Zero-Detail Fetch)")
 
-    print(f"\nPhase 1 Complete: Found total {len(pending)} items to sync (max 200).")
+    # --- Queue Reconciliation: catch queued items invisible to the Custom View ---
+    # The custom view can silently omit items (e.g. category gaps). Cross-check
+    # against a status-filtered fetch of ALL items (list endpoint: native fields
+    # only, no custom fields — details are fetched per-item below).
+    queued = []
+    page = 1
+    recon_ok = True
+    while True:
+        params = {'cf_shopify_status': 'Queue for Upload', 'per_page': 200, 'page': page}
+        resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
+
+        if resp.status_code == 429:
+            print("    Zoho Rate Limit (429). Sleeping 60s and retrying...")
+            time.sleep(60)
+            resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
+
+        if not resp.ok:
+            print(f"  [WARN] Queue reconciliation fetch failed: {resp.status_code} {resp.text}")
+            print("  [WARN] Skipping view-gap check for this run — custom view results used as-is.")
+            recon_ok = False
+            break
+
+        data = resp.json()
+        queued.extend(data.get('items', []))
+
+        if not data.get('page_context', {}).get('has_more_page'):
+            break
+        page += 1
+
+    if recon_ok:
+        view_ids = {item['item_id'] for item in items_to_process}
+        gap_items = [q for q in queued if q.get('item_id') not in view_ids]
+        if gap_items:
+            print("\n" + "!" * 70)
+            print(f"  [VIEW GAP] {len(gap_items)} queued item(s) invisible to the custom view — syncing them anyway:")
+            for q in gap_items:
+                print(f"    - {q.get('sku', 'Unknown SKU')}")
+            print("!" * 70)
+            for q in gap_items:
+                gap_sku = q.get('sku', 'Unknown SKU')
+                flat_item = fetch_item_detail_flat(q['item_id'], gap_sku)
+                if flat_item:
+                    pending.append(flat_item)
+                    print(f"      ✓ {flat_item['sku']} [{flat_item['status']}] (View-Gap Detail Fetch)")
+
+    print(f"\nPhase 1 Complete: Found total {len(pending)} items to sync.")
     return pending
+
+
+def zoho_find_item_by_sku(sku):
+    """
+    Live exact-SKU lookup via the Zoho list endpoint (search_text).
+    Returns the list-endpoint item dict or None. Mirrors common.zoho_find_by_sku.
+    """
+    url = f"{ZOHO_API_BASE}/items"
+    params = {'search_text': sku, 'per_page': 200}
+    resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
+    if resp.status_code == 429:
+        print("    Zoho Rate Limit (429). Sleeping 60s and retrying...")
+        time.sleep(60)
+        resp = requests.get(url, headers=zoho_headers(), params=params, timeout=15)
+    if not resp.ok:
+        print(f"      ✗ {sku}: SKU search failed (HTTP {resp.status_code})")
+        return None
+    for it in resp.json().get('items', []):
+        if it.get('sku') == sku:
+            return it
+    return None
 
 
 def fetch_items_by_skus(skus: list) -> list:
@@ -319,67 +438,36 @@ def fetch_items_by_skus(skus: list) -> list:
     Phase 1 alternative: fetch specific items by SKU directly from the Zoho
     item-detail API, bypassing the custom view.  Used when the custom view
     does not include a given item's category.
+    SKUs are resolved live against Zoho (exact match via search_text). If ANY
+    requested SKU cannot be resolved, the run aborts with exit code 1 before
+    syncing anything.
     """
-    import json as _json
-
-    # Build a sku→item_id map from enrichment_input.json (if present)
-    input_file = os.path.join(os.path.dirname(__file__), '..', 'enrichment_input.json')
-    sku_to_id: dict = {}
-    if os.path.exists(input_file):
-        with open(input_file) as f:
-            for entry in _json.load(f):
-                if entry.get('sku'):
-                    sku_to_id[entry['sku']] = entry['item_id']
-
     print(f"Phase 1 (SKU override): Fetching {len(skus)} item(s) directly from Zoho...")
     pending = []
+    unresolved = []
 
     for sku in skus:
-        item_id = sku_to_id.get(sku)
-        if not item_id:
-            print(f"      ✗ {sku}: not found in enrichment_input.json")
+        listed = zoho_find_item_by_sku(sku)
+        if not listed:
+            print(f"      ✗ {sku}: not found in live Zoho lookup")
+            unresolved.append(sku)
             continue
 
-        url = f"{ZOHO_API_BASE}/items/{item_id}"
-        resp = requests.get(url, headers=zoho_headers(),
-                            params={'organization_id': ZOHO_ORG_ID}, timeout=15)
-        if not resp.ok:
-            print(f"      ✗ {sku}: HTTP {resp.status_code}")
+        flat_item = fetch_item_detail_flat(listed['item_id'], sku)
+        if not flat_item:
+            # Detail fetch failed — the item exists but could not be loaded.
+            unresolved.append(sku)
             continue
-
-        item = resp.json().get('item', {})
-        cfs = {cf['api_name']: cf.get('value', '') for cf in item.get('custom_fields', [])}
-
-        status_str = cfs.get('cf_shopify_status', '')
-        flat_item = {
-            'zoho_id':              item['item_id'],
-            'sku':                  item.get('sku', sku),
-            'name':                 item.get('name', ''),
-            'rate':                 item.get('rate', 0),
-            'description':          cfs.get('cf_description_html', '') or item.get('description', ''),
-            'brand':                item.get('brand', ''),
-            'enriched_title':       cfs.get('cf_enriched_title', ''),
-            'shopify_product_type': cfs.get('cf_shopify_product_type', ''),
-            'shopify_tags':         cfs.get('cf_shopify_tags', ''),
-            'category':             item.get('category_name', ''),
-            'subcategory':          item.get('sub_category_name', ''),
-            'status':               status_str,
-            'collection':           cfs.get('cf_shopify_collection', ''),
-            'v1_name':              cfs.get('cf_shopify_var_1_name', ''),
-            'v1_val':               cfs.get('cf_shopify_var_1_value', ''),
-            'v2_name':              cfs.get('cf_shopify_var_2_name', ''),
-            'v2_val':               cfs.get('cf_shopify_var_2_value', ''),
-            'v3_name':              cfs.get('cf_shopify_var_3_name', ''),
-            'v3_val':               cfs.get('cf_shopify_var_3_value', ''),
-            'image_name':           item.get('image_name', ''),
-            'image_type':           item.get('image_type', ''),
-            'notes':                cfs.get('cf_shopify_sync_notes', ''),
-            'item_type':            item.get('item_type', ''),
-            'stock_on_hand':        item.get('stock_on_hand', 0),
-        }
 
         pending.append(flat_item)
-        print(f"      ✓ {sku} [{status_str}] (Direct Fetch)")
+        print(f"      ✓ {sku} [{flat_item['status']}] (Direct Fetch)")
+
+    if unresolved:
+        print(f"\n[FATAL] {len(unresolved)} of {len(skus)} requested SKU(s) could not be resolved in Zoho:")
+        for sku in unresolved:
+            print(f"    - {sku}")
+        print("Aborting: nothing was synced. Fix the SKU list and re-run.")
+        sys.exit(1)
 
     print(f"\nPhase 1 Complete: Found total {len(pending)} items to sync.")
     return pending

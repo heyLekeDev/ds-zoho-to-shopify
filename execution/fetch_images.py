@@ -404,6 +404,44 @@ MANUAL_OVERRIDES: dict = {
 _FEEDBACK_DIR       = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'feedback')
 _IMAGE_HINTS_FILE   = os.path.join(_FEEDBACK_DIR, 'image_hints.json')
 
+# ── Failure memory ────────────────────────────────────────────────────────────
+# Items that found no image keep their 'Image required' status, so without a
+# memory every rerun re-spends the full query budget on the same hopeless SKUs.
+
+FAILURE_FILE          = '.fetch_failures.json'
+FAILURE_COOLDOWN_DAYS = 3
+RETRY_FAILED          = False   # set by --retry-failed
+
+def load_failures():
+    try:
+        with open(FAILURE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def record_failure(failures, sku):
+    rec = failures.get(sku, {'count': 0})
+    rec['count'] = rec.get('count', 0) + 1
+    rec['last']  = date.today().isoformat()
+    failures[sku] = rec
+    with open(FAILURE_FILE, 'w') as f:
+        json.dump(failures, f, indent=1)
+    if rec['count'] >= 2:
+        print(f'     💡 {sku} has failed auto-fetch {rec["count"]}× — consider adding it to '
+              f'manual_only_skus in feedback/image_hints.json')
+
+def in_failure_cooldown(failures, sku):
+    if RETRY_FAILED:
+        return False
+    rec = failures.get(sku)
+    if not rec:
+        return False
+    try:
+        days = (date.today() - date.fromisoformat(rec['last'])).days
+    except Exception:
+        return False
+    return days < FAILURE_COOLDOWN_DAYS
+
 MANUAL_ONLY_SKUS:        set = set()   # SKUs that must be imaged manually — skip auto-fetch
 MANUAL_ONLY_COLLECTIONS: set = set()   # Collections where every item is manual-only
 
@@ -1085,6 +1123,8 @@ def main():
     parser.add_argument('--sku',               help='Process a single SKU only')
     parser.add_argument('--recheck-published', action='store_true',
                         help='Audit all live Shopify products for bad/duplicate images, requeue, then auto-fetch')
+    parser.add_argument('--retry-failed', action='store_true',
+                        help=f'Retry SKUs still inside the {FAILURE_COOLDOWN_DAYS}-day failure cooldown')
     parser.add_argument('--brands', nargs='+', metavar='BRAND',
                         help='Only process items whose brand field matches one of these (case-insensitive)')
     args = parser.parse_args()
@@ -1163,7 +1203,17 @@ def main():
 
     counts = {'validated': 0, 'would_validate': 0, 'no_image': 0, 'skipped': 0, 'error': 0}
 
+    global RETRY_FAILED
+    RETRY_FAILED = args.retry_failed
+    failures = load_failures()
+
     for item in items_to_process:
+        sku = item.get('sku', '')
+        if in_failure_cooldown(failures, sku):
+            rec = failures.get(sku, {})
+            print(f'  ⏸  {sku}  cooling down (failed {rec.get("count", 1)}× , last {rec.get("last")}) — use --retry-failed to force')
+            counts['skipped'] += 1
+            continue
         try:
             token = get_zoho_token()
             result = process_item(item, token, args.dry_run, today_str,
@@ -1171,6 +1221,8 @@ def main():
         except Exception as e:
             print(f'  ✗ Unhandled error for {item.get("sku", "?")}: {e}')
             result = 'error'
+        if result == 'no_image' and not args.dry_run:
+            record_failure(failures, sku)
         counts[result] = counts.get(result, 0) + 1
         # DDG needs a 20s cool-down between items; CSE does not.
         used, limit = _cse_quota()
