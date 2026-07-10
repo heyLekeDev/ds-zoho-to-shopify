@@ -1080,7 +1080,8 @@ def main():
             items_to_process = [it for it in items_to_process if it.get('sku') == args.sku]
     else:
         # Normal mode: read from enrichment_input.json
-        items_to_process = list(all_input)
+        # Filter out non-item objects (e.g. the injected feedback_context block)
+        items_to_process = [it for it in all_input if it.get('item_id')]
         if args.sku:
             items_to_process = [it for it in items_to_process if it.get('sku') == args.sku]
             if not items_to_process:

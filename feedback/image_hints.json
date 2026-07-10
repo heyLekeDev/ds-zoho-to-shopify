@@ -18,7 +18,12 @@
     "swann-morton":["swann-morton.com", "swannmorton.com"],
     "castellini":  ["castellini.it", "castellini.com"],
     "ethicon":     ["ethicon.com", "jnjmedtech.com"],
-    "vivid":       ["vividcarts.com", "vividarts.co.uk"]
+    "vivid":       ["pearsondental.com"],
+    "prevest denpro": ["prevestdenpro.com"],
+    "unigloves":   ["unigloves.co.uk", "unigloves.com"],
+    "pearson dental": ["pearsondental.com"],
+    "dux dental":  ["duxdental.com"],
+    "plasdent":    ["plasdent.com"]
   },
 
   "globally_blocked_domains": [
@@ -47,12 +52,35 @@
     "400-120-003",
     "400-120-004",
     "420-110-001",
-    "580-130-001"
+    "580-130-001",
+    "260-140-002",
+    "260-140-003",
+    "260-140-004",
+    "260-140-005",
+    "340-190-123",
+    "340-130-005",
+    "280-130-010",
+    "280-110-081",
+    "420-110-028",
+    "420-110-029",
+    "380-110-051",
+    "360-130-011",
+    "380-122-023",
+    "380-122-025",
+    "380-122-015",
+    "500-130-010",
+    "500-130-009",
+    "500-130-008",
+    "260-170-002",
+    "260-190-001",
+    "580-130-015",
+    "200-170-027"
   ],
 
   "manual_only_collections": [
     "_note_remove_me_before_use",
-    "SNL Brochures & Catalogues"
+    "SNL Brochures & Catalogues",
+    "DFS Ceramic Brush"
   ],
 
   "lessons_log": [
@@ -78,6 +106,16 @@
       "sku": "580-130-001",
       "item": "Pearson PQ Pouches",
       "lesson": "nutridentcompany.com appeared repeatedly in DDG results with low-quality images for Pearson products. Added to globally_blocked_domains. Pearsondentaluk.com is the preferred source."
+    },
+    {
+      "date": "2026-07-10",
+      "batch": "Burs/Biomaterials/Endodontics 42-item batch",
+      "lesson": "First full audit-gate run: 33 of 42 auto-fetched images were WRONG despite passing size/ratio checks (suture boxes for brushes, ear spray for canal lubricant, a floor lamp for a footswitch, an electron microscope for expansion screws). Visual audit before Queue for Upload is MANDATORY. Colour-specific variants (endo stop colours) and niche lab items (ceramic brushes, mandrels, jigs) are hopeless for auto-search - marked manual-only. Also: watch for wrong shade (QwikTemp A1 got A3 image), wrong size (Unigloves L got M box, 25mm discs got 38mm), and near-miss products from the right brand (Dedeco point vs disc, AH Plus Jet vs paste kit)."
+    },
+    {
+      "date": "2026-07-10",
+      "sku": "280-110-082/084",
+      "lesson": "Cattani Turbo Jet 1 and 2 auto-fetched each other's renders (swapped). For multi-model equipment families, verify the model label IN the image before accepting."
     }
   ]
 }

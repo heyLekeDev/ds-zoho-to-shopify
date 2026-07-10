@@ -287,7 +287,8 @@ def run_write(dry_run):
         output_results = json.load(f)
 
     # Build lookup maps
-    input_by_sku = {item['sku']: item for item in input_items}
+    # Skip non-item objects (e.g. the injected feedback_context block has no sku)
+    input_by_sku = {item['sku']: item for item in input_items if item.get('sku')}
 
     today_str = date.today().isoformat()
     token     = get_zoho_token()
