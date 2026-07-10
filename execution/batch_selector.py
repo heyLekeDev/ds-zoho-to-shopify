@@ -254,6 +254,8 @@ def main():
     parser.add_argument('--csv',        default=None, help='Path to inventory CSV')
     parser.add_argument('--batch-size', type=int, default=DEFAULT_BATCH_SIZE)
     parser.add_argument('--dry-run',    action='store_true', help='Preview without writing to Zoho')
+    parser.add_argument('--yes',        action='store_true',
+                        help='Skip the confirmation prompt (required for non-interactive/scheduled runs)')
     parser.add_argument('--brands',     nargs='+', default=None,
                         help='Only select items matching these brands (case-insensitive)')
     parser.add_argument('--exclude-shopify', default=None,
@@ -343,10 +345,16 @@ def main():
 
     # ── Confirm ───────────────────────────────────────────────────
     print()
-    confirm = input(f'  Write "Queue for Enrichment" to these {len(batch)} items? [y/N] ').strip().lower()
-    if confirm != 'y':
-        print('  Aborted.')
-        sys.exit(0)
+    if args.yes:
+        print(f'  --yes supplied — writing "Queue for Enrichment" to {len(batch)} items.')
+    elif not sys.stdin.isatty():
+        print('  ✗ Non-interactive run without --yes. Re-run with --yes to confirm the batch.')
+        sys.exit(2)
+    else:
+        confirm = input(f'  Write "Queue for Enrichment" to these {len(batch)} items? [y/N] ').strip().lower()
+        if confirm != 'y':
+            print('  Aborted.')
+            sys.exit(0)
 
     # ── Write to Zoho ─────────────────────────────────────────────
     print(f'\n  Writing to Zoho...')

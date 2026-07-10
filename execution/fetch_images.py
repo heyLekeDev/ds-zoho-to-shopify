@@ -215,24 +215,42 @@ def get_item_detail(item_id, token):
 
 _DIMENSION_RE = re.compile(r'^\d+(\.\d+)?\s*(MM|CM|M)\b', re.IGNORECASE)
 
+_DASH_RE  = re.compile(r'[—–]')
+_NOISE_RE = re.compile(r'[#"()″′]')
+
+def _clean_search_text(text, brand=''):
+    """
+    Normalize product text for search engines:
+    strip em-dashes, #, parens/quotes; drop a leading brand prefix
+    (the brand is added to the query separately, exactly once).
+    """
+    t = _DASH_RE.sub(' ', text or '')
+    t = _NOISE_RE.sub(' ', t)
+    t = ' '.join(t.split())
+    if brand and t.lower().startswith(brand.lower()):
+        t = t[len(brand):].strip(' -—–')
+    return t.strip()
+
 def build_queries_v2(name, brand, category, enriched_title='', v1_name='', v1_value='',
                      forced_specific=False):
     """
-    Return a prioritised list of (query_string, is_site_search) tuples.
+    Return a prioritised list of clean query strings.
 
     Priority order:
-      1. site:{trusted_domain} {enriched_title}  ← manufacturer site first
-      2. "{enriched_title}" {brand}              ← exact enriched title
-      3. {brand} {v1_name} {v1_value} dental     ← variant-specific fallback
-      4. {brand} {category_word} dental          ← broad fallback
+      1. site:{trusted_domain} {core}     ← manufacturer site first
+      2. {brand} {core}                   ← brand exactly once, cleaned title
+      3. {brand} {core} {variant value}   ← variant-specific
+      4. {core} dental                    ← brandless fallback
 
-    When forced_specific=True (duplicate detected), skip 1-2 and use 3-4 only
-    to guarantee a different kind of result.
+    Rules learned the hard way (2026-07-10 audit: 33/42 wrong images):
+    - no em-dashes, no '#', no quoted phrases — they kill or distort results
+    - never duplicate the brand ("Cattani Cattani ...")
+    - never append raw category strings ("Dental Units & Accessories")
+    - no generic brand-only fallback — it fetches the wrong product entirely
     """
     brand = (brand or '').strip()
-    cat_word = category.split('-')[-1].strip().title() if '-' in category else category.strip().title()
 
-    # Clean up the raw name for fallback queries
+    # Clean up the raw name for fallback use
     clean = name.replace('-', ' ').replace('*', '').strip()
     dim_match = _DIMENSION_RE.match(clean)
     if dim_match:
@@ -241,41 +259,35 @@ def build_queries_v2(name, brand, category, enriched_title='', v1_name='', v1_va
         natural = f'{rest} {dim}'.strip()
     else:
         natural = clean
-    natural_title = natural.title()
+
+    core = _clean_search_text(enriched_title, brand) or _clean_search_text(natural.title(), brand)
+    v1_clean = _clean_search_text(v1_value, '') if v1_value else ''
 
     queries = []
 
     if not forced_specific:
         # 1. Manufacturer site searches (highest precision)
         trusted_domains = BRAND_TRUSTED_DOMAINS.get(brand.lower(), []) if brand else []
-        for domain in trusted_domains[:2]:  # try up to 2 trusted domains
-            if enriched_title:
-                queries.append(f'site:{domain} {enriched_title}')
-            else:
-                queries.append(f'site:{domain} {natural_title}')
+        for domain in trusted_domains[:2]:
+            queries.append(f'site:{domain} {core}')
 
-        # 2. Exact enriched title with brand
-        if enriched_title and brand:
-            queries.append(f'"{enriched_title}" {brand}')
-        elif enriched_title:
-            queries.append(f'"{enriched_title}"')
+        # 2. Brand + cleaned core title (brand exactly once)
+        if brand:
+            queries.append(f'{brand} {core}')
 
-    # 3. Variant-specific query (also used when forced_specific=True)
-    if brand and v1_value:
-        qualifier = f'{v1_name} {v1_value}' if v1_name else v1_value
-        queries.append(f'{brand} {qualifier} {cat_word} dental')
-    elif brand and enriched_title:
-        queries.append(f'{brand} {enriched_title} product image')
-    elif brand:
-        queries.append(f'{brand} {natural_title} dental')
+    # 3. Variant-specific — append only the variant tokens not already in the title
+    if v1_clean:
+        core_words = set(core.lower().split())
+        extra = ' '.join(w for w in v1_clean.split() if w.lower() not in core_words)
+        if extra:
+            queries.append(f'{brand} {core} {extra}'.strip())
 
-    # 4. Broad fallback
-    if brand:
-        queries.append(f'{brand} {cat_word} dental product')
-    else:
-        queries.append(f'{natural_title} dental')
+    # 4. Brandless fallback with a dental qualifier — still product-specific
+    queries.append(f'{core} dental')
 
-    return queries
+    # De-dup while preserving order
+    seen = set()
+    return [q for q in queries if not (q in seen or seen.add(q))]
 
 # ── Google Custom Search (primary — free tier, 100 queries/day) ──────────────
 
@@ -314,9 +326,11 @@ def search_images_google(query, max_results=MAX_CANDIDATES):
     if used >= limit:
         return None
     try:
+        # One CSE call costs 1 quota unit whether we ask for 1 or 10 results —
+        # always ask for 10. 'large' pre-filters tiny thumbnails server-side.
         resp = requests.get('https://www.googleapis.com/customsearch/v1', params={
             'key': CSE_KEY, 'cx': CSE_CX, 'q': query,
-            'searchType': 'image', 'num': min(max_results, 10),
+            'searchType': 'image', 'num': 10, 'imgSize': 'large',
         }, timeout=15)
         _cse_quota_bump()
         data = resp.json()
@@ -329,18 +343,25 @@ def search_images_google(query, max_results=MAX_CANDIDATES):
             else:
                 print(f'     ⚠ CSE error: {msg[:80]}')
             return None
+        # Keep title/snippet/context — they carry the model/shade/size tokens
+        # that candidate scoring uses to pick the RIGHT variant.
         return [{'url': it.get('link', ''),
                  'width':  int(it.get('image', {}).get('width', 0) or 0),
-                 'height': int(it.get('image', {}).get('height', 0) or 0)}
+                 'height': int(it.get('image', {}).get('height', 0) or 0),
+                 'title':   it.get('title', ''),
+                 'snippet': it.get('snippet', ''),
+                 'context': it.get('image', {}).get('contextLink', '')}
                 for it in data.get('items', []) if it.get('link')]
     except Exception as e:
         print(f'     ⚠ CSE request failed: {e}')
         return None
 
 def search_images(query, max_results=MAX_CANDIDATES):
-    """Unified search: Google CSE first (fast, reliable, free tier), DDG fallback."""
+    """Unified search: Google CSE first (fast, reliable, free tier), DDG fallback.
+    Falls back to DDG when CSE is unavailable OR returned zero results
+    (the quota unit is already spent — don't waste the query entirely)."""
     results = search_images_google(query, max_results)
-    if results is not None:
+    if results:
         return results, 'cse'
     return search_images_ddg(query, max_results), 'ddg'
 
@@ -538,29 +559,60 @@ def write_zoho_status(item_id, new_status, sync_result, notes, source_url, token
 
 # ── Candidate filtering ───────────────────────────────────────────────────────
 
-def try_candidates(candidates, brand='', exclude_hashes=None):
+def _variant_tokens(value):
+    """Tokenize a variant value for matching: 'Turbo Jet 2 (230V 50Hz)' → {'turbo','jet','2','230v','50hz'}."""
+    return {t for t in re.split(r'[^a-z0-9]+', (value or '').lower()) if t}
+
+def _token_hits(tokens, text):
+    """Count word-boundary token matches in text (loose substrings would over-match single digits)."""
+    return sum(1 for t in tokens if re.search(rf'\b{re.escape(t)}\b', text))
+
+def try_candidates(candidates, brand='', exclude_hashes=None,
+                   required_tokens=None, forbidden_tokens=None, tried_urls=None):
     """
     Try each candidate URL. Returns (image_bytes, pil_img, w, h, ratio, url, md5) or None.
     - Rejects competitor URLs.
     - Rejects images whose MD5 is in exclude_hashes (already used in same collection).
-    - Prioritises trusted brand domains.
+    - Scores candidates by variant-distinguishing tokens (model number, shade,
+      size, colour) found in the URL + CSE title/snippet/context. A candidate
+      matching a SIBLING variant's distinctive token and none of this item's is
+      rejected outright — this is what prevented-class failures look like:
+      Turbo Jet 1 getting Jet 2's render, shade A1 getting an A3 image.
+    - Prioritises score, then trusted brand domains.
+    - tried_urls (a set, mutated in place) prevents re-downloading candidates
+      already attempted in an earlier pass for the same item.
     """
     exclude_hashes = exclude_hashes or set()
+    required_tokens = required_tokens or set()
+    forbidden_tokens = forbidden_tokens or set()
+    tried_urls = tried_urls if tried_urls is not None else set()
 
-    def sort_key(c):
-        url = c.get('url', '')
-        if is_competitor_url(url):
-            return 2
-        if brand and is_trusted_url(url, brand):
-            return 0
-        return 1
+    def cand_text(c):
+        return ' '.join([c.get('url', ''), c.get('title', ''),
+                         c.get('snippet', ''), c.get('context', '')]).lower()
 
-    for cand in sorted(candidates, key=sort_key):
+    def score(c):
+        s = 0
+        text = cand_text(c)
+        s += 3 * _token_hits(required_tokens, text)
+        s -= 4 * _token_hits(forbidden_tokens, text)
+        if brand and is_trusted_url(c.get('url', ''), brand):
+            s += 1
+        return s
+
+    for cand in sorted(candidates, key=lambda c: (-score(c),)):
         url = cand.get('url', '')
-        if not url:
+        if not url or url in tried_urls:
             continue
+        tried_urls.add(url)
         if is_competitor_url(url):
             print(f'     ✗ Blocked competitor URL: {url[:60]}')
+            continue
+
+        # Wrong-variant guard: matches a sibling's distinctive token but none of ours
+        if forbidden_tokens and _token_hits(forbidden_tokens, cand_text(cand)) \
+                and required_tokens and not _token_hits(required_tokens, cand_text(cand)):
+            print(f'     ✗ Wrong-variant signal, skipping: {url[:60]}')
             continue
 
         meta_w = cand.get('width', 0)
@@ -644,60 +696,72 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
     # Existing collection hashes to avoid duplicates
     col_hashes = collection_hashes.get(collection, set()) if collection else set()
 
-    # Two-pass approach: normal queries first, then forced-specific on duplicate
-    for forced_specific in (False, True):
-        if forced_specific:
-            print(f'     → Duplicate detected — retrying with variant-specific queries...')
+    # Variant-distinguishing tokens: this item's variant value vs its siblings'.
+    # required = tokens unique to THIS variant; forbidden = tokens unique to siblings.
+    # These drive candidate scoring so 'Turbo Jet 1' can never accept Jet 2's image.
+    own_tokens = _variant_tokens(v1_value)
+    sibling_tokens = set()
+    if collection:
+        for o in output_by_sku.values():
+            if o.get('shopify_collection') == collection and o.get('sku') != sku:
+                sibling_tokens |= _variant_tokens(o.get('variant_1_value', ''))
+    required_tokens = own_tokens - sibling_tokens
+    forbidden_tokens = sibling_tokens - own_tokens
+    if required_tokens:
+        print(f'     Variant tokens: need {sorted(required_tokens)}, avoid {sorted(forbidden_tokens)}')
 
+    tried_urls = set()   # never re-download the same candidate for this item
+    all_candidates = []  # accumulate across queries; scoring decides order
+
+    def _try(cands, hashes):
+        return try_candidates(cands, brand=brand, exclude_hashes=hashes,
+                              required_tokens=required_tokens,
+                              forbidden_tokens=forbidden_tokens,
+                              tried_urls=tried_urls)
+
+    hit = None
+
+    # Priority 0: manual override / saved source URL — tried ALONE, before
+    # any search query is spent (a confirmed URL must not lose to a search hit).
+    if sku in MANUAL_OVERRIDES:
+        override_url = MANUAL_OVERRIDES[sku]
+        print(f'     📌 Manual override: {override_url[:80]}')
+        hit = _try([{'url': override_url, 'width': 0, 'height': 0}], col_hashes)
+    elif source_url:
+        if is_competitor_url(source_url):
+            print(f'     ⚠  Saved source URL is from a blocked domain — skipping cached URL.')
+        else:
+            print(f'     Trying saved source URL...')
+            hit = _try([{'url': source_url, 'width': 0, 'height': 0}], col_hashes)
+
+    if not hit:
         queries = build_queries_v2(
             name, brand, category,
             enriched_title=enriched_title,
             v1_name=v1_name,
             v1_value=v1_value,
-            forced_specific=forced_specific,
         )
-
-        candidates = []
-
-        # Priority 0: MANUAL_OVERRIDES — tried before any search query, first pass only
-        if not forced_specific and sku in MANUAL_OVERRIDES:
-            override_url = MANUAL_OVERRIDES[sku]
-            print(f'     📌 Manual override: {override_url[:80]}')
-            candidates.append({'url': override_url, 'width': 0, 'height': 0})
-
-        # Priority 1: try saved source URL on first pass only
-        elif not forced_specific and source_url:
-            if is_competitor_url(source_url):
-                print(f'     ⚠  Saved source URL is from a blocked domain — skipping cached URL.')
-            else:
-                print(f'     Trying saved source URL...')
-                candidates.append({'url': source_url, 'width': 0, 'height': 0})
-
         for query in queries:
             print(f'     Searching: "{query}"')
             results, engine = search_images(query, max_results=MAX_CANDIDATES)
             if engine == 'cse' and results:
                 print(f'     [CSE] {len(results)} result(s)')
-            candidates.extend(results)
+            all_candidates.extend(results)
 
-            hit = try_candidates(candidates, brand=brand, exclude_hashes=col_hashes)
+            hit = _try(all_candidates, col_hashes)
             if hit:
                 break
 
-            time.sleep(15)
+            # DDG needs a cool-down between queries; CSE does not.
+            if engine == 'ddg':
+                time.sleep(15)
 
-        if hit:
-            break  # found a unique image
-
-    if not hit:
-        # Last resort: use best available even if it's a duplicate, but warn
-        candidates_all = []
-        if source_url:
-            candidates_all.append({'url': source_url, 'width': 0, 'height': 0})
-        for q in build_queries_v2(name, brand, category, enriched_title, v1_name, v1_value):
-            candidates_all.extend(search_images_ddg(q, max_results=MAX_CANDIDATES))
-            time.sleep(5)
-        hit = try_candidates(candidates_all, brand=brand, exclude_hashes=set())  # no hash exclusion
+    if not hit and all_candidates:
+        # Last resort: allow a within-collection duplicate from ALREADY-FETCHED
+        # candidates (no new searches — the old triple-search here was the main
+        # quota drain), but warn loudly.
+        tried_urls.clear()
+        hit = _try(all_candidates, set())  # no hash exclusion
         is_dupe = True if hit else False
     else:
         is_dupe = False

@@ -9,6 +9,7 @@ Zoho-to-Shopify Master Sync (Overhaul v2)
 """
 
 import os
+import sys
 import csv
 import time
 import json
@@ -83,14 +84,20 @@ SHOPIFY_URL = f"https://{SHOPIFY_SHOP_URL}/admin/api/{SHOPIFY_API_VERSION}/graph
 
 LOG_FILE = 'Sync_Execution_Log.csv'
 
+# Zoho item IDs whose status handshake failed even after retry (reported at end of run)
+_handshake_failures = []
+
 # --- Zoho Auth ---
 TOKEN_FILE = '.zoho_token.json'
 _zoho_token = None
+_zoho_token_ts = 0
 
 def get_zoho_token():
-    global _zoho_token
-    if _zoho_token: return _zoho_token
-    
+    global _zoho_token, _zoho_token_ts
+    # Access tokens expire in 1 hour. Use 55 mins (3300s) for safety.
+    if _zoho_token and (time.time() - _zoho_token_ts) < 3300:
+        return _zoho_token
+
     # 1. Try disk cache
     if os.path.exists(TOKEN_FILE):
         try:
@@ -100,6 +107,7 @@ def get_zoho_token():
                 if time.time() - t_data.get('timestamp', 0) < 3300:
                     _zoho_token = t_data.get('access_token')
                     if _zoho_token:
+                        _zoho_token_ts = t_data.get('timestamp', time.time())
                         return _zoho_token
         except:
             pass
@@ -120,10 +128,11 @@ def get_zoho_token():
         
         if 'access_token' in data:
             _zoho_token = data['access_token']
+            _zoho_token_ts = time.time()
             # Save to disk
             try:
                 with open(TOKEN_FILE, 'w') as f:
-                    json.dump({'access_token': _zoho_token, 'timestamp': time.time()}, f)
+                    json.dump({'access_token': _zoho_token, 'timestamp': _zoho_token_ts}, f)
             except:
                 pass
             return _zoho_token
@@ -169,11 +178,44 @@ def shopify_graphql(query, variables=None):
         "X-Shopify-Access-Token": get_shopify_token(),
         "Content-Type": "application/json"
     }
-    resp = requests.post(SHOPIFY_URL, headers=headers, json={"query": query, "variables": variables}, timeout=20)
-    data = resp.json()
-    if 'errors' in data:
-        print(f"GraphQL Error: {json.dumps(data['errors'], indent=2)}")
-    return data
+    last_status = None
+    for attempt in range(3):
+        resp = requests.post(SHOPIFY_URL, headers=headers, json={"query": query, "variables": variables}, timeout=20)
+        last_status = resp.status_code
+        if resp.status_code != 200:
+            print(f"  [GRAPHQL HTTP {resp.status_code}] Attempt {attempt+1}/3. Retrying in 5s...")
+            time.sleep(5)
+            continue
+
+        try:
+            data = resp.json()
+        except ValueError:
+            data = None
+        if not isinstance(data, dict):
+            data = {}
+
+        # Detect throttling safely and retry
+        errors = data.get('errors')
+        throttled = False
+        if isinstance(errors, list):
+            for err in errors:
+                if isinstance(err, dict) and (err.get('extensions') or {}).get('code') == 'THROTTLED':
+                    throttled = True
+                    break
+        if throttled:
+            print(f"  [GRAPHQL THROTTLED] Attempt {attempt+1}/3. Sleeping 10s and retrying...")
+            time.sleep(10)
+            continue
+
+        if errors:
+            print(f"GraphQL Error: {json.dumps(errors, indent=2)}")
+
+        # Normalize so callers' .get('data', {}).get(...) chains never hit None
+        if data.get('data') is None:
+            data['data'] = {}
+        return data
+
+    raise Exception(f"Shopify GraphQL request failed after 3 attempts (last HTTP status: {last_status}).")
 
 def get_active_publications():
     """Fetches all active Shopify sales channel IDs (e.g., Online Store, POS)."""
@@ -491,8 +533,12 @@ def update_zoho_status(zoho_id, status, debug_note="", existing_note=""):
             return False
     # --------------------------------------------------------
     
-    # No retries here to avoid slowing down parallel threadpool
+    # No retries here to avoid slowing down parallel threadpool (429 gets one retry)
     resp = requests.put(url, headers=zoho_headers(), json=payload, timeout=10)
+    if resp.status_code == 429:
+        print(f"  [HANDSHAKE 429] Zoho rate limit updating {zoho_id}. Sleeping 30s and retrying once...")
+        time.sleep(30)
+        resp = requests.put(url, headers=zoho_headers(), json=payload, timeout=10)
     return resp.ok
 
 # --- Phase 3: Shopify Actions ---
@@ -809,9 +855,8 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
                         else:
                             print(f"    ✓ Product {p_id} published to {len(active_publications)} active channels.")
 
-                    # Handle Image for the initial shell if it exists
-                    if item.get('image_name'):
-                        sync_image_to_shopify(p_id, z_id, sku, item['image_name'])
+                    # Image upload is handled by the to_update pass below, which links it
+                    # to the variant and checks errors — do not upload it here as well.
 
                     # Capture default variant ID to avoid collision
                     default_v_id = None
@@ -1072,7 +1117,12 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
     
     # Generate MD5 hash of the original high-resolution file
     img_hash = hashlib.md5(image_bytes).hexdigest()
-    
+
+    # Content-addressed filename: generic Zoho names (e.g. image.png) with
+    # duplicateResolutionMode REPLACE could overwrite another product's file.
+    ext = image_name.rsplit('.', 1)[-1].lower() if '.' in image_name else 'jpg'
+    upload_name = f"{sku}-{img_hash[:8]}.{ext}"
+
     # Compare against cache to skip redundant API waste
     if cache_data is not None and getattr(cache_data, "get", lambda x: None)(f"{sku}_img") == img_hash:
         print(f"      [IMAGE SKIP] MD5 Hash matches cache for {sku}. Skipping all Shopify File API calls.")
@@ -1110,7 +1160,7 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
     """
     staged_vars = {
         "input": [{
-            "filename": image_name,
+            "filename": upload_name,
             "mimeType": mime_type,
             "resource": "IMAGE",
             "fileSize": str(file_size),
@@ -1134,7 +1184,7 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
     for param in target['parameters']:
         multipart_data[param['name']] = param['value']
     
-    files = {'file': (image_name, image_bytes, mime_type)}
+    files = {'file': (upload_name, image_bytes, mime_type)}
     
     aws_resp = requests.post(upload_url, data=multipart_data, files=files)
     if not aws_resp.ok:
@@ -1159,7 +1209,7 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
     file_create_vars = {
         "files": [{
             "originalSource": resource_url,
-            "filename": image_name,
+            "filename": upload_name,
             "contentType": "IMAGE",
             "duplicateResolutionMode": "REPLACE"
         }]
@@ -1210,8 +1260,14 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
     }
     
     media_res = shopify_graphql(media_query, media_vars)
-    media_nodes = media_res.get('data', {}).get('productCreateMedia', {}).get('media', [])
-    
+    media_payload = media_res.get('data', {}).get('productCreateMedia', {}) or {}
+    media_errs = media_payload.get('mediaUserErrors', [])
+    if media_errs:
+        print(f"      [IMAGE ERROR] productCreateMedia user errors: {json.dumps(media_errs)}")
+        return False, None, f"Failed to attach media to Product: {json.dumps(media_errs)}"
+
+    media_nodes = media_payload.get('media', [])
+
     if not media_nodes:
         print(f"      [IMAGE WARNING] Failed to attach media to Product: {media_res}")
         return False, None, "Failed to attach media to Product."
@@ -1259,7 +1315,33 @@ def sync_image_to_shopify(product_id, zoho_id, sku, image_name, variant_id=None,
                 
         # If it falls through the loop, it timed out
         return False, None, "Image Processing Timeout"
-            
+
+    # No variant to link — poll the media node until Shopify finishes async processing
+    status_query = """
+    query($id: ID!) {
+      node(id: $id) {
+        ... on MediaImage { status }
+      }
+    }
+    """
+    max_retries = 3
+    for attempt in range(max_retries):
+        print(f"      [IMAGE DELAY] Waiting 4s for media processing (Attempt {attempt+1}/{max_retries})...")
+        time.sleep(4)
+
+        s_res = shopify_graphql(status_query, {"id": media_id})
+        node = s_res.get('data', {}).get('node') or {}
+        m_status = node.get('status')
+
+        if m_status == 'READY':
+            print(f"      ✓ Media processed successfully (Media ID: {media_id})")
+            return True, img_hash, None
+        if m_status == 'FAILED':
+            print(f"      [IMAGE ERROR] Shopify media processing FAILED (Media ID: {media_id})")
+            return False, None, "Shopify media processing FAILED after upload."
+
+    # Still PROCESSING after retries — don't block the run on slow processing
+    print(f"      [IMAGE WARNING] Media {media_id} still processing after {max_retries} checks. Treating as success.")
     return True, img_hash, None
 
 def sync_all(groups, dry_run=False, cache=None, active_publications=None):
@@ -1286,9 +1368,34 @@ def sync_all(groups, dry_run=False, cache=None, active_publications=None):
         # 2. Immediate Checkpoint Handshake (Commit chunk to Zoho)
         if batch_zoho_updates and not dry_run:
             print(f"\n  [Checkpoint] Committing {len(batch_zoho_updates)} status updates to Zoho for Micro-Batch {chunk_idx + 1}...")
+            futures = []
             with ThreadPoolExecutor(max_workers=5) as executor:
                 for z_id, status, note, existing_note in batch_zoho_updates:
-                    executor.submit(update_zoho_status, z_id, status, note, existing_note)
+                    fut = executor.submit(update_zoho_status, z_id, status, note, existing_note)
+                    futures.append((z_id, status, note, existing_note, fut))
+
+            # Verify handshake results; retry failures once
+            failed = []
+            for z_id, status, note, existing_note, fut in futures:
+                try:
+                    ok = fut.result()
+                except Exception as e:
+                    print(f"  [Checkpoint] Handshake exception for {z_id}: {e}")
+                    ok = False
+                if not ok:
+                    failed.append((z_id, status, note, existing_note))
+
+            if failed:
+                print(f"  [Checkpoint] {len(failed)} handshake(s) failed. Retrying once in 2s...")
+                time.sleep(2)
+                for z_id, status, note, existing_note in failed:
+                    try:
+                        ok = update_zoho_status(z_id, status, note, existing_note)
+                    except Exception as e:
+                        print(f"  [Checkpoint] Handshake retry exception for {z_id}: {e}")
+                        ok = False
+                    if not ok:
+                        _handshake_failures.append(z_id)
             print("  [Checkpoint] Commit complete.")
 
 def main():
@@ -1323,6 +1430,13 @@ def main():
         traceback.print_exc()
     finally:
         save_cache(cache)
+
+    if _handshake_failures:
+        print("\n[HANDSHAKE FAILED] Zoho status updates failed (after retry) for the following item IDs:")
+        for z_id in _handshake_failures:
+            print(f"  - {z_id}")
+        print("Their cf_shopify_status in Zoho may be stale. Investigate and update manually or re-run.")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()

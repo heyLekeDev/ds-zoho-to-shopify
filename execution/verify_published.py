@@ -49,10 +49,32 @@ def verify_sku(sku, token):
     if prod.get('status') != 'ACTIVE':
         reasons.append(f"Product status is {prod.get('status')}")
 
-    has_variant_img = bool((v.get('image') or {}).get('url'))
+    # Invisible-product mode: exists and ACTIVE but never published to the Online Store
+    if not prod.get('publishedAt'):
+        reasons.append('Not published to Online Store channel')
+
+    n_variants = (prod.get('variantsCount') or {}).get('count', 1)
+    variant_img = (v.get('image') or {}).get('url')
     has_product_img = bool(prod.get('featuredMedia')) or (prod.get('mediaCount') or {}).get('count', 0) > 0
-    if not has_variant_img and not has_product_img:
+
+    if n_variants > 1:
+        # On multi-variant products a product-level image is NOT enough —
+        # this variant needs its own linked image.
+        if not variant_img:
+            reasons.append('Variant has no linked image (multi-variant product)')
+        else:
+            # Sibling variants sharing this exact image = likely wrong/duplicate image
+            siblings = [e['node'] for e in (prod.get('variants') or {}).get('edges', [])]
+            shared = [s['sku'] for s in siblings
+                      if s.get('sku') != sku and (s.get('image') or {}).get('url') == variant_img]
+            if shared:
+                reasons.append(f'Image shared with sibling variant(s): {", ".join(shared[:4])}')
+    elif not variant_img and not has_product_img:
         reasons.append('No image on Shopify')
+
+    img = v.get('image') or {}
+    if img.get('width') and (img['width'] < 800 or (img.get('height') or 0) < 800):
+        reasons.append(f"Image below 800x800 ({img['width']}x{img.get('height')})")
 
     desc = (prod.get('descriptionHtml') or '').strip()
     if not desc:

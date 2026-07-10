@@ -196,17 +196,19 @@ def shopify_graphql(query, variables=None):
     raise Exception('Shopify GraphQL: too many retries')
 
 def shopify_variant_by_sku(sku):
-    """Look up a variant (and its product) by SKU. Returns dict or None."""
+    """Look up a variant (and its product, incl. sibling variants) by SKU. Returns dict or None."""
     q = '''
     query($q: String!) {
       productVariants(first: 5, query: $q) {
         edges { node {
           id sku price
-          image { url }
+          image { url width height }
           product {
-            id title handle status descriptionHtml
+            id title handle status descriptionHtml publishedAt
             featuredMedia { preview { image { url } } }
             mediaCount { count }
+            variantsCount { count }
+            variants(first: 30) { edges { node { sku image { url } } } }
           }
         } }
       }
