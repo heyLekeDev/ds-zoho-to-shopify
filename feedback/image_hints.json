@@ -1,31 +1,85 @@
 {
   "_description": "Image search hints for fetch_images.py. Loaded at startup. Edit this file to improve future image fetches without touching the script.",
-
   "brand_preferred_sources": {
     "_note": "Domains added here merge with BRAND_TRUSTED_DOMAINS in fetch_images.py (not replaced). Brand key must be lowercase.",
-    "fixodent":    ["pg.com", "fixodent.co.uk", "fixodent.com"],
-    "poligrip":    ["poligrip.com", "seabonddental.com"],
-    "pearson":     ["pearsondentaluk.com", "pearsondentalusa.com"],
-    "dentek":      ["dentek.com"],
-    "dentaurum":   ["dentaurum.de", "dentaurum.com"],
-    "alpro":       ["alpro-dental.com", "alprodental.com"],
-    "philips zoom":["philips.com", "usa.philips.com"],
-    "carestream":  ["carestreamdental.com", "carestream.com"],
-    "planmeca":    ["planmeca.com"],
-    "cefla":       ["cefladental.com", "cefla.com"],
-    "cattani":     ["cattani.it", "cattaniuk.com"],
-    "tavom":       ["tavom.com"],
-    "swann-morton":["swann-morton.com", "swannmorton.com"],
-    "castellini":  ["castellini.it", "castellini.com"],
-    "ethicon":     ["ethicon.com", "jnjmedtech.com"],
-    "vivid":       ["pearsondental.com"],
-    "prevest denpro": ["prevestdenpro.com"],
-    "unigloves":   ["unigloves.co.uk", "unigloves.com"],
-    "pearson dental": ["pearsondental.com"],
-    "dux dental":  ["duxdental.com"],
-    "plasdent":    ["plasdent.com"]
+    "fixodent": [
+      "pg.com",
+      "fixodent.co.uk",
+      "fixodent.com"
+    ],
+    "poligrip": [
+      "poligrip.com",
+      "seabonddental.com"
+    ],
+    "pearson": [
+      "pearsondentaluk.com",
+      "pearsondentalusa.com"
+    ],
+    "dentek": [
+      "dentek.com"
+    ],
+    "dentaurum": [
+      "dentaurum.de",
+      "dentaurum.com"
+    ],
+    "alpro": [
+      "alpro-dental.com",
+      "alprodental.com"
+    ],
+    "philips zoom": [
+      "philips.com",
+      "usa.philips.com"
+    ],
+    "carestream": [
+      "carestreamdental.com",
+      "carestream.com"
+    ],
+    "planmeca": [
+      "planmeca.com"
+    ],
+    "cefla": [
+      "cefladental.com",
+      "cefla.com"
+    ],
+    "cattani": [
+      "cattani.it",
+      "cattaniuk.com"
+    ],
+    "tavom": [
+      "tavom.com"
+    ],
+    "swann-morton": [
+      "swann-morton.com",
+      "swannmorton.com"
+    ],
+    "castellini": [
+      "castellini.it",
+      "castellini.com"
+    ],
+    "ethicon": [
+      "ethicon.com",
+      "jnjmedtech.com"
+    ],
+    "vivid": [
+      "pearsondental.com"
+    ],
+    "prevest denpro": [
+      "prevestdenpro.com"
+    ],
+    "unigloves": [
+      "unigloves.co.uk",
+      "unigloves.com"
+    ],
+    "pearson dental": [
+      "pearsondental.com"
+    ],
+    "dux dental": [
+      "duxdental.com"
+    ],
+    "plasdent": [
+      "plasdent.com"
+    ]
   },
-
   "globally_blocked_domains": [
     "_note_remove_me_before_use",
     "linkedin.com",
@@ -39,11 +93,9 @@
     "youtube.com",
     "tiktok.com"
   ],
-
   "sku_image_overrides": {
     "_note": "Map SKU → direct image URL. URL must pass Pillow aspect-ratio (0.8–1.2) and resolution (800×800) checks. Tried FIRST before any DDG query."
   },
-
   "manual_only_skus": [
     "_note_remove_me_before_use",
     "360-120-004",
@@ -74,15 +126,19 @@
     "260-170-002",
     "260-190-001",
     "580-130-015",
-    "200-170-027"
+    "200-170-027",
+    "120-120-002",
+    "120-120-003",
+    "120-120-004",
+    "120-120-008",
+    "120-120-009",
+    "120-120-031"
   ],
-
   "manual_only_collections": [
     "_note_remove_me_before_use",
     "SNL Brochures & Catalogues",
     "DFS Ceramic Brush"
   ],
-
   "lessons_log": [
     {
       "date": "2026-04-05",
@@ -116,6 +172,11 @@
       "date": "2026-07-10",
       "sku": "280-110-082/084",
       "lesson": "Cattani Turbo Jet 1 and 2 auto-fetched each other's renders (swapped). For multi-model equipment families, verify the model label IN the image before accepting."
+    },
+    {
+      "date": "2026-07-11",
+      "batch": "Campaign slice 1 (65 items: endo, disposables, apparel)",
+      "lesson": "New engine: 58/65 technical validation at ~1 CSE query/item (old engine burned up to 12), but visual audit accepted only 10 - long-tail generics (tray covers, mixing pads, cups, paper points) rarely have findable exact images. Recurring confusions: paper points fetch gutta-percha; rubber dam clamps fetch forceps; scrub tops fetch non-African model shots (people rule - need flat-lay product photos); colour/size variants still mismatch when siblings are not in the same batch (no forbidden tokens). These families are team-sourcing work, not search work - all 48 rejects appended to Image Queue tab with suggested sources."
     }
   ]
 }
