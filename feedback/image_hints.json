@@ -91,7 +91,11 @@
     "twitter.com",
     "pinterest.com",
     "youtube.com",
-    "tiktok.com"
+    "tiktok.com",
+    "dentrealmarket.com",
+    "vvividvinyl.com",
+    "bumbletoys.com",
+    "walmartimages.com"
   ],
   "sku_image_overrides": {
     "_note": "Map SKU → direct image URL. URL must pass Pillow aspect-ratio (0.8–1.2) and resolution (800×800) checks. Tried FIRST before any DDG query."
@@ -132,7 +136,18 @@
     "120-120-004",
     "120-120-008",
     "120-120-009",
-    "120-120-031"
+    "120-120-031",
+    "140-110-004",
+    "380-110-008",
+    "280-120-016",
+    "480-150-002",
+    "480-150-052",
+    "480-150-054",
+    "200-110-025",
+    "200-110-022",
+    "380-120-007",
+    "200-220-001",
+    "200-220-002"
   ],
   "manual_only_collections": [
     "_note_remove_me_before_use",
@@ -177,6 +192,26 @@
       "date": "2026-07-11",
       "batch": "Campaign slice 1 (65 items: endo, disposables, apparel)",
       "lesson": "New engine: 58/65 technical validation at ~1 CSE query/item (old engine burned up to 12), but visual audit accepted only 10 - long-tail generics (tray covers, mixing pads, cups, paper points) rarely have findable exact images. Recurring confusions: paper points fetch gutta-percha; rubber dam clamps fetch forceps; scrub tops fetch non-African model shots (people rule - need flat-lay product photos); colour/size variants still mismatch when siblings are not in the same batch (no forbidden tokens). These families are team-sourcing work, not search work - all 48 rejects appended to Image Queue tab with suggested sources."
+    },
+    {
+      "date": "2026-07-11",
+      "batch": "Fix Tracker daily maintenance (14 Open/Reopened rows)",
+      "lesson": "CSE quota was already exhausted by the morning batch run, so this pass was CSE-free repair only. Live-Shopify defects found and removed: (1) brand-confusion wrong product - \"Vivid Sticky Wrap\" (dental barrier film) showed VViViD automotive vinyl wrap from vvividvinyl.com [blocked]; (2) logo-as-product - Pearson Thermoforming Sheet showed a bare \"Pearson\" wordmark from seeklogo [already blocked]; (3) reseller watermark - Castellini PiezoSteril showed a dentrealmarket.com watermarked photo [blocked]; (4) background-removal wrecks from an earlier build still live on Published products (Bicon Synthograft infographic, President Impression Tray jagged-halo cutout) - deleted from both Shopify and Zoho, reset to Image required; (5) non-square featured image (product_image.jpg 648x366) caused a \"wrong size\" complaint on 340-190-025 - deleted, leaving the three square 1296px images; (6) stale foreign-SKU gallery images (600-160-002 inside 600-160-001, 280-120-017 inside 280-120-016, 380-120-010 inside 380-120-007) removed. Lesson: deleting a bad Zoho image does NOT remove the already-published Shopify media - Reopened image complaints usually mean orphaned/duplicate Shopify media that must be deleted via productDeleteMedia directly."
+    },
+    {
+      "date": "2026-07-12",
+      "batch": "Daily maintenance fix-tracker (4 Reopened + 10 Open rows)",
+      "lesson": "Verified-first pass. (1) All 4 Reopened rows (280-120-016, 400-140-004, 380-120-007, 200-110-022) were ALREADY resolved on live Shopify by the prior day's productDeleteMedia pass - Shopify media query showed 0 stale media (or the single correct image for 400-140-004); the rows were only Reopened because the sheet was never written back. Always re-query live Shopify media before re-doing a media deletion. (2) A brand's OWN 'official' source URL can still be a marketing infographic, not a clean packshot: bicon.com/SGFT.jpg (Synthograft) and reachtoothbrush.com ...ATF_6.jpg (Reach Advance) are both feature graphics with callout text - reject infographics even from the manufacturer domain. (3) Colgate 480-150-002 has a clean 2500px 2-brush render in Zoho but the exact 'Microsinic' model / single-vs-twin-pack is unverifiable - do not publish an unconfirmable model match. (4) pearsondental catalog thumbs can be tiny (President tray C59-0430 = 234x208) - too low-res to upscale. All routed to Image Queue for team sourcing (already in manual_only_skus). (5) Two logged SKUs (300-520-010, 270-150-001) do not exist in Zoho - Needs Manual, team to confirm SKU."
+    },
+    {
+      "date": "2026-07-12",
+      "sku": "200-220-002",
+      "lesson": "fetch_images.py BUG: when the found image's source URL exceeds 255 chars, the Zoho status write fails with 'Source URL value length cannot exceed 255' and the item errors out (does not record a normal failure). cf_source_url should be truncated/omitted to <=255 chars before the write. Low priority (the fetched Dynarex image was wrong-brand anyway) but worth fixing so long-URL CDN results don't error."
+    },
+    {
+      "date": "2026-07-13",
+      "sku": "200-220-001",
+      "lesson": "Daily maintenance: same Dynarex infographic bug as 200-220-002 sibling, now with a WORSE consequence understood. fetch_images.py uploads the image to Zoho (upload_image_to_zoho) BEFORE write_zoho_status; when the >255-char source URL makes the status write fail, the wrong image is LEFT on the item while status stays 'Image required' (silent bad-image leak, not caught by the default audit gate which only scans 'Image Validated'). Today the leaked image on 200-220-001 was a Dynarex marketing infographic (text overlay + brand watermark + a non-African child using a Junior 5in depressor) - triple rule violation for a Birchwood/JMU Senior 6in item. Deleted via reset_for_refetch. Actions: (1) added 200-220-001 AND 200-220-002 to manual_only_skus; (2) blocked walmartimages.com (reseller marketplace CDN repeatedly serving infographics with overlays); (3) both routed to Image Queue. Script fixes still pending for Leke: truncate cf_source_url to <=255 before write, AND delete-on-failed-write (or write status before/independently so a failed source-URL write cannot strand a wrong image)."
     }
   ]
 }
