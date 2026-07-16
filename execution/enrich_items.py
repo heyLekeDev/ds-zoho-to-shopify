@@ -299,6 +299,24 @@ def run_write(dry_run):
 
     print(f'\n  Writing {len(output_results)} enriched items to Zoho...\n')
 
+    # Copy style enforcement: no em/en dashes in any customer-facing field.
+    # Scrub deterministically and warn, so bad characters never reach Zoho or
+    # Shopify while the warning corrects the enrichment habit at the source.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from common import has_banned_dashes, scrub_dashes
+    _COPY_FIELDS = ('enriched_title', 'shopify_collection', 'shopify_product_type',
+                    'shopify_tags', 'description_html',
+                    'variant_1_name', 'variant_1_value',
+                    'variant_2_name', 'variant_2_value',
+                    'variant_3_name', 'variant_3_value')
+    for result in output_results:
+        dirty = [f for f in _COPY_FIELDS if has_banned_dashes(result.get(f))]
+        if dirty:
+            for f in dirty:
+                result[f] = scrub_dashes(result[f])
+            print(f'  ⚠ {result.get("sku", "?")}: em/en dash scrubbed from {", ".join(dirty)} '
+                  '(copy rule: no em/en dashes in customer-facing text)')
+
     for result in output_results:
         sku     = result.get('sku', '')
         source  = input_by_sku.get(sku, {})

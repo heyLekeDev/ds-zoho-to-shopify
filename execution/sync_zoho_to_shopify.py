@@ -58,7 +58,10 @@ def get_item_hash(item):
         'v2_val': item.get('v2_val'),
         'v3_val': item.get('v3_val'),
         'collection': item.get('collection'),
-        'status': item.get('status')
+        'status': item.get('status'),
+        # Stock must be part of the hash or a quantity-only change gets skipped
+        # as "no changes" when an item is re-queued.
+        'stock': item.get('stock_on_hand'),
     }
     dump = json.dumps(relevant_data, sort_keys=True)
     return hashlib.md5(dump.encode()).hexdigest()
@@ -647,8 +650,10 @@ def check_image_aspect_ratio(zoho_id, image_name):
         img = Image.open(io.BytesIO(resp.content))
         width, height = img.size
         
-        if width < 300 or height < 300:
-            return False, f"Image Resolution Too Low (Size: {width}x{height}px). Minimum required is 300px for Shopify zoom functionality. Please re-sync a higher quality image."
+        # 800px floor matches the pipeline standard (fetch/validate/hygiene all use
+        # 800) — anything smaller gets published only to be flagged by the recheck.
+        if width < 800 or height < 800:
+            return False, f"Image Resolution Too Low (Size: {width}x{height}px). Minimum required is 800px (pipeline standard). Re-fetch or upscale the image in Zoho and re-sync."
             
         ratio = width / height
         
@@ -751,36 +756,47 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
             abort_updates.append((item['zoho_id'], "Error uploading", ratio_error, zoho_id_to_notes.get(item['zoho_id'], '')))
         return abort_updates
 
-    # 1. Search for existing Shopify Product by resolved title
+    # 1. Search for existing Shopify Product by resolved title.
+    # Shopify's title: query is a TOKEN match, not exact — "Pearson Rubber Dam Clamp"
+    # also matches "Pearson Rubber Dam Clamp Forceps". Fetch several candidates and
+    # accept only an exact (case-insensitive) title match, otherwise variants get
+    # attached to the wrong product.
     search_q = f'title:"{shopify_title}"'
     resp = shopify_graphql("""
         query($q: String!) {
-            products(first: 1, query: $q) {
-                edges { 
-                    node { 
-                        id 
-                        variants(first: 100) { 
-                            edges { 
-                                node { 
-                                    id 
+            products(first: 10, query: $q) {
+                edges {
+                    node {
+                        id
+                        title
+                        variants(first: 100) {
+                            edges {
+                                node {
+                                    id
                                     title
-                                    sku 
+                                    sku
                                     inventoryItem { id }
                                     media(first: 5) {
                                         edges { node { id alt } }
                                     }
-                                } 
-                            } 
-                        } 
-                    } 
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     """, {"q": search_q})
-    
+
     product_node = None
     edges = resp.get('data', {}).get('products', {}).get('edges', [])
-    if edges: product_node = edges[0]['node']
+    for edge in edges:
+        if edge['node'].get('title', '').strip().lower() == shopify_title.strip().lower():
+            product_node = edge['node']
+            break
+    if edges and not product_node:
+        near_miss = edges[0]['node'].get('title', '')
+        print(f"  [TITLE MATCH] No exact match for '{shopify_title}' (nearest: '{near_miss}') — treating as new product.")
     
     shopify_skus = {}
     shopify_media = {}
@@ -859,9 +875,21 @@ def sync_group_to_shopify(group_name, items, dry_run=False, cache=None, active_p
         existing_v_id = shopify_skus.get(sku)
         
         # If SKU not found but Product exists, AND it's a standalone item (no option values),
-        # hijack the product's default variant instead of trying to add a second default variant.
+        # take over the product's default variant instead of trying to add a second default
+        # variant — but ONLY if that variant is genuinely unclaimed. If it already carries a
+        # different SKU, this is a title collision with a real product: overwriting would
+        # destroy the other item's variant (SKU, price, image) and its order history link.
         if not existing_v_id and product_node and not option_values:
             first_var = product_node['variants']['edges'][0]['node']
+            fv_sku = (first_var.get('sku') or '').strip()
+            if fv_sku and fv_sku != sku:
+                print(f"  [TITLE COLLISION] Standalone title '{shopify_title}' already exists on Shopify "
+                      f"with SKU {fv_sku}. Refusing to overwrite its default variant.")
+                zoho_updates.append((z_id, "Error uploading",
+                    f"Title collision: a Shopify product titled '{shopify_title}' already exists and its "
+                    f"variant belongs to SKU {fv_sku}. Retitle this item (cf_enriched_title) or group them "
+                    f"as variants of one collection.", zoho_id_to_notes.get(z_id, '')))
+                continue
             existing_v_id = first_var['id']
             if first_var.get('inventoryItem'):
                 shopify_inv_items[sku] = first_var['inventoryItem']['id']

@@ -8,6 +8,7 @@ lookups — duplicated ad-hoc implementations are where field-name bugs
 """
 
 import os
+import re
 import json
 import time
 import requests
@@ -38,7 +39,39 @@ ALLOWED_WRITE_FIELDS = {
     'cf_shopify_sync_notes', 'cf_sync_result',
     'cf_enriched_title', 'cf_shopify_tags',
     'cf_shopify_product_type', 'cf_description_html',
+    # Batch-migration bookkeeping (2026-07-17). cf_is_batch_item and
+    # cf_expiry_date are deliberately NOT writable — they are team-owned.
+    'cf_batch_migrated',
 }
+
+# ── Copy style: em/en dash ban (customer-facing text) ────────────────────────
+# Store copy rule: no em (U+2014) or en (U+2013) dashes in any customer-facing
+# field (titles, collections, option names/values, descriptions, tags).
+# Numeric ranges use "to"; qualifiers use a comma, colon, or parentheses.
+
+DASH_RE = re.compile('[—–]')
+
+def has_banned_dashes(text) -> bool:
+    """True if the text contains an em or en dash."""
+    return bool(text) and bool(DASH_RE.search(str(text)))
+
+def scrub_dashes(text):
+    """Deterministically replace em/en dashes with store-style equivalents.
+
+    Rules (applied in order):
+      1. digit–digit range        → " to "   ("15–40" → "15 to 40")
+      2. spaced dash " — " / " – " → ", "     ("Dispenser — White" → "Dispenser, White")
+      3. any remaining dash        → ", "
+    Collapses doubled spaces/commas the substitutions can leave behind.
+    """
+    if not text or not DASH_RE.search(str(text)):
+        return text
+    s = str(text)
+    s = re.sub(r'(?<=\d)\s*[—–]\s*(?=\d)', ' to ', s)
+    s = re.sub(r'\s*[—–]\s*', ', ', s)
+    s = re.sub(r',\s*,', ', ', s)
+    s = re.sub(r'  +', ' ', s)
+    return s.strip()
 
 # ── Zoho auth ─────────────────────────────────────────────────────────────────
 

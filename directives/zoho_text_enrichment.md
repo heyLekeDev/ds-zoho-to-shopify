@@ -77,7 +77,8 @@ Use as many dimensions as genuinely exist in the product family. Do not collapse
 
 When a product needs a compound identifier (e.g., shape + ISO code together), use a combined option name and embed both values in the option value string:
 - Option name: `Shape & ISO Code`
-- Values: `"Tapered Fissure — 770/10F"`, `"Flame — 514/4C"`, etc.
+- Values: `"Tapered Fissure 770/10F"`, `"Flame 514/4C"`, etc. (a single space or a
+  comma separates the two parts: never an em or en dash)
 
 This pattern is used when the two dimensions are inseparable for identification purposes.
 
@@ -102,7 +103,27 @@ Use precise, clinical option names. Never use generic names like "Option 1" or "
 | Pack size | `Pack` |
 | Shade (composites) | `Shade` |
 
-Avoid `"/"` in option names — Shopify rejects the sequence `" / "` (space-slash-space). Use `"&"` or `"—"` instead.
+Avoid `"/"` in option names: Shopify rejects the sequence `" / "` (space-slash-space). Use `"&"` instead.
+
+### Copy style rules (apply to EVERY customer-facing field)
+
+These apply to `enriched_title`, `shopify_collection`, option names and values,
+`shopify_tags`, and `description_html`. They are enforced: `enrich_items.py --write`
+scrubs violations and `validate_enrichment.py` fails any that remain.
+
+1. **No em dashes (U+2014) and no en dashes (U+2013), anywhere.** Replacements:
+   - Trailing qualifier (colour, size, model): use parentheses or a comma.
+     Write `UnoDent Cotton Roll Dispenser (White)`, not the dash form.
+   - Compound values: a comma or a single space. Write `10mm, 2mm Well`.
+   - Numeric ranges: the word "to". Write `Sizes 15 to 40`, not `15` dash `40`.
+   - A plain hyphen (`-`) inside real product names (`Integra-CP`, `Butter-Soft`,
+     `X-Ray`) is fine; it is part of the name, not punctuation.
+2. **No exclamation points.** State the fact; do not shout it.
+3. **Plain, specific, active language.** Name the material, the size, the count,
+   the clinical use. Cut filler like "high-quality", "premium", "world-class",
+   "seamless", "state-of-the-art": if the spec matters, state the spec.
+4. **Descriptions speak to one buyer.** "you" over "dental professionals" in the
+   abstract; benefits tied to the spec, not adjectives.
 
 #### Late Arrival: check the existing Shopify product first
 

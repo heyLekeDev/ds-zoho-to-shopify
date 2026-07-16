@@ -579,8 +579,13 @@ def write_zoho_status(item_id, new_status, sync_result, notes, source_url, token
         {'api_name': 'cf_sync_result',        'value': sync_result},
         {'api_name': 'cf_shopify_sync_notes', 'value': notes},
     ]
-    if source_url:
+    # cf_source_url is capped at 255 chars in Zoho — writing a longer URL fails the
+    # WHOLE update, stranding an already-uploaded image at the old status
+    # (bit us live on 2026-07-16). Long URLs stay in the notes field instead.
+    if source_url and len(source_url) <= 255:
         custom_fields.append({'api_name': 'cf_source_url', 'value': source_url})
+    elif source_url:
+        print(f'     ⚠ source URL {len(source_url)} chars (>255) — kept in notes only')
 
     resp = requests.put(
         f'{ZOHO_API_BASE}/items/{item_id}',
@@ -606,7 +611,8 @@ def _token_hits(tokens, text):
     return sum(1 for t in tokens if re.search(rf'\b{re.escape(t)}\b', text))
 
 def try_candidates(candidates, brand='', exclude_hashes=None,
-                   required_tokens=None, forbidden_tokens=None, tried_urls=None):
+                   required_tokens=None, forbidden_tokens=None, tried_urls=None,
+                   title_tokens=None):
     """
     Try each candidate URL. Returns (image_bytes, pil_img, w, h, ratio, url, md5) or None.
     - Rejects competitor URLs.
@@ -616,6 +622,11 @@ def try_candidates(candidates, brand='', exclude_hashes=None,
       matching a SIBLING variant's distinctive token and none of this item's is
       rejected outright — this is what prevented-class failures look like:
       Turbo Jet 1 getting Jet 2's render, shade A1 getting an A3 image.
+    - Relevance gate: when the item has NO variant tokens to pin it down and the
+      candidate is not from a trusted brand domain, the candidate's text must
+      mention the product (≥2 title tokens, or 1 for very short titles).
+      Without this, generic items accept the first big-enough image of ANYTHING
+      (2026-07-16 audit: a fireplace shovel published as a mixing pad).
     - Prioritises score, then trusted brand domains.
     - tried_urls (a set, mutated in place) prevents re-downloading candidates
       already attempted in an earlier pass for the same item.
@@ -624,6 +635,7 @@ def try_candidates(candidates, brand='', exclude_hashes=None,
     required_tokens = required_tokens or set()
     forbidden_tokens = forbidden_tokens or set()
     tried_urls = tried_urls if tried_urls is not None else set()
+    title_tokens = title_tokens or set()
 
     def cand_text(c):
         return ' '.join([c.get('url', ''), c.get('title', ''),
@@ -652,6 +664,14 @@ def try_candidates(candidates, brand='', exclude_hashes=None,
                 and required_tokens and not _token_hits(required_tokens, cand_text(cand)):
             print(f'     ✗ Wrong-variant signal, skipping: {url[:60]}')
             continue
+
+        # Relevance gate for generic items: no variant tokens + untrusted domain
+        # → candidate text must actually mention the product.
+        if title_tokens and not required_tokens and not (brand and is_trusted_url(url, brand)):
+            need = 2 if len(title_tokens) >= 2 else 1
+            if _token_hits(title_tokens, cand_text(cand)) < need:
+                print(f'     ✗ No product-name match in candidate text, skipping: {url[:60]}')
+                continue
 
         meta_w = cand.get('width', 0)
         meta_h = cand.get('height', 0)
@@ -710,18 +730,19 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
     v1_value       = enriched.get('variant_1_value', '') or ''
     collection     = enriched.get('shopify_collection', '') or ''
 
-    # Check current Zoho status
-    status, source_url = get_item_detail(item_id, token)
-    if status != 'Image required':
-        print(f'  ⬜ {sku}  {name[:45]}  [{status}]')
-        return 'skipped'
-
-    # Manual-only gate — skip auto-fetch for items/collections flagged in image_hints.json
+    # Manual-only gate FIRST — it needs no API call, so checking it before the
+    # status fetch saves one Zoho detail call per manual-only item every run.
     if sku in MANUAL_ONLY_SKUS:
         print(f'  📌 {sku}  {name[:45]}  [Manual only — skipping auto-fetch]')
         return 'skipped'
     if collection and collection in MANUAL_ONLY_COLLECTIONS:
         print(f'  📌 {sku}  {name[:45]}  [Collection "{collection}" is manual-only — skipping]')
+        return 'skipped'
+
+    # Check current Zoho status
+    status, source_url = get_item_detail(item_id, token)
+    if status != 'Image required':
+        print(f'  ⬜ {sku}  {name[:45]}  [{status}]')
         return 'skipped'
 
     print(f'\n  🔍 {sku}  {name[:45]}')
@@ -751,11 +772,21 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
     tried_urls = set()   # never re-download the same candidate for this item
     all_candidates = []  # accumulate across queries; scoring decides order
 
-    def _try(cands, hashes):
+    # Title tokens for the generic-item relevance gate: significant words from
+    # the enriched title (fallback: raw name), minus filler that matches anything.
+    _TITLE_STOPWORDS = {'dental', 'the', 'for', 'with', 'and', 'of', 'pack', 'pk',
+                        'box', 'pcs', 'per', 'set', 'kit', 'new'}
+    title_tokens = {t for t in _variant_tokens(enriched_title or name)
+                    if len(t) > 2 and t not in _TITLE_STOPWORDS}
+
+    def _try(cands, hashes, gate=True):
+        # gate=False for human-confirmed URLs (manual override / saved source):
+        # the relevance gate only applies to anonymous search candidates.
         return try_candidates(cands, brand=brand, exclude_hashes=hashes,
                               required_tokens=required_tokens,
                               forbidden_tokens=forbidden_tokens,
-                              tried_urls=tried_urls)
+                              tried_urls=tried_urls,
+                              title_tokens=title_tokens if gate else None)
 
     hit = None
 
@@ -764,13 +795,13 @@ def process_item(item, token, dry_run, today_str, output_by_sku, collection_hash
     if sku in MANUAL_OVERRIDES:
         override_url = MANUAL_OVERRIDES[sku]
         print(f'     📌 Manual override: {override_url[:80]}')
-        hit = _try([{'url': override_url, 'width': 0, 'height': 0}], col_hashes)
+        hit = _try([{'url': override_url, 'width': 0, 'height': 0}], col_hashes, gate=False)
     elif source_url:
         if is_competitor_url(source_url):
             print(f'     ⚠  Saved source URL is from a blocked domain — skipping cached URL.')
         else:
             print(f'     Trying saved source URL...')
-            hit = _try([{'url': source_url, 'width': 0, 'height': 0}], col_hashes)
+            hit = _try([{'url': source_url, 'width': 0, 'height': 0}], col_hashes, gate=False)
 
     if not hit:
         queries = build_queries_v2(

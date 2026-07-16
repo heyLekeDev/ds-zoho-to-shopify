@@ -1,0 +1,12 @@
+{
+  "_description": "Expiry markdown policy — approved by Leke 2026-07-17. Used by reconcile_published.py. Tiers: days-to-expiry thresholds (inclusive upper bound) mapped to markdown fraction. Floor: Shopify price never drops below the item's purchase_rate (cost); floored items are flagged for disposal review. Prices round to the nearest rounding_step naira. Expired items are pulled to DRAFT on Shopify and listed for disposal.",
+  "tiers": [
+    {"max_days": 30,  "markdown": 0.40},
+    {"max_days": 90,  "markdown": 0.25},
+    {"max_days": 180, "markdown": 0.10}
+  ],
+  "floor": "purchase_rate",
+  "rounding_step": 50,
+  "expired_action": "draft_and_report",
+  "report_buckets_days": [30, 60, 90]
+}

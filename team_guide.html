@@ -1,0 +1,521 @@
+<title>SNL Dental · Store Pipeline Guide</title>
+<style>
+  :root {
+    --ground: #FAFBFA;
+    --surface: #FFFFFF;
+    --ink: #1A2B28;
+    --ink-soft: #52645F;
+    --accent: #0E7C6B;
+    --accent-ink: #0A5A4E;
+    --accent-soft: #E3F2EE;
+    --amber: #B7791F;
+    --amber-soft: #FBF0DC;
+    --red: #B3392E;
+    --red-soft: #F9E9E7;
+    --line: #DCE5E1;
+    --chip-ink: #33443F;
+    --on-accent: #FFFFFF;
+    --shadow: 0 1px 2px rgba(26, 43, 40, .05), 0 4px 16px rgba(26, 43, 40, .05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0F1E1A; --surface: #16302A; --ink: #E4EFEA; --ink-soft: #9DB4AD;
+      --accent: #3FBFA8; --accent-ink: #7FD8C7; --accent-soft: #1C4038;
+      --amber: #E0A94E; --amber-soft: #3A2F17; --red: #E07A6F; --red-soft: #45211D;
+      --line: #27453D; --chip-ink: #C4D6D0; --on-accent: #0F1E1A;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0F1E1A; --surface: #16302A; --ink: #E4EFEA; --ink-soft: #9DB4AD;
+    --accent: #3FBFA8; --accent-ink: #7FD8C7; --accent-soft: #1C4038;
+    --amber: #E0A94E; --amber-soft: #3A2F17; --red: #E07A6F; --red-soft: #45211D;
+    --line: #27453D; --chip-ink: #C4D6D0; --on-accent: #0F1E1A;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.25);
+  }
+  :root[data-theme="light"] {
+    --ground: #FAFBFA; --surface: #FFFFFF; --ink: #1A2B28; --ink-soft: #52645F;
+    --accent: #0E7C6B; --accent-ink: #0A5A4E; --accent-soft: #E3F2EE;
+    --amber: #B7791F; --amber-soft: #FBF0DC; --red: #B3392E; --red-soft: #F9E9E7;
+    --line: #DCE5E1; --chip-ink: #33443F; --on-accent: #FFFFFF;
+    --shadow: 0 1px 2px rgba(26,43,40,.05), 0 4px 16px rgba(26,43,40,.05);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font: 16px/1.65 -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .serif { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; }
+  .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Header ── */
+  header.hero { padding: 46px 0 26px; }
+  .eyebrow {
+    display: inline-block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 12px;
+  }
+  h1 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(28px, 4.6vw, 40px); line-height: 1.15; margin: 0 0 10px; text-wrap: balance;
+  }
+  .hero p { color: var(--ink-soft); max-width: 58ch; margin: 0; font-size: 16.5px; }
+  .updated { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+  .updated b { color: var(--ink); }
+
+  /* ── Page tabs ── */
+  nav.tabs {
+    position: sticky; top: 0; z-index: 10; background: var(--ground);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  nav.tabs .wrap { display: flex; gap: 6px; padding-top: 10px; padding-bottom: 10px; flex-wrap: wrap; }
+  nav.tabs a {
+    text-decoration: none; color: var(--ink-soft); font-size: 13.5px;
+    font-weight: 600; padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+    border: 1px solid transparent;
+  }
+  nav.tabs a:hover { background: var(--accent-soft); color: var(--accent-ink); }
+  nav.tabs a.active { background: var(--accent); color: var(--on-accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ── Pages ── */
+  .page { padding: 44px 0 20px; }
+  body.js .page { display: none; }
+  body.js .page.active { display: block; }
+  .pagelabel {
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; margin-bottom: 8px;
+  }
+  h2 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(23px, 3.4vw, 30px); margin: 0 0 10px; line-height: 1.2; text-wrap: balance;
+  }
+  h3 { font-size: 17px; margin: 40px 0 12px; }
+  .lede { color: var(--ink-soft); max-width: 60ch; margin: 0 0 30px; font-size: 16px; }
+
+  /* ── Cards (no side accents anywhere) ── */
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 24px 26px; box-shadow: var(--shadow);
+  }
+  .cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .card h3 { margin: 0 0 4px; font-size: 16.5px; }
+  .card .why {
+    display: inline-block; font-size: 11.5px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--accent); margin: 10px 0 2px;
+  }
+  .card p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14.5px; max-width: 62ch; }
+  .card ul { margin: 8px 0 0; padding-left: 20px; color: var(--ink-soft); font-size: 14.5px; }
+  .card li { margin: 6px 0; }
+  .card .do { color: var(--ink); font-weight: 600; }
+  .badge {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+    text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 8px;
+  }
+  .badge.red { background: var(--red-soft); color: var(--red); }
+  .cta-link {
+    display: inline-block; margin-top: 14px; text-decoration: none;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; font-size: 13.5px;
+    padding: 9px 16px; border-radius: 999px;
+  }
+  .cta-link:hover { background: var(--accent); color: var(--on-accent); }
+
+  .rule-card .big {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(19px, 2.6vw, 23px); line-height: 1.4; margin: 0 0 10px;
+  }
+  .truth-flow { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+  .truth-node {
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 700;
+    padding: 11px 18px; border-radius: 12px; font-size: 14.5px;
+  }
+  .truth-node.out { background: var(--surface); border: 1.5px dashed var(--line); color: var(--ink); }
+  .arrow { color: var(--accent); font-size: 20px; font-weight: 700; }
+
+  /* ── Numbers ── */
+  .nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+  .num { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .num b { display: block; font-size: 25px; font-variant-numeric: tabular-nums;
+           font-family: "Iowan Old Style", Palatino, Georgia, serif; }
+  .num.good b { color: var(--accent); }
+  .num span { font-size: 13px; color: var(--ink-soft); }
+
+  /* ── Vertical status journey ── */
+  .vflow { list-style: none; margin: 0; padding: 0; }
+  .vflow li { display: flex; align-items: baseline; gap: 14px; }
+  .vflow .chip {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 12.5px; font-weight: 600; color: var(--chip-ink);
+    background: var(--surface); border: 1.5px solid var(--line);
+    padding: 8px 14px; border-radius: 999px; white-space: nowrap;
+  }
+  .vflow .chip.live { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .vflow .chip.warn { background: var(--amber-soft); border-color: var(--amber); color: var(--amber); }
+  .vflow .desc { color: var(--ink-soft); font-size: 14px; }
+  .vflow .down {
+    color: var(--accent); font-weight: 700; font-size: 17px;
+    padding: 2px 0 2px 26px; line-height: 1.2;
+  }
+  .sideflows { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 8px; }
+  @media (min-width: 700px) { .sideflows { grid-template-columns: 1fr 1fr; } }
+
+  /* ── Vertical stepper (morning run) ── */
+  .steps { list-style: none; margin: 0; padding: 0; }
+  .steps li { position: relative; padding: 0 0 26px 56px; }
+  .steps li::before {
+    content: ""; position: absolute; left: 17px; top: 38px; bottom: -2px;
+    width: 2px; background: var(--line);
+  }
+  .steps li:last-child::before { display: none; }
+  .step-dot {
+    position: absolute; left: 0; top: 2px; width: 36px; height: 36px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 800; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .steps b.t { display: block; font-size: 15.5px; margin-bottom: 3px; }
+  .steps span.d { color: var(--ink-soft); font-size: 14.5px; display: block; max-width: 58ch; }
+
+  /* ── Cause & effect (vertical mini flows) ── */
+  .fx { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 700px) { .fx { grid-template-columns: 1fr 1fr; } }
+  .fx .card { padding: 20px 22px; }
+  .fx .you { font-weight: 700; font-size: 15px; }
+  .fx .mid { color: var(--ink-soft); font-size: 14px; padding: 6px 0 6px 2px; }
+  .fx .mid::before { content: "↓ "; color: var(--accent); font-weight: 700; }
+  .fx .res { color: var(--accent-ink); font-weight: 700; font-size: 14.5px; }
+  .fx .res::before { content: "↓ "; color: var(--accent); font-weight: 700; }
+
+  /* ── Expiry tiers ── */
+  .tiers { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 8px 0 4px; }
+  .tier {
+    display: flex; align-items: center; gap: 16px; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px;
+  }
+  .tier .days { flex: 0 0 122px; font-weight: 700; font-size: 13.5px; }
+  .tier .bar { flex: 1; height: 10px; border-radius: 999px; background: var(--accent-soft); overflow: hidden; min-width: 60px; }
+  .tier .bar i { display: block; height: 100%; background: var(--amber); border-radius: 999px; }
+  .tier .off { flex: 0 0 108px; text-align: right; font-weight: 800; font-size: 14.5px; color: var(--amber);
+               font-variant-numeric: tabular-nums; }
+  .tier.safe .off { color: var(--accent); }
+  .tier.safe .bar i { background: var(--accent); }
+  .tier.dead { background: var(--red-soft); border-color: var(--red); }
+  .tier.dead .off { color: var(--red); font-size: 13px; }
+  .tier-note { font-size: 13.5px; color: var(--ink-soft); margin-top: 12px; max-width: 62ch; }
+
+  /* ── Phases ── */
+  .phases { counter-reset: ph; display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 8px; }
+  .phase { background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+           padding: 20px 22px 20px 62px; position: relative; }
+  .phase::before {
+    counter-increment: ph; content: counter(ph);
+    position: absolute; left: 18px; top: 20px; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 800; font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .phase b { display: block; margin-bottom: 3px; }
+  .phase p { margin: 0; color: var(--ink-soft); font-size: 14.5px; max-width: 60ch; }
+  .phase .tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .1em;
+                text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
+                background: var(--accent-soft); color: var(--accent-ink); margin-left: 8px; vertical-align: 2px; }
+
+  /* ── Findings ── */
+  .log { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 22px; }
+  .log-entry { margin-bottom: 22px; position: relative; }
+  .log-entry::before { content: ""; position: absolute; left: -27px; top: 7px; width: 8px; height: 8px;
+                       border-radius: 50%; background: var(--accent); }
+  .log-entry .date { font-size: 12px; font-weight: 800; letter-spacing: .08em; color: var(--accent);
+                     text-transform: uppercase; }
+  .log-entry p { margin: 4px 0 0; color: var(--ink-soft); font-size: 14.5px; max-width: 64ch; }
+
+  /* ── Pager ── */
+  .pager { display: flex; justify-content: space-between; gap: 12px; margin: 46px 0 8px; }
+  .pager a {
+    text-decoration: none; background: var(--surface); border: 1px solid var(--line);
+    color: var(--ink); border-radius: 12px; padding: 13px 18px; font-size: 14px; font-weight: 600;
+    box-shadow: var(--shadow); max-width: 48%;
+  }
+  .pager a small { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+                   color: var(--ink-soft); font-weight: 800; margin-bottom: 2px; }
+  .pager a:hover { border-color: var(--accent); }
+  .pager .spacer { flex: 1; }
+
+  footer { padding: 40px 0 44px; color: var(--ink-soft); font-size: 13px; }
+  footer .wrap { border-top: 1px solid var(--line); padding-top: 20px; }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">SNL Dental Solutions</div>
+    <h1>How our store runs itself, and where it needs you</h1>
+    <p>You work in Zoho. An automated run updates the Shopify store every morning at 07:07. Five short pages: what happens on its own, what only you can do, and the new expiring-goods workflow.</p>
+    <div class="updated">Last updated <b>17 July 2026</b> · New findings appear on the Updates page</div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Pages">
+  <div class="wrap">
+    <a href="#overview" data-page="overview">1 · Overview</a>
+    <a href="#morning" data-page="morning">2 · Every Morning</a>
+    <a href="#tasks" data-page="tasks">3 · Your Tasks</a>
+    <a href="#expiry" data-page="expiry">4 · Expiring Goods</a>
+    <a href="#updates" data-page="updates">5 · Updates</a>
+  </div>
+</nav>
+
+<!-- ══════════ PAGE 1 · OVERVIEW ══════════ -->
+<section class="page" id="overview">
+  <div class="wrap">
+    <div class="pagelabel">Page 1 of 5</div>
+    <h2>The one rule, and where things stand</h2>
+
+    <div class="card rule-card">
+      <p class="big serif">Zoho is the source of truth. The store follows it automatically.</p>
+      <p>Never edit the store directly. Fix Zoho, and the store corrects itself by the next morning. The automation publishes exactly what Zoho says, so a wrong price in Zoho becomes a wrong price on the store.</p>
+      <div class="truth-flow">
+        <div class="truth-node">You keep Zoho accurate</div>
+        <div class="arrow">→</div>
+        <div class="truth-node">07:07 automation</div>
+        <div class="arrow">→</div>
+        <div class="truth-node out">Store is correct</div>
+      </div>
+    </div>
+
+    <h3>Today's numbers</h3>
+    <div class="nums">
+      <div class="num good"><b>989</b><span>items live on the store</span></div>
+      <div class="num good"><b>0</b><span>price or stock drift</span></div>
+      <div class="num good"><b>177</b><span>pieces of store text cleaned in one pass</span></div>
+      <div class="num"><b>~90</b><span>Image Queue rows waiting for your URLs</span></div>
+      <div class="num"><b>0</b><span>items tagged "Is Batch Item" so far. Next team push</span></div>
+    </div>
+
+    <h3>An item's journey to the store</h3>
+    <p class="lede" style="margin-bottom:16px">Every item shows a <b>Shopify status</b> field in Zoho. That field is the truth about where it is:</p>
+    <ol class="vflow">
+      <li><span class="chip">Queue for Enrichment</span><span class="desc">selected for the store</span></li>
+      <li class="down">↓</li>
+      <li><span class="chip">Enrichment Complete</span><span class="desc">title, description and grouping written</span></li>
+      <li class="down">↓</li>
+      <li><span class="chip">Image Validated</span><span class="desc">photo checked: sharp, square, the exact product</span></li>
+      <li class="down">↓</li>
+      <li><span class="chip">Queue for Upload</span><span class="desc">ready to publish</span></li>
+      <li class="down">↓</li>
+      <li><span class="chip live">Published</span><span class="desc">live, and kept correct automatically from here on</span></li>
+    </ol>
+
+    <div class="sideflows">
+      <div class="card">
+        <h3 style="margin-top:0">If no good photo exists</h3>
+        <ol class="vflow">
+          <li><span class="chip warn">Image required</span></li>
+          <li class="down">↓</li>
+          <li><span class="chip">you paste a URL in the Image Queue</span></li>
+          <li class="down">↓</li>
+          <li><span class="chip">Image Validated</span><span class="desc">back on track</span></li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0">If something needs a human</h3>
+        <ol class="vflow">
+          <li><span class="chip warn">Needs Review / Error</span></li>
+          <li class="down">↓</li>
+          <li><span class="desc" style="padding-left:2px">the reason is always written on the item, in the Sync result and sync notes fields</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="pager">
+      <span class="spacer"></span>
+      <a href="#morning" data-page="morning"><small>Next</small>Every Morning →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 2 · EVERY MORNING ══════════ -->
+<section class="page" id="morning">
+  <div class="wrap">
+    <div class="pagelabel">Page 2 of 5</div>
+    <h2>What happens every morning</h2>
+    <p class="lede">The 07:07 run, in the order it executes. You never trigger any of this.</p>
+    <ol class="steps">
+      <li><span class="step-dot">1</span><b class="t">Image Queue</b><span class="d">Downloads the image links you pasted in the Fix sheet, checks each one against the product, uploads the good ones. Rejections get a written reason.</span></li>
+      <li><span class="step-dot">2</span><b class="t">Image search + audit</b><span class="d">Hunts for missing product photos on manufacturer sites. Every found image is visually reviewed before it can touch the store.</span></li>
+      <li><span class="step-dot">3</span><b class="t">Change watch</b><span class="d">Finds every item you edited yesterday. A new photo or changed text on a live item is re-published the same run.</span></li>
+      <li><span class="step-dot">4</span><b class="t">Sync + verify</b><span class="d">Publishes ready items: builds the product, groups variants, sets price and stock. Then checks the store to confirm each one is actually live.</span></li>
+      <li><span class="step-dot">5</span><b class="t">Reconcile + expiry</b><span class="d">Compares every live item to Zoho and corrects price and stock drift. Applies markdowns to short-dated goods. Pulls expired goods off the store.</span></li>
+      <li><span class="step-dot">6</span><b class="t">Galleries</b><span class="d">Publishes the extra product photos from the Image 2 / Image 3 URL fields, after review.</span></li>
+      <li><span class="step-dot">7</span><b class="t">Fix Tracker</b><span class="d">Works every Open and Reopened row in the Issues tab, writes what was done.</span></li>
+      <li><span class="step-dot">8</span><b class="t">Report</b><span class="d">Daily summary, including anything that needs a human decision.</span></li>
+    </ol>
+
+    <div class="pager">
+      <a href="#overview" data-page="overview"><small>Back</small>← Overview</a>
+      <a href="#tasks" data-page="tasks"><small>Next</small>Your Tasks →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 3 · YOUR TASKS ══════════ -->
+<section class="page" id="tasks">
+  <div class="wrap">
+    <div class="pagelabel">Page 3 of 5</div>
+    <h2>Your tasks, and what each one triggers</h2>
+    <p class="lede">Five jobs. Everything else is automatic.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>1 · Keep Zoho accurate</h3>
+        <p><span class="do">Prices, stock, photos, descriptions.</span> Change them in Zoho the moment they change in reality.</p>
+        <div class="why">Why</div>
+        <p>The store copies Zoho every morning, and this pipeline is the only thing keeping store prices honest: Zoho's own Shopify connection never syncs prices. A photo you replace in Zoho is live the next day.</p>
+        <a class="cta-link" href="https://inventory.zoho.com/app/868799877#/inventory/items" target="_blank" rel="noopener">Open Zoho items ↗</a>
+      </div>
+      <div class="card">
+        <h3>2 · Log store problems in the Fix sheet (Issues tab)</h3>
+        <p><span class="do">One row per problem:</span> date, SKU, type, what you saw. Done.</p>
+        <div class="why">Why</div>
+        <p>The automation cannot see the store the way a customer does. Your row gets fixed the next morning, with notes on what was done. Still wrong? Set the row to <b>Reopened</b>: the system must then try a different approach, never the same one twice.</p>
+        <a class="cta-link" href="https://docs.google.com/spreadsheets/d/1xnsCpSKXcHTjJIGZ2OeTku1QoONXVcgDm97A6YYj4rw/edit#gid=0" target="_blank" rel="noopener">Open the Issues tab ↗</a>
+      </div>
+      <div class="card">
+        <h3>3 · Fill the Image Queue</h3>
+        <p><span class="do">Paste the exact product's image URL in column F.</span> The suggested-source column tells you where to look.</p>
+        <div class="why">Why</div>
+        <p>These items already defeated automatic search: about 9 in 10 automatic finds for them were the wrong product. You will find the right image in seconds, and every URL you provide teaches the system a trusted source. Good URL: manufacturer or distributor page, exact model, colour, shade and pack size, no watermarks.</p>
+        <a class="cta-link" href="https://docs.google.com/spreadsheets/d/1xnsCpSKXcHTjJIGZ2OeTku1QoONXVcgDm97A6YYj4rw/edit#gid=13333912" target="_blank" rel="noopener">Open the Image Queue ↗</a>
+      </div>
+      <div class="card">
+        <h3>4 · Tag expiring goods</h3>
+        <p><span class="do">Tick "Is Batch Item"</span> on products that expire, and <span class="do">fill "Expiry Date"</span> with the nearest expiry on the shelf.</p>
+        <div class="why">Why</div>
+        <p>One tick switches on automatic markdowns and the expired-goods pull. Full detail on the Expiring Goods page.</p>
+        <a class="cta-link" href="https://inventory.zoho.com/app/868799877#/inventory/items" target="_blank" rel="noopener">Open Zoho items ↗</a>
+      </div>
+      <div class="card">
+        <h3>5 · Optional: give products a gallery</h3>
+        <p><span class="do">Paste manufacturer photo URLs</span> into "Image 2 URL" and "Image 3 URL".</p>
+        <div class="why">Why</div>
+        <p>Multi-photo listings sell better. Each URL is reviewed and published the next morning.</p>
+        <a class="cta-link" href="https://inventory.zoho.com/app/868799877#/inventory/items" target="_blank" rel="noopener">Open Zoho items ↗</a>
+      </div>
+      <div class="card">
+        <span class="badge red">Never do these</span>
+        <ul>
+          <li><b>Don't use "Contains Variants"</b> when creating items. Always Single Item, with SKU and price. Variants without SKUs are invisible to the automation.</li>
+          <li><b>Don't change SKU or name on a live item</b>, except the cutover step on the Expiring Goods page. SKU is the thread holding Zoho, the store, and order history together.</li>
+          <li><b>Don't price items under ₦100.</b> They are treated as placeholders and never publish.</li>
+          <li><b>Don't edit the store directly.</b> It gets overwritten by the next morning run.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>What your action triggers</h3>
+    <div class="fx">
+      <div class="card"><div class="you">Create a Single Item</div><div class="mid">enrich, group, find image, publish</div><div class="res">New product on the store</div></div>
+      <div class="card"><div class="you">Fix a price or stock count</div><div class="mid">morning reconcile</div><div class="res">Corrected listing</div></div>
+      <div class="card"><div class="you">Replace a photo or edit text</div><div class="mid">change watch re-publishes</div><div class="res">Updated product page</div></div>
+      <div class="card"><div class="you">Tag Is Batch Item + Expiry Date</div><div class="mid">expiry watch</div><div class="res">Markdowns; expired goods pulled</div></div>
+      <div class="card"><div class="you">Paste an Image Queue URL</div><div class="mid">validate, review, upload</div><div class="res">Right photo live</div></div>
+      <div class="card"><div class="you">Log a problem in Issues</div><div class="mid">diagnose, fix, learn the lesson</div><div class="res">Problem gone next day</div></div>
+    </div>
+
+    <div class="pager">
+      <a href="#morning" data-page="morning"><small>Back</small>← Every Morning</a>
+      <a href="#expiry" data-page="expiry"><small>Next</small>Expiring Goods →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 4 · EXPIRING GOODS ══════════ -->
+<section class="page" id="expiry">
+  <div class="wrap">
+    <div class="pagelabel">Page 4 of 5 · Our next major push</div>
+    <h2>Expiring goods</h2>
+    <p class="lede">Selling expired dental materials is a compliance problem. Letting short-dated stock sit at full price is a financial one. This workflow solves both automatically.</p>
+
+    <h3 style="margin-top:0">What happens once an item is tagged</h3>
+    <div class="tiers">
+      <div class="tier safe"><span class="days">180+ days</span><div class="bar"><i style="width:100%"></i></div><span class="off">Full price</span></div>
+      <div class="tier"><span class="days">91 to 180 days</span><div class="bar"><i style="width:90%"></i></div><span class="off">10% off</span></div>
+      <div class="tier"><span class="days">31 to 90 days</span><div class="bar"><i style="width:75%"></i></div><span class="off">25% off</span></div>
+      <div class="tier"><span class="days">30 days or less</span><div class="bar"><i style="width:60%"></i></div><span class="off">40% off</span></div>
+      <div class="tier dead"><span class="days">Expired</span><div class="bar"></div><span class="off">Pulled off the store</span></div>
+    </div>
+    <p class="tier-note">Customers see the discount with the full price struck through. The discount never goes below what we paid for the item; goods that hit that floor are flagged for disposal review. Zoho's selling price is never touched: discounts exist only on the store.</p>
+
+    <h3>The transition to true batch tracking</h3>
+    <p class="lede" style="margin-bottom:18px">Today, expiry is one hand-filled date per item. The destination is Zoho batch tracking, where every delivery carries its own expiry automatically. Zoho cannot convert an existing item once it has history, so we replace items one by one, with zero effect on the store:</p>
+    <div class="phases">
+      <div class="phase"><b>Tag everything that expires <span class="tag">now</span></b><p>Tick Is Batch Item, fill Expiry Date. Markdown protection is live immediately, before any migration.</p></div>
+      <div class="phase"><b>New items are born batch-tracked <span class="tag">now</span></b><p>Any new expiring product is created with batch tracking on. Expiry then records itself with every delivery.</p></div>
+      <div class="phase"><b>Cutover when stock hits zero <span class="tag">rolling</span></b><p>The daily report lists tagged items that reached zero stock as cutover ready. You rename the old item's name and SKU with a "-X" ending (one edit). The automation rebuilds it batch-tracked under the original SKU and retires the old record. The store never notices: same page, same order history.</p></div>
+      <div class="phase"><b>Retire the hand-filled date <span class="tag">later</span></b><p>When every expiring item is batch-tracked, the Expiry Date field is no longer needed.</p></div>
+    </div>
+
+    <div class="pager">
+      <a href="#tasks" data-page="tasks"><small>Back</small>← Your Tasks</a>
+      <a href="#updates" data-page="updates"><small>Next</small>Updates →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PAGE 5 · UPDATES ══════════ -->
+<section class="page" id="updates">
+  <div class="wrap">
+    <div class="pagelabel">Page 5 of 5</div>
+    <h2>Updates and findings</h2>
+    <p class="lede">Newest first. The daily run adds entries when it learns something the team should know.</p>
+    <div class="log">
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Pipeline hardening completed: daily price and stock reconciliation (Zoho's own Shopify connection never syncs prices), change watch for photo and text edits, expiry markdown automation, multi-photo galleries, and the store-wide text cleanup. The four new item fields went live.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Confirmed by testing: Zoho items with any history can never be switched to batch tracking, and SKUs stay reserved even after deactivation. Both facts shaped the cutover procedure on the Expiring Goods page.</p></div>
+      <div class="log-entry"><div class="date">16 July 2026</div><p>Image audit of one day's automatic fetches: 2 of 27 were correct. Generic disposables and apparel are now permanently routed to the Image Queue for team-sourced URLs.</p></div>
+    </div>
+
+    <div class="pager">
+      <a href="#expiry" data-page="expiry"><small>Back</small>← Expiring Goods</a>
+      <span class="spacer"></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">SNL Dental Solutions · internal guide · questions to Leke. Source file: <span class="mono">TEAM_GUIDE.md</span> in the pipeline project.</div>
+</footer>
+
+<script>
+  (function () {
+    document.body.classList.add('js');
+    var pages = document.querySelectorAll('.page');
+    var tabs = document.querySelectorAll('nav.tabs a');
+
+    function show(id, push) {
+      var found = false;
+      pages.forEach ? null : null;
+      for (var i = 0; i < pages.length; i++) {
+        var on = pages[i].id === id;
+        pages[i].classList.toggle('active', on);
+        if (on) found = true;
+      }
+      if (!found) { id = 'overview'; document.getElementById(id).classList.add('active'); }
+      for (var j = 0; j < tabs.length; j++) {
+        tabs[j].classList.toggle('active', tabs[j].getAttribute('data-page') === id);
+      }
+      if (push !== false) { try { history.replaceState(null, '', '#' + id); } catch (e) {} }
+      window.scrollTo(0, 0);
+    }
+
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('a[data-page]') : null;
+      if (!a) return;
+      e.preventDefault();
+      show(a.getAttribute('data-page'));
+    });
+
+    window.addEventListener('hashchange', function () {
+      show((location.hash || '#overview').slice(1), false);
+    });
+
+    show((location.hash || '#overview').slice(1), false);
+  })();
+</script>

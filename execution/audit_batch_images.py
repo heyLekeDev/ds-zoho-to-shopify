@@ -30,7 +30,33 @@ import html
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import PROJECT_DIR, get_zoho_token, zoho_item_by_sku, zoho_download_image
+import requests
+from common import (PROJECT_DIR, get_zoho_token, zoho_item_by_sku,
+                    zoho_item_detail, zoho_download_image, zoho_headers,
+                    ZOHO_API_BASE, ZOHO_ORG_ID)
+
+
+def fetch_validated_sku_map(token):
+    """One status-filtered sweep: sku → item_id for every 'Image Validated' item.
+    Replaces two API calls per batch SKU with ~1 call total."""
+    out = {}
+    page = 1
+    while True:
+        r = requests.get(f'{ZOHO_API_BASE}/items', headers=zoho_headers(token),
+                         params={'organization_id': ZOHO_ORG_ID,
+                                 'cf_shopify_status': 'Image Validated',
+                                 'per_page': 200, 'page': page}, timeout=20)
+        if r.status_code == 429:
+            time.sleep(60)
+            continue
+        d = r.json()
+        for it in d.get('items', []):
+            if it.get('sku'):
+                out[it['sku']] = it['item_id']
+        if not d.get('page_context', {}).get('has_more_page'):
+            break
+        page += 1
+    return out
 
 
 def main():
@@ -58,12 +84,25 @@ def main():
     rows = []
     counts = {'downloaded': 0, 'skipped': 0, 'no_image': 0}
 
+    # Default mode: one status sweep decides which SKUs need detail calls at all.
+    validated_map = None if args.all_statuses else fetch_validated_sku_map(token)
+    if validated_map is not None:
+        print(f'  {len(validated_map)} item(s) at Image Validated org-wide; '
+              f'auditing the ones in this batch.')
+
     for sku in skus:
-        item = zoho_item_by_sku(sku, token)
-        if not item:
-            print(f'  ✗ {sku}  not found in Zoho')
-            counts['skipped'] += 1
-            continue
+        if validated_map is not None:
+            item_id = validated_map.get(sku)
+            if not item_id:
+                counts['skipped'] += 1
+                continue  # not at Image Validated — no API call spent
+            item = zoho_item_detail(item_id, token)
+        else:
+            item = zoho_item_by_sku(sku, token)
+            if not item:
+                print(f'  ✗ {sku}  not found in Zoho')
+                counts['skipped'] += 1
+                continue
 
         status = item['cf'].get('cf_shopify_status', '')
         if not args.all_statuses and status != 'Image Validated':

@@ -10,3 +10,10 @@ __pycache__/
 audit/
 enrichment_input.json
 enrichment_output.json
+.reconcile_report.json
+.reconcile_baseline_*.json
+dash_remediation_preview.md
+.change_watch.json
+.orphan_cache.json
+.gallery_staging.json
+.dash_fix_report.json

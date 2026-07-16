@@ -147,9 +147,30 @@ def run_validation_rules(result, source, item, collection_counts, collection_opt
     # Rule 7: Shopify rejects " / " in option names; clinical names required
     for oname in (v1_name, v2_name):
         if ' / ' in oname:
-            failures.append(f'Option name "{oname}" contains " / " — Shopify rejects it; use "&" or "—"')
+            failures.append(f'Option name "{oname}" contains " / " (Shopify rejects it; use "&")')
         if oname.strip().lower() in ('option 1', 'option 2', 'option 3', 'config'):
             failures.append(f'Option name "{oname}" is a placeholder — use a clinical name (ISO Code, Grit, Size...)')
+
+    # Rule 7b: Copy style — no em/en dashes in any customer-facing field.
+    # (Store rule: ranges use "to"; qualifiers use comma, colon, or parentheses.
+    # enrich_items --write scrubs these automatically; a hit here means the
+    # field was edited after enrichment or bypassed the write step.)
+    from common import has_banned_dashes
+    _copy_fields = {
+        'enriched_title':     title,
+        'shopify_collection': collection,
+        'variant_1_name':     v1_name,
+        'variant_2_name':     v2_name,
+        'variant_1_value':    result.get('variant_1_value') or '',
+        'variant_2_value':    result.get('variant_2_value') or '',
+        'variant_3_value':    result.get('variant_3_value') or '',
+        'shopify_tags':       result.get('shopify_tags') or '',
+        'description_html':   result.get('description_html') or '',
+    }
+    for fname, fval in _copy_fields.items():
+        if has_banned_dashes(fval):
+            failures.append(f'{fname} contains an em/en dash (copy rule: no em/en dashes; '
+                            f'use "to" for ranges; comma, colon, or parentheses for qualifiers)')
 
     # Rule 8: SKU already live on Shopify → this is a write-back, not an upload
     if shopify_lookup is not None:

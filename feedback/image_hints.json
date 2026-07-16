@@ -95,7 +95,10 @@
     "dentrealmarket.com",
     "vvividvinyl.com",
     "bumbletoys.com",
-    "walmartimages.com"
+    "walmartimages.com",
+    "diy.com",
+    "picclickimg.com",
+    "etsystatic.com"
   ],
   "sku_image_overrides": {
     "_note": "Map SKU → direct image URL. URL must pass Pillow aspect-ratio (0.8–1.2) and resolution (800×800) checks. Tried FIRST before any DDG query."
@@ -147,7 +150,47 @@
     "200-110-022",
     "380-120-007",
     "200-220-001",
-    "200-220-002"
+    "200-220-002",
+    "320-120-022",
+    "260-210-003",
+    "260-210-004",
+    "260-170-003",
+    "260-200-005",
+    "260-200-006",
+    "260-200-010",
+    "260-180-001",
+    "260-180-002",
+    "260-180-003",
+    "260-180-005",
+    "260-180-006",
+    "260-180-008",
+    "260-180-010",
+    "260-200-013",
+    "260-200-024",
+    "200-170-001",
+    "200-200-002",
+    "200-200-003",
+    "200-200-004",
+    "200-160-001",
+    "200-170-011",
+    "200-180-001",
+    "200-180-002",
+    "200-180-003",
+    "200-200-007",
+    "200-200-008",
+    "200-200-009",
+    "200-200-010",
+    "200-200-011",
+    "200-200-012",
+    "200-200-015",
+    "200-120-005",
+    "200-170-026",
+    "360-130-002",
+    "120-120-032",
+    "120-120-005",
+    "120-120-006",
+    "120-120-007",
+    "260-180-004"
   ],
   "manual_only_collections": [
     "_note_remove_me_before_use",
@@ -212,6 +255,16 @@
       "date": "2026-07-13",
       "sku": "200-220-001",
       "lesson": "Daily maintenance: same Dynarex infographic bug as 200-220-002 sibling, now with a WORSE consequence understood. fetch_images.py uploads the image to Zoho (upload_image_to_zoho) BEFORE write_zoho_status; when the >255-char source URL makes the status write fail, the wrong image is LEFT on the item while status stays 'Image required' (silent bad-image leak, not caught by the default audit gate which only scans 'Image Validated'). Today the leaked image on 200-220-001 was a Dynarex marketing infographic (text overlay + brand watermark + a non-African child using a Junior 5in depressor) - triple rule violation for a Birchwood/JMU Senior 6in item. Deleted via reset_for_refetch. Actions: (1) added 200-220-001 AND 200-220-002 to manual_only_skus; (2) blocked walmartimages.com (reseller marketplace CDN repeatedly serving infographics with overlays); (3) both routed to Image Queue. Script fixes still pending for Leke: truncate cf_source_url to <=255 before write, AND delete-on-failed-write (or write status before/independently so a failed source-URL write cannot strand a wrong image)."
+    },
+    {
+      "date": "2026-07-14",
+      "batch": "Daily maintenance auto-retry (65-item Campaign slice 1 batch)",
+      "lesson": "Auto-fetch retry validated 15 images; visual audit ACCEPTED only 1 (260-130-056 BA International Ultimate Power+ BA755LK handpiece - exact model label verified in-image, clean square 1080px - queued for upload) and REJECTED 14, every one matching a previously-flagged Image-Queue failure. Confirmed the two chronic endodontic confusions once more: PAPER POINTS auto-fetch GUTTA-PERCHA (260-180-001 Roeko #20 -> roeko Guttapercha Greater Taper 0.04; 260-180-005 -> Guttapercha Top Color; 260-180-008 ProTaper Gold -> JMU gutta percha; also HyFlex CM assorted box for a Roeko #25) and RUBBER DAM CLAMPS auto-fetch FORCEPS or wrong-brand collages (260-200-006/010 -> clamp forceps, one TopDental-watermarked; 260-200-005 -> Medesy 14A/2A/00/8A collage without the 12A). Also: Bicon Integra-CP implant (320-120-022) fetched an ALGOR finite-element STRESS-ANALYSIS figure from a journal; Maillefer finger spreader (260-210-004) fetched a SybronEndo box; Black-Line plugger (260-210-003) fetched a Hu-Friedy instrument; PD Formocresol (260-170-003) fetched PD Tricresol & Formalin (right brand, wrong product). MD5 dupes across sibling sizes (260-180-002==003, 005==006) are a reliable wrong-image signal. All 14 added to manual_only_skus so fetch stops burning CSE quota on them; all were already in the Image Queue tab for team sourcing. Net: for these endo-points / rubber-dam-clamp / niche-implant families, auto-search yield is ~1/15 - they are team-sourcing work."
+    },
+    {
+      "date": "2026-07-16",
+      "batch": "Daily maintenance auto-retry (65-item Campaign slice 1 batch)",
+      "lesson": "Auto-fetch validated 27 images; visual audit ACCEPTED only 2 and REJECTED 25 (yield ~2/27). ACCEPTED: 200-170-014 Unigloves Supergrip Latex Medium (box shows correct brand+material+size M, from phabcart.imgix.net) and 120-120-001 Cherokee Workwear Originals V-Neck Grape (clean flat lay with Originals red tag). REJECTED families, all confirming prior Image-Queue failures: generic no-brand DISPOSABLES are hopeless via CSE - Dental Mixing Pads fetched a fireplace shovel (200-180-001 from diy.com), a PPSU endoscope disinfection box (200-180-002), and a panda desk mouse pad (200-180-003 from etsystatic); Disposable Large Tray fetched a dental AIR COMPRESSOR (200-200-004 from picclickimg); UnoDent/N'SURE cups fetched a denture/bur soaking pot (200-200-002), a UnoDent cotton-rolls box (200-200-003), a Flow Dental film-holder (200-200-015) and a wheat-straw reusable-cup infographic (200-200-007); N'SURE tray covers fetched a matrix wedge (008), an x-ray PSP pouch (009), a 'dream' interdental-brush box (010), a Flow Dental PSP envelope (011) and a multi-colour assortment instead of the specific colour (012). GLOVE brand/material/size mismatches persist: BeeSure latex-large fetched BeeSure SuperSlim NITRILE 300 (200-170-001); Grip Touch latex XS fetched Micro-Touch Denta-Glove M nitrile (200-170-011); UnoDent Nitrisoft XS fetched the M box (200-170-026). Sponge Dispenser Mauve fetched the BLUE variant (200-120-005). Stoddard prophy brush fetched a UnoDent-branded identical-spec tray - BRAND mismatch, rejected (360-130-002). Exodontia gauze fetched a plastcareusa comparison INFOGRAPHIC with text (200-160-001). Rubber Dam Clamp 14A fetched a Medesy 14A/2A/00/8A collage (wrong brand + shows avoid-variants, 260-200-013); Rubber Dam Frame fetched Nyclave sterilization tubing (260-200-024). APPAREL confirmed manual-only: 120-120-032 Buttersoft Wine fetched a Christmas-monster-print top with a PhotoRoom watermark; 120-120-007 Cherokee 4876 Wine fetched a Cherokee 4101T PANTS infographic (wrong garment+text); 120-120-005/006 Cherokee Galaxy fetched byte-identical model shots of an unconfirmable Cherokee line (rejected - cannot verify 4876 model, apparel-manual-only). Also deleted an unaudited image on 260-180-004 (Roeko paper point) whose status-write had failed (source URL >255 chars) so it never reached the audit gate. All 26 added to manual_only_skus; diy.com, picclickimg.com, etsystatic.com blocked as non-dental junk sources. LESSON: generic no-brand disposable-supply families (mixing pads, disposable cups/trays/tray-covers, sponge dispensers) and apparel are team-sourcing work - CSE cannot resolve them; stop auto-retrying."
     }
   ]
 }
