@@ -277,7 +277,7 @@
 <nav class="tabs" aria-label="Pages">
   <div class="wrap">
     <a href="#overview" data-page="overview">1 · Overview</a>
-    <a href="#morning" data-page="morning">2 · Every Morning</a>
+    <a href="#automations" data-page="automations">2 · Automations</a>
     <a href="#tasks" data-page="tasks">3 · Your Tasks</a>
     <a href="#expiry" data-page="expiry">4 · Expiring Goods</a>
     <a href="#updates" data-page="updates">5 · Updates</a>
@@ -348,17 +348,19 @@
 
     <div class="pager">
       <span class="spacer"></span>
-      <a href="#morning" data-page="morning"><small>Next</small>Every Morning →</a>
+      <a href="#automations" data-page="automations"><small>Next</small>Automations →</a>
     </div>
   </div>
 </section>
 
-<!-- ══════════ PAGE 2 · EVERY MORNING ══════════ -->
-<section class="page" id="morning">
+<!-- ══════════ PAGE 2 · AUTOMATIONS ══════════ -->
+<section class="page" id="automations">
   <div class="wrap">
     <div class="pagelabel">Page 2 of 5</div>
-    <h2>What happens every morning</h2>
-    <p class="lede">The 07:07 run, in the order it executes. You never trigger any of this.</p>
+    <h2>The automations</h2>
+    <p class="lede">Two routines keep the store correct. Catalogue looks after what products are; Commerce looks after what they cost and how many are shown. You never trigger any of this.</p>
+
+    <h3 style="margin-top:0">Every morning · Catalogue, 07:07</h3>
     <ol class="steps">
       <li><span class="step-dot">1</span><b class="t">Image Queue</b><span class="d">Downloads the image links you pasted in the Fix sheet, checks each one against the product, uploads the good ones. Rejections get a written reason.</span></li>
       <li><span class="step-dot">2</span><b class="t">Image search + audit</b><span class="d">Hunts for missing product photos on manufacturer sites. Every found image is visually reviewed before it can touch the store.</span></li>
@@ -370,9 +372,15 @@
       <li><span class="step-dot">8</span><b class="t">Report</b><span class="d">Daily summary, including anything that needs a human decision.</span></li>
     </ol>
 
+    <h3>Every afternoon · Commerce, 13:07 and 13:42</h3>
+    <ol class="steps">
+      <li><span class="step-dot">1</span><b class="t">13:07 · The midday check</b><span class="d">Runs on its own, even with no computer open. Corrects store prices and stock against Zoho, applies expiry markdowns and short-dated tags, and pulls expired goods off the store. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</span></li>
+      <li><span class="step-dot">2</span><b class="t">13:42 · The Commerce review</b><span class="d">Reads what the morning run and the midday check did, and reports anything needing attention: price and stock drift, expiry buckets, batch caps, items ready for cutover. If the midday check itself failed to run, the review notices and re-runs it.</span></li>
+    </ol>
+
     <div class="card" style="margin-top:6px">
-      <h3 style="margin-top:0">The afternoon: Commerce</h3>
-      <p>The run above is the <b>Catalogue</b> routine: what products are. Its sibling, <b>Commerce</b>, looks after what products cost and how many are shown. At 13:07 an automatic check corrects prices and stock and applies expiry markdowns, even when nobody has the computer open; at about 13:42 Commerce reviews everything the day's checks did and reports anything needing attention, including noticing if the midday check itself failed to run. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p>
+      <h3 style="margin-top:0">The safety ceiling</h3>
+      <p>If more than 50 price and stock corrections are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.</p>
     </div>
 
     <div class="pager">
@@ -431,7 +439,7 @@
           <li><b>Don't use "Contains Variants"</b> when creating items. Always Single Item, with SKU and price. Variants without SKUs are invisible to the automation.</li>
           <li><b>Don't change SKU or name on a live item</b>, except the cutover step on the Expiring Goods page. SKU is the thread holding Zoho, the store, and order history together.</li>
           <li><b>Don't price items under ₦100.</b> They are treated as placeholders and never publish.</li>
-          <li><b>Don't edit the store directly.</b> It gets overwritten by the next morning run.</li>
+          <li><b>Don't edit the store directly.</b> It gets overwritten by the next automatic run.</li>
         </ul>
       </div>
     </div>
@@ -447,7 +455,7 @@
     </div>
 
     <div class="pager">
-      <a href="#morning" data-page="morning"><small>Back</small>← Every Morning</a>
+      <a href="#automations" data-page="automations"><small>Back</small>← Automations</a>
       <a href="#expiry" data-page="expiry"><small>Next</small>Expiring Goods →</a>
     </div>
   </div>
@@ -504,7 +512,7 @@
       </details>
       <details>
         <summary>Does a discount change our price in Zoho?</summary>
-        <div class="a">Never. Zoho's selling price is untouched; the discount exists only on the store, shown with the full price struck through. Fix the price in Zoho and the store follows the next morning, discount recalculated on top.</div>
+        <div class="a">Never. Zoho's selling price is untouched; the discount exists only on the store, shown with the full price struck through. Fix the price in Zoho and the store follows at the next automatic check, discount recalculated on top.</div>
       </details>
       <details>
         <summary>A customer orders a discounted item. Which units do we ship?</summary>
@@ -532,7 +540,7 @@
     <div class="log">
       <div class="log-entry"><div class="date">17 July 2026</div><p>The automation is now two named routines. Catalogue (07:07) looks after what products are: photos, text, publishing, the Fix sheet. Commerce (13:07 and 13:42) looks after what products cost and how many are shown: prices, stock, expiry discounts. Commerce also checks its own health: if the midday check ever fails silently, the afternoon review notices and re-runs it.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Safety ceiling added to the automatic corrections: if more than 50 price and stock fixes are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.</p></div>
-      <div class="log-entry"><div class="date">17 July 2026</div><p>The automation now runs twice a day. The 07:07 morning run handles everything on the Every Morning page; a lighter check at 13:07 corrects prices and stock and applies expiry markdowns on its own, with nobody at the computer. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>The automation now runs twice a day. The 07:07 morning run handles everything on the Automations page; a lighter check at 13:07 corrects prices and stock and applies expiry markdowns on its own, with nobody at the computer. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Plan agreed for Zoho's own Shopify connection: it keeps bringing store orders and customers into Zoho (roughly every 4 hours) and keeps matching new products behind the scenes each night, while our automation owns everything the store displays: products, photos, text, prices, discounts and the quantities shown. The day the first "Is Batch Item" is tagged, the automatic checks move to hourly and the connection's stock push is switched off, so a batch discount can never appear with the wrong quantity behind it. Until then nothing changes.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Mixed-batch selling solved: the store now sells one batch at a time. A listing with short-dated stock shows only that batch's quantity at its discounted price (with a "short-dated" tag); fresh stock stays hidden until the old batch sells out, then the listing flips to the fresh batch the next morning. Nobody can buy fresh stock at the short-dated discount. Checked whether Shopify handles expiry natively: it does not (apps exist, but they would create a second batch ledger to maintain by hand), so this stays in our own automation.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Expiry workflow refined for real shelves: expired units on a mixed shelf never pull the listing while fresh stock remains (flagged for disposal instead). Cutover timing changed from "stock hits zero" to "just before a resupply arrives": the daily report now flags tagged items at their reorder level. FAQ added to the Expiring Goods page.</p></div>

@@ -15,7 +15,11 @@ This is why the team's Zoho habits matter so much. The automation is thorough, b
 
 ## 2. What happens automatically every day
 
-The 07:07 morning run, in order:
+Two routines keep the store correct. Catalogue looks after what products are; Commerce looks after what they cost and how many are shown. Nobody on the team triggers any of this.
+
+### Every morning: Catalogue (07:07)
+
+In order:
 
 | Step | What it does | What you see |
 |---|---|---|
@@ -30,7 +34,14 @@ The 07:07 morning run, in order:
 | Fix Tracker | Works through every Open and Reopened row in the Issues tab | Status, resolution notes, and date filled in |
 | Report | Summarises everything above, including anything that needs a human decision | Daily summary for Leke |
 
-**And in the afternoon: Commerce.** The run above is the Catalogue routine: it looks after what products are (photos, text, publishing). Its sibling, the Commerce routine, looks after what products cost and how many are shown. At 13:07 an automatic check corrects store prices and stock and applies expiry markdowns, even when nobody has the computer open. At about 13:42 Commerce reviews everything the day's checks did and reports anything that needs attention, including noticing if the midday check itself failed to run. A price you fix in Zoho before one o'clock is on the store the same afternoon.
+### Every afternoon: Commerce (13:07 and 13:42)
+
+| Time | What it does | What you see |
+|---|---|---|
+| 13:07 The midday check | Runs on its own, even with no computer open. Corrects store prices and stock against Zoho, applies expiry markdowns and short-dated tags, pulls expired goods off the store | A price you fix in Zoho before one o'clock is on the store the same afternoon |
+| 13:42 The Commerce review | Reads what the morning run and the midday check did. Reports price and stock drift, expiry buckets, batch caps, and items ready for cutover. If the midday check itself failed to run, the review notices and re-runs it | Afternoon summary for Leke when something needs attention |
+
+**The safety ceiling.** If more than 50 price and stock corrections are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.
 
 ## 3. How an item travels the pipeline
 
