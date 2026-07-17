@@ -1,12 +1,26 @@
 {
-  "_description": "Expiry markdown policy — approved by Leke 2026-07-17. Used by reconcile_published.py. Tiers: days-to-expiry thresholds (inclusive upper bound) mapped to markdown fraction. Floor: Shopify price never drops below the item's purchase_rate (cost); floored items are flagged for disposal review. Prices round to the nearest rounding_step naira. Expired items are pulled to DRAFT on Shopify and listed for disposal.",
+  "_description": "Expiry markdown policy — approved by Leke 2026-07-17 (sliver rule + reorder-level cutover added 2026-07-17). Used by reconcile_published.py. Tiers: days-to-expiry thresholds (inclusive upper bound) mapped to markdown fraction. Floor: Shopify price never drops below the item's purchase_rate (cost); floored items are flagged for disposal review. Prices round to the nearest rounding_step naira. Expired items are pulled to DRAFT on Shopify and listed for disposal. sliver_threshold: a short-dated batch smaller than this fraction of on-hand stock does NOT drive the listing's markdown; its units are flagged for disposal/offline sale instead, and the next batch drives pricing. Expired batches on a shelf that still has live batches never pull the listing; they are flagged for stock adjustment.",
+  "sliver_threshold": 0.2,
   "tiers": [
-    {"max_days": 30,  "markdown": 0.40},
-    {"max_days": 90,  "markdown": 0.25},
-    {"max_days": 180, "markdown": 0.10}
+    {
+      "max_days": 30,
+      "markdown": 0.4
+    },
+    {
+      "max_days": 90,
+      "markdown": 0.25
+    },
+    {
+      "max_days": 180,
+      "markdown": 0.1
+    }
   ],
   "floor": "purchase_rate",
   "rounding_step": 50,
   "expired_action": "draft_and_report",
-  "report_buckets_days": [30, 60, 90]
+  "report_buckets_days": [
+    30,
+    60,
+    90
+  ]
 }

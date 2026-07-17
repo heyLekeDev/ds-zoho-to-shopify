@@ -219,6 +219,27 @@
                 text-transform: uppercase; padding: 3px 9px; border-radius: 999px;
                 background: var(--accent-soft); color: var(--accent-ink); margin-left: 8px; vertical-align: 2px; }
 
+  /* ── FAQ accordion ── */
+  .faq { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
+  .faq details {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+    padding: 0; overflow: hidden;
+  }
+  .faq summary {
+    cursor: pointer; list-style: none; display: flex; align-items: center; gap: 12px;
+    padding: 16px 18px; font-weight: 700; font-size: 15px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before {
+    content: "+"; flex: 0 0 26px; height: 26px; border-radius: 50%;
+    background: var(--accent-soft); color: var(--accent-ink); font-weight: 800;
+    display: flex; align-items: center; justify-content: center; font-size: 16px;
+  }
+  .faq details[open] summary::before { content: "−"; }
+  .faq details[open] summary { border-bottom: 1px solid var(--line); }
+  .faq .a { padding: 14px 18px 18px 56px; color: var(--ink-soft); font-size: 14.5px; max-width: 64ch; }
+  .faq .a b { color: var(--ink); }
+
   /* ── Findings ── */
   .log { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 22px; }
   .log-entry { margin-bottom: 22px; position: relative; }
@@ -248,7 +269,7 @@
   <div class="wrap">
     <div class="eyebrow">SNL Dental Solutions</div>
     <h1>How our store runs itself, and where it needs you</h1>
-    <p>You work in Zoho. An automated run updates the Shopify store every morning at 07:07. Five short pages: what happens on its own, what only you can do, and the new expiring-goods workflow.</p>
+    <p>You work in Zoho. Two automated routines keep the Shopify store correct: Catalogue every morning at 07:07 (photos, text, new products) and Commerce at midday (prices, stock, discounts). Five short pages: what happens on its own, what only you can do, and the new expiring-goods workflow.</p>
     <div class="updated">Last updated <b>17 July 2026</b> · New findings appear on the Updates page</div>
   </div>
 </header>
@@ -271,11 +292,11 @@
 
     <div class="card rule-card">
       <p class="big serif">Zoho is the source of truth. The store follows it automatically.</p>
-      <p>Never edit the store directly. Fix Zoho, and the store corrects itself by the next morning. The automation publishes exactly what Zoho says, so a wrong price in Zoho becomes a wrong price on the store.</p>
+      <p>Never edit the store directly. Fix Zoho, and the store corrects itself at the next automatic check: the full run every morning at 07:07, prices and stock again at 13:07. The automation publishes exactly what Zoho says, so a wrong price in Zoho becomes a wrong price on the store.</p>
       <div class="truth-flow">
         <div class="truth-node">You keep Zoho accurate</div>
         <div class="arrow">→</div>
-        <div class="truth-node">07:07 automation</div>
+        <div class="truth-node">07:07 + 13:07 automation</div>
         <div class="arrow">→</div>
         <div class="truth-node out">Store is correct</div>
       </div>
@@ -285,7 +306,7 @@
     <div class="nums">
       <div class="num good"><b>989</b><span>items live on the store</span></div>
       <div class="num good"><b>0</b><span>price or stock drift</span></div>
-      <div class="num good"><b>177</b><span>pieces of store text cleaned in one pass</span></div>
+      <div class="num good"><b>2</b><span>routines: Catalogue 07:07, Commerce midday</span></div>
       <div class="num"><b>~90</b><span>Image Queue rows waiting for your URLs</span></div>
       <div class="num"><b>0</b><span>items tagged "Is Batch Item" so far. Next team push</span></div>
     </div>
@@ -349,6 +370,11 @@
       <li><span class="step-dot">8</span><b class="t">Report</b><span class="d">Daily summary, including anything that needs a human decision.</span></li>
     </ol>
 
+    <div class="card" style="margin-top:6px">
+      <h3 style="margin-top:0">The afternoon: Commerce</h3>
+      <p>The run above is the <b>Catalogue</b> routine: what products are. Its sibling, <b>Commerce</b>, looks after what products cost and how many are shown. At 13:07 an automatic check corrects prices and stock and applies expiry markdowns, even when nobody has the computer open; at about 13:42 Commerce reviews everything the day's checks did and reports anything needing attention, including noticing if the midday check itself failed to run. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p>
+    </div>
+
     <div class="pager">
       <a href="#overview" data-page="overview"><small>Back</small>← Overview</a>
       <a href="#tasks" data-page="tasks"><small>Next</small>Your Tasks →</a>
@@ -368,7 +394,7 @@
         <h3>1 · Keep Zoho accurate</h3>
         <p><span class="do">Prices, stock, photos, descriptions.</span> Change them in Zoho the moment they change in reality.</p>
         <div class="why">Why</div>
-        <p>The store copies Zoho every morning, and this pipeline is the only thing keeping store prices honest: Zoho's own Shopify connection never syncs prices. A photo you replace in Zoho is live the next day.</p>
+        <p>The store copies Zoho twice a day (07:07 and 13:07), and this pipeline is the only thing keeping store prices honest: Zoho's own Shopify connection never syncs prices. A photo you replace in Zoho is live the next day.</p>
         <a class="cta-link" href="https://inventory.zoho.com/app/868799877#/inventory/items" target="_blank" rel="noopener">Open Zoho items ↗</a>
       </div>
       <div class="card">
@@ -413,7 +439,7 @@
     <h3>What your action triggers</h3>
     <div class="fx">
       <div class="card"><div class="you">Create a Single Item</div><div class="mid">enrich, group, find image, publish</div><div class="res">New product on the store</div></div>
-      <div class="card"><div class="you">Fix a price or stock count</div><div class="mid">morning reconcile</div><div class="res">Corrected listing</div></div>
+      <div class="card"><div class="you">Fix a price or stock count</div><div class="mid">next check, 07:07 or 13:07</div><div class="res">Corrected listing</div></div>
       <div class="card"><div class="you">Replace a photo or edit text</div><div class="mid">change watch re-publishes</div><div class="res">Updated product page</div></div>
       <div class="card"><div class="you">Tag Is Batch Item + Expiry Date</div><div class="mid">expiry watch</div><div class="res">Markdowns; expired goods pulled</div></div>
       <div class="card"><div class="you">Paste an Image Queue URL</div><div class="mid">validate, review, upload</div><div class="res">Right photo live</div></div>
@@ -443,14 +469,51 @@
       <div class="tier dead"><span class="days">Expired</span><div class="bar"></div><span class="off">Pulled off the store</span></div>
     </div>
     <p class="tier-note">Customers see the discount with the full price struck through. The discount never goes below what we paid for the item; goods that hit that floor are flagged for disposal review. Zoho's selling price is never touched: discounts exist only on the store.</p>
+    <p class="tier-note"><b>Several batches on the shelf?</b> The store sells one batch at a time, oldest first. The listing shows only the soonest batch's quantity, at that batch's discounted price, and gets a "short-dated" tag. Fresh stock stays hidden until the old batch sells out; the next automatic check flips the listing to the fresh batch at its own price and the tag comes off. Nobody ever buys fresh stock at the old batch's discount, and the discount does its real job: clearing the short-dated units first.</p>
 
     <h3>The transition to true batch tracking</h3>
     <p class="lede" style="margin-bottom:18px">Today, expiry is one hand-filled date per item. The destination is Zoho batch tracking, where every delivery carries its own expiry automatically. Zoho cannot convert an existing item once it has history, so we replace items one by one, with zero effect on the store:</p>
     <div class="phases">
       <div class="phase"><b>Tag everything that expires <span class="tag">now</span></b><p>Tick Is Batch Item, fill Expiry Date. Markdown protection is live immediately, before any migration.</p></div>
       <div class="phase"><b>New items are born batch-tracked <span class="tag">now</span></b><p>Any new expiring product is created with batch tracking on. Expiry then records itself with every delivery.</p></div>
-      <div class="phase"><b>Cutover when stock hits zero <span class="tag">rolling</span></b><p>The daily report lists tagged items that reached zero stock as cutover ready. You rename the old item's name and SKU with a "-X" ending (one edit). The automation rebuilds it batch-tracked under the original SKU and retires the old record. The store never notices: same page, same order history.</p></div>
+      <div class="phase"><b>Cut over just before a resupply arrives <span class="tag">rolling</span></b><p>When a tagged item's stock drops to its reorder level, the daily report lists it as cutover ready: that is the moment, because the shelf is at its lowest and easiest to count. Count the remaining units per expiry date, rename the old item's name and SKU with a "-X" ending (one edit), and the automation rebuilds it batch-tracked under the original SKU with those units as its first batches. Then receive the new delivery into the rebuilt item, entering the batch number and expiry at the receiving step. Every reorder migrates an item. The store never notices: same page, same order history.</p></div>
       <div class="phase"><b>Retire the hand-filled date <span class="tag">later</span></b><p>When every expiring item is batch-tracked, the Expiry Date field is no longer needed.</p></div>
+    </div>
+
+    <h3>Common questions</h3>
+    <div class="faq">
+      <details>
+        <summary>We have several batches with different expiry dates. Which one sets the discount?</summary>
+        <div class="a">The store sells <b>one batch at a time, oldest first</b>. The listing shows only the soonest batch's quantity, at that batch's discounted price. When those units sell out, the next automatic check flips the listing to the next batch: its quantity, its price. Until an item is batch-tracked, the hand-filled Expiry Date field plays the same role for the whole shelf: keep it set to the nearest expiry, and update it when that stock sells out.</div>
+      </details>
+      <details>
+        <summary>Only two short-dated units are left, but we have a hundred fresh ones. Does everything get discounted?</summary>
+        <div class="a">No. The listing shows <b>quantity 2 at the discount</b>; the hundred fresh units are hidden until those two sell. Nobody can buy fresh stock at the short-dated price. When you ship those orders, pick the short-dated batch: it is the one the customer paid the discount for. If a tiny discounted batch lingers unsold and is blocking fresh stock, the daily report flags it so you can sell those units offline and unblock the listing.</div>
+      </details>
+      <details>
+        <summary>We reorder before stock ever reaches zero. When do we cut over?</summary>
+        <div class="a"><b>Just before the resupply arrives.</b> The daily report flags a tagged item the moment its stock drops to its reorder level. The shelf is at its lowest then, so counting the leftover units per expiry date takes minutes. Rename the old item with "-X", the automation rebuilds it batch-tracked with those units, and you receive the new delivery into the rebuilt item with its batch and expiry. Every reorder migrates one more item.</div>
+      </details>
+      <details>
+        <summary>What if some units on the shelf have already expired but we also have fresh stock?</summary>
+        <div class="a">The listing <b>stays live</b> on the fresh batches (expired units are never shown or counted on the store). The expired units are flagged in the daily report to be removed from sellable stock and disposed of. A listing only comes off the store when <b>everything</b> on the shelf is expired.</div>
+      </details>
+      <details>
+        <summary>How can we tell on the store that an item is short-dated?</summary>
+        <div class="a">Two ways, both automatic: the price shows a discount with the full price struck through, and the product carries a <b>"short-dated" tag</b>. The tag comes off by itself at the next automatic check after the short-dated batch sells out. The tag also makes it possible to show a "Short-dated deals" collection page later, with zero extra work.</div>
+      </details>
+      <details>
+        <summary>Does a discount change our price in Zoho?</summary>
+        <div class="a">Never. Zoho's selling price is untouched; the discount exists only on the store, shown with the full price struck through. Fix the price in Zoho and the store follows the next morning, discount recalculated on top.</div>
+      </details>
+      <details>
+        <summary>A customer orders a discounted item. Which units do we ship?</summary>
+        <div class="a"><b>The oldest batch first.</b> When you raise the invoice, Zoho lists the batches sorted first-expiring-first; pick from the top. That is what the discount exists to do: move the short-dated stock before it expires.</div>
+      </details>
+      <details>
+        <summary>Can the discount ever sell below what we paid?</summary>
+        <div class="a">No. The price floors at the item's purchase cost. Items that hit the floor are flagged for disposal review, because at that point holding them is costing more than clearing them.</div>
+      </details>
     </div>
 
     <div class="pager">
@@ -467,6 +530,12 @@
     <h2>Updates and findings</h2>
     <p class="lede">Newest first. The daily run adds entries when it learns something the team should know.</p>
     <div class="log">
+      <div class="log-entry"><div class="date">17 July 2026</div><p>The automation is now two named routines. Catalogue (07:07) looks after what products are: photos, text, publishing, the Fix sheet. Commerce (13:07 and 13:42) looks after what products cost and how many are shown: prices, stock, expiry discounts. Commerce also checks its own health: if the midday check ever fails silently, the afternoon review notices and re-runs it.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Safety ceiling added to the automatic corrections: if more than 50 price and stock fixes are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>The automation now runs twice a day. The 07:07 morning run handles everything on the Every Morning page; a lighter check at 13:07 corrects prices and stock and applies expiry markdowns on its own, with nobody at the computer. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Plan agreed for Zoho's own Shopify connection: it keeps bringing store orders and customers into Zoho (roughly every 4 hours) and keeps matching new products behind the scenes each night, while our automation owns everything the store displays: products, photos, text, prices, discounts and the quantities shown. The day the first "Is Batch Item" is tagged, the automatic checks move to hourly and the connection's stock push is switched off, so a batch discount can never appear with the wrong quantity behind it. Until then nothing changes.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Mixed-batch selling solved: the store now sells one batch at a time. A listing with short-dated stock shows only that batch's quantity at its discounted price (with a "short-dated" tag); fresh stock stays hidden until the old batch sells out, then the listing flips to the fresh batch the next morning. Nobody can buy fresh stock at the short-dated discount. Checked whether Shopify handles expiry natively: it does not (apps exist, but they would create a second batch ledger to maintain by hand), so this stays in our own automation.</p></div>
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Expiry workflow refined for real shelves: expired units on a mixed shelf never pull the listing while fresh stock remains (flagged for disposal instead). Cutover timing changed from "stock hits zero" to "just before a resupply arrives": the daily report now flags tagged items at their reorder level. FAQ added to the Expiring Goods page.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Pipeline hardening completed: daily price and stock reconciliation (Zoho's own Shopify connection never syncs prices), change watch for photo and text edits, expiry markdown automation, multi-photo galleries, and the store-wide text cleanup. The four new item fields went live.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Confirmed by testing: Zoho items with any history can never be switched to batch tracking, and SKUs stay reserved even after deactivation. Both facts shaped the cutover procedure on the Expiring Goods page.</p></div>
       <div class="log-entry"><div class="date">16 July 2026</div><p>Image audit of one day's automatic fetches: 2 of 27 were correct. Generic disposables and apparel are now permanently routed to the Image Queue for team-sourced URLs.</p></div>

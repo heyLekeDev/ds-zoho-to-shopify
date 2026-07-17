@@ -17,3 +17,7 @@ dash_remediation_preview.md
 .orphan_cache.json
 .gallery_staging.json
 .dash_fix_report.json
+
+# Headless ops runs (com.snl.ds-ops): per-run reconcile reports + logs
+ops_reports/
+logs/
