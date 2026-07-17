@@ -39,9 +39,13 @@ ALLOWED_WRITE_FIELDS = {
     'cf_shopify_sync_notes', 'cf_sync_result',
     'cf_enriched_title', 'cf_shopify_tags',
     'cf_shopify_product_type', 'cf_description_html',
-    # Batch-migration bookkeeping (2026-07-17). cf_is_batch_item and
-    # cf_expiry_date are deliberately NOT writable — they are team-owned.
+    # Batch-migration bookkeeping (2026-07-17).
     'cf_batch_migrated',
+    # cf_is_batch_item / cf_expiry_date were team-owned (not writable) until
+    # Leke approved the bulk-tagging flow (2026-07-17): the team supplies a
+    # sheet of expiring SKUs + dates, automation does the data entry. Scripts
+    # must only ever write values sourced from that sheet, never inferred ones.
+    'cf_is_batch_item', 'cf_expiry_date',
 }
 
 # ── Copy style: em/en dash ban (customer-facing text) ────────────────────────

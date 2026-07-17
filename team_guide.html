@@ -308,7 +308,7 @@
       <div class="num good"><b>0</b><span>price or stock drift</span></div>
       <div class="num good"><b>2</b><span>routines: Catalogue 07:07, Commerce midday</span></div>
       <div class="num"><b>~90</b><span>Image Queue rows waiting for your URLs</span></div>
-      <div class="num"><b>0</b><span>items tagged "Is Batch Item" so far. Next team push</span></div>
+      <div class="num"><b>0</b><span>items tagged "Is Batch Item" so far. Monday's list changes that</span></div>
     </div>
 
     <h3>An item's journey to the store</h3>
@@ -375,7 +375,7 @@
     <h3>Every afternoon · Commerce, 13:07 and 13:42</h3>
     <ol class="steps">
       <li><span class="step-dot">1</span><b class="t">13:07 · The midday check</b><span class="d">Runs on its own, even with no computer open. Corrects store prices and stock against Zoho, applies expiry markdowns and short-dated tags, and pulls expired goods off the store. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</span></li>
-      <li><span class="step-dot">2</span><b class="t">13:42 · The Commerce review</b><span class="d">Reads what the morning run and the midday check did, and reports anything needing attention: price and stock drift, expiry buckets, batch caps, items ready for cutover. If the midday check itself failed to run, the review notices and re-runs it.</span></li>
+      <li><span class="step-dot">2</span><b class="t">13:42 · The Commerce review</b><span class="d">Reads what the morning run and the midday check did, and reports anything needing attention: price and stock drift, expiry buckets, batch caps, batch conversions completed. If the midday check itself failed to run, the review notices and re-runs it.</span></li>
     </ol>
 
     <div class="card" style="margin-top:6px">
@@ -423,7 +423,7 @@
         <h3>4 · Tag expiring goods</h3>
         <p><span class="do">Tick "Is Batch Item"</span> on products that expire, and <span class="do">fill "Expiry Date"</span> with the nearest expiry on the shelf.</p>
         <div class="why">Why</div>
-        <p>One tick switches on automatic markdowns and the expired-goods pull. Full detail on the Expiring Goods page.</p>
+        <p>One tick switches on automatic markdowns, the expired-goods pull, and the automatic conversion to batch tracking. Full detail on the Expiring Goods page.</p>
         <a class="cta-link" href="https://inventory.zoho.com/app/868799877#/inventory/items" target="_blank" rel="noopener">Open Zoho items ↗</a>
       </div>
       <div class="card">
@@ -437,7 +437,7 @@
         <span class="badge red">Never do these</span>
         <ul>
           <li><b>Don't use "Contains Variants"</b> when creating items. Always Single Item, with SKU and price. Variants without SKUs are invisible to the automation.</li>
-          <li><b>Don't change SKU or name on a live item</b>, except the cutover step on the Expiring Goods page. SKU is the thread holding Zoho, the store, and order history together.</li>
+          <li><b>Don't change SKU or name on a live item.</b> SKU is the thread holding Zoho, the store, and order history together. (The automation's batch conversion is the only exception, and it handles that itself.)</li>
           <li><b>Don't price items under ₦100.</b> They are treated as placeholders and never publish.</li>
           <li><b>Don't edit the store directly.</b> It gets overwritten by the next automatic run.</li>
         </ul>
@@ -449,7 +449,7 @@
       <div class="card"><div class="you">Create a Single Item</div><div class="mid">enrich, group, find image, publish</div><div class="res">New product on the store</div></div>
       <div class="card"><div class="you">Fix a price or stock count</div><div class="mid">next check, 07:07 or 13:07</div><div class="res">Corrected listing</div></div>
       <div class="card"><div class="you">Replace a photo or edit text</div><div class="mid">change watch re-publishes</div><div class="res">Updated product page</div></div>
-      <div class="card"><div class="you">Tag Is Batch Item + Expiry Date</div><div class="mid">expiry watch</div><div class="res">Markdowns; expired goods pulled</div></div>
+      <div class="card"><div class="you">Tag Is Batch Item + Expiry Date</div><div class="mid">expiry watch + automatic conversion</div><div class="res">Markdowns; item becomes batch-tracked</div></div>
       <div class="card"><div class="you">Paste an Image Queue URL</div><div class="mid">validate, review, upload</div><div class="res">Right photo live</div></div>
       <div class="card"><div class="you">Log a problem in Issues</div><div class="mid">diagnose, fix, learn the lesson</div><div class="res">Problem gone next day</div></div>
     </div>
@@ -466,7 +466,7 @@
   <div class="wrap">
     <div class="pagelabel">Page 4 of 5 · Our next major push</div>
     <h2>Expiring goods</h2>
-    <p class="lede">Selling expired dental materials is a compliance problem. Letting short-dated stock sit at full price is a financial one. This workflow solves both automatically.</p>
+    <p class="lede">Selling expired dental materials is a compliance problem. Letting short-dated stock sit at full price is a financial one. This workflow solves both automatically. The plan: on Monday the team compiles the complete list of expiring items and their expiration dates; the tagging is done in bulk from that list, and conversion to batch tracking runs on its own from there.</p>
 
     <h3 style="margin-top:0">What happens once an item is tagged</h3>
     <div class="tiers">
@@ -482,9 +482,10 @@
     <h3>The transition to true batch tracking</h3>
     <p class="lede" style="margin-bottom:18px">Today, expiry is one hand-filled date per item. The destination is Zoho batch tracking, where every delivery carries its own expiry automatically. Zoho cannot convert an existing item once it has history, so we replace items one by one, with zero effect on the store:</p>
     <div class="phases">
-      <div class="phase"><b>Tag everything that expires <span class="tag">now</span></b><p>Tick Is Batch Item, fill Expiry Date. Markdown protection is live immediately, before any migration.</p></div>
+      <div class="phase"><b>Tag everything that expires <span class="tag">now</span></b><p>Tick Is Batch Item, fill Expiry Date. Or hand Leke the full list of expiring SKUs and dates and the tagging is done in bulk. Markdown protection is live immediately.</p></div>
       <div class="phase"><b>New items are born batch-tracked <span class="tag">now</span></b><p>Any new expiring product is created with batch tracking on. Expiry then records itself with every delivery.</p></div>
-      <div class="phase"><b>Cut over just before a resupply arrives <span class="tag">rolling</span></b><p>When a tagged item's stock drops to its reorder level, the daily report lists it as cutover ready: that is the moment, because the shelf is at its lowest and easiest to count. Count the remaining units per expiry date, rename the old item's name and SKU with a "-X" ending (one edit), and the automation rebuilds it batch-tracked under the original SKU with those units as its first batches. Then receive the new delivery into the rebuilt item, entering the batch number and expiry at the receiving step. Every reorder migrates an item. The store never notices: same page, same order history.</p></div>
+      <div class="phase"><b>Conversion is automatic <span class="tag">no action</span></b><p>Once an item is tagged, the automation converts it by itself: the old record is renamed aside and retired, and a batch-tracked twin takes over the same SKU and product page. Current stock carries over as one opening batch at the date you gave. You do nothing, and the store never notices: same page, same order history.</p></div>
+      <div class="phase"><b>The one new habit <span class="tag">receiving</span></b><p>When a delivery arrives for a batch-tracked item, enter the batch number and expiry date at the receiving step. That single habit replaces all hand-maintained dates.</p></div>
       <div class="phase"><b>Retire the hand-filled date <span class="tag">later</span></b><p>When every expiring item is batch-tracked, the Expiry Date field is no longer needed.</p></div>
     </div>
 
@@ -499,8 +500,8 @@
         <div class="a">No. The listing shows <b>quantity 2 at the discount</b>; the hundred fresh units are hidden until those two sell. Nobody can buy fresh stock at the short-dated price. When you ship those orders, pick the short-dated batch: it is the one the customer paid the discount for. If a tiny discounted batch lingers unsold and is blocking fresh stock, the daily report flags it so you can sell those units offline and unblock the listing.</div>
       </details>
       <details>
-        <summary>We reorder before stock ever reaches zero. When do we cut over?</summary>
-        <div class="a"><b>Just before the resupply arrives.</b> The daily report flags a tagged item the moment its stock drops to its reorder level. The shelf is at its lowest then, so counting the leftover units per expiry date takes minutes. Rename the old item with "-X", the automation rebuilds it batch-tracked with those units, and you receive the new delivery into the rebuilt item with its batch and expiry. Every reorder migrates one more item.</div>
+        <summary>When do we cut an item over to batch tracking?</summary>
+        <div class="a"><b>You don't. It happens by itself.</b> Once an item is tagged, the automation renames the old record aside, rebuilds it batch-tracked under the same SKU, and carries the current stock over as one opening batch at the expiry date you gave. Your only job afterwards: when a delivery arrives, enter the batch number and expiry at the receiving step. If a shelf holds several different expiry dates today, the opening batch uses the soonest one; real per-batch dates build up naturally as new deliveries arrive.</div>
       </details>
       <details>
         <summary>What if some units on the shelf have already expired but we also have fresh stock?</summary>
@@ -538,6 +539,7 @@
     <h2>Updates and findings</h2>
     <p class="lede">Newest first. The daily run adds entries when it learns something the team should know.</p>
     <div class="log">
+      <div class="log-entry"><div class="date">17 July 2026</div><p>Batch conversion is now fully automatic. The team's only job for expiring goods is the tag and the expiry date (or simply the list of expiring SKUs and dates, tagged in bulk). The automation renames the old record aside, rebuilds the item batch-tracked under the same SKU, carries stock over as an opening batch, and retires the old record. The store never notices. The one new habit: enter batch number and expiry when receiving deliveries into batch-tracked items.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>The automation is now two named routines. Catalogue (07:07) looks after what products are: photos, text, publishing, the Fix sheet. Commerce (13:07 and 13:42) looks after what products cost and how many are shown: prices, stock, expiry discounts. Commerce also checks its own health: if the midday check ever fails silently, the afternoon review notices and re-runs it.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>Safety ceiling added to the automatic corrections: if more than 50 price and stock fixes are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.</p></div>
       <div class="log-entry"><div class="date">17 July 2026</div><p>The automation now runs twice a day. The 07:07 morning run handles everything on the Automations page; a lighter check at 13:07 corrects prices and stock and applies expiry markdowns on its own, with nobody at the computer. Fix a price in Zoho before one o'clock and the store has it the same afternoon.</p></div>

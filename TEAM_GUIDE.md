@@ -39,7 +39,7 @@ In order:
 | Time | What it does | What you see |
 |---|---|---|
 | 13:07 The midday check | Runs on its own, even with no computer open. Corrects store prices and stock against Zoho, applies expiry markdowns and short-dated tags, pulls expired goods off the store | A price you fix in Zoho before one o'clock is on the store the same afternoon |
-| 13:42 The Commerce review | Reads what the morning run and the midday check did. Reports price and stock drift, expiry buckets, batch caps, and items ready for cutover. If the midday check itself failed to run, the review notices and re-runs it | Afternoon summary for Leke when something needs attention |
+| 13:42 The Commerce review | Reads what the morning run and the midday check did. Reports price and stock drift, expiry buckets, batch caps, and batch conversions completed. If the midday check itself failed to run, the review notices and re-runs it | Afternoon summary for Leke when something needs attention |
 
 **The safety ceiling.** If more than 50 price and stock corrections are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.
 
@@ -95,7 +95,7 @@ What makes a good URL: manufacturer or major distributor page, the exact model, 
 ### The rules (things that break the automation)
 
 - **Do not use "Contains Variants" when creating items.** Create every item as a Single Item with its own SKU. The pipeline builds store variants automatically and more safely. Variant items created without SKUs are invisible to every part of the automation. (The test group "PERM ABUT (3MM)" in Zoho, four variants with no SKUs and zero prices, is exactly the situation to avoid.)
-- **Never change an item's SKU or name on a live item** outside the batch cutover procedure below. SKU is the thread connecting Zoho, the store, and order history.
+- **Never change an item's SKU or name on a live item.** SKU is the thread connecting Zoho, the store, and order history. (The automation's batch conversion is the only exception, and it handles that itself.)
 - **Prices under ₦100 never publish.** The pipeline treats them as placeholders and skips them.
 - **No em dashes in product text.** Store copy uses commas, parentheses, and the word "to" for ranges. The system enforces and auto-corrects this, so mostly just know it exists.
 
@@ -123,20 +123,17 @@ The discount never goes below the item's purchase cost; items that hit that floo
 
 Right now expiry lives in one field per item, which the team updates by hand. The destination is Zoho's built-in batch tracking, where every stock receipt carries its own batch number and expiry date and the system always knows the soonest one. The catch, confirmed by testing: **Zoho cannot switch an existing item to batch tracking once it has any transaction history.** So the transition is a rolling replacement, item by item, with zero effect on the store:
 
-- **Phase 0 (now).** Tag expiring items and fill Expiry Date. Markdown automation is live immediately, before any migration.
+- **Phase 0 (now).** Tag expiring items and fill Expiry Date, or hand Leke the full list of expiring SKUs and dates and the tagging is done in bulk. Markdown automation is live immediately.
 - **Phase 1 (immediately, new items only).** Any new expiring product is created with batch tracking switched on from day one. From then on, expiry data enters automatically when stock is received. No dates to maintain by hand.
-- **Phase 2 (rolling cutovers, triggered by reordering).** When a tagged item's stock drops to its reorder level, the daily report lists it as **cutover ready**: the shelf is at its lowest right before a resupply, so it is the easiest moment to count. The steps, per item:
-  1. Team counts the remaining units per expiry date, then renames the old item's name and SKU with a `-X` suffix (two fields, one edit, in Zoho). This frees the identity.
-  2. The automation creates the replacement: same SKU and name as before, batch tracking on, the counted units as its opening batches, all store fields copied, marked Published, old item deactivated and flagged Batch Migrated.
-  3. The team receives the new delivery into the rebuilt item, entering batch number and expiry at the receiving step. Every reorder migrates one more item.
-  4. **The store never notices.** Same product page, same variant, same order history.
-- **Phase 3.** When every expiring item is batch tracked, the hand-maintained Expiry Date field retires.
+- **Phase 2 (automatic conversion).** Once an item is tagged, the automation converts it by itself: the old record is renamed aside and retired, and a batch-tracked twin takes over the same SKU and product page. Current stock carries over as one opening batch at the expiry date you gave. **The team does nothing, and the store never notices.** Same product page, same variant, same order history.
+- **Phase 3 (the one new habit).** When a delivery arrives for a batch-tracked item, enter the batch number and expiry date at the receiving step. That single habit replaces all hand-maintained dates.
+- **Phase 4.** When every expiring item is batch tracked, the hand-filled Expiry Date field retires.
 
 **Several batches on the shelf:** the store sells one batch at a time, oldest first. The listing shows only the soonest batch's quantity, at that batch's discounted price, and carries a "short-dated" product tag. Fresh stock stays hidden until the old batch sells out; the next morning the listing flips to the fresh batch at its own price and the tag comes off. Nobody ever buys fresh stock at the old batch's discount. When shipping a discounted order, pick the short-dated batch: it is what the customer paid for. A tiny discounted batch that lingers unsold is flagged in the daily report (sell offline to unblock the fresh stock). Expired units on a mixed shelf never pull the listing while fresh batches remain; they are flagged for removal from sellable stock. A listing only comes off the store when everything on the shelf is expired.
 
 ### How this ties into the rest of the pipeline
 
-The expiry watch is not a separate system. It lives inside the same morning reconciler that fixes prices and stock, reads the same Zoho fields, and reports in the same daily summary. Tagging an item connects it to everything at once: markdowns, expiry buckets in the report (30, 60, 90 days), the expired pull, and the cutover queue.
+The expiry watch is not a separate system. It lives inside the same morning reconciler that fixes prices and stock, reads the same Zoho fields, and reports in the same daily summary. Tagging an item connects it to everything at once: markdowns, expiry buckets in the report (30, 60, 90 days), the expired pull, and the automatic conversion to batch tracking.
 
 ## 6. How the whole thing connects
 
@@ -148,7 +145,7 @@ fix prices / stock / photos  ──────────►   change watch + 
 tag Is Batch Item + Expiry Date  ──────►   expiry watch  ────────────────────►    markdowns, expired pulled
 paste Image Queue / gallery URLs  ─────►   review + publish images  ──────────►   photos and galleries
 log store problems in Issues tab  ─────►   diagnose, fix, learn lesson  ───────►  problem gone next day
-rename -X when cutover ready  ─────────►   batch-tracked replacement  ─────────►  store unaffected
+(conversion is automatic)  ────────────►   batch-tracked replacement  ─────────►  store unaffected
 ```
 
 Everything the team does is an input in Zoho or the Fix sheet. Everything on the store is an output. Nothing requires touching Shopify.
@@ -158,12 +155,14 @@ Everything the team does is an input in Zoho or the Fix sheet. Everything on the
 - 989 items live on the store; price and stock drift: **zero** after the first reconciliation corrected 17 stale prices and 24 stock counts
 - Store copy cleaned: 112 titles, 44 option values, and 21 descriptions rewritten to the new copy standard in one pass, both in Zoho and on the store
 - Known debts being worked through the daily report: 49 items published in Zoho but missing on the store, 46 legacy store products with no Zoho item, about 90 Image Queue rows waiting for URLs
-- Expiry workflow: built and armed; waiting on the first wave of Is Batch Item tags from the team
+- Expiry workflow: built and armed, and the conversion to batch tracking is fully automated. The plan: on Monday 20 July the team compiles the complete list of expiring items with their expiration dates; the tagging is then done in bulk from that list and conversion runs on its own from there
 - Maintenance is now two named routines: Catalogue (07:07, what products are) and Commerce (13:07 check plus 13:42 review, what products cost and how many are shown); the division of work with Zoho's own Shopify connection is agreed and written up in the Findings Log below
 
 ## 8. Findings Log
 
 New entries are appended here by the daily maintenance run when something worth the team's attention is learned.
+
+- **2026-07-17.** Batch conversion is now fully automatic. The team's only job for expiring goods is the tag and the expiry date (or simply the list of expiring SKUs and dates, tagged in bulk). The automation renames the old record aside, rebuilds the item batch-tracked under the same SKU, carries stock over as an opening batch, and retires the old record. The store never notices. The one new habit: enter batch number and expiry when receiving deliveries into batch-tracked items.
 
 - **2026-07-17.** The automation is now two named routines. Catalogue (07:07) looks after what products are: photos, text, publishing, the Fix sheet. Commerce (13:07 and 13:42) looks after what products cost and how many are shown: prices, stock, expiry discounts. Commerce also checks its own health: if the midday check ever fails silently, the afternoon review notices and re-runs it.
 - **2026-07-17.** Safety ceiling added to the automatic corrections: if more than 50 price and stock fixes are ever pending at once, the automation stops and reports instead of fixing. A pile that big means something upstream broke, and pushing it to the store would spread the damage.
