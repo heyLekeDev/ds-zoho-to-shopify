@@ -57,6 +57,8 @@ KNOWN_BRANDS = {
     'dux dental', 'prevest denpro', 'dedeco', 'lewa', 'dfs', 'castellini',
     'ethicon', 'swann-morton', 'bonart', 'young', 'kodak', 'diatech',
     'stoddard', 'stddard', 'transcoject', 'dentaurum', 'plasdent',
+    # confirmed real manufacturers added 2026-07-11
+    'miltex', 'kulzer', 'renfert', 'eschmann', 'keystone', 'coricama', 'fixodent',
 }
 
 
