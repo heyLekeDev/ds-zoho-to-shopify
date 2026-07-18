@@ -56,17 +56,35 @@ def fetch_collections():
     return [e['node'] for e in d['data']['collections']['edges']]
 
 
-def create_collection(title):
+def create_collection(title, column='TAG', condition=None):
     q = '''mutation($input: CollectionInput!) { collectionCreate(input: $input) {
       collection { id title } userErrors { field message } } }'''
     d = shopify_graphql(q, {'input': {
         'title': title,
         'ruleSet': {'appliedDisjunctively': False,
-                    'rules': [{'column': 'TAG', 'relation': 'EQUALS', 'condition': title}]},
+                    'rules': [{'column': column, 'relation': 'EQUALS',
+                               'condition': condition or title}]},
     }})
     res = d.get('data', {}).get('collectionCreate') or {}
     errs = res.get('userErrors') or []
     return (res.get('collection') if not errs else None), '; '.join(e['message'] for e in errs)
+
+
+def fetch_vendor_counts():
+    """Active-product count per vendor."""
+    from collections import Counter
+    q = '''query($c:String){ products(first:250, after:$c, query:"status:active"){
+      pageInfo{hasNextPage endCursor} edges{node{vendor}}}}'''
+    counts, cursor = Counter(), None
+    while True:
+        d = shopify_graphql(q, {'c': cursor})
+        pd = d['data']['products']
+        for e in pd['edges']:
+            counts[(e['node']['vendor'] or '').strip()] += 1
+        if not pd['pageInfo']['hasNextPage']:
+            break
+        cursor = pd['pageInfo']['endCursor']
+    return counts
 
 
 def set_rules(collection_id, rules, disjunctive=False):
@@ -86,10 +104,13 @@ def main():
     parser.add_argument('--create-missing', action='store_true')
     parser.add_argument('--show-out-of-stock', action='store_true',
                         help="Remove the 'inventory > 0' rule from category collections")
+    parser.add_argument('--create-brands', action='store_true',
+                        help='Create VENDOR collections for real brands with >= --min-products')
+    parser.add_argument('--min-products', type=int, default=2)
     parser.add_argument('--apply', action='store_true', help='Write changes (default: dry run)')
     args = parser.parse_args()
-    if not (args.create_missing or args.show_out_of_stock):
-        parser.error('Choose --create-missing and/or --show-out-of-stock')
+    if not (args.create_missing or args.show_out_of_stock or args.create_brands):
+        parser.error('Choose --create-missing, --show-out-of-stock and/or --create-brands')
 
     print('═' * 64)
     print('  Collection Fixer' + ('' if args.apply else '  (DRY RUN)'))
@@ -109,6 +130,65 @@ def main():
                 col, err = create_collection(t)
                 print(f"    {'✓' if col else '✗'} {t}" + (f'  {err}' if err else ''))
                 time.sleep(0.4)
+
+    if args.create_brands:
+        from normalize_vendors import KNOWN_BRANDS
+        # Existing VENDOR-rule collections and the vendor string each targets
+        vendor_cols = {}
+        for c in cols:
+            rs = c.get('ruleSet')
+            if rs:
+                for r in rs['rules']:
+                    if r['column'] == 'VENDOR':
+                        vendor_cols[r['condition'].lower()] = c
+
+        counts = fetch_vendor_counts()
+        # 1. Fix existing VENDOR rules whose condition no longer matches any product
+        print('\n  Existing brand collections with a stale vendor rule:')
+        stale_rule = 0
+        for cond, c in vendor_cols.items():
+            if counts.get(c['title'], 0) == 0 and cond != c['title'].lower():
+                # rule condition differs from the collection title and matches nothing
+                actual = next((v for v in counts if v.lower() == c['title'].lower()), None)
+                if actual and counts[actual]:
+                    print(f"    {c['title']:<20} rule='{cond}' → '{actual}' ({counts[actual]} products)")
+                    stale_rule += 1
+                    if args.apply:
+                        set_rules(c['id'], [{'column': 'VENDOR', 'relation': 'EQUALS',
+                                             'condition': actual}], False)
+        if not stale_rule:
+            print('    (none)')
+
+        # 2. Create collections for real brands lacking one
+        make = []
+        for vendor, n in sorted(counts.items(), key=lambda x: -x[1]):
+            if n < args.min_products:
+                continue
+            if not vendor or vendor.lower() in {'generic', 'assorted', 'n/a'}:
+                continue
+            if vendor.lower() in vendor_cols or vendor in by_title:
+                continue
+            if vendor.lower() in KNOWN_BRANDS:
+                make.append((vendor, n))
+
+        skipped = [(v, n) for v, n in sorted(counts.items(), key=lambda x: -x[1])
+                   if n >= args.min_products and v and v.lower() not in {'generic', 'assorted', 'n/a'}
+                   and v.lower() not in vendor_cols and v not in by_title
+                   and v.lower() not in KNOWN_BRANDS]
+
+        print(f'\n  Brand collections to CREATE ({len(make)}):')
+        for v, n in make:
+            print(f'    + {v:<22} ({n} products)')
+        if args.apply and make:
+            print()
+            for v, n in make:
+                col, err = create_collection(v, column='VENDOR', condition=v)
+                print(f"    {'✓' if col else '✗'} {v}" + (f'  {err}' if err else ''))
+                time.sleep(0.4)
+
+        print(f'\n  NOT created — not in known-brand list, confirm if real ({len(skipped)}):')
+        for v, n in skipped[:40]:
+            print(f'    ? {v:<26} ({n})')
 
     if args.show_out_of_stock:
         targets = []
